@@ -1,0 +1,87 @@
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    box-shadow: 9px 9px 24px #f0f0f0,
+        -9px -9px 24px #ffffff;
+}
+
+.header-logo {
+    width: 30px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 18px;
+
+}
+
+.header-search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+
+}
+
+.header-search-input {
+    height: 10px;
+    padding: 20px;
+    width: 70%;
+    border-radius: 5px;
+    border: 0.5px solid;
+    box-shadow: 9px 9px 24px #f0f0f0,
+        -9px -9px 24px #ffffff;
+}
+
+.header-search-icon {
+    padding: 2px;
+    height: 22px;
+    margin-right: 10px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    margin-left: 5px;
+}
+
+.header-option-lineOne {
+    font-size: 10px;
+}
+
+.header-option-lineTwo {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-links {
+    color: black;
+}
+
+.header-links ::hover {
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+
+}
+
+.header-option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.header-option ::hover {
+    background-color: black;
+    color: white;
+    box-shadow: 9px 9px 24px #f0f0f0,
+        -9px -9px 24px #ffffff;
+    transition: all 0.2s ease-out;
+}

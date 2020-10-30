@@ -1,26 +1,44 @@
 import React from 'react'
-import  {Navbar, Nav, Container, Form, FormControl, Button} from 'react-bootstrap';
+import './Header.css'
+import SearchIcon from '@material-ui/icons/Search';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Header = () => {
     return (
-        <header>
-            <Navbar bg="light" expand="lg" sticky="top">
-            <Navbar.Brand href="#home">DUBookX</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#">Login </Nav.Link>
-                <Nav.Link href="#">Register</Nav.Link>
-            </Nav>
+        <div className="header">
+            <img className="header-logo" src="https://www.flaticon.com/svg/static/icons/svg/3576/3576317.svg" alt="DUBookX"/>
 
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-primary">Search</Button>
-            </Form>
-            </Navbar.Collapse>
-            </Navbar>
-        </header>
+            <div className="header-search">
+                <input className="header-search-input"></input>
+                <SearchIcon className="header-search-icon"></SearchIcon> 
+            </div>
+
+            <div className="header-nav">
+                <div className="header-option">
+                <a href="#" className="header-links">
+                    <span className="header-option-lineOne"><ExitToAppIcon></ExitToAppIcon></span>
+                    <span className="header-option-lineTwo">Login</span>
+                </a>
+                </div>
+                
+                <div className="header-option">
+                <a href="#"  className="header-links">
+                    <span className="header-option-lineOne"><ShoppingCartIcon></ShoppingCartIcon></span>
+                    <span className="header-option-lineTwo">Cart</span>
+                </a>
+                </div>
+                
+                    <div className="header-option">
+                    <a href="#"  className="header-links">
+                        <span className="header-option-lineOne"><AccountCircleIcon/></span>
+                        <span className="header-option-lineTwo">Account</span>
+                    </a>
+                    </div>
+
+            </div>
+        </div>
     )
 }
 
