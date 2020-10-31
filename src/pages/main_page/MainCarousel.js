@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import './MainCarousel.css'
 
-import './MainPage.css'
 function MainCarousel() {
     return (
         <Carousel 

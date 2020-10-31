@@ -9,7 +9,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const Header = () => {
     return (
         <div className="header">
-            <img className="header-logo" src="https://www.flaticon.com/svg/static/icons/svg/3576/3576317.svg" alt="DUBookX"/>
+            <img className="header-logo" src="https://i.ibb.co/GWBKTFW/DU.png" alt="DUBookX"/>
 
             <div className="header-search">
                 <input className="header-search-input"></input>

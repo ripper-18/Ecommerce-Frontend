@@ -1,3 +1,9 @@
+a,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
 .header {
     height: 60px;
     display: flex;
@@ -11,10 +17,10 @@
 }
 
 .header-logo {
-    width: 30px;
+    width: 80px;
     object-fit: contain;
     margin: 0 20px;
-    margin-top: 18px;
+
 
 }
 
@@ -31,9 +37,9 @@
     padding: 20px;
     width: 70%;
     border-radius: 5px;
-    border: 0.5px solid;
-    box-shadow: 9px 9px 24px #f0f0f0,
-        -9px -9px 24px #ffffff;
+    border: 0 solid;
+    box-shadow: inset 8px 8px 33px #cfcfcf,
+        inset -8px -8px 33px #ffffff;
 }
 
 .header-search-icon {
@@ -64,12 +70,6 @@
     color: black;
 }
 
-.header-links ::hover {
-    color: white;
-    background-color: black;
-    border-radius: 4px;
-
-}
 
 .header-option {
     display: flex;
@@ -78,10 +78,16 @@
     margin-right: 10px;
 }
 
-.header-option ::hover {
+.header-option :hover {
     background-color: black;
     color: white;
-    box-shadow: 9px 9px 24px #f0f0f0,
-        -9px -9px 24px #ffffff;
     transition: all 0.2s ease-out;
+    border-radius: 10%;
+}
+
+
+@media screen and (max-width: 650px) {
+    .header-option-lineTwo {
+        display: none;
+    }
 }
