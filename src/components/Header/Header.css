@@ -5,7 +5,7 @@ a:active {
 }
 
 .header {
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -36,6 +36,14 @@ a:active {
     height: 10px;
     padding: 20px;
     width: 70%;
+    border-radius: 5px;
+    border: 0 solid;
+    box-shadow: inset 3px 3px 20px #cfcfcf,
+        inset -3px -3px 20px #ffffff;
+}
+
+
+.header-search-input:hover {
     border-radius: 5px;
     border: 0 solid;
     box-shadow: inset 8px 8px 33px #cfcfcf,
@@ -82,8 +90,8 @@ a:active {
 }
 
 .header-option :hover {
-    background-color: black;
-    color: white;
+    background-color: #eff8ff;
+    color: black;
     transition: all 0.2s ease-out;
     border-radius: 5px;
 }

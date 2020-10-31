@@ -12,7 +12,7 @@ const Header = () => {
             <img className="header-logo" src="https://i.ibb.co/GWBKTFW/DU.png" alt="DUBookX"/>
 
             <div className="header-search">
-                <input className="header-search-input"></input>
+                <input className="header-search-input" placeholder="Enter Your Favorite Book"></input>
                 <SearchIcon className="header-search-icon"></SearchIcon> 
             </div>
 

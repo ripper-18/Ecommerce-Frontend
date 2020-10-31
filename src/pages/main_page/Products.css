@@ -37,16 +37,14 @@
 }
 
 .product-button {
-    background: rgb(39, 39, 41);
-    color: white;
+    background: #abdaff;
+    color: black;
     margin-top: 10px;
     border-radius: 5px;
 }
 
 .product-button:hover {
-    background: black;
-    color: white;
-    box-shadow: 2px 2px 4px #393939,
-        -2px -2px 4px #474747;
+    background: #67bcff;
+    color: black;
 
 }
