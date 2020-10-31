@@ -54,11 +54,13 @@ a:active {
 
 .header-option-lineOne {
     font-size: 10px;
+    padding: 10px;
 }
 
 .header-option-lineTwo {
     font-size: 13px;
     font-weight: 800;
+    padding: 10px;
 }
 
 .header-nav {
@@ -68,6 +70,7 @@ a:active {
 
 .header-links {
     color: black;
+    padding: 10px;
 }
 
 
@@ -82,12 +85,31 @@ a:active {
     background-color: black;
     color: white;
     transition: all 0.2s ease-out;
-    border-radius: 10%;
+    border-radius: 5px;
 }
 
 
 @media screen and (max-width: 650px) {
     .header-option-lineTwo {
         display: none;
+        padding: 0px;
+    }
+
+    .header-option-lineOne {
+        font-size: 10px;
+        padding: 0px;
+    }
+
+    .header-links {
+        color: black;
+        padding: 00px;
+    }
+
+
+    .header-option {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 10px;
     }
 }
