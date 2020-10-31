@@ -21,7 +21,6 @@ function MainPage() {
                         <Products></Products>
                         <Products></Products>
                         <Products></Products>
-                        <Products></Products>
      
                     </div>
                 </div>
@@ -30,7 +29,7 @@ function MainPage() {
                         <Products></Products>
                         <Products></Products>
                         <Products></Products>
-                        <Products></Products>
+
 
                     </div>
                 </div>
