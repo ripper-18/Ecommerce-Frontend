@@ -25,10 +25,10 @@ const Header = () => {
                 </div>
                 
                 <div className="header-option">
-                <a href="#"  className="header-links">
+                <Link to="/cart" className="header-links">
                     <span className="header-option-lineOne"><ShoppingCartIcon></ShoppingCartIcon></span>
                     <span className="header-option-lineTwo">Cart</span>
-                </a>
+                </Link>
                 </div>
                 
                     <div className="header-option">

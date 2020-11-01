@@ -94,6 +94,15 @@ a:active {
     color: black;
     transition: all 0.2s ease-out;
     border-radius: 5px;
+    border-bottom: #53a2df 5px solid;
+}
+
+.header-option-lineOne:hover {
+    border-bottom: none;
+}
+
+.header-option-lineTwo:hover {
+    border-bottom: none;
 }
 
 

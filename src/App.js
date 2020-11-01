@@ -15,6 +15,9 @@ class App extends Component {
         const LoginPage = React.lazy(() =>
             import("./pages/login_page/loginScreen")
         );
+        const CartPage = React.lazy(() => 
+            import("./pages/cart_page/Cart")
+        );
         
         return (
             <div className="App">
@@ -29,6 +32,7 @@ class App extends Component {
                     <main style={{ minHeight: "60vh" }}>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
+                        <Route path="/cart" exact component={CartPage}/>
                     </main>
                 </Suspense>
                 <Footer />
