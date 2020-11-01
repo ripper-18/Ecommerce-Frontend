@@ -5,7 +5,7 @@ import { GoogleLogin } from "react-google-login";
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
 import styles from "./Login.module.css";
-import imgg from './imgg.jpeg';
+import imgg from '../../assets/login_page/imgg.jpeg';
 
 const responseGoogle = (response) => {
     console.log(response);
