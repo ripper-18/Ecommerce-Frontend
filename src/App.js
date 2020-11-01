@@ -1,46 +1,40 @@
-import React from 'react'
-import './Header.css'
-import {Link} from 'react-router-dom'
-import SearchIcon from '@material-ui/icons/Search';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import React, {Component,  Suspense } from "react";
+import Loader from "./components/Loader/Loader";
+import { Route } from "react-router-dom";
+import "./App.css";
+import "./bootstrap.min.css";
+import Header from './components/Header/Header'
+import Footer from "./components/Footer/Footer";
 
-const Header = () => {
-    return (
-        <div className="header">
-           <Link to="/"><img className="header-logo" src="https://i.ibb.co/GWBKTFW/DU.png" alt="DUBookX"/></Link> 
 
-            <div className="header-search">
-                <input className="header-search-input" placeholder="Enter Your Favorite Book"></input>
-                <SearchIcon className="header-search-icon"></SearchIcon> 
+class App extends Component {
+    render() {
+        const MainPage = React.lazy(() =>
+            import("./pages/main_page/MainPage")
+        );
+        const LoginPage = React.lazy(() =>
+            import("./pages/login_page/loginScreen")
+        );
+        
+        return (
+            <div className="App">
+                <Suspense
+                    fallback={
+                        <React.Fragment>
+                            <Loader />
+                        </React.Fragment>
+                    }
+                >
+                    <Header />
+                    <main style={{ minHeight: "60vh" }}>
+                        <Route path="/" exact component={MainPage} />
+                        <Route path="/login" exact component={LoginPage}/>
+                    </main>
+                </Suspense>
+                <Footer />
             </div>
-
-            <div className="header-nav">
-                <div className="header-option">
-                <Link to="/login" className="header-links">
-                    <span className="header-option-lineOne"><ExitToAppIcon></ExitToAppIcon></span>
-                    <span className="header-option-lineTwo">Login</span>
-                </Link>
-                </div>
-                
-                <div className="header-option">
-                <a href="#"  className="header-links">
-                    <span className="header-option-lineOne"><ShoppingCartIcon></ShoppingCartIcon></span>
-                    <span className="header-option-lineTwo">Cart</span>
-                </a>
-                </div>
-                
-                    <div className="header-option">
-                    <a href="#"  className="header-links">
-                        <span className="header-option-lineOne"><AccountCircleIcon/></span>
-                        <span className="header-option-lineTwo">Account</span>
-                    </a>
-                    </div>
-
-            </div>
-        </div>
-    )
+        );
+    }
 }
 
-export default Header
+export default App
