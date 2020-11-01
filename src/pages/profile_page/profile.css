@@ -1,0 +1,47 @@
+.card_container{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.outer_container h1{
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: white;
+  flex: .8;
+  align-items: center;
+  align-content: center;
+}
+
+.card p,.card h2{
+    text-align: center;
+}
+
+.button_div{
+    background-color: #67bcff;
+    width: 50vw;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10vh;
+}
+
+.button_div button{
+    width: 15vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: bisque;
+    height: 10vh;
+    color: black;
+    border-radius: 100px;
+    border: 2px solid white;
+    background-color: #FF5349;
+    margin-bottom: 5vh;
+}

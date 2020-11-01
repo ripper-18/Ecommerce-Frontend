@@ -1,0 +1,10 @@
+.info_container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #67bcff;
+    width: 50vw;
+    height: 50vh;
+}
