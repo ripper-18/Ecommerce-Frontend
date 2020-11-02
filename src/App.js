@@ -18,6 +18,9 @@ class App extends Component {
         const CartPage = React.lazy(() => 
             import("./pages/cart_page/Cart")
         );
+        const OrderPage = React.lazy(() =>
+            import("./pages/order_page/OrderPage")
+        )
         
         return (
             <div className="App">
@@ -33,6 +36,7 @@ class App extends Component {
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
+                        <Route path="/order" exact component={OrderPage}/>
                     </main>
                 </Suspense>
                 <Footer />
