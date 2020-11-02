@@ -4,12 +4,12 @@
     flex: 1;
 }
 
-.outer_container h1{
+/* .outer_container h1{
     text-align: center;
     align-items: center;
     align-self: center;
     align-content: center;
-}
+} */
 
 .card {
   /* Add shadows to create the "card" effect */

@@ -4,6 +4,7 @@ import { Tab } from "react-bootstrap";
 import styles from "./profile.css";
 import Orders from './orderComponent';
 import Information from './infoComponenet';
+import Welcome from './welcomeComponent';
 
 
 class Profile extends Component{
@@ -11,7 +12,7 @@ class Profile extends Component{
     render(){
         return(
             <div className='outer_container'>
-                <h1>Welcome back Roctoid</h1>
+                <Welcome name='aditya karn' />
                 <br></br>
                 <div className="card_container">
 
