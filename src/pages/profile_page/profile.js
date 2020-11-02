@@ -1,4 +1,4 @@
-import React, {Component,useEffect} from 'react';
+import React, {Component} from 'react';
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
 import styles from "./profile.css";
@@ -11,7 +11,7 @@ import {logoutUser} from '../../actions/auth_actions'
 
 class Profile extends Component {
 
-    state={
+    /*state={
         user:{
             name:"",
             email:"",
@@ -20,7 +20,12 @@ class Profile extends Component {
         orderhistory:{
 
         }
+    }*/
+
+    componentDidMount(){
+        console.log("hi")
     }
+    
     
 
     render(){
@@ -29,9 +34,6 @@ class Profile extends Component {
                 <Welcome name='aditya karn' />
                 <br></br>
                 <div className="card_container">
-
-
-
                     <div className='card'>
                         <Tabs
                             defaultActiveKey="overview"

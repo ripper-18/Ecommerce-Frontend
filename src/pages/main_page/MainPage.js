@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import MainCarousel from './MainCarousel'
 import Filters from './Filters'
 import Products from './Products'
@@ -7,6 +7,11 @@ import './MainPage.css'
 import {connect} from 'react-redux'
 
 function MainPage() {
+
+    useEffect(()=>{
+        console.log("main")
+    })
+
     return (
         <div>
 

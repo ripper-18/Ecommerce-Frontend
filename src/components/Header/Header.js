@@ -32,7 +32,7 @@ const Header = () => {
                 </div>
                 
                     <div className="header-option">
-                    <Link to="/account"  className="header-links">
+                    <Link to="/profile"  className="header-links">
                         <span className="header-option-lineOne"><AccountCircleIcon/></span>
                         <span className="header-option-lineTwo">Account</span>
                     </Link>
