@@ -1,13 +1,27 @@
-import React, {Component} from 'react';
+import React, {Component,useEffect} from 'react';
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
 import styles from "./profile.css";
 import Orders from './orderComponent';
 import Information from './infoComponenet';
 import Welcome from './welcomeComponent';
+import {connect} from 'react-redux';
 
+import {logoutUser} from '../../actions/auth_actions'
 
-class Profile extends Component{
+class Profile extends Component {
+
+    state={
+        user:{
+            name:"",
+            email:"",
+            phone: ""
+        },
+        orderhistory:{
+
+        }
+    }
+    
 
     render(){
         return(
@@ -46,16 +60,7 @@ class Profile extends Component{
                                 <Orders status='delivered' date='13/10/2020' id='15' />
                                 <Orders status='delivered' date='13/10/2020' id='15' />
 
-
-
-
-
-
                             </Tab>
-
-
-
-
 
                         </Tabs>
 
@@ -68,10 +73,10 @@ class Profile extends Component{
 
             </div>
 
-            
-
-        );
-    }
+        )}
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+});
 
-export default Profile;
+export default connect(mapStateToProps,{logoutUser})(Profile);

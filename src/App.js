@@ -5,6 +5,7 @@ import "./App.css";
 import "./bootstrap.min.css";
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter } from "react-router-dom";
 
 
 class App extends Component {
@@ -21,9 +22,12 @@ class App extends Component {
         const OrderPage = React.lazy(() =>
             import("./pages/order_page/OrderPage")
         )
+        const ProfilePage =React.lazy(()=>
+        import ('./pages/profile_page/profile'))
         
         return (
             <div className="App">
+                <BrowserRouter>
                 <Suspense
                     fallback={
                         <React.Fragment>
@@ -37,9 +41,12 @@ class App extends Component {
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
                         <Route path="/order" exact component={OrderPage}/>
+                        <Route path="/account" exact component={ProfilePage}/>
                     </main>
-                </Suspense>
+               
                 <Footer />
+                </Suspense>
+                </BrowserRouter>
             </div>
         );
     }

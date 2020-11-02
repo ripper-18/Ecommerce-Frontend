@@ -4,6 +4,7 @@ import Filters from './Filters'
 import Products from './Products'
 import {Row, Col} from 'react-bootstrap';
 import './MainPage.css'
+import {connect} from 'react-redux'
 
 function MainPage() {
     return (
