@@ -136,14 +136,16 @@ export const loginGoogle = (user, history) => (dispatch) => {
     );
 };
 
-export const updateUser = (phone, token) => (dispatch) => {
+export const updateUser = (user, token) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", token);
   //  myHeaders.append("set-cookie", "httponly;secure;samesite=none")
-
+  console.log("updae_action")
     var raw = JSON.stringify({
-        phone: phone,
+        email:user.email,
+        phone: user.phone,
+        name:user.name,
     });
 
     var requestOptions = {
@@ -161,6 +163,7 @@ export const updateUser = (phone, token) => (dispatch) => {
                     type: UPDATE_USER,
                     payload: res.data,
                 });
+                
             } else {
                // dispatch(showDialog("Something went wrong"));
             }

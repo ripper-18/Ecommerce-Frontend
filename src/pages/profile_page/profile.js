@@ -2,17 +2,16 @@ import React, {Component} from 'react';
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
 import {withRouter} from 'react-router-dom'
-import styles from "./profile.css";
-import Orders from './orderComponent';
-import Information from './infoComponenet';
-import Welcome from './welcomeComponent';
+import   "./profile.css";
 import {connect} from 'react-redux';
-import {logoutUser} from '../../actions/auth_actions'
+import {logoutUser,updateUser} from '../../actions/auth_actions'
 import {getPastOrders} from '../../actions/order_actions'
+import  "./order.css";
 
 class Profile extends Component {
 
     state={
+        isDisabled: true,
         user:{
             name:this.props.auth.user.name,
             email:this.props.auth.user.email,
@@ -60,10 +59,27 @@ class Profile extends Component {
             
         });
     }
+
+    updateUserfunc=()=>{
+        
+        if(this.state.user.name!==0){
+            if(this.state.user.email!==0){
+                console.log("update")
+                this.setState({ isDisabled: !this.state.isDisabled })
+                this.props.updateUser(this.state.user,this.props.auth.token)
+            }
+            else{
+                alert("Email can't be empty!")
+            }
+        }
+        else{
+            alert("Name can't be empty!")
+        }
+    }
     render(){
         return(
             <div className='outer_container'>
-                <Welcome name={this.state.user.name} />
+               
                 <br></br>
                 <div className="card_container">
                     <div className='card'>
@@ -71,25 +87,57 @@ class Profile extends Component {
                             defaultActiveKey="overview"
                             id="uncontrolled-tab-example"
                         >
-
                             <Tab eventKey="overview" title="Account Overview">
-                                <Information email={this.state.user.email} phone={this.state.user.phone}   />
+                              
+                                    <br/>
+                                    <center>
+                                    <button disabled={this.state.isDisabled} onClick={()=>this.updateUserfunc()} >Update</button>
+                                    <input type="button" value="Edit" disabled={!this.state.isDisabled} onClick={() => {
+                                        this.setState({ isDisabled: !this.state.isDisabled })
+                                    }} />
+                                    </center>
+                                    <p>Name: </p>
+                <input value={this.state.user.name} onChange={e => {
+                  this.setState({
+                    user: {
+                      ...this.state.user,
+                      name: e.target.value
+                    }
+                  })
+                }} value={this.state.user.name} disabled={this.state.isDisabled} />
+                <p>Email: </p>
+                <input value={this.state.user.email} onChange={e => {
+                  this.setState({
+                    user: {
+                      ...this.state.user,
+                      email: e.target.value
+                    }
+                  })
+                }} value={this.state.user.email} disabled={this.state.isDisabled} />
+                <p>Phone: </p>
+                <input value={this.state.user.phone} onChange={e => {
+                  this.setState({
+                    user: {
+                      ...this.state.user,
+                      phone: e.target.value
+                    }
+                  })
+                }} value={this.state.user.phone} disabled={this.state.isDisabled} />
 
-                                <div className='button_div'>
-                                    <button >EDIT DETAILS</button>
-                                    <button >MANAGE ADDRESS</button>
-                                </div>
+<button onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
                             </Tab>
                             <Tab eventKey="orders" title="Previous Orders">
                                 <br></br>
                                 <br></br>
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-                                <Orders status='delivered' date='13/10/2020' id='15' />
-
+                                <div className='order_container'>
+            
+            
+            <h3><b>Order Id: </b></h3>
+            <h3><b>Order Status: </b></h3>
+            <h3><b>Date: </b></h3>
+            <h4><b>......Click here to get full information about the order</b></h4>
+        </div>
+        
                             </Tab>
                         </Tabs>
                     </div>
@@ -103,4 +151,4 @@ const mapStateToProps = (state) => ({
     pastOrders:state.pastOrders
 });
 
-export default connect(mapStateToProps,{logoutUser,getPastOrders})(withRouter(Profile));
+export default connect(mapStateToProps,{logoutUser,getPastOrders,updateUser})(withRouter(Profile));
