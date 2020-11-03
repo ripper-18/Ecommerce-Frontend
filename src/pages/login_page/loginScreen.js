@@ -116,15 +116,16 @@ class Login extends Component {
         };
         this.props.loginFb(data, this.props.history);
     };
-
+*/
     handleGoogleLogin = ({ profileObj }) => {
         let data = {
             name: profileObj.name,
             email: profileObj.email,
             id: profileObj.googleId,
         };
+        console.log("google-login")
         this.props.loginGoogle(data, this.props.history);
-    };*/
+    };
 
     handleRegister = () => {
         if (
@@ -224,12 +225,42 @@ class Login extends Component {
                                     <p>Or Login with </p>
                                     {/* <FaGoogle></FaGoogle> */}
 
-                                    {/*<GoogleLogin
-                                        clientId="250553439818-747jqjn1nsjrpespp5hbun3jl9leddo3.apps.googleusercontent.com"
-                                        onSuccess={responseGoogle}
-                                        onFailure={responseGoogle}
-                                    />*/}
-                                    <FaFacebookF></FaFacebookF>
+                                    <GoogleLogin
+                                    render={(
+                                        renderProps
+                                    ) => (
+                                            <button
+                                                onClick={
+                                                    renderProps.onClick
+                                                }
+                                                disabled={
+                                                    renderProps.disabled
+                                                }
+                                                
+                                            >
+                                                
+                                                <span>
+                                                    Login
+                                                    with
+                                                    Google
+                                            </span>
+                                            </button>
+                                        )}
+                                        clientId="250553439818-tk4jffted610in0h9hidqgnpft8m0lm2.apps.googleusercontent.com"
+                                        onSuccess={
+                                            this
+                                                .handleGoogleLogin
+                                        }
+                                        onFailure={() =>
+                                            alert(
+                                                `Login failed`
+                                            )
+                                        }
+                                        cookiePolicy={
+                                            "single_host_origin"
+                                        }
+                                    />
+                                   
                                 </Tab>
                                 <Tab eventKey="signup" title="Create Account">
                                     <h2>Sign Up</h2>

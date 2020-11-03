@@ -28,10 +28,7 @@ export default  function (state = initialState, action) {
             return {
                 ...state,
                 oldUser: true,
-                user: {
-                    ...state.user,
-                    phone: action.payload.phone,
-                },
+                user: action.payload.user,
             };
 
         default:

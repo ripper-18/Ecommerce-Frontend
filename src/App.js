@@ -1,6 +1,6 @@
-import React, {Component,  Suspense } from "react";
+import React, {  Suspense } from "react";
 import Loader from "./components/Loader/Loader";
-import { Route,Switch,BrowserRouter} from "react-router-dom";
+import { Route,BrowserRouter} from "react-router-dom";
 import "./App.css";
 import "./bootstrap.min.css";
 import Header from './components/Header/Header'
