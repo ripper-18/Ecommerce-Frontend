@@ -23,21 +23,7 @@ function MainPage() {
                 <Col xs="9">
                 <h1 style={{textAlign : 'center'}}> Best Place to Buy Books </h1>
                 <div  className="main">
-                    <div className="main-row">
                         <Products></Products>
-                        <Products></Products>
-                        <Products></Products>
-     
-                    </div>
-                </div>
-                <div  className="main">
-                    <div className="main-row">
-                        <Products></Products>
-                        <Products></Products>
-                        <Products></Products>
-
-
-                    </div>
                 </div>
                 </Col>
 
