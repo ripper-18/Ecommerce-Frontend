@@ -16,12 +16,6 @@ export const removeFromCart = (books,index) => (dispatch) =>{
     });    
 }
 
-export const removeFromCart = (books, index) => (dispatch) => {
-    dispatch({
-        type: REMOVE_FROM_CART,
-        payload: { books, index },
-    });
-}
 
 export const clearCart = () => (dispatch) =>{
     dispatch({
