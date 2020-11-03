@@ -17,6 +17,15 @@ function App()   {
         return (
             <BrowserRouter>
             <div className="App">
+                <Suspense
+                fallback={
+                    <React.Fragment>
+                        <Loader/>
+                    </React.Fragment>
+                }
+                >
+
+               
                 
                     <Header />
                     <main style={{ minHeight: "60vh" }}>
@@ -27,6 +36,7 @@ function App()   {
                         <Route path="/order" exact component={OrderPage}/>
                         <Route path="/profile" exact component={ProfilePage}/>
                    </main>
+                   </Suspense>
                 <Footer />  
             </div>
             </BrowserRouter>   

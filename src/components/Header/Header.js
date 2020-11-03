@@ -1,12 +1,19 @@
-import React from 'react'
+import React,{Component} from 'react'
 import './Header.css'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/auth_actions";
+class Header extends Component{
 
-const Header = () => {
+    componentDidMount(){
+       // console.log(this.props)
+    }
+
+    render(){
     return (
         <div className="header">
            <Link to="/"><img className="header-logo" src="https://i.ibb.co/GWBKTFW/DU.png" alt="DUBookX"/></Link> 
@@ -18,10 +25,18 @@ const Header = () => {
 
             <div className="header-nav">
                 <div className="header-option">
-                <Link to="/login" className="header-links">
-                    <span className="header-option-lineOne"><ExitToAppIcon></ExitToAppIcon></span>
-                    <span className="header-option-lineTwo">Login</span>
-                </Link>
+                    {!this.props.auth.isAuth?(
+                        <Link to="/login" className="header-links">
+                        <span className="header-option-lineOne"><ExitToAppIcon></ExitToAppIcon></span>
+                        <span className="header-option-lineTwo">Login</span>
+                    </Link>
+                    ):(
+                        <Link to="/profile"  className="header-links">
+                        <span className="header-option-lineOne"><AccountCircleIcon/></span>
+                        <span className="header-option-lineTwo">Account</span>
+                    </Link>
+                    )}
+                
                 </div>
                 
                 <div className="header-option">
@@ -30,17 +45,12 @@ const Header = () => {
                     <span className="header-option-lineTwo">Cart</span>
                 </Link>
                 </div>
-                
-                    <div className="header-option">
-                    <Link to="/profile"  className="header-links">
-                        <span className="header-option-lineOne"><AccountCircleIcon/></span>
-                        <span className="header-option-lineTwo">Account</span>
-                    </Link>
-                    </div>
-
             </div>
         </div>
-    )
+    )}
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+});
 
-export default Header
+export default connect(mapStateToProps,{logoutUser})(withRouter(Header))

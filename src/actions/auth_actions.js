@@ -63,7 +63,7 @@ export const loginUser = (user, history) => (dispatch) => {
                     type: LOGIN_USER,
                     payload: res.data,
                 });
-                history.push("/account");
+                history.push("/profile");
             } else {
                 console.log("error")
                // dispatch(showDialog("Something went wrong"));
