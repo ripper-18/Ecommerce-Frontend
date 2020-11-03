@@ -327,7 +327,7 @@ class Login extends Component {
                 </div>
 
                 <div className={styles.right_section} >
-                    <img src={imgg}></img>
+                    
                 </div>
             </div>
         );
