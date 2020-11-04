@@ -3,8 +3,9 @@ import './Products.css'
 import ProductItem from './ProductItem'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {getBooks} from '../../actions/book_actions'
+import {getBooks,getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
+import {logoutUser} from '../../actions/auth_actions'
 
 class Products extends Component {
     state={
@@ -16,8 +17,8 @@ class Products extends Component {
     }
 
     componentDidMount(){
-
-        this.props.getBooks(this.state.filters)
+        this.props.logoutUser(this.props.history)
+        this.props.getBooksByKeyword(this.state.filters,'s')
         console.log(this.props)
     }
 
@@ -46,10 +47,13 @@ class Products extends Component {
 const mapStateToProps = (state) => ({
     book: state.book,
     cart: state.cart,
+    auth:state.auth
 });
 
 export default connect(mapStateToProps, {
     getBooks,
     addToCart,
     removeFromCart,
+    getBooksByKeyword,
+    logoutUser
 })(withRouter(Products));

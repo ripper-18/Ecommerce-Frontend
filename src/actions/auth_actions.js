@@ -158,6 +158,7 @@ export const updateUser = (user, token) => (dispatch) => {
     fetch(config.user + "auth/update", requestOptions).then((response) =>
         response.json().then((res) => {
             console.log(res);
+            
             if (res.data) {
                 dispatch({
                     type: UPDATE_USER,

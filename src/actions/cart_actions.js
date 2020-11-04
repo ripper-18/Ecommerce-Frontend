@@ -10,10 +10,10 @@ export const addToCart = (books) => (dispatch) =>{
 
 };
 
-export const removeFromCart = (books,index) => (dispatch) =>{
+export const removeFromCart = (books) => (dispatch) =>{
     dispatch({
         type:REMOVE_FROM_CART,
-        payload:{books,index},
+        payload:{books},
     });    
 }
 

@@ -5,11 +5,13 @@ import Products from './Products'
 import {Row, Col} from 'react-bootstrap';
 import './MainPage.css'
 import {connect} from 'react-redux'
+import {logoutUser} from '../../actions/auth_actions'
 
 function MainPage() {
 
     useEffect(()=>{
-        console.log("main")
+       // console.log("main")
+      
     })
 
     return (

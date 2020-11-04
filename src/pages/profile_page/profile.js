@@ -67,6 +67,7 @@ class Profile extends Component {
                 console.log("update")
                 this.setState({ isDisabled: !this.state.isDisabled })
                 this.props.updateUser(this.state.user,this.props.auth.token)
+                console.log(this.props.auth)
             }
             else{
                 alert("Email can't be empty!")

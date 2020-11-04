@@ -7,7 +7,6 @@ import {
 
 const initialState = {
     bookCart: [],
-    index: 0
 };
 
 const removeItem = (arr, item) => {
@@ -17,7 +16,7 @@ const removeItem = (arr, item) => {
         let temp = [...arr];
         console.log("to be removed")
         console.log(item)
-        let idx = item.index
+        let idx=-1;
         if (idx === -1) {
             idx = arr.findIndex((p) => p._id === item._id);
         }
