@@ -10,7 +10,7 @@ import LoginPage from "./pages/login_page/loginScreen"
 import CartPage from "./pages/cart_page/Cart"
 import OrderPage from './pages/order_page/OrderPage'
 import ProfilePage from './pages/profile_page/profile'
-
+import CheckOutPage from './pages/checkout_page/CheckOut'
 
 function App()   {
 
@@ -35,6 +35,7 @@ function App()   {
                         <Route path="/cart" exact component={CartPage}/>
                         <Route path="/order" exact component={OrderPage}/>
                         <Route path="/profile" exact component={ProfilePage}/>
+                        <Route path="/checkout" exact component={CheckOutPage}/>
                    </main>
                    </Suspense>
                 <Footer />  

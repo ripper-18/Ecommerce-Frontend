@@ -156,7 +156,6 @@ class OrderPage extends Component{
 
 
                             <Item></Item>
-                            <Item></Item>
 
                         </div>
                     </Col>
