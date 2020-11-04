@@ -7,8 +7,6 @@ import {
 
 const initialState = {
     bookCart: [],
-    
-    
     index: 0
 };
 
@@ -26,9 +24,9 @@ const removeItem = (arr, item) => {
         console.log(idx)
         const rem = temp.splice(idx, 1);
         console.log("final")
-        console.log(temp)
-        console.log("removed")
-        console.log(rem)
+        //console.log(temp)
+        //console.log("removed")
+      //  console.log(rem)
         return temp;
     }
 };
