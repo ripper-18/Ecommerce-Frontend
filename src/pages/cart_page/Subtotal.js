@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{Component} from 'react'
 import CurrencyFormat from "react-currency-format";
 import './Subtotal.css'
 
-function Subtotal() {
+class  Subtotal extends Component {
+    render(){
     return (
         <div className="subtotal">
             <CurrencyFormat
@@ -10,12 +11,12 @@ function Subtotal() {
                 <>
                 <p>
                     Subtotal  :  
-                    <strong>300</strong>
+                    <strong>{this.props.subtotal.toFixed(2)}</strong>
                 </p>
                 <br/>
                 <p>
                     Delivery :
-                    <strong> 50 </strong>
+                    <strong> {this.props.delivery} </strong>
                 </p>
                 <p>
                     GST :
@@ -33,7 +34,7 @@ function Subtotal() {
             
             <button>Proceed to Checkout</button>
         </div>
-    )
+    )}
 }
 
 export default Subtotal
