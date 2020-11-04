@@ -17,7 +17,7 @@ class Products extends Component {
     }
 
     componentDidMount(){
-        this.props.logoutUser(this.props.history)
+        // this.props.logoutUser(this.props.history)
         this.props.getBooksByKeyword(this.state.filters,'s')
         console.log(this.props)
     }
