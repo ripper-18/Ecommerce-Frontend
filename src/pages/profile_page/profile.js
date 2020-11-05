@@ -20,33 +20,38 @@ class Profile extends Component {
         orderhistory:{
             orders:[],
             isInfOpen:[],
-            showMore:false
+           
         }
     }
 
-    componentDidMount(){
+    componentDidMount (){
         //console.log(this.state)
         this.props.getPastOrders(this.props.auth.token);
-        console.log(this.props)
-        /*let address=[]
+       // console.log(this.props)
+        let address=[]
       this.props.pastOrders.map((addr,index)=>(
         address[index]=false
       ))
-      console.log(address)
+      //console.log(address)
      
-      console.log(this.state)
+      //console.log(this.state)
       let a=[]
       this.props.pastOrders.map((order,index)=>{
-          if(order.orderStatus==="delivered" || order.orderStatus==="out_for_delivery" ){
+          console.log(order)
               a.push(order)
-          }
+          
       })
       this.setState({
+          ...this.state,
+          orderhistory:{
           ...this.state.orderhistory,
-          isInfOpen:address,
-          temp:a
-      })*/
+            isInfOpen:address,
+          orders:a
+          }
+          
+      })
 
+      console.log(this.state)
     }
 
     setInfOpen = (value,index) => {
@@ -131,12 +136,59 @@ class Profile extends Component {
                                 <br></br>
                                 <br></br>
                                 <div className='order_container'>
-            
-            
-            <h3><b>Order Id: </b></h3>
-            <h3><b>Order Status: </b></h3>
-            <h3><b>Date: </b></h3>
-            <h4><b>......Click here to get full information about the order</b></h4>
+                                
+                        <div className="py-2 row" >
+                        <div className="col-8">
+                            {this.state.orderhistory.orders.length > 0 ? (
+                                this.state.orderhistory.orders.map(
+                                    (order, index) => (
+                                        <div
+                                            className="card my-3 p-2"
+                                            key={index}
+                                        >
+                                            <div>
+                                                <span className="font-weight-bold">
+                                                    Order ID:
+                                                </span>{" "}
+                                                <span>
+                                                    {order.orderId}
+                                                </span>
+                                                <br />
+                                                <span className="font-weight-bold">
+                                                    Order Status:
+                                                </span>{" "}
+                                                <span className="text-capitalize">
+                                                    {
+                                                        order.orderStatus
+                                                    }
+                                                </span>
+                                                <br />
+                                                <span className="font-weight-bold">
+                                                    Date:
+                                                </span>{" "}
+                                                <span>
+                                                    {new Date(
+                                                        order.placedAt
+                                                    ).toLocaleDateString(
+                                                        "en-GB"
+                                                    )}
+                                                </span>
+                                                <br />
+                                            </div>
+                                            <div  onClick={()=>this.setInfOpen(true,index)}>
+                                               <span style={{color:"red",fontSize:"px"}}>...</span> Click here to get full information about the order
+                                            </div>
+                                            
+                                        </div>
+                                    )
+                                )
+                            ) : (
+                                <p></p>
+                            )
+                            }
+                           
+                        </div>
+                    </div>
         </div>
         
                             </Tab>
@@ -149,7 +201,7 @@ class Profile extends Component {
 }
 const mapStateToProps = (state) => ({
     auth: state.auth,
-    pastOrders:state.pastOrders
+    pastOrders:state.order.pastOrders
 });
 
 export default connect(mapStateToProps,{logoutUser,getPastOrders,updateUser})(withRouter(Profile));
