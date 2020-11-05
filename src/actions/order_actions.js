@@ -160,11 +160,10 @@ export const setCurrentOrder = (
 export const placeDirectOrder = (
     address,
     mode,
-    dishes,
-    coupon,
+    books,
+    
     token,
     originalBill,
-    discountedBill,
     finalAmount,
     delivery,
     gst
@@ -172,7 +171,7 @@ export const placeDirectOrder = (
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
-    console.log(originalBill)
+   // console.log(originalBill)
     
     
     var raw = JSON.stringify({
@@ -180,8 +179,7 @@ export const placeDirectOrder = (
         paymentMode: mode,
         address: address,
         originalBill: originalBill,
-        dishes: [...dishes],
-        discountedBill: discountedBill,
+        books: [...books],
         finalAmount: finalAmount,
         deliveryCharge:delivery,
         gstCharge:gst

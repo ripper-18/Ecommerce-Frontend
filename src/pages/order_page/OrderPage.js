@@ -6,7 +6,7 @@ import { withRouter, Link } from "react-router-dom";
 import './OrderPage.css'
 import {Row, Col} from 'react-bootstrap';
 
-
+import {placeDirectOrder} from '../../actions/order_actions'
 import config from "../../config";
 
 
@@ -75,10 +75,8 @@ class OrderPage extends Component{
                      this.props.currentOrder.address,
                      this.state.mode,
                      this.props.currentOrder.books,
-                     this.props.currentOrder.coupon,
                      this.props.auth.token,
                      this.props.currentOrder.originalBill,
-                     this.props.currentOrder.discountedBill,
                      this.props.currentOrder.finalAmount,
                      this.props.currentOrder.delivery,
                      this.props.currentOrder.gst
@@ -153,13 +151,53 @@ class OrderPage extends Component{
 
                     <Col xs="9">
                         <div className="checkout-left">
-
+                        <div className="d-flex flex-column">
+                                            <label>
+                                                {" "}
+                                                <input
+                                                    type="radio"
+                                                    name="mode"
+                                                    value="online"
+                                                    onChange={(e) =>
+                                                        this.setState({
+                                                            ...this.state,
+                                                            mode:
+                                                                e.target.value,
+                                                        })
+                                                    }
+                                                />{" "}
+                                                Online Payment
+                                            </label>
+                                            <label>
+                                                {" "}
+                                                <input
+                                                    type="radio"
+                                                    name="mode"
+                                                    value="cash"
+                                                    onChange={(e) =>
+                                                        this.setState({
+                                                            ...this.state,
+                                                            mode:
+                                                                e.target.value,
+                                                        })
+                                                    }
+                                                />{" "}
+                                                Cash On delivery
+                                            </label>
+                                        </div>
+                                        <button
+                                        className={
+                                            "btn w-100 btn-lg"
+                                        }
+                                        onClick={this.stagePayment}
+                                    >
+                                        Place Order
+                                    </button>
                         </div>
                     </Col>
 
                     <Col xs="3">
                         <div className="checkout-right">
-
                             
                         </div>
                     </Col>
@@ -171,7 +209,7 @@ class OrderPage extends Component{
 
                 <div>
                     <h3> Delivery address: </h3>
-                    <p> H E R E A D D A D D R E S S </p>
+        <p> {this.props.currentOrder.address} </p>
                     <p></p>
                 </div>
             </div>
@@ -183,9 +221,9 @@ class OrderPage extends Component{
 const mapStateToProps = (state) => ({
     cart: state.cart,
     auth: state.auth,
-    order: state.order,
+    currentOrder: state.order.currentOrder,
 });
 export default connect(mapStateToProps, {
-    
+    placeDirectOrder
    
 })(withRouter(OrderPage));
