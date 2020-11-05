@@ -16,7 +16,7 @@ class Header extends Component{
     render(){
     return (
         <div className="header">
-           <Link to="/"><img className="header-logo" src="https://i.ibb.co/GWBKTFW/DU.png" alt="DUBookX"/></Link> 
+           <Link to="/"><img className="header-logo" src="https://i.ibb.co/3CWFddk/header-logo-1.png" alt="DUBookX"/></Link> 
 
             <div className="header-search">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book"></input>
