@@ -30,15 +30,15 @@ class CheckOut extends Component {
         let names=[];
         for (let i = 0; i < books.length; i++) {
             let num = books[i]._id;
-            names[num]=books[i].name
+            names[num]=books[i]
             
             counts[num] = counts[num] ? counts[num] + 1 : 1;
         }
         for (let i = 0; i < Object.keys(counts).length; i++) {
             result[i] = {
-                book: Object.keys(counts)[i],
+                
                 quantity: Object.values(counts)[i],
-                name:names[Object.keys(counts)[i]]
+                book:names[Object.keys(counts)[i]]
             };
         }
         console.log(result)

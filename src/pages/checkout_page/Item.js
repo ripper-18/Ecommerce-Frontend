@@ -7,7 +7,7 @@ class Item extends Component {
         <div className = "product">
         
             <div className="producr-info">
-                <p>{this.props.data.name}  </p>
+                <p>{this.props.data.book.name}  </p>
                 <p className= "product-price">
                     
              <strong>{this.props.data.quantity}</strong>
