@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import CurrencyFormat from "react-currency-format";
+import{ Link} from 'react-router-dom'
 import './Subtotal.css'
 
 class  Subtotal extends Component {
@@ -32,7 +33,7 @@ class  Subtotal extends Component {
             prefix={"Rs."}
             />
             
-            <button>Proceed to Checkout</button>
+            <Link to="/checkout" >Proceed to Checkout</Link>
         </div>
     )}
 }

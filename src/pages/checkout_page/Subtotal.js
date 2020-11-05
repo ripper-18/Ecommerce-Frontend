@@ -11,20 +11,20 @@ class  Subtotal extends Component {
                 <div class="checkout-details">
                     <p>
                         Subtotal  :  
-                        <strong>Rs. Something </strong>
+            <strong>{this.props.subtotal} </strong>
                     </p>
                     <br/>
                     <p>
                         Delivery :
-                        <strong> Rs. something </strong>
+                        <strong> Rs. {this.props.delivery} </strong>
                     </p>
                     <p>
                         GST :
-                        <strong> 20 </strong>
+                        <strong> Rs. {((this.props.subtotal+this.props.delivery)*0.05).toFixed(2)} </strong>
                     </p>
                     <p>
                         Total Money :
-                        <strong> ++++ </strong>
+                        <strong>{((this.props.subtotal+this.props.delivery)*1.05).toFixed(2)}</strong>
                     </p>
                 
 

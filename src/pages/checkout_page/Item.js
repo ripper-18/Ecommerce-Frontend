@@ -1,18 +1,20 @@
-import React from 'react'
+import React,{Component} from 'react'
 import "./Item.css"
-function Item() {
+class Item extends Component {
+
+    render(){
     return (
         <div className = "product">
         
             <div className="producr-info">
-                <p>Communist Manifesto</p>
+                <p>{this.props.data.name}  </p>
                 <p className= "product-price">
-                    <small>Rs.</small>
-                    <strong>150.00</strong>
+                    
+             <strong>{this.props.data.quantity}</strong>
                 </p>
             </div>
         </div>
-    )
+    )}
 }
 
 export default Item

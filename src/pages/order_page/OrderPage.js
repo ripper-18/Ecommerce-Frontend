@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-import { clearCart } from "../../actions/cart_actions";
+
 
 import './OrderPage.css'
 import {Row, Col} from 'react-bootstrap';
-import Item from './Item'
-import Subtotal from './Subtotal';
+
 
 import config from "../../config";
 
@@ -32,10 +31,11 @@ class OrderPage extends Component{
     };
     
     displayRazorpay = async (data) => {
-        // console.log(data);
+         console.log(data);
         const res = await loadScript(
-            "https://checkout.razorpay.com/v1/checkout.js"
+            "https:checkout.razorpay.com/v1/checkout.js"
         ); 
+
         if (!res) {
             alert("Razorpay failed to load. Are you online?");
             return;
@@ -65,41 +65,41 @@ class OrderPage extends Component{
         paymentObject.open();
     };
 
-    // stagePayment = () => {
-    //     console.log(this.props)
-    //     if (this.state.mode === "") {
-    //         alert("Please select a payment mode");
-    //     } else {
-    //         this.props
-    //             .placeDirectOrder(
-    //                 this.props.currentOrder.address,
-    //                 this.state.mode,
-    //                 this.props.currentOrder.dishes,
-    //                 this.props.currentOrder.coupon,
-    //                 this.props.auth.token,
-    //                 this.props.currentOrder.originalBill,
-    //                 this.props.currentOrder.discountedBill,
-    //                 this.props.currentOrder.finalAmount,
-    //                 this.props.currentOrder.delivery,
-    //                 this.props.currentOrder.gst
+     stagePayment = () => {
+         console.log(this.props)
+         if (this.state.mode === "") {
+             alert("Please select a payment mode");
+         } else {
+             this.props
+                 .placeDirectOrder(
+                     this.props.currentOrder.address,
+                     this.state.mode,
+                     this.props.currentOrder.books,
+                     this.props.currentOrder.coupon,
+                     this.props.auth.token,
+                     this.props.currentOrder.originalBill,
+                     this.props.currentOrder.discountedBill,
+                     this.props.currentOrder.finalAmount,
+                     this.props.currentOrder.delivery,
+                     this.props.currentOrder.gst
 
-    //             )
-    //             .then((res) => {
-    //                 if (res.order.orderStatus === "staged") {
-    //                     this.displayRazorpay(res);
-    //                 } else if (res.order.orderStatus === "placed") {
-    //                     this.props.clearCart()
-    //                     this.props.history.push("/orders");
-    //                 } else {
-    //                     this.props.showDialog("Your order could not be placed");
-    //                 }
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err);
-    //                 this.props.showDialog("Your order could not be placed");
-    //             });
-    //     }
-    // };
+                 )
+                 .then((res) => {
+                     if (res.order.orderStatus === "staged") {
+                         this.displayRazorpay(res);
+                     } else if (res.order.orderStatus === "placed") {
+                         this.props.clearCart()
+                         this.props.history.push("/orders");
+                     } else {
+                         console.log("Your order could not be placed");
+                     }
+                 })
+                 .catch((err) => {
+                     console.log(err);
+                     console.log("Your order could not be placed");
+                 });
+         }
+     };
 
 
     onPaymentComplete = ({
@@ -136,6 +136,7 @@ class OrderPage extends Component{
 
     componentDidMount() {
         window.scrollTo(0, 0)
+        console.log(this.props)
     }
 
     render(){
@@ -153,17 +154,13 @@ class OrderPage extends Component{
                     <Col xs="9">
                         <div className="checkout-left">
 
-
-
-                            <Item></Item>
-
                         </div>
                     </Col>
 
                     <Col xs="3">
                         <div className="checkout-right">
 
-                            <Subtotal></Subtotal>
+                            
                         </div>
                     </Col>
                 </Row>
@@ -183,4 +180,12 @@ class OrderPage extends Component{
     
 }
 
-export default OrderPage
+const mapStateToProps = (state) => ({
+    cart: state.cart,
+    auth: state.auth,
+    order: state.order,
+});
+export default connect(mapStateToProps, {
+    
+   
+})(withRouter(OrderPage));

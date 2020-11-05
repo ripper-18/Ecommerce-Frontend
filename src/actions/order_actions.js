@@ -137,9 +137,8 @@ export const editAddress = (id, addr, token) => (dispatch) => {
 export const setCurrentOrder = (
     address,
     originalBill,
-    coupon,
-    dishes,
-    discountedBill,
+    
+    books,
     finalAmount,
     delivery,
     gst
@@ -148,10 +147,9 @@ export const setCurrentOrder = (
         type: SET_CURRENT_ORDER,
         payload: {
             address,
-            dishes,
-            coupon,
+            books,
+            
             originalBill,
-            discountedBill,
             finalAmount,
             delivery,
             gst

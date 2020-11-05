@@ -18,13 +18,13 @@ class Products extends Component {
 
     componentDidMount(){
         // this.props.logoutUser(this.props.history)
-        this.props.getBooksByKeyword(this.props.filters,'s')
+        this.props.getBooksByKeyword(this.props.filters,'')
        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.filters !== this.props.filters) {
-            this.props.getBooksByKeyword(this.props.filters,'');
+            this.props.getBooksByKeyword(this.props.filters);
         }
       //  console.log( this.props)
     }
