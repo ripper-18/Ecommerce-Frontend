@@ -79,6 +79,7 @@ a:active {
 .header-links {
     color: black;
     padding: 10px;
+   
 }
 
 
@@ -106,6 +107,26 @@ a:active {
 }
 
 
+.dynamic_cart{
+  position: relative;
+  display: inline;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  top: 5px;
+  left: -.5vw;
+  align-items: center;
+  justify-content: center;
+  
+  right: 0;
+  /* left: 92vw; */
+  background: #04fcef;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+
 @media screen and (max-width: 650px) {
     .header-option-lineTwo {
         display: none;
@@ -120,6 +141,7 @@ a:active {
     .header-links {
         color: black;
         padding: 00px;
+        
     }
 
 
