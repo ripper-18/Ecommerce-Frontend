@@ -7,6 +7,7 @@ import './OrderPage.css'
 import {Row, Col} from 'react-bootstrap';
 
 import {placeDirectOrder} from '../../actions/order_actions'
+import {clearCart} from '../../actions/cart_actions'
 import config from "../../config";
 
 
@@ -48,17 +49,17 @@ class OrderPage extends Component{
         const options = {
             key: config.rzp_id,//make a flexible dev and live mode key accepter
             currency: "INR",//backend
-            amount: "10000",//backend
-            order_id: "6",
+            amount: data.order.finalAmount,//backend
+            order_id: data.order.razorpayOrderId,
             name: "DUBookex",
             description: "Confirm payment to place order",
             handler: (response) => {
                 this.onPaymentComplete(response);
             },
             prefill: {
-                name: "ramon",
-                email: "ramzy@gmail.com",
-                contact: "9900990099",
+                name: this.props.auth.user.name,
+                email: this.props.auth.user.email,
+                contact: this.props.auth.user.phone,
             },
         };
         const paymentObject = new window.Razorpay(options);
@@ -87,7 +88,7 @@ class OrderPage extends Component{
                          this.displayRazorpay(res);
                      } else if (res.order.orderStatus === "placed") {
                          this.props.clearCart()
-                         this.props.history.push("/orders");
+                         this.props.history.push("/profile");
                      } else {
                          console.log("Your order could not be placed");
                      }
@@ -126,7 +127,7 @@ class OrderPage extends Component{
             res.json().then((res) => {
                 if (res.sucessOrder.orderStatus === "placed") {
                     this.props.clearCart()
-                    this.props.history.push("/orders");
+                    this.props.history.push("/profile");
                 }
             })
         );
@@ -224,6 +225,7 @@ const mapStateToProps = (state) => ({
     currentOrder: state.order.currentOrder,
 });
 export default connect(mapStateToProps, {
-    placeDirectOrder
+    placeDirectOrder,
+    clearCart
    
 })(withRouter(OrderPage));

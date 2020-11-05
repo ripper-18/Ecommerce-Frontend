@@ -197,7 +197,7 @@ export const placeDirectOrder = (
     return fetch(config.user + "order", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-            //console.log(result);
+            console.log(result);
             return result;
         })
         .catch((error) => {

@@ -14,15 +14,15 @@ const removeItem = (arr, item) => {
         return [];
     } else {
         let temp = [...arr];
-        console.log("to be removed")
-        console.log(item)
+        //console.log("to be removed")
+        //console.log(item)
         let idx=-1;
         if (idx === -1) {
             idx = arr.findIndex((p) => p._id === item._id);
         }
-        console.log(idx)
+        //console.log(idx)
         const rem = temp.splice(idx, 1);
-        console.log("final")
+        //console.log("final")
         //console.log(temp)
         //console.log("removed")
       //  console.log(rem)
