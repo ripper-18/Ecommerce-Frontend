@@ -24,7 +24,7 @@ class Products extends Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.filters !== this.props.filters) {
-            this.props.getBooksByKeyword(this.props.filters);
+            this.props.getBooksByKeyword(this.props.filters,'');
         }
       //  console.log( this.props)
     }

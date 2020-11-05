@@ -20,19 +20,21 @@ class Header extends Component{
 
             <div className="header-search">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book"></input>
-                <SearchIcon className="header-search-icon"></SearchIcon> 
+                <div className="header-search-icon-div">
+                    <SearchIcon className="header-search-icon"></SearchIcon> 
+                </div>
             </div>
 
             <div className="header-nav">
                 <div className="header-option">
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className="header-links">
-                        <span className="header-option-lineOne"><ExitToAppIcon></ExitToAppIcon></span>
+                        <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon"></ExitToAppIcon></span>
                         <span className="header-option-lineTwo">Login</span>
                     </Link>
                     ):(
                         <Link to="/profile"  className="header-links">
-                        <span className="header-option-lineOne"><AccountCircleIcon/></span>
+                        <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon" /></span>
                         <span className="header-option-lineTwo">Account</span>
                     </Link>
                     )}
@@ -42,9 +44,9 @@ class Header extends Component{
 
                 <div className="header-option">
                     {this.props.cart.bookCart.length ? (<Link to="/cart" className="header-links">
-
                         <span className='header-option-lineOne'>
-                            <span className='dynamic_cart'>{this.props.cart.bookCart.length}</span>
+                            
+                    <span className='dynamic_cart'>{this.props.cart.bookCart.length}</span>
 
                             <span className=""><ShoppingCartIcon></ShoppingCartIcon></span>
                            
