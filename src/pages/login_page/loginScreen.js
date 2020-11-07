@@ -166,7 +166,7 @@ class Login extends Component {
             <div className={styles.parent_div}>
                 
                 <div className={styles.left_section} >
-                    <h1 className={styles.welcome_heading}>Welcome brotha</h1>
+                    <h1 className={styles.welcome_heading}>Welcome to DUBookX</h1>
                     <br></br><br></br>
                     <div className={styles.card_container}>
                         <div className={styles.card}>
@@ -174,8 +174,8 @@ class Login extends Component {
                                 defaultActiveKey="login"
                                 id="uncontrolled-tab-example"
                             >
-                                <Tab eventKey="login" title="Login">
-                                    <h2>Login</h2>
+                                <Tab eventKey="login" title="Login" className = {styles.login_tab}>
+                                    <h2 className={styles.supplement_heading}>Login</h2>
                                     <form>
                                         
                                             <label>
@@ -263,7 +263,7 @@ class Login extends Component {
                                    
                                 </Tab>
                                 <Tab eventKey="signup" title="Create Account">
-                                    <h2>Sign Up</h2>
+                                    <h2 className={styles.supplement_heading}>Sign Up</h2>
                                     <form>
                                         <label>
                                             Name:

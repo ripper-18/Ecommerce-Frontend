@@ -11,6 +11,10 @@ form {
 }
 
 
+.welcome_heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+}
 
 .right_section {
   flex: 28;
@@ -24,7 +28,6 @@ form {
   flex: 40;
   flex-direction: column;
   justify-content: center;
-
 }
 
 
@@ -59,7 +62,9 @@ form {
   align-content: center;
 }
 
-
+.supplement_heading {
+  margin-top: 40px;
+}
 
 
 input {
