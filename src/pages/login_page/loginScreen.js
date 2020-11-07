@@ -180,7 +180,7 @@ class Login extends Component {
                                         
                                             <label>
                                                 Email:
-                    <input type="email" placeholder="Enter email or phone"
+                    <input size="100" type="email" placeholder="Enter email or phone"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -192,6 +192,7 @@ class Login extends Component {
                                                                     this.handleLoginEmail(
                                                                         e
                                                                     )
+                                                                
                                                                 }/>
                                             </label>
                                     
@@ -199,7 +200,7 @@ class Login extends Component {
 
                                         <label>
                                             Password:
-                  <input type="password" placeholder="Enter your password"
+                  <input size="100"  type="password" placeholder="Enter your password"
                                                                 className="form-control"
                                                                 required
                                                                 value={

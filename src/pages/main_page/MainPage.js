@@ -2,7 +2,7 @@ import React,{useEffect,Component} from 'react'
 import MainCarousel from './MainCarousel'
 import Filters from './Filters'
 import Products from './Products'
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Container} from 'react-bootstrap';
 import './MainPage.css'
 import {connect} from 'react-redux'
 import {logoutUser} from '../../actions/auth_actions'
@@ -51,9 +51,10 @@ class MainPage extends Component {
     return (
         <div>
 
-            <div className="main-carousel">
+            <Container>
                 <MainCarousel></MainCarousel>
-            </div>
+            </Container>
+
             <Row>
                 <Col xs="3">
                    <Filters
