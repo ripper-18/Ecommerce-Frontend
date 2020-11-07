@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './ProductItem.css'
+import {Link,withRouter} from 'react-router-dom'
 
 class ProductItem extends Component {
   componentDidMount(){
@@ -25,7 +26,7 @@ handleRemoveFromCart = () => {
            className="product-image"
            />
             <div className="product-info">
-                <p>{this.props.data.name}</p>
+               <p onClick={()=>this.props.history.push(`/product/${this.props.data._id}`)}>{this.props.data.name}</p> 
                 <p className= "product-price">
                     <small>Rs.</small>
                     <strong>{
@@ -116,4 +117,4 @@ handleRemoveFromCart = () => {
     )}
 }
 
-export default ProductItem
+export default withRouter(ProductItem)

@@ -1,27 +1,26 @@
-import {GET_BOOKS} from './types'
+import {GET_BOOKS,CURRENT_BOOK} from './types'
 import config from "../config";
 
 export const getBookbyId = (id) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify(id);
+    
 
     var requestOptions = {
-        method: "POST",
+        method: "GET",
         headers: myHeaders,
-        body: raw,
         redirect: "follow",
     };
-    //console.log(filters)
+    console.log(id)
 
-    fetch(config.user + "book/query", requestOptions)
+    fetch(config.user + `book/${id}` , requestOptions)
         .then((response) => response.json())
         .then((res) => {
             dispatch({
-                type: GET_BOOKS,
+                type: CURRENT_BOOK,
                 payload: res,
             });
-            //console.log(res)
+            console.log(res)
         })
         .catch((err) => console.log(err));
 };

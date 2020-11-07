@@ -38,7 +38,7 @@ function App()   {
                         <Route path="/profile" exact component={ProfilePage}/>
                         <Route path="/checkout" exact component={CheckOutPage}/>
                         <Route path="/address" exact component={AddressPage} />
-                        <Route  path="/product" exact component={ProductPage} />
+                        <Route  path="/product/:id" exact component={ProductPage} />
                    </main>
                    </Suspense>
                 <Footer />  
