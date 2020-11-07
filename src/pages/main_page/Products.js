@@ -18,13 +18,27 @@ class Products extends Component {
 
     componentDidMount(){
         // this.props.logoutUser(this.props.history)
-        this.props.getBooksByKeyword(this.props.filters,'')
+        
+        const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+          console.log(token)//123
+          if(token===null){
+            token=''
+        }
+          
+        this.props.getBooksByKeyword(this.props.filters,token)
        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.filters !== this.props.filters) {
-            this.props.getBooksByKeyword(this.props.filters,'');
+            const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+          console.log(token)
+          if(token===null){
+              token=''
+          }
+            this.props.getBooksByKeyword(this.props.filters,token);
         }
       //  console.log( this.props)
     }
