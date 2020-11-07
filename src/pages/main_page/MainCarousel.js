@@ -12,7 +12,7 @@ function MainCarousel() {
         showIndicators={false}
         showStatus={false}
         autoPlay
-        interval={5000}
+        interval={7000}
         stopOnHover={false}
         >
             <div

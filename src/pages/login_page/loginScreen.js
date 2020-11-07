@@ -13,6 +13,7 @@ import {
     loginFb,
     loginGoogle,
 } from "../../actions/auth_actions";
+import google from '../../assets/google.svg'
 
 class Login extends Component {
     state = {
@@ -242,12 +243,7 @@ class Login extends Component {
                                                 }
                                                 
                                             >
-                                                
-                                                <span>
-                                                    Login
-                                                    with
-                                                    Google
-                                            </span>
+                                                <img src={google}/>
                                             </button>
                                         )}
                                         clientId="250553439818-tk4jffted610in0h9hidqgnpft8m0lm2.apps.googleusercontent.com"

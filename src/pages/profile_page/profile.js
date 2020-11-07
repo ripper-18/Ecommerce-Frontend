@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {logoutUser,updateUser} from '../../actions/auth_actions'
 import {getPastOrders} from '../../actions/order_actions'
 import  "./order.css";
+import InfoModal from './InfoModal'
 
 class Profile extends Component {
 
@@ -55,14 +56,16 @@ class Profile extends Component {
     }
 
     setInfOpen = (value,index) => {
-        let address=this.state.isInfOpen
+        let address=this.state.orderhistory.isInfOpen
         address[index]=value
        // console.log(this.state)
         this.setState({
             ...this.state,
-            isInfOpen: address,
-            
-        });
+            orderhistory:{
+            ...this.state.orderhistory,
+                isInfOpen: address,
+            }
+        })
     }
 
     updateUserfunc=()=>{
@@ -192,7 +195,12 @@ class Profile extends Component {
                                             <div  onClick={()=>this.setInfOpen(true,index)}>
                                                <span style={{color:"red",fontSize:"px"}}>...</span> Click here to get full information about the order
                                             </div>
-                                            
+                                            <InfoModal 
+                                                        infOpen={this.state.orderhistory.isInfOpen[index]}
+                                                        setModalOpen={this.setInfOpen}
+                                                        data={order}
+                                                        index={index}
+                                                        />
                                         </div>
                                     )
                                 )
