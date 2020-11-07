@@ -96,12 +96,7 @@ class Profile extends Component {
                             <Tab eventKey="overview" title="Account Overview">
                               
                                     <br/>
-                                    <center>
-                                    <button disabled={this.state.isDisabled} onClick={()=>this.updateUserfunc()} >Update</button>
-                                    <input type="button" value="Edit" disabled={!this.state.isDisabled} onClick={() => {
-                                        this.setState({ isDisabled: !this.state.isDisabled })
-                                    }} />
-                                    </center>
+                                    
                                     <p>Name: </p>
                 <input value={this.state.user.name} onChange={e => {
                   this.setState({
@@ -132,6 +127,14 @@ class Profile extends Component {
 
 <button onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
 <Link to="/address">Manage Addresses</Link>
+
+                            <center>
+                                    <input className="edit-button" type="button" value="Edit" disabled={!this.state.isDisabled} onClick={() => {
+                                        this.setState({ isDisabled: !this.state.isDisabled })
+                                    }} />
+                                    <button className="update-button" disabled={this.state.isDisabled} onClick={()=>this.updateUserfunc()} >Update</button>  
+                            </center>
+
                             </Tab>
                             <Tab eventKey="orders" title="Previous Orders">
                                 <br></br>
