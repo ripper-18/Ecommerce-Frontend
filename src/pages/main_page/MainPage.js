@@ -51,7 +51,9 @@ class MainPage extends Component {
     return (
         <div>
 
-            <MainCarousel></MainCarousel>
+            <div className="main-carousel">
+                <MainCarousel></MainCarousel>
+            </div>
             <Row>
                 <Col xs="3">
                    <Filters
