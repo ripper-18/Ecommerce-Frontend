@@ -215,10 +215,12 @@ class Login extends Component {
                                                                 } />
                                         </label>
                                         <br />
-                                        <input type="button" value="Login" onClick={
+                                        <div className = {styles.user_login_button}>
+                                        <input className= {styles.login_tab_button} type="button" value="Login" onClick={
                                                                 this.handleLogin
                                                             }
                                                              />
+                                        </div>
                                     </form>
                                     <br />
 
@@ -342,11 +344,13 @@ class Login extends Component {
                                                                 } />
                                         </label>
                                         <br />
-                                        <input type="button" value="Sign Up"
+                                        <div className = {styles.user_login_button}>
+                                        <input className= {styles.login_tab_button} type="button" value="Sign Up"
                                         onClick={
                                             this
                                                 .handleRegister
                                         }  />
+                                        </div>
                                     </form>
                                     <br />
                                 </Tab>

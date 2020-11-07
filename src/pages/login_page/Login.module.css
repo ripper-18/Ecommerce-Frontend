@@ -3,6 +3,7 @@
 
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 form {
@@ -12,7 +13,7 @@ form {
 
 
 .welcome_heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 50px;
 }
 
@@ -163,6 +164,19 @@ input {
   max-width: 20px;
   margin-right: 1rem;
   margin-left: 0.5rem;
+}
+
+.user_login_button {
+  display: flex;
+  justify-content: center;
+}
+
+.login_tab_button {
+  color: white;
+  background: #517fda;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0px;
 }
 
 @media screen and (min-width: 769px) {
