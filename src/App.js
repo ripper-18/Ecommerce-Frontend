@@ -12,6 +12,7 @@ import OrderPage from './pages/order_page/OrderPage'
 import ProfilePage from './pages/profile_page/profile'
 import CheckOutPage from './pages/checkout_page/CheckOut'
 import AddressPage from './pages/address_page/address'
+import ProductPage from './pages/product_page/Product'
 
 function App()   {
 
@@ -37,6 +38,7 @@ function App()   {
                         <Route path="/profile" exact component={ProfilePage}/>
                         <Route path="/checkout" exact component={CheckOutPage}/>
                         <Route path="/address" exact component={AddressPage} />
+                        <Route  path="/product" exact component={ProductPage} />
                    </main>
                    </Suspense>
                 <Footer />  

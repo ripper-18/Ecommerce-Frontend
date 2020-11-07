@@ -3,7 +3,7 @@ import './Products.css'
 import ProductItem from './ProductItem'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {getBooks,getBooksByKeyword} from '../../actions/book_actions'
+import {getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {logoutUser} from '../../actions/auth_actions'
 
@@ -86,7 +86,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    getBooks,
+    
     addToCart,
     removeFromCart,
     getBooksByKeyword,
