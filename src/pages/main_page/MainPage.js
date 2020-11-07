@@ -15,6 +15,7 @@ class MainPage extends Component {
            subject:[]      
           },
         sortValue: 0,
+        keyword:""
         
 
     };
@@ -47,7 +48,19 @@ class MainPage extends Component {
         });
     };
 
+    componentDidMount(){
+        const query = new URLSearchParams(this.props.location.search);
+        const token = query.get('search')
+        //  console.log(token)//123
+          this.setState({
+              ...this.state,
+              keyword:token
+          })
+         // console.log(this.state.keyword)
+    }
     render(){
+        
+         // console.log(this.state.keyword)
     return (
         <div>
 
@@ -67,6 +80,7 @@ class MainPage extends Component {
                         <Products
                         filters={this.state.filters}
                         sortValue={this.state.sortValue}
+                        keyword={this.state.keyword}
                         ></Products>
                 </div>
                 </Col>

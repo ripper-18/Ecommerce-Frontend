@@ -8,9 +8,28 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/auth_actions";
 class Header extends Component{
+    state={
+        keyword:""
+    }
 
     componentDidMount(){
        // console.log(this.props)
+    }
+
+    setKeyword(e){
+        this.setState({
+            ...this.state,
+            keyword:e.target.value
+        })
+        //console.log(e.target.value)
+    }
+    submitSearch=()=>{
+        if(this.state.keyword===''){
+            alert('Search cant be empty!')
+            return
+        }
+        this.props.history.push(`/?search=${this.state.keyword}`)
+        window.location.reload()
     }
 
     render(){
@@ -19,9 +38,9 @@ class Header extends Component{
            <Link to="/"><img className="header-logo" src="https://i.ibb.co/3CWFddk/header-logo-1.png" alt="DUBookX"/></Link> 
 
             <div className="header-search">
-                <input className="header-search-input" placeholder="Enter Your Favorite Book"></input>
+                <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
                 <div className="header-search-icon-div">
-                    <SearchIcon className="header-search-icon"></SearchIcon> 
+                    <SearchIcon className="header-search-icon" onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
 

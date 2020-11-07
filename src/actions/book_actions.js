@@ -1,10 +1,10 @@
 import {GET_BOOKS} from './types'
 import config from "../config";
 
-export const getBooks = (filters) => (dispatch) => {
+export const getBookbyId = (id) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify(filters);
+    var raw = JSON.stringify(id);
 
     var requestOptions = {
         method: "POST",
@@ -36,7 +36,7 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
         body: raw,
         redirect: "follow",
     };
-    //console.log(filters)
+    console.log(keyword)
 
     fetch(config.user + `book/query?keyword=${keyword}`, requestOptions)
         .then((response) => response.json())

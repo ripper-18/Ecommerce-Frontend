@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{Component} from 'react'
 import {Row, Col} from 'react-bootstrap';
 import './Product.css';
+import {connect} from 'react-redux'
 
-function Product() {
+class Product extends Component {
+    render(){
     return (
         <div>
             
@@ -58,7 +60,7 @@ function Product() {
             </Row>
             
         </div>
-    )
+    )}
 }
 
 export default Product

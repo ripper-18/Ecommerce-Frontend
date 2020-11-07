@@ -3,7 +3,7 @@ import './Products.css'
 import ProductItem from './ProductItem'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {getBooks,getBooksByKeyword} from '../../actions/book_actions'
+import {getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {logoutUser} from '../../actions/auth_actions'
 
@@ -18,13 +18,27 @@ class Products extends Component {
 
     componentDidMount(){
         // this.props.logoutUser(this.props.history)
-        this.props.getBooksByKeyword(this.props.filters,'')
+        
+        const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+          console.log(token)//123
+          if(token===null){
+            token=''
+        }
+          
+        this.props.getBooksByKeyword(this.props.filters,token)
        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.filters !== this.props.filters) {
-            this.props.getBooksByKeyword(this.props.filters,'');
+            const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+          console.log(token)
+          if(token===null){
+              token=''
+          }
+            this.props.getBooksByKeyword(this.props.filters,token);
         }
       //  console.log( this.props)
     }
@@ -72,7 +86,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    getBooks,
+    
     addToCart,
     removeFromCart,
     getBooksByKeyword,
