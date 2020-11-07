@@ -5,6 +5,7 @@ import './MainCarousel.css'
 
 function MainCarousel() {
     return (
+      <React.Fragment>
         <Carousel 
         showThumbs={false}
         infiniteLoop={true}
@@ -16,7 +17,7 @@ function MainCarousel() {
         >
             <div
           className="SlideContainer"
-          style={{ backgroundImage: "url(https://i.ibb.co/vhPxGDf/DU-Book-X.png)" }}
+          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
             >
           <p className="SlideText" style={{ color: "white" }}>
             DU <br />
@@ -47,7 +48,7 @@ function MainCarousel() {
 
         <div
           className="SlideContainer"
-          style={{ backgroundImage: "url(https://i.ibb.co/vhPxGDf/DU-Book-X.png)" }}
+          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
             >
           <p className="SlideText" style={{ color: "white" }}>
           DU <br />
@@ -60,6 +61,7 @@ function MainCarousel() {
             <div className="RedButton">PERSONALISE MENU</div></Link> */}
         </div>
     </Carousel>
+    </React.Fragment>
     )
 }
 

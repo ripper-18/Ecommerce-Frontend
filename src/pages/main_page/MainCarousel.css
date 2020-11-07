@@ -1,13 +1,9 @@
 .SlideContainer {
     min-height: 768px;
     position: relative;
-    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: 15px;
-    width: 100%;
-
 }
 
 .SlideText {
@@ -44,10 +40,36 @@
     justify-content: center;
 }
 
+.BlackDiscountBanner {
+    background-color: black;
+    white-space: nowrap;
+    color: white;
+    padding: 3px 10px;
+}
+
 .RedDiscountBanner {
     background-color: rgb(186, 12, 47);
     color: white;
     padding: 5px 2px;
+}
+
+.HomePageS1Banner {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.HomePageS1Star {
+    height: 25px;
+    padding-left: 50px;
+    align-items: center;
 }
 
 .slide .SlideContainer img {
@@ -72,13 +94,35 @@
     }
 }
 
-@media screen and (max-width: 750px) {}
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
     .SlideContainer {
-        height: 50%;
+        margin-top: 0;
     }
 
+    .SlideText {
+        top: 0;
+        padding-top: 10rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        left: 0;
+        color: #fff !important;
+        text-align: center;
+        font-size: 350%;
+        height: 100%;
+    }
+
+    .SlideContainer .RedButton {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .DiscountBanner {
+        transform: translateX(-50%);
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 650px) {
     .HomePageS1Star {
         padding-left: 0;
         display: block;
