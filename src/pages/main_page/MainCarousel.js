@@ -5,62 +5,30 @@ import './MainCarousel.css'
 
 function MainCarousel() {
     return (
-        <Carousel 
-        showThumbs={false}
-        infiniteLoop={true}
-        showIndicators={false}
-        showStatus={false}
-        autoPlay
-        interval={5000}
-        stopOnHover={false}
-        >
-            <div
-          className="SlideContainer"
-          style={{ backgroundImage: "url(https://i.ibb.co/vhPxGDf/DU-Book-X.png)" }}
-            >
-          <p className="SlideText" style={{ color: "white" }}>
-            DU <br />
-            BookX
-            <br />
-
-          </p>
-          {/* <Link
-            to="#"
-          >
-            <div className="RedButton">PERSONALISE MENU</div></Link> */}
-        </div>
-
-        <div
-          className="SlideContainer"
-          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
-            >
-          <p className="SlideText" style={{ color: "white)" }}>
-          DU <br />
-            BookX
-            <br />
-          </p>
-          {/* <Link
-            to="#"
-          >
-            <div className="RedButton">PERSONALISE MENU</div></Link> */}
-        </div>
-
-        <div
-          className="SlideContainer"
-          style={{ backgroundImage: "url(https://i.ibb.co/vhPxGDf/DU-Book-X.png)" }}
-            >
-          <p className="SlideText" style={{ color: "white" }}>
-          DU <br />
-            BookX
-            <br />
-          </p>
-          {/* <Link
-            to="#"
-          >
-            <div className="RedButton">PERSONALISE MENU</div></Link> */}
-        </div>
-    </Carousel>
+      <Carousel showThumbs={false}
+      infiniteLoop={true}
+      showIndicators={false}
+      showStatus={false}
+      autoPlay
+      interval={5000}
+      stopOnHover={false}
+      >
+      <div>
+          <img src="https://i.ibb.co/vhPxGDf/DU-Book-X.png" />
+          <p>Legend 1</p>
+      </div>
+      <div>
+          <img src="https://i.ibb.co/vhPxGDf/DU-Book-X.png" />
+          <p >Legend 2</p>
+      </div>
+      <div>
+          <img src="https://i.ibb.co/vhPxGDf/DU-Book-X.png" />
+          <p>Legend 3</p>
+      </div>
+  </Carousel>
     )
 }
 
 export default MainCarousel
+
+        
