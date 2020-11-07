@@ -3,12 +3,7 @@
     margin-left: 10px;
 }
 
-.product-image-individual {
-    max-height: 200px;
-    width: 30%;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
+
 
 .product-author {
     padding: 0px 20px;

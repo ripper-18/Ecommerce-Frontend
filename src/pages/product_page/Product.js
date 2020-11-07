@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getBookbyId} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
+import ProductCarousel from './ProductCarousel'
 
 class Product extends Component {
     state={
@@ -23,10 +24,7 @@ class Product extends Component {
             <Row>
                 <Col xs="6">
                 <div className="product-image">
-                    <img src="https://images.pexels.com/photos/4170629/pexels-photo-4170629.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="product-image-individual"></img>
-                    <img src="https://images.pexels.com/photos/4170629/pexels-photo-4170629.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="product-image-individual"></img>
-                    <img src="https://images.pexels.com/photos/4170629/pexels-photo-4170629.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="product-image-individual"></img>
-                    <img src="https://images.pexels.com/photos/4170629/pexels-photo-4170629.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="product-image-individual"></img>
+                   <ProductCarousel  image={this.props.book.image}/>
 
                 </div>
                 </Col>
