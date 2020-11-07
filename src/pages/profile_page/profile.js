@@ -94,11 +94,11 @@ class Profile extends Component {
                             id="uncontrolled-tab-example"
                         >
                             <Tab eventKey="overview" title="Account Overview">
-                              
+                              <h1 className= "welcome-heading">Your Account Details</h1>
                                     <br/>
                                     
                                     <p>Name: </p>
-                <input value={this.state.user.name} onChange={e => {
+                <input className="input-fields-main" size="100" value={this.state.user.name} onChange={e => {
                   this.setState({
                     user: {
                       ...this.state.user,
@@ -107,7 +107,7 @@ class Profile extends Component {
                   })
                 }} value={this.state.user.name} disabled={this.state.isDisabled} />
                 <p>Email: </p>
-                <input value={this.state.user.email} onChange={e => {
+                <input size="100"  value={this.state.user.email} onChange={e => {
                   this.setState({
                     user: {
                       ...this.state.user,
@@ -116,7 +116,7 @@ class Profile extends Component {
                   })
                 }} value={this.state.user.email} disabled={this.state.isDisabled} />
                 <p>Phone: </p>
-                <input value={this.state.user.phone} onChange={e => {
+                <input size="100" value={this.state.user.phone} onChange={e => {
                   this.setState({
                     user: {
                       ...this.state.user,
@@ -124,9 +124,17 @@ class Profile extends Component {
                     }
                   })
                 }} value={this.state.user.phone} disabled={this.state.isDisabled} />
+                <br/>
+                <p>Address: </p>
+                <div className="manage-address-div" style={{textAlign : "center"}}>
+                <Link to="/address">Manage Addresses</Link>
+                </div>
 
-<button onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
-<Link to="/address">Manage Addresses</Link>
+                <hr
+        style={{
+           width: "200px"
+        }}
+                />
 
                             <center>
                                     <input className="edit-button" type="button" value="Edit" disabled={!this.state.isDisabled} onClick={() => {
@@ -134,7 +142,9 @@ class Profile extends Component {
                                     }} />
                                     <button className="update-button" disabled={this.state.isDisabled} onClick={()=>this.updateUserfunc()} >Update</button>  
                             </center>
-
+                            <div class="account-page-button">
+<button className="account-button" onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
+</div>
                             </Tab>
                             <Tab eventKey="orders" title="Previous Orders">
                                 <br></br>

@@ -11,9 +11,10 @@
     align-content: center;
 } */
 
+
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     transition: 0.3s;
     background-color: white;
     flex: .8;
@@ -21,9 +22,79 @@
     align-content: center;
 }
 
+
 .card p,
 .card h2 {
     text-align: center;
+}
+
+.welcome-heading {
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 50px;
+}
+
+
+input {
+    margin: 5px 5px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 15px;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    border: 1px solid #c8cacc;
+    border-radius: 0;
+    height: auto;
+    line-height: 1.15;
+    color: inherit;
+    background: inherit;
+}
+
+.form input:hover,
+.form select:hover {
+    border: 1px solid #d8173c;
+}
+
+.form input[type="button"] {
+    height: 52px;
+    border-radius: 26px;
+    border: none;
+    padding: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: linear-gradient(180deg, #db4663, #ba0a2f);
+    color: #fff;
+    border: 2px solid #d8173c;
+}
+
+.form input[type="button"]:hover {
+    color: #fff;
+}
+
+.account-page-button {
+    display: flex;
+    justify-content: center;
+}
+
+.account-button {
+    color: white;
+    background: #517fda;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.manage-address-div {
+    font-size: 20px;
 }
 
 .button_div {
@@ -48,11 +119,60 @@
 }
 
 .edit-button {
-    padding: 20px;
+    padding: 10px;
     background-color: #67bcff;
     color: white;
     border: 0px;
     border-radius: 5px;
+}
+
+.edit-button:disabled {
+    padding: 10px;
+    background-color: #5d5f60;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.update-button {
+    padding: 15px;
+    background-color: #517fda;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.update-button:disabled {
+    padding: 10px;
+    background-color: #5d5f60;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.tabs {
+    justify-content: space-evenly;
+
+}
+
+.wrapper>div {
+    margin-top: 128px;
+}
+
+.tabs a {
+    flex: 2;
+    text-align: center;
+    background-color: aqua;
+}
+
+.tabs a:focus {
+    outline: none;
+}
+
+@media screen and (min-width: 769px) {
+    .wrapper {
+        margin-top: 80px;
+    }
 }
 
 /* .update-button {
