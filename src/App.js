@@ -11,6 +11,7 @@ import CartPage from "./pages/cart_page/Cart"
 import OrderPage from './pages/order_page/OrderPage'
 import ProfilePage from './pages/profile_page/profile'
 import CheckOutPage from './pages/checkout_page/CheckOut'
+import AddressPage from './pages/address_page/address'
 
 function App()   {
 
@@ -29,13 +30,13 @@ function App()   {
                 
                     <Header />
                     <main style={{ minHeight: "60vh" }}>
-                        
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
                         <Route path="/order" exact component={OrderPage}/>
                         <Route path="/profile" exact component={ProfilePage}/>
                         <Route path="/checkout" exact component={CheckOutPage}/>
+                        <Route path="/address" exact component={AddressPage} />
                    </main>
                    </Suspense>
                 <Footer />  

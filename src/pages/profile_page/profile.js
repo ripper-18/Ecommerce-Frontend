@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import   "./profile.css";
 import {connect} from 'react-redux';
 import {logoutUser,updateUser} from '../../actions/auth_actions'
@@ -37,7 +37,7 @@ class Profile extends Component {
       //console.log(this.state)
       let a=[]
       this.props.pastOrders.map((order,index)=>{
-          console.log(order)
+          //console.log(order)
               a.push(order)
           
       })
@@ -131,6 +131,7 @@ class Profile extends Component {
                 }} value={this.state.user.phone} disabled={this.state.isDisabled} />
 
 <button onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
+<Link to="/address">Manage Addresses</Link>
                             </Tab>
                             <Tab eventKey="orders" title="Previous Orders">
                                 <br></br>
@@ -139,8 +140,8 @@ class Profile extends Component {
                                 
                         <div className="py-2 row" >
                         <div className="col-8">
-                            {this.state.orderhistory.orders.length > 0 ? (
-                                this.state.orderhistory.orders.map(
+                            {this.props.pastOrders.length > 0 ? (
+                                this.props.pastOrders.map(
                                     (order, index) => (
                                         <div
                                             className="card my-3 p-2"

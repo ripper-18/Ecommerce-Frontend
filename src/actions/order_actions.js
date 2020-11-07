@@ -10,21 +10,11 @@ export const addAddress = (address, token) => (dispatch) => {
 
     var raw = JSON.stringify({
         phone: address.phone,
-        lat: address.lat,
-        lng: address.long,
         state: address.state,
-        address:
-            address.delivery1 +
-            " " +
-            address.delivery2 +
-            " " +
-            address.city +
-            " " +
-            address.postcode,
-        floor: address.floor,
-        instructions: address.instructions,
-        lankmark: address.landmark,
-    });
+        address:address.delivery1,
+        city:address.city,
+        pincode:address.pincode
+     })
 
     var requestOptions = {
         method: "POST",
@@ -46,7 +36,7 @@ export const addAddress = (address, token) => (dispatch) => {
                   //  showDialog(
                     //    "Address could not be added, check your input and try again"
                     //)
-                
+                console.log("Address could not be added, check your input and try again")
             }
         })
         .catch((err) => console.log(err));
@@ -92,7 +82,7 @@ export const removeAddress = (id, token) => (dispatch) => {
             //dispatch(showDialog("Address Removed"));
             // dispatch(showDialog("Address Removed"));
             // window.location.reload();
-            console.log("address removed")
+            //console.log("address removed")
         } else {
             /*dispatch(
                 showDialog("Address could not be removed, Something went wrong")
@@ -117,11 +107,11 @@ export const editAddress = (id, addr, token) => (dispatch) => {
 
     fetch(config.user + "address/" + id, requestOptions)
         .then((response) => {
-            console.log(response)
+           // console.log(response)
             if (response.status === 200) {
                 //dispatch(showDialog("Address Updated"));
                 // showDialog("Address Updated");
-                console.log("address updated")
+                //console.log("address updated")
                 // window.location.reload();
             } else {
                 /*dispatch(

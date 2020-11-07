@@ -4,3 +4,19 @@
     align-items: center;
 
 }
+.add {
+    font-size: 150px;
+    font-weight: 300;
+    color: gray;
+    position: absolute;
+    left: 33%;
+    top: -2%;
+    cursor: pointer;
+  }
+  .add2 {
+    font-size: 24px;
+    color: black;
+    position: absolute;
+    left: 25%;
+    top: 67%;
+  }
