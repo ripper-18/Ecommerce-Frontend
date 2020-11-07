@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './ProductItem.css'
 import {Link,withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {getBookbyId} from '../../actions/book_actions'
 
 class ProductItem extends Component {
   componentDidMount(){
@@ -26,7 +28,7 @@ handleRemoveFromCart = () => {
            className="product-image"
            />
             <div className="product-info">
-               <p onClick={()=>this.props.history.push(`/product/${this.props.data._id}`)}>{this.props.data.name}</p> 
+               <p onClick={()=>{ this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}</p> 
                 <p className= "product-price">
                     <small>Rs.</small>
                     <strong>{
@@ -116,5 +118,10 @@ handleRemoveFromCart = () => {
         </div>
     )}
 }
+const mapStateToProps = (state) => ({
+    book: state.book.currentBook,
+    cart: state.cart,
+    auth:state.auth
+});
 
-export default withRouter(ProductItem)
+export default connect(mapStateToProps,{getBookbyId})(withRouter(ProductItem))

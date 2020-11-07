@@ -12,12 +12,7 @@ class Product extends Component {
     }
 
     async componentDidMount(){
-        console.log(this.props.match.params.id)
-        await this.setState({
-            ...this.state,
-            id:this.props.match.params.id
-        })
-        this.props.getBookbyId(this.state.id)
+       
     }
 
 
