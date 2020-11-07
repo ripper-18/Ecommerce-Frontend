@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
+
 import { Carousel } from 'react-responsive-carousel';
 import './ProductCarousel.css'
 
@@ -14,12 +14,11 @@ class MainCarousel extends Component {
       infiniteLoop={true}
       showIndicators={false}
       showStatus={false}
-      autoPlay
-      interval={5000}
+      
       stopOnHover={false}
       >
       {this.props.image.map((im,index)=>(
-          <div>
+          <div className="product-img">
               <img src={im}/>
           </div>
       ))}
