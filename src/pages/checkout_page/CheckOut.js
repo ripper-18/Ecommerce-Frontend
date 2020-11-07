@@ -68,6 +68,24 @@ class CheckOut extends Component {
             selectedAddress: e.target.value,
         });
     };
+    setModalOpen = (value) => {
+        this.setState({
+            ...this.state,
+            isOpen: value,
+        });
+    };
+    setCnfOpen = (value) => {
+        this.setState({
+            ...this.state,
+            isCnfOpen: value,
+        });
+    };
+    setEditOpen = (value) => {
+        this.setState({
+            ...this.state,
+            isEditOpen: value,
+        });
+    };
     handlePlaceDirectOrder = () => {
         //console.log(this.props.coupon.appliedDiscount)
       
@@ -95,6 +113,9 @@ class CheckOut extends Component {
             this.props.showDialog("Please select an address");
         }
     };
+    componentDidUpdate(){
+      //  window.location.reload()
+    }
             
            
     render(){
@@ -149,22 +170,7 @@ class CheckOut extends Component {
                                                         {addr.state || "N/A"}
                                                     </span>
                                                 </div>
-                                                <div>
-                                                    <span className="font-weight-bold">
-                                                        Floor:{" "}
-                                                    </span>
-                                                    <span>
-                                                        {addr.floor || "N/A"}
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <span className="font-weight-bold">
-                                                        Landmark:{" "}
-                                                    </span>
-                                                    <span>
-                                                        {addr.landmark || "N/A"}
-                                                    </span>
-                                                </div>
+                                                
                                                 <div>
                                                     <span className="font-weight-bold">
                                                         Phone:{" "}
