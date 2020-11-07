@@ -1,13 +1,18 @@
 .products-page {
-    display: flex;
-    z-index: 1;
+    display: grid;
+    grid-template-columns: 25vw 25vw;
+    
+    
+    /* z-index: 1; */
     margin-left: 5px;
     margin-right: 5px;
-    flex-direction: column;
+    
 
 }
 
 .product-card {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
+

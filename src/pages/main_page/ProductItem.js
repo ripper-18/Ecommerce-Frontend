@@ -23,10 +23,12 @@ handleRemoveFromCart = () => {
     return (
         <div className = "product-individual">
            
+            {/* <div className="product-image"> */}
            <img
            src={this.props.data.image[0]}
-           className="product-image"
+           
            />
+            {/* </div> */}
             <div className="product-info">
                <p onClick={()=>{ this.props.getBookbyId(this.props.data._id);   this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}</p> 
                 <p className= "product-price">
