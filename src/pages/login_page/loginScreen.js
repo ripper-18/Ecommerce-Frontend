@@ -225,12 +225,13 @@ class Login extends Component {
                                     <hr></hr>
                                     <p>Or Login with </p>
                                     {/* <FaGoogle></FaGoogle> */}
-
+                                    <div className={styles.google_button_container}>
                                     <GoogleLogin
                                     render={(
                                         renderProps
                                     ) => (
                                             <button
+                                                className = {styles.login_with_google_button}
                                                 onClick={
                                                     renderProps.onClick
                                                 }
@@ -261,6 +262,7 @@ class Login extends Component {
                                             "single_host_origin"
                                         }
                                     />
+                                    </div>
                                    
                                 </Tab>
                                 <Tab eventKey="signup" title="Create Account">
