@@ -268,7 +268,7 @@ class Login extends Component {
                                     <form>
                                         <label>
                                             Name:
-                  <input type="text" placeholder="Enter your name"
+                  <input size="100"  type="text" placeholder="Enter your name"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -287,7 +287,7 @@ class Login extends Component {
 
                                         <label>
                                             Email:
-                  <input type="email" placeholder="Enter your email address"
+                  <input size="100"  type="email" placeholder="Enter your email address"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -305,8 +305,8 @@ class Login extends Component {
                                         <br />
 
                                         <label>
-                                            Phone:
-                  <input type="number" placeholder="Enter your phone number"
+                                             Phone:
+                  <input size="100" type="number" placeholder="Enter your phone number"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -325,7 +325,7 @@ class Login extends Component {
 
                                         <label>
                                             Password:
-                  <input type="password" placeholder="Enter your password"
+                  <input size="100"  type="password" placeholder="Enter your password"
                                                                 className="form-control"
                                                                 required
                                                                 value={

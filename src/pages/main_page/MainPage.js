@@ -2,7 +2,7 @@ import React,{useEffect,Component} from 'react'
 import MainCarousel from './MainCarousel'
 import Filters from './Filters'
 import Products from './Products'
-import {Row, Col, Container} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import './MainPage.css'
 import {connect} from 'react-redux'
 import {logoutUser} from '../../actions/auth_actions'
@@ -15,7 +15,6 @@ class MainPage extends Component {
            subject:[]      
           },
         sortValue: 0,
-        keyword:""
         
 
     };
@@ -48,26 +47,13 @@ class MainPage extends Component {
         });
     };
 
-    componentDidMount(){
-        const query = new URLSearchParams(this.props.location.search);
-        const token = query.get('search')
-        //  console.log(token)//123
-          this.setState({
-              ...this.state,
-              keyword:token
-          })
-         // console.log(this.state.keyword)
-    }
     render(){
-        
-         // console.log(this.state.keyword)
     return (
         <div>
 
-            <Container>
+            <div className="main-carousel">
                 <MainCarousel></MainCarousel>
-            </Container>
-
+            </div>
             <Row>
                 <Col xs="3">
                    <Filters
@@ -80,7 +66,6 @@ class MainPage extends Component {
                         <Products
                         filters={this.state.filters}
                         sortValue={this.state.sortValue}
-                        keyword={this.state.keyword}
                         ></Products>
                 </div>
                 </Col>
