@@ -3,7 +3,7 @@ import './ProductItem.css'
 
 class ProductItem extends Component {
   componentDidMount(){
-    //console.log(this.props)
+    console.log(this.props)
   }
   handleAddToCart = () => {
    
@@ -33,19 +33,59 @@ handleRemoveFromCart = () => {
                 </p>
             </div>
             
+
+            
              {this.props.container.filter(
                                     (item) => item._id === this.props.data._id
-                                ).length > 0 ? (
+                                ).length <= 0 ? (
                                         <button
+                                        style={{ color: "red" }}
+                                        onClick={this.handleAddToCart}
+                                    >
+                                        {"Add To Cart"}
+                                    </button>
+
+                                        
+                                    ) : (
+                                        <div>
+                                         <button
                                             style={{ color: "red" }}
                                             onClick={this.handleRemoveFromCart}
                                         >
                                             {"-"}
+                                        </button> 
+
+                                        <button button style={{ color: "red" }}>
+                                        {
+                                            this.props.container.filter(
+                                                (item) =>
+                                                    item._id ===
+                                                    this.props.data._id
+                                            ).length
+                                        }
                                         </button>
-                                    ) : (
-                                        <span />
+
+                        {this.props.isEditable && this.props.container.filter(
+                            (item) =>
+                                item._id ===
+                                this.props.data._id
+                        ).length < this.props.data.countInStock ? (
+                                                <button
+                                                    style={{ color: "red" }}
+                                                    onClick={this.handleAddToCart}
+                                                >
+                                                    {"+"}
+                                                </button>
+                                            ) : (
+                                                <span />
+                                            )}
+
+                                        </div>
+                                        
+                    
+                                       
                                     )}
-                                {this.props.container.filter(
+                                {/* {this.props.container.filter(
                                     (item) => item._id === this.props.data._id
                                 ).length > 0 ? (
                                         <button style={{ color: "red" }}>
@@ -59,8 +99,10 @@ handleRemoveFromCart = () => {
                                         </button>
                                     ) : (
                                         <span />
-                                    )}
-                                {this.props.isEditable ? (
+                                    )} */}
+                                    {/* {this.props.isEditable && this.props.container.filter(
+                                        (item) => item._id === this.props.data._id
+                                    ).length > 0 ? (
                                     <button
                                         style={{ color: "red" }}
                                         onClick={this.handleAddToCart}
@@ -69,7 +111,7 @@ handleRemoveFromCart = () => {
                                     </button>
                                 ) : (
                                         <span />
-                                    )}
+                                    )} */}
         </div>
     )}
 }
