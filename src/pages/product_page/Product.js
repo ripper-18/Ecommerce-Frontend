@@ -18,7 +18,7 @@ class Product extends Component {
             ...this.state,
             selectedImage:image
         })
-        console.log(this.state.selectedImage)
+        //console.log(this.state.selectedImage)
       }; 
      
 
@@ -27,127 +27,109 @@ class Product extends Component {
       }
 
     render(){
+
+      let quantity=this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length
     return (
-        <Row>
-        <Col md={6}>
-          <Image src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} fluid />
+        <Row className="product-container">
+        <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
+          <Image src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
         </Col>
-        <Col md={3}>
+        <Col md={3} xs={6}>
+          <Card style={{margin:"20px"}}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h3>{this.props.book.name}</h3>
+              <h3 style={{fontWeight:"800"}}>{this.props.book.name}</h3>
             </ListGroup.Item>
-            <ListGroup.Item>
-            <ul className="images">
-                    {[ ...this.props.book.image].map((x) => (
-                      <li key={x}>
-                        <button
-                          type="button"
-                          className="light"
-                          onClick={() => this.changeImage(x)}
-                        >
-                          <Image src={x} alt="product" className="small" fluid/>
-                        </button>
-                      </li>
+            <ListGroup.Item variant='flush'>
+            <div className="images">
+                    {this.props.book.image.map((x) => (
+                      <div key={x} onClick={() => this.changeImage(x)} className="image-container">
+                          <img src={x} alt="product" className="image" />
+                      </div>
                     ))}
-                  </ul>
+                  </div>
             </ListGroup.Item>
            
-            <ListGroup.Item>Price: ${this.props.book.price}</ListGroup.Item>
+            <ListGroup.Item><span className="product-heading">Price:</span> Rs.{this.props.book.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description: {this.props.book.description}
+            <span className="product-heading"> Description:</span> {this.props.book.description}
+            </ListGroup.Item>
+            <ListGroup.Item>
+            <span className="product-heading"> Author:</span> {this.props.book.author}
+            </ListGroup.Item>
+            <ListGroup.Item>
+            <span className="product-heading"> Publisher:</span> {this.props.book.publisher}
+            </ListGroup.Item>
+            <ListGroup.Item>
+            <span className="product-heading"> Edition:</span> {this.props.book.edition}
+            </ListGroup.Item>
+            <ListGroup.Item>
+            <span className="product-heading"> Weight:</span> {this.props.book.weight}gms
             </ListGroup.Item>
           </ListGroup>
+          </Card>
         </Col>
-        <Col md={3}>
-          <Card>
+        <Col md={3} xs={6} >
+          <Card style={{margin:"20px"}}>
             <ListGroup variant='flush'>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Price:</Col>
-                  <Col>
-                    <strong>Rs.{this.props.book.price}</strong>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
+            <ListGroup.Item>
+            <span className="product-heading">Total Price: </span> Rs. {this.props.book.price*quantity}
+            </ListGroup.Item>
 
               <ListGroup.Item>
-                <Row>
-                  <Col>Status:</Col>
-                  <Col>
-                    {this.props.book.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-                  </Col>
-                </Row>
+              <span className="product-heading"> Status: </span>   {this.props.book.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
               </ListGroup.Item>
 
               {this.props.book.countInStock > 0 && (
                 <ListGroup.Item>
-                  <Row>
-                    <Col>Qty</Col>
-                    <Col>
-                    
-                    {this.props.cart.bookCart.filter(
-                                    (item) => item._id === this.props.book._id
-                                ).length <= 0 ? (
-                                        <button
-                                        style={{ color: "red" }}
-                                        onClick={()=>this.props.addToCart(this.props.book)}
-                                    >
-                                        {"Add To Cart"}
-                                    </button>
-
-                                        
-                                    ) : (
-                                        <div>
-                                         <button
-                                            style={{ color: "red" }}
-                                            onClick={()=>this.props.removeFromCart(this.props.book)}
-                                        >
-                                            {"-"}
-                                        </button> 
-
-                                        <button button style={{ color: "red" }}>
-                                        {
-                                            this.props.cart.bookCart.filter(
-                                                (item) =>
-                                                    item._id ===
-                                                    this.props.book._id
-                                            ).length
-                                        }
-                                        </button>
-
-                        { this.props.cart.bookCart.filter(
-                            (item) =>
-                                item._id ===
-                                this.props.book._id
-                        ).length < this.props.book.countInStock ? (
-                                                <button
-                                                    style={{ color: "red" }}
-                                                    onClick={()=>this.props.addToCart(this.props.book)}
-                                                >
-                                                    {"+"}
-                                                </button>
-                                            ) : (
-                                                <span />
-                                            )}
-                                            </div>
-                                    )}
-                                           
-
-                    </Col>
-                  </Row>
+                   <span className="product-heading"> Qty: {quantity} </span> 
                 </ListGroup.Item>
               )}
 
               <ListGroup.Item>
-                <Button
+                { quantity===0?(<button
                   
-                  className='btn-block'
-                  type='button'
+                  onClick={()=>this.props.addToCart(this.props.book)}
+                  className="ac-btn"
                   disabled={this.props.book.countInStock === 0}
+                  
                 >
                   Add To Cart
-                </Button>
+                </button>):(
+                  <div style={{display:"flex",justifyContent:"space-evenly"}}>
+                    <button
+                  onClick={()=>this.props.addToCart(this.props.book)}
+                  className="cc-btn"
+                >
+                  +
+                </button>
+               
+                    <button
+                  
+                  onClick={()=>this.props.removeFromCart(this.props.book)}
+                  className="cc-btn"
+                >
+                  -
+                </button>
+                  </div>
+                 
+                )}
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+          <Card style={{margin:"20px"}}>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+              <h3 style={{fontWeight:"800"}}>SELLER INFORMATION: </h3>
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className="product-heading"> Name:  </span>{this.props.book.seller.name} 
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className="product-heading"> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className="product-heading"> Address:  </span>{this.props.book.seller.address} 
               </ListGroup.Item>
             </ListGroup>
           </Card>

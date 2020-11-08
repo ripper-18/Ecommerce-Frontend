@@ -23,7 +23,7 @@ class Products extends Component {
         
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-          console.log(token)//123
+         // console.log(token)//123
           if(token===null){
             token=''
         }
