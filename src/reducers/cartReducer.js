@@ -14,13 +14,19 @@ const removeItem = (arr, item) => {
         return [];
     } else {
         let temp = [...arr];
+        //console.log(item)
         //console.log("to be removed")
         //console.log(item)
-        let idx=-1;
-        if (idx === -1) {
-            idx = arr.findIndex((p) => p._id === item._id);
-        }
-        //console.log(idx)
+        
+        
+        
+          let  idx = arr.findIndex((it)=>{
+              //console.log(it._id)
+              //console.log(item.books._id)
+              return it._id===item.books._id
+          });
+        
+       // console.log(idx)
         const rem = temp.splice(idx, 1);
         //console.log("final")
         //console.log(temp)

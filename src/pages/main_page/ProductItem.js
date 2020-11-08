@@ -14,10 +14,10 @@ class ProductItem extends Component {
     
 };
 handleRemoveFromCart = () => {
-    this.props.removeFunction({
-        
-        ...this.props.data,
-    });
+   // console.log(this.props.data)
+    this.props.removeFunction(
+        this.props.data,
+    );
 };
     render(){
     return (
