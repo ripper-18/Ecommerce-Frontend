@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './Cart.css'
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col,Button} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {addToCart,removeFromCart,clearCart} from '../../actions/cart_actions'
 import Item from './Item'
 import Subtotal from './Subtotal';
+
 
 class Cart  extends Component  {
     componentDidMount(){
@@ -45,6 +46,7 @@ class Cart  extends Component  {
             </div>
             <Row>
                 <Col xs="9">
+                    <Button color="primary" onClick={this.props.clearCart}>Clear Cart</Button>
                 <div className="checkout-left">
                    
                 {this.getCount(this.props.cart.bookCart)
