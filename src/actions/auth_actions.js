@@ -2,7 +2,7 @@ import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, UPDATE_USER,FORGOT_PASS } from 
 import config from "../config";
 
 
-export const registerUser = (user) => (dispatch, history) => {
+export const registerUser = (user,history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
    
@@ -23,11 +23,12 @@ export const registerUser = (user) => (dispatch, history) => {
 
     fetch(config.user + "auth/signup", requestOptions).then((res) =>res.json().then((response)=> {
         console.log(response)
-        if (response.status === 200) {
+        if (response.message === "Registration Completed" ) {
             dispatch({
                 type: REGISTER_USER,
             });
             console.log("Account created")
+            history.push("/profile");
             //dispatch(showDialog("Account Created"));
             
         } else {

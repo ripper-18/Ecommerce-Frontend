@@ -134,7 +134,7 @@ class Login extends Component {
             this.state.register.email.length > 0 &&
             this.state.register.phone.length > 0
         ) {
-            if (this.state.register.password.length > 7) {
+            if (this.state.register.password.length > 6) {
                 if (
                     this.state.register.password ===
                     this.state.register.confirmpassword
@@ -340,6 +340,21 @@ class Login extends Component {
                                                                 } />
                                         </label>
                                         <br />
+                                        <label>
+                                            Password:
+                  <input size="100"  type="password" placeholder="Enter your password"
+                                                                className="form-control"
+                                                                required
+                                                                value={
+                                                                    this.state
+                                                                        .register
+                                                                        .confirmpassword                                                                }
+                                                                onChange={(e) =>
+                                                                    this.handleRegisterCnfPassword(
+                                                                        e
+                                                                    )
+                                                                } />
+                                        </label>
                                         <div className = {styles.user_login_button}>
                                         <input className= {styles.login_tab_button} type="button" value="Sign Up"
                                         onClick={

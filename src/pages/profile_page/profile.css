@@ -1,3 +1,7 @@
+.outer_container {
+    margin-bottom: 30px;
+}
+
 .card_container {
     display: flex;
     justify-content: center;
@@ -20,6 +24,10 @@
     flex: .8;
     align-items: center;
     align-content: center;
+    /* border-radius: 50px; */
+    background: #fcfcfc;
+    box-shadow: 5px 5px 10px #d6d6d6,
+        -5px -5px 10px #ffffff;
 }
 
 
@@ -35,50 +43,11 @@
     font-size: 50px;
 }
 
-
-input {
-    margin: 5px 5px;
-    padding: 5px 5px;
-    margin-bottom: 10px;
-}
-
-
-.form input,
-.form select {
-    width: 100%;
-    padding: 15px;
-    padding-left: 16px;
-    font-size: 0.9rem;
-    border: 1px solid #c8cacc;
-    border-radius: 0;
-    height: auto;
-    line-height: 1.15;
-    color: inherit;
-    background: inherit;
-}
-
-.form input:hover,
-.form select:hover {
-    border: 1px solid #d8173c;
-}
-
-.form input[type="button"] {
-    height: 52px;
-    border-radius: 26px;
-    border: none;
-    padding: initial;
+.center-form {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 16px;
-    background: linear-gradient(180deg, #db4663, #ba0a2f);
-    color: #fff;
-    border: 2px solid #d8173c;
 }
 
-.form input[type="button"]:hover {
-    color: #fff;
-}
 
 .account-page-button {
     display: flex;
@@ -91,6 +60,7 @@ input {
     padding: 15px;
     border-radius: 5px;
     border: 0px;
+    margin-bottom: 15px;
 }
 
 .manage-address-div {
@@ -155,9 +125,6 @@ input {
 
 }
 
-.wrapper>div {
-    margin-top: 128px;
-}
 
 .tabs a {
     flex: 2;
@@ -182,3 +149,22 @@ input {
     border: 0px;
     border-radius: 5px;
 } */
+
+.py-2 {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.order-information {
+    cursor: pointer;
+    color: #3d5c9b;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .order-information {
+        font-size: 10px;
+        text-align: center;
+    }
+}

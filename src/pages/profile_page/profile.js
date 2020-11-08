@@ -101,16 +101,19 @@ class Profile extends Component {
                                     <br/>
                                     
                                     <p>Name: </p>
-                <input className="input-fields-main" size="100" value={this.state.user.name} onChange={e => {
-                  this.setState({
-                    user: {
-                      ...this.state.user,
-                      name: e.target.value
-                    }
-                  })
-                }} value={this.state.user.name} disabled={this.state.isDisabled} />
+                                    <div className="center-form">
+                                            <input className="input-fields-main" value={this.state.user.name} onChange={e => {
+                                            this.setState({
+                                                user: {
+                                                ...this.state.user,
+                                                name: e.target.value
+                                                }
+                                            })
+                                            }} value={this.state.user.name} disabled={this.state.isDisabled} />
+                                    </div>
                 <p>Email: </p>
-                <input size="100"  value={this.state.user.email} onChange={e => {
+                <div className="center-form">
+                <input  value={this.state.user.email} onChange={e => {
                   this.setState({
                     user: {
                       ...this.state.user,
@@ -118,8 +121,10 @@ class Profile extends Component {
                     }
                   })
                 }} value={this.state.user.email} disabled={this.state.isDisabled} />
+                </div>
                 <p>Phone: </p>
-                <input size="100" value={this.state.user.phone} onChange={e => {
+                <div className="center-form">
+                <input value={this.state.user.phone} onChange={e => {
                   this.setState({
                     user: {
                       ...this.state.user,
@@ -127,10 +132,12 @@ class Profile extends Component {
                     }
                   })
                 }} value={this.state.user.phone} disabled={this.state.isDisabled} />
+                </div>
                 <br/>
                 <p>Address: </p>
                 <div className="manage-address-div" style={{textAlign : "center"}}>
                 <Link to="/address">Manage Addresses</Link>
+                
                 </div>
 
                 <hr
@@ -147,14 +154,19 @@ class Profile extends Component {
                             </center>
                             <div class="account-page-button">
 <button className="account-button" onClick={()=>this.props.logoutUser(this.props.history)}>Logout User</button>
+                
 </div>
                             </Tab>
                             <Tab eventKey="orders" title="Previous Orders">
                                 <br></br>
                                 <br></br>
+
                                 <div className='order_container'>
+
                                 
                         <div className="py-2 row" >
+                        <h1 className= "welcome-heading">Your Previous Orders</h1>
+
                         <div className="col-8">
                             {this.props.pastOrders.length > 0 ? (
                                 this.props.pastOrders.map(
@@ -192,8 +204,8 @@ class Profile extends Component {
                                                 </span>
                                                 <br />
                                             </div>
-                                            <div  onClick={()=>this.setInfOpen(true,index)}>
-                                               <span style={{color:"red",fontSize:"px"}}>...</span> Click here to get full information about the order
+                                            <div className="order-information"  onClick={()=>this.setInfOpen(true,index)}>
+                                               Click here to get full information about the order
                                             </div>
                                             <InfoModal 
                                                         infOpen={this.state.orderhistory.isInfOpen[index]}
