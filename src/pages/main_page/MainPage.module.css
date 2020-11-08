@@ -1,0 +1,83 @@
+.background-carousel {
+    background: url(https://i.ibb.co/kympBHS/Copy-of-Untitled-2.png);
+}
+
+.accordion label {
+    font-weight: bold;
+}
+.accordion input,
+.accordion select {
+    width: 100%;
+    padding: 15px;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    border: 1px solid #c8cacc;
+    border-radius: 0;
+    height: auto;
+    line-height: 1.15;
+    color: inherit;
+    background: inherit;
+}
+.accordion input:hover,
+.accordion select:hover {
+    border: 1px solid #d8173c;
+}
+.toBilling {
+    height: 52px;
+    border-radius: 26px;
+    border: none;
+    padding: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: linear-gradient(180deg, #db4663, #ba0a2f);
+    color: #fff;
+    border: 2px solid #d8173c;
+}
+.toBilling:hover {
+    color: #fff;
+}
+.checkoutHeader button:focus {
+    outline: none;
+}
+.add{
+    font-size: 150px;
+    font-weight: 300;
+    color: gray;
+    position: absolute;
+    left: 37%;
+    top: 0%;
+    cursor: pointer;
+}
+.add2{
+    font-size: 24px;
+    color: black;
+    position: absolute;
+    left: 33%;
+    top: 67%;
+}
+@media screen and (min-width: 769px) {
+    .wrapper {
+        margin-top: 80px;
+    }
+}
+
+
+.sideFilter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translateX(-100%);
+    width: 90vw;
+    background-color: #fff;
+    font-size: 1.1rem;
+    border-top: 0.5px solid #444;
+    min-height: 100vh;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sideFilterOpen {
+    transform: translate(0);
+}

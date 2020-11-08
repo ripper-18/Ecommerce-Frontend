@@ -6,7 +6,7 @@ import {getBookbyId} from '../../actions/book_actions'
 
 class ProductItem extends Component {
   componentDidMount(){
-    console.log(this.props)
+    //console.log(this.props)
   }
   handleAddToCart = () => {
    

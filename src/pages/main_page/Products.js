@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import './Products.css'
 import ProductItem from './ProductItem'
+import {Row,Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {logoutUser} from '../../actions/auth_actions'
+import filterIcon from '../../assets/filter_icon.svg'
 
 class Products extends Component {
     state={
@@ -60,10 +62,27 @@ class Products extends Component {
             display = books.sort((a, b) => b.price - a.price);
         }
     return (
-        <div className= "products-page">
+        <Row className= "products-page">
+            <div className={" d-md-none py-1 filterSideNav"}>
+                        <button
+                            className={"filterSideNavBtn"}
+                            onClick={this.props.handleSideFilterOpen}
+                        >
+                            <div
+                                className={"filterIcon"}
+                                style={{
+                                    backgroundImage: `url(${filterIcon})`,
+                                }}
+                            />
+                        </button>
+                    </div>
+
             {
                 display.map((book,index)=>(
-                    <div className="product-card">
+                    <Col className="product-card"
+                    xs={6}
+                                lg={6}
+                                xl={4}>
                     <ProductItem
                     isEditable={true}
                     data={book}
@@ -71,11 +90,11 @@ class Products extends Component {
                     removeFunction={this.props.removeFromCart}
                     container={this.props.cart.bookCart}
                     />  
-                    </div>
+                    </Col>
                 ))
             }
             
-        </div>
+        </Row>
         
     )}
 }

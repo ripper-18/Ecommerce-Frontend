@@ -1,7 +1,7 @@
 import { GET_ADDRESS, GET_PAST_ORDERS, SET_CURRENT_ORDER } from "./types";
 
 import config from "../config";
-
+import { showDialog} from './dialog_actions'
 
 export const addAddress = (address, token) => (dispatch) => {
     var myHeaders = new Headers();
@@ -26,17 +26,15 @@ export const addAddress = (address, token) => (dispatch) => {
     fetch(config.user + "address/", requestOptions)
         .then((response) => {
             if (response.status === 200) {
-                //dispatch(showDialog("Address Added"));
+                dispatch(showDialog("Address Added"));
 
                 // dispatch(showDialog("Address Added"));
                 // window.location.reload();
                 console.log("adress added")
             } else {
-                //dispatch(
-                  //  showDialog(
-                    //    "Address could not be added, check your input and try again"
-                    //)
-                console.log("Address could not be added, check your input and try again")
+                dispatch(
+                   showDialog( "Address could not be added, check your input and try again"))
+                //console.log("Address could not be added, check your input and try again")
             }
         })
         .catch((err) => console.log(err));
@@ -80,13 +78,13 @@ export const removeAddress = (id, token) => (dispatch) => {
         if (response.status === 200) {
             console.log(response)
             //dispatch(showDialog("Address Removed"));
-            // dispatch(showDialog("Address Removed"));
+             dispatch(showDialog("Address Removed"));
             // window.location.reload();
             //console.log("address removed")
         } else {
-            /*dispatch(
+            dispatch(
                 showDialog("Address could not be removed, Something went wrong")
-            );*/
+            );
         }
     });
 };
@@ -109,16 +107,16 @@ export const editAddress = (id, addr, token) => (dispatch) => {
         .then((response) => {
            // console.log(response)
             if (response.status === 200) {
-                //dispatch(showDialog("Address Updated"));
+                dispatch(showDialog("Address Updated"));
                 // showDialog("Address Updated");
                 //console.log("address updated")
                 // window.location.reload();
             } else {
-                /*dispatch(
+                dispatch(
                     showDialog(
                         "Address could not be updated, check your input and try again"
                     )
-                );*/
+                );
             }
         })
         .catch((err) => console.log(err));
@@ -127,7 +125,6 @@ export const editAddress = (id, addr, token) => (dispatch) => {
 export const setCurrentOrder = (
     address,
     originalBill,
-    
     books,
     finalAmount,
     delivery,
@@ -192,9 +189,9 @@ export const placeDirectOrder = (
         })
         .catch((error) => {
             console.log(error);
-           /* dispatch(
+            dispatch(
                 showDialog("Something went wrong while placing the order")
-            );*/
+            );
         });
 };
 

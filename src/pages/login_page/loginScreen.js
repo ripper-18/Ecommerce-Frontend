@@ -10,7 +10,6 @@ import imgg from '../../assets/login_page/imgg.jpeg';
 import {
     registerUser,
     loginUser,
-    loginFb,
     loginGoogle,
 } from "../../actions/auth_actions";
 import google from '../../assets/google.svg'
@@ -390,7 +389,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
     registerUser,
     loginUser,
-    loginFb,
+    
     loginGoogle
 })(Login);
 

@@ -2,13 +2,16 @@ import React,{useEffect,Component} from 'react'
 import MainCarousel from './MainCarousel'
 import Filters from './Filters'
 import Products from './Products'
-import {Row, Col} from 'react-bootstrap';
-import './MainPage.css'
+import {Row, Col,Container} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import {logoutUser} from '../../actions/auth_actions'
+import cross from '../../assets/cross.svg'
+import cx from "classnames"
+import styles from './MainPage.module.css'
 
 class MainPage extends Component {
     state = {
+        isSideFilterOpen: false,
         filters: {
            year:[],
            course:[],
@@ -46,6 +49,18 @@ class MainPage extends Component {
             sortValue: value,
         });
     };
+    handleSideFilterOpen = () => {
+        document.body.style.overflow = "hidden";
+        this.setState({
+            isSideFilterOpen: true,
+        });
+    };
+    handleSideFilterClose = () => {
+        document.body.style.overflow = "initial";
+        this.setState({
+            isSideFilterOpen: false,
+        });
+    };
 
     render(){
     return (
@@ -54,24 +69,71 @@ class MainPage extends Component {
             <div className="main-carousel">
                 <MainCarousel></MainCarousel>
             </div>
+            <Container>
             <Row>
-                <Col xs="3">
+                <Col 
+                  sm={12}
+                  md={3}
+                  className="d-none d-md-block px-4 pl-md-0"
+                >
                    <Filters
                    setSortValue={this.setSortValue}
                    setFilters={this.setFilters}/>
                 </Col>
-                <Col xs="9">
+                <Col 
+                className="bg-white" sm={12} md={9}>
                 <h1 style={{textAlign : 'center'}}> Best Place to Buy Books </h1>
                 <div  className="main">
                         <Products
                         filters={this.state.filters}
                         sortValue={this.state.sortValue}
+                        handleSideFilterOpen={
+                            this.handleSideFilterOpen
+                        }
                         ></Products>
                 </div>
                 </Col>
-
             </Row>
-
+            </Container>
+            <div
+                        className={cx(styles.sideFilter, {
+                            [styles.sideFilterOpen]: this.state
+                                .isSideFilterOpen,
+                        })}
+                    >
+                        <div
+                            className="col-12"
+                            style={{ position: "relative" }}
+                        >
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: "10px",
+                                    right: "10px",
+                                }}
+                            >
+                                <button
+                                    style={{
+                                        background: "transparent",
+                                        border: "none",
+                                    }}
+                                    onClick={this.handleSideFilterClose}
+                                >
+                                    <div
+                                        style={{
+                                            backgroundImage: `url(${cross})`,
+                                            height: "32px",
+                                            width: "32px",
+                                        }}
+                                    />
+                                </button>
+                            </div>
+                            <Filters
+                                setSortValue={this.setSortValue}
+                                setFilters={this.setFilters}
+                            />
+                        </div>
+                    </div>
         </div>
 
         

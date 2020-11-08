@@ -2,8 +2,9 @@ import React,{Component} from 'react'
 import { Form, Container, Card } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import Select from "react-select";
-import './Filters.css'
+import styles from  './Filters.module.css'
 import FilterAccordion from "./FiltersArcadion";
+import cx from 'classnames';
 
 const options = [
     
@@ -24,7 +25,6 @@ class Filters extends Component {
     render(){
     return (
         <Container className="pl-md-0">
-        <div className="container_inner">
             <div className='heading mt-5 m-0 mb-md-4'>
                 <h2>Filter Books</h2>
             </div>
@@ -38,7 +38,7 @@ class Filters extends Component {
                             ...theme.colors,
                             primary25: "#f5f5f5",
                             primary50: "#f5f5f5",
-                            primary: "#d8173c",
+                            primary: "#517fda",
                         },
                     })}
                     onChange={(e) => this.props.setSortValue(e.value)}
@@ -53,12 +53,13 @@ class Filters extends Component {
                     <button
                         onClick={() => window.location.reload()}
                         className="btn btn-lg btn-outline-danger w-100"
+                        style={{borderColor:"#517fda"}}
                     >
                         Reset
                         </button>
                 </div>
             </div>
-            </div>
+            
         </Container>
         // <Container>
         //     <Card>

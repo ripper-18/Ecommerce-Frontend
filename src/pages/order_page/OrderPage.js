@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-
-
 import './OrderPage.css'
 import {Row, Col} from 'react-bootstrap';
-
 import {placeDirectOrder} from '../../actions/order_actions'
 import {clearCart} from '../../actions/cart_actions'
+import { showDialog } from "../../actions/dialog_actions";
 import config from "../../config";
 
 
@@ -69,7 +67,7 @@ class OrderPage extends Component{
      stagePayment = () => {
          console.log(this.props)
          if (this.state.mode === "") {
-             alert("Please select a payment mode");
+            this.props.showDialog("Please select a payment mode");
          } else {
              this.props
                  .placeDirectOrder(
@@ -90,12 +88,12 @@ class OrderPage extends Component{
                          this.props.clearCart()
                          this.props.history.push("/profile");
                      } else {
-                         console.log("Your order could not be placed");
+                        this.props.showDialog("Your order could not be placed");
                      }
                  })
                  .catch((err) => {
                      console.log(err);
-                     console.log("Your order could not be placed");
+                     this.props.showDialog("Your order could not be placed");
                  });
          }
      };
@@ -226,6 +224,7 @@ const mapStateToProps = (state) => ({
 });
 export default connect(mapStateToProps, {
     placeDirectOrder,
-    clearCart
+    clearCart,
+    showDialog
    
 })(withRouter(OrderPage));

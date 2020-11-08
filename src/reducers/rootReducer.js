@@ -3,11 +3,13 @@ import authReducer from './authReducer'
 import bookReducer from './bookReducer';
 import orderReducer from './orderReducer'
 import cartReducer from './cartReducer'
+import dialogReducer from './dialogReducer'
 
 export default combineReducers({
   
     auth: authReducer,
     order:orderReducer,
     book:bookReducer,
-    cart:cartReducer
+    cart:cartReducer,
+    dialog:dialogReducer
 });

@@ -3,6 +3,9 @@ import Loader from "./components/Loader/Loader";
 import { Route,BrowserRouter} from "react-router-dom";
 import "./App.css";
 import "./bootstrap.min.css";
+import {Modal} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {showDialog,hideDialog} from './actions/dialog_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import MainPage from './pages/main_page/MainPage'
@@ -14,7 +17,7 @@ import CheckOutPage from './pages/checkout_page/CheckOut'
 import AddressPage from './pages/address_page/address'
 import ProductPage from './pages/product_page/Product'
 
-function App()   {
+function App(props)   {
 
         return (
             <BrowserRouter>
@@ -41,11 +44,33 @@ function App()   {
                         <Route  path="/product/:id" exact component={ProductPage} />
                    </main>
                    </Suspense>
+                   <Modal
+                    show={props.dialog.isOpen}
+                    onHide={props.hideDialog}
+                    centered
+                    size="sm"
+                    style={{
+                        zIndex: "999999",
+                        fontFamily: "Shentox",
+                    }}
+                >
+                    <Modal.Body>{props.dialog.msg}</Modal.Body>
+                    <Modal.Footer>
+                        <button
+                            onClick={props.hideDialog}
+                            className="btn btn-outline-danger btn-sm"
+                        >
+                            OK
+                        </button>
+                    </Modal.Footer>
+                </Modal>
                 <Footer />  
             </div>
             </BrowserRouter>   
         );
     
 }
-
-export default App
+const mapStateToProps = (state) => ({
+    dialog: state.dialog,
+});
+export default connect(mapStateToProps, { hideDialog })(App);

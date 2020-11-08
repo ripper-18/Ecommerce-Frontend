@@ -1,5 +1,6 @@
 import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, UPDATE_USER,FORGOT_PASS } from "./types";
 import config from "../config";
+import {showDialog} from './dialog_actions'
 
 
 export const registerUser = (user,history) => (dispatch) => {
@@ -29,11 +30,11 @@ export const registerUser = (user,history) => (dispatch) => {
             });
             console.log("Account created")
             history.push("/profile");
-            //dispatch(showDialog("Account Created"));
+            dispatch(showDialog("Account Created"));
             
         } else {
             console.log(response.message)
-            //dispatch(showDialog(response.message));
+            dispatch(showDialog(response.message));
         }
     }));
     
@@ -67,43 +68,12 @@ export const loginUser = (user, history) => (dispatch) => {
                 history.push("/profile");
             } else {
                 console.log("error")
-               // dispatch(showDialog("Something went wrong"));
+                dispatch(showDialog(`${res.message}`));
             }
         })
     );
 };
-export const loginFb = (user, history) => (dispatch) => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    
-    var raw = JSON.stringify({
-        name: user.name,
-        email: user.email,
-        facebookId: user.id,
-    });
 
-    var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-    };
-
-    fetch(config.user + "auth/facebook", requestOptions).then((response) =>
-        response.json().then((res) => {
-            console.log(res);
-            if (res.data && res.data.token.length > 1) {
-                dispatch({
-                    type: LOGIN_USER,
-                    payload: res.data,
-                });
-                history.push("/profile");
-            } else {
-                //dispatch(showDialog("Something went wrong"));
-            }
-        })
-    );
-};
 export const loginGoogle = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -131,7 +101,7 @@ export const loginGoogle = (user, history) => (dispatch) => {
                 });
                 history.push("/profile");
             } else {
-                //dispatch(showDialog("Something went wrong"));
+                dispatch(showDialog("Something went wrong"));
             }
         })
     );
@@ -165,9 +135,10 @@ export const updateUser = (user, token) => (dispatch) => {
                     type: UPDATE_USER,
                     payload: res.data,
                 });
-                
+               
+                dispatch(showDialog("Information got updated!"))
             } else {
-               // dispatch(showDialog("Something went wrong"));
+                dispatch(showDialog("Something went wrong"));
             }
         })
     );
@@ -195,8 +166,9 @@ export const forgotPassword =(user,history)=>(dispatch)=>{
                 dispatch({
                     type: FORGOT_PASS
                 });
+                dispatch(showDialog("Your password was changed!"))
             } else {
-               // dispatch(showDialog("Something went wrong"));
+                dispatch(showDialog("Something went wrong"));
             }
         })
     );

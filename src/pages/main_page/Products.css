@@ -20,8 +20,22 @@
     width: 33%;
 }
 
-img{
-    height: 5%;
-    width: 10%;
+.filterSideNav {
+    box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.12);
+    background: #fff;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
-
+.filterSideNavBtn {
+    background: transparent;
+    border: none;
+    /* float: right; */
+}
+.filterSideNavBtn div {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+}
