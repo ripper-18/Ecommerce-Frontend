@@ -7,7 +7,7 @@ import FilterAccordion from "./FiltersArcadion";
 import cx from 'classnames';
 
 const options = [
-    
+    {value:"0",label:"None"},
     { value: "1", label: "Name A-Z" },
     { value: "2", label: "Name Z-A" },
     { value: "3", label: "Price (Low to High)" },

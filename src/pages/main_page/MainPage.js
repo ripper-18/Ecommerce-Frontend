@@ -103,7 +103,7 @@ class MainPage extends Component {
                     >
                         <div
                             className="col-12"
-                            style={{ position: "relative" }}
+                            style={{ position: "relative",top:"100px" }}
                         >
                             <div
                                 style={{
