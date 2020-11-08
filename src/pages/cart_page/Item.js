@@ -21,10 +21,11 @@ class Item extends Component {
         <div className = "product">
            
             <img
+            className='product-img'
             src={this.props.item.book.image[0]
             }
             />
-            <div className="producr-info">
+            <div className="product-info">
                 <p>{this.props.item.book.name}</p>
                 <p className= "product-price">
                     <small>Rs.</small>
@@ -34,16 +35,17 @@ class Item extends Component {
                 </p>
             </div>
             
-            <button className="product-button"  onClick={() =>
+            <button className="productt-button"  onClick={() =>
                                     this.handleAddToCart(
                                         this.props.item.book
                                     )
                                 }> Add to cart </button>
-            <button className="product-button"  onClick={() =>
+            <button className="productt-button"  onClick={() =>
                                     this.handleRemoveFromCart(
                                         this.props.item.book
                                     )
                                 }> Remove from cart </button>
+            <hr></hr>
         </div>
     )}
 }

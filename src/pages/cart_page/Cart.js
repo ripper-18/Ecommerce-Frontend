@@ -46,7 +46,7 @@ class Cart  extends Component  {
             </div>
             <Row>
                 <Col xs="9">
-                    <Button color="primary" onClick={this.props.clearCart}>Clear Cart</Button>
+                    
                 <div className="checkout-left">
                    
                 {this.getCount(this.props.cart.bookCart)
@@ -68,6 +68,7 @@ class Cart  extends Component  {
                     delivery={30}
                     gst={5}
                     ></Subtotal>
+                        <button className='clear-cart-button' onClick={this.props.clearCart}>Clear Cart</button>
                 </div>
                 </Col>
             </Row>
