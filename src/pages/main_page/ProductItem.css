@@ -2,12 +2,20 @@
     flex: 1;
     display: flex; 
     flex-direction: column;
-    flex-wrap: inherit;
+    flex-wrap: wrap;
     flex-basis: 0;
+    transition: 0.3s;
+  background-color: white;
+  flex: .8;
+  align-items: center;
+  align-content: center;
+  font-size: 15px;
+  
+
     
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 10px;
     padding: 20px;
     
@@ -16,7 +24,7 @@
 
     background-color: white;
     z-index: 1;
-    border: 2mm solid black;
+   
 
     border-radius: 1px;
     background: #ffffff;
@@ -39,25 +47,22 @@
 }
 
 .product-image {
-    flex-basis: 0;
+    /* flex-basis: 0;
     display: flex;
-    flex: 1;
+    flex: 1; */
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     
     /* object-fit: contain; */
     margin-bottom: 15px;
+    width: 200px;
+    height: 200px;
 }
 
-.product-image img{
-    flex: 0.5;
-    width: 50%;
-    height: 50%;
-    flex-basis: 0;
-}
 
-.product-button {
+
+/* .product-button {
     background: #abdaff;
     color: black;
     margin-top: 10px;
@@ -69,11 +74,74 @@
     background: #67bcff;
     color: black;
 
-}
+} */
 
-img{
+/* img{
     flex: 1;
-    width: min-content;
-    height: min-content;
+    width: fit-content;
+    height: fit-content;
+    
+} */
+.wrap-button{
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.add-to-cart-button {
+    display: inline;
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.add-to-cart-button:hover {
+  background-color: #00cddb;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.outer-wrap{
+    color: #fff;
+}
+.add-subtract-button{
+
+  width: 50px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  border: 0.01mm solid #00cddb;
+
 }
 
+.add-subtract-button:hover{
+    background-color: #00cddb;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+
+}

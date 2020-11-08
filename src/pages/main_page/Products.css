@@ -1,6 +1,8 @@
 .products-page {
-    display: grid;
-    grid-template-columns: 25vw 25vw;
+    /* display: grid;
+    grid-template-columns: 25vw 25vw; */
+    display: flex;
+    flex-wrap: wrap;
     
     
     /* z-index: 1; */
@@ -11,8 +13,15 @@
 }
 
 .product-card {
-    display: flex;
+    flex: 1;
+    /* display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    width: 33%;
+}
+
+img{
+    height: 5%;
+    width: 10%;
 }
 

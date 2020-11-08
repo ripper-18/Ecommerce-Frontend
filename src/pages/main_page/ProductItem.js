@@ -24,13 +24,13 @@ handleRemoveFromCart = () => {
         <div className = "product-individual">
            
             {/* <div className="product-image"> */}
-           <img
+            <img className="product-image"
            src={this.props.data.image[0]}
            
            />
             {/* </div> */}
             <div className="product-info">
-               <p onClick={()=>{ this.props.getBookbyId(this.props.data._id);   this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}</p> 
+                <p onClick={() => { this.props.getBookbyId(this.props.data._id); this.props.history.push(`/product/${this.props.data._id}`) }}><b>{this.props.data.name}</b></p> 
                 <p className= "product-price">
                     <small>Rs.</small>
                     <strong>{
@@ -43,24 +43,28 @@ handleRemoveFromCart = () => {
              {this.props.container.filter(
                                     (item) => item._id === this.props.data._id
                                 ).length <= 0 ? (
-                                        <button
-                                        style={{ color: "red" }}
+                                        <div className='wrap-button'>
+                                        <button className='add-to-cart-button'
+                                        // style={{ color: "red" }}
                                         onClick={this.handleAddToCart}
                                     >
                                         {"Add To Cart"}
                                     </button>
+                                    </div>
 
                                         
                                     ) : (
-                                        <div>
-                                         <button
-                                            style={{ color: "red" }}
+                                        
+                        <div className='outer_wrap'>
+                        <button className='add-subtract-button'
+                                            // style={{ color: "red" }}
                                             onClick={this.handleRemoveFromCart}
                                         >
                                             {"-"}
                                         </button> 
-
-                                        <button button style={{ color: "red" }}>
+                                        
+                                        
+                        <button className='add-subtract-button'>
                                         {
                                             this.props.container.filter(
                                                 (item) =>
@@ -69,18 +73,21 @@ handleRemoveFromCart = () => {
                                             ).length
                                         }
                                         </button>
+                                        
 
                         {this.props.isEditable && this.props.container.filter(
                             (item) =>
                                 item._id ===
                                 this.props.data._id
                         ).length < this.props.data.countInStock ? (
-                                                <button
-                                                    style={{ color: "red" }}
+                                        
+                                <button className='add-subtract-button'
+                                                    // style={{ color: "red" }}
                                                     onClick={this.handleAddToCart}
                                                 >
                                                     {"+"}
                                                 </button>
+                                                
                                             ) : (
                                                 <span />
                                             )}
