@@ -104,8 +104,7 @@ const mapStateToProps = (state) => ({
     auth:state.auth
 });
 
-export default connect(mapStateToProps, {
-    
+export default connect(mapStateToProps, {    
     addToCart,
     removeFromCart,
     getBooksByKeyword,
