@@ -14,15 +14,15 @@
  const initialState = {};
 
  const middleware = [thunk];
+ const composeEnhancer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE ||compose;
 
 
  export const store = createStore(
      persistedReducer,
      initialState,
-     compose(
-         applyMiddleware(...middleware),
-         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-     )
+     composeEnhancer(
+        applyMiddleware(...middleware)
+    )
  );
 
  export const persistor = persistStore(store);
