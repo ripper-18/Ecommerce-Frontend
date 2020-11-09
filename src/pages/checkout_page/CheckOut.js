@@ -6,7 +6,7 @@ import './CheckOut.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getAddress,removeAddress,setCurrentOrder,addAddress} from '../../actions/order_actions'
-
+import {showDialog} from '../../actions/dialog_actions'
 import ConfirmationModal from "../address_page/ConfirmationModal";
 import EditModal from "../address_page/EditModal";
 import AddressModal from "../address_page/AddressModal";
@@ -259,5 +259,5 @@ export default connect(mapStateToProps, {
     getAddress,
     removeAddress,
     setCurrentOrder,
-   
+   showDialog
 })(withRouter(CheckOut));

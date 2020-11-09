@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/auth_actions";
+import {showDialog} from '../../actions/dialog_actions'
 class Header extends Component{
     state={
         keyword:""
@@ -25,7 +26,7 @@ class Header extends Component{
     }
     submitSearch=()=>{
         if(this.state.keyword===''){
-            alert('Search cant be empty!')
+            this.props.showDialog('Search cant be empty!')
             return
         }
         this.props.history.push(`/?search=${this.state.keyword}`)
@@ -94,7 +95,7 @@ const mapStateToProps = (state) => ({
     cart: state.cart,
 });
 
-export default connect(mapStateToProps,{logoutUser})(withRouter(Header))
+export default connect(mapStateToProps,{logoutUser,showDialog})(withRouter(Header))
 
 
 //we have something called a props tree in our redux, see rootreducers file, this file has all the reducers combined into one
