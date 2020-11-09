@@ -39,6 +39,7 @@ class Cart  extends Component  {
     };
     
     render(){
+        const dev_charge = this.props.cart.bookCart.length?(30):(0);
     return (
         <div>
              <div>
@@ -48,7 +49,11 @@ class Cart  extends Component  {
                 <Col xs="9">
                     
                 <div className="checkout-left">
-                   
+                <div id='subheading-div'>
+                    <div className='sub1'>Items</div>
+                    <div className='sub2'></div>
+                    <div className='sub1'>Price</div>
+                </div>
                 {this.getCount(this.props.cart.bookCart)
                                     .sort((a, b) =>
                                         a.book.name < b.book.name ? -1 : 1
@@ -65,7 +70,7 @@ class Cart  extends Component  {
 
                     <Subtotal 
                     subtotal={this.getSubTotal()}
-                    delivery={30}
+                    delivery={dev_charge}
                     gst={5}
                     ></Subtotal>
                         <button className='clear-cart-button' onClick={this.props.clearCart}>Clear Cart</button>
