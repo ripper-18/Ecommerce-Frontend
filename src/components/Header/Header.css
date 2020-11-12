@@ -23,6 +23,7 @@ a:active {
     height: 80px;
 }
 
+
 .header-search {
     display: flex;
     flex: 1;
@@ -150,5 +151,18 @@ a:active {
         flex-direction: column;
         margin-left: 20px;
         margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .header-option {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-logo {
+        width: 40px;
+        height: 20px;
     }
 }
