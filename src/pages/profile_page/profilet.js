@@ -94,7 +94,7 @@ class Profile extends Component {
 
             <br/> <br/> <div className = "card_container" >
             <div className = 'card' >
-            < Tabs defaultActiveKey = "overview"
+            <Tabs defaultActiveKey = "overview"
              id = "uncontrolled-tab-example" >
             <Tab eventKey = "overview"
             title = "Account Overview" >
@@ -196,7 +196,7 @@ class Profile extends Component {
             } > Update </button>  
              </center>
               <div class = "account-page-button" >
-            <button className = "account-button"
+            <button className = "logout-button"
             onClick = {
                 () => this.props.logoutUser(this.props.history)
             } > Logout User </button>

@@ -60,11 +60,24 @@
 
 .account-button {
     color: white;
-    background: #517fda;
+    background: #0097e6;
     padding: 15px;
     border-radius: 5px;
     border: 0px;
     margin-bottom: 15px;
+}
+
+.logout-button {
+    color: white;
+    background: #e84118;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0px;
+    margin-bottom: 15px;
+}
+
+.logout-button:hover {
+    background: #c23616;
 }
 
 .manage-address-div {
@@ -72,7 +85,7 @@
 }
 
 .button_div {
-    background-color: #67bcff;
+    background-color: #0097e6;
     width: 50vw;
     align-items: center;
     align-content: center;
@@ -88,7 +101,7 @@
     color: black;
     border-radius: 100px;
     border: 2px solid white;
-    background-color: #FF5349;
+    background-color: #e84118;
     margin-bottom: 5vh;
 }
 
@@ -100,6 +113,11 @@
     border-radius: 5px;
 }
 
+.edit-button:hover {
+    background-color: #0097e6;
+
+}
+
 .edit-button:disabled {
     padding: 10px;
     background-color: #5d5f60;
@@ -109,8 +127,8 @@
 }
 
 .update-button {
-    padding: 15px;
-    background-color: #517fda;
+    padding: 13px;
+    background-color: #0097e6;
     color: white;
     border: 0px;
     border-radius: 5px;
@@ -126,7 +144,6 @@
 
 .tabs {
     justify-content: space-evenly;
-
 }
 
 
