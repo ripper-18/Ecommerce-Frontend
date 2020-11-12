@@ -133,18 +133,18 @@ class CheckOut extends Component {
                 <p>Order Summary!</p>
 
                 <span className='lefty'>Subtotal</span>
-                <span className='righty'>{subt}</span><br></br>
+                <span className='righty'>₹{subt}</span><br></br>
                 <span className='lefty'>Delivery</span>
-                <span className='righty'>30</span><br></br>
+                <span className='righty'>₹30</span><br></br>
                 <span className='lefty'>Gst(5%)</span>
-                <span className='righty'>{gst}</span><br></br>
+                <span className='righty'>₹{gst}</span><br></br>
                 <span className='lefty'>Discount</span>
-                <span className='righty'>0</span><br></br>
+                <span className='righty'>₹0</span><br></br>
                 
                 
                 
                 <span className='lefty total-amount'>Total</span>
-                <span className='righty total-amount'>{final}</span><br></br>
+                <span className='righty total-amount'>₹{final}</span><br></br>
                 
             
 
@@ -174,6 +174,7 @@ class CheckOut extends Component {
                                             this
                                                 .setSelectedAddress
                                         }
+                                        style={{marginRight:"10%" }}
                                     />
                                 </div>
                                 <div className="card h-200 col-10" style={{ height: "350px", display:"inline" }}>
@@ -262,10 +263,17 @@ class CheckOut extends Component {
                             </p>
                         </div>
                     )} 
-
+                    <input
+                        type="radio"
+                       
+                        style={{display:"none", marginRight:"10%"}}
+                        
+                    />
                     <div className="card" style={{ height: "350px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
                         <div className="card-body">
-                            <span className="add" onClick={() => this.setModalOpen(true)}>+Add Address</span>
+                            <span className="add1" onClick={() => this.setModalOpen(true)}>+</span>
+                            <br></br>
+                            <span className="add2" onClick={() => this.setModalOpen(true)}>Add Address</span>
                         </div>
                         {" "}
                     </div>
@@ -278,8 +286,8 @@ class CheckOut extends Component {
                     setModalOpen={this.setModalOpen}
                 />
                 
-                <button className="add-to-cart-button" onClick={this
-                    .handlePlaceDirectOrder} style={{marginLeft:"40%", marginTop:"7%"}}>Pay</button>
+                <button className="place-order-button" onClick={this
+                    .handlePlaceDirectOrder} style={{marginLeft:"40%", marginTop:"7%"}}>Place Order</button>
                 
             </div>
         </div>

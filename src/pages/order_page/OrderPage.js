@@ -139,79 +139,96 @@ class OrderPage extends Component{
     render(){
         return (
             <div>
-                <div>
-                    <h2 className="checkout-title"> Your Cart</h2>
-                    <br />
-                    <br />
-                    <h3>Order Summary: </h3>
-                    <br />
-                </div>
-                <Row>
-
-                    <Col xs="9">
-                        <div className="checkout-left">
-                        <div className="d-flex flex-column">
-                                            <label>
-                                                {" "}
-                                                <input
-                                                    type="radio"
-                                                    name="mode"
-                                                    value="online"
-                                                    onChange={(e) =>
-                                                        this.setState({
-                                                            ...this.state,
-                                                            mode:
-                                                                e.target.value,
-                                                        })
-                                                    }
-                                                />{" "}
-                                                Online Payment
-                                            </label>
-                                            <label>
-                                                {" "}
-                                                <input
-                                                    type="radio"
-                                                    name="mode"
-                                                    value="cash"
-                                                    onChange={(e) =>
-                                                        this.setState({
-                                                            ...this.state,
-                                                            mode:
-                                                                e.target.value,
-                                                        })
-                                                    }
-                                                />{" "}
-                                                Cash On delivery
-                                            </label>
-                                        </div>
-                                        <button
-                                        className={
-                                            "btn w-100 btn-lg"
-                                        }
-                                        onClick={this.stagePayment}
-                                    >
-                                        Place Order
-                                    </button>
-                        </div>
-                    </Col>
-
-                    <Col xs="3">
-                        <div className="checkout-right">
-                            
-                        </div>
-                    </Col>
-                </Row>
-
-                <div>
-                    <h3>Total Price:  RS. To render </h3>
-                </div>
-
-                <div>
-                    <h3> Delivery address: </h3>
-        <p> {this.props.currentOrder.address} </p>
-                    <p></p>
+                <div className='card-container'>
+                    <div className='card payment'>
+                        <p>Confirm payment to place order</p>
+                    </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+        //     <div>
+        //         <div>
+        //             <h2 className="checkout-title"> Your Cart</h2>
+        //             <br />
+        //             <br />
+        //             <h3>Order Summary: </h3>
+        //             <br />
+        //         </div>
+        //         <Row>
+
+        //             <Col xs="9">
+        //                 <div className="checkout-left">
+        //                 <div className="d-flex flex-column">
+        //                                     <label>
+        //                                         {" "}
+        //                                         <input
+        //                                             type="radio"
+        //                                             name="mode"
+        //                                             value="online"
+        //                                             onChange={(e) =>
+        //                                                 this.setState({
+        //                                                     ...this.state,
+        //                                                     mode:
+        //                                                         e.target.value,
+        //                                                 })
+        //                                             }
+        //                                         />{" "}
+        //                                         Online Payment
+        //                                     </label>
+        //                                     <label>
+        //                                         {" "}
+        //                                         <input
+        //                                             type="radio"
+        //                                             name="mode"
+        //                                             value="cash"
+        //                                             onChange={(e) =>
+        //                                                 this.setState({
+        //                                                     ...this.state,
+        //                                                     mode:
+        //                                                         e.target.value,
+        //                                                 })
+        //                                             }
+        //                                         />{" "}
+        //                                         Cash On delivery
+        //                                     </label>
+        //                                 </div>
+        //                                 <button
+        //                                 className={
+        //                                     "btn w-100 btn-lg"
+        //                                 }
+        //                                 onClick={this.stagePayment}
+        //                             >
+        //                                 Place Order
+        //                             </button>
+        //                 </div>
+        //             </Col>
+
+        //             <Col xs="3">
+        //                 <div className="checkout-right">
+                            
+        //                 </div>
+        //             </Col>
+        //         </Row>
+
+        //         <div>
+        //             <h3>Total Price:  RS. To render </h3>
+        //         </div>
+
+        //         <div>
+        //             <h3> Delivery address: </h3>
+        // <p> {this.props.currentOrder.address} </p>
+        //             <p></p>
+        //         </div>
+        //     </div>
         )
     }
     
