@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import Subtotal from './Subtotal'
 import OrderDetails from './OrderDetails'
-import Item from './Item'
+import addressCard from './AddressCard'
 import './CheckOut.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
@@ -120,132 +120,163 @@ class CheckOut extends Component {
            
     render(){
     return (
-        <div>
-            <h1>Checkout Page</h1>
+        <div id='checkout-container'>
+            <div className='col-3' id='subtotal-box'>
+                {/* <Subtotal
+                    subtotal={this.getSubTotal()}
+                    delivery={this.state.delivery}
+                    gst={5} /> */}
+                <p>Order Summary!</p>
 
-            {this.state.selectedCartValue.map((book)=>(
-                <Item
-                data={book}></Item>
-            ))}
+                <span className='lefty'>Subtotal</span>
+                <span className='righty'>100</span><br></br>
+                <span className='lefty'>Delivery</span>
+                <span className='righty'>100</span><br></br>
+                <span className='lefty'>Gst</span>
+                <span className='righty'>100</span><br></br>
+                <span className='lefty'>Discount</span>
+                <span className='righty'>100</span><br></br>
+                
+                
+                <div className='total-container'>
+                <span className='lefty'>Total</span>
+                <span className='righty'>100</span><br></br>
+                </div>
             
 
-            <Subtotal
-            subtotal={this.getSubTotal()}
-            delivery={this.state.delivery}
-            gst={5} />
 
-            <h3> Address: </h3>
-            <div className={"container my-5"} style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
-                                                        
-                                                        {this.props.order.addresses.length > 0 ? (
-                                this.props.order.addresses.map((addr, index) => (
-                                    <div key={index} className="col-md-6" >
-                                       <label className="row">
-                                                         <div className="col-2">
-                                                                   <input
-                                                                                                type="radio"
-                                                                                                name="address"
-                                                                                                value={
-                                                                                                    addr._id
-                                                                                                }
-                                                                                                onChange={
-                                                                                                    this
-                                                                                                        .setSelectedAddress
-                                                                                                }
-                                                                                            />
-                                                                                        </div>
-                                        <div className="card h-200 col-10" style={{height:"300px"}}>
-                                            <div className="card-body">
-                                                <div>
-                                                    <span className="font-weight-bold">
-                                                        Address:{" "}
-                                                    </span>
-                                                    <span>{addr.address}</span>
-                                                </div>
-                                                <div>
-                                                    <span className="font-weight-bold">
-                                                        State:{" "}
-                                                    </span>
-                                                    <span>
-                                                        {addr.state || "N/A"}
-                                                    </span>
-                                                </div>
-                                                
-                                                <div>
-                                                    <span className="font-weight-bold">
-                                                        Phone:{" "}
-                                                    </span>
-                                                    <span>
-                                                        {addr.phone || "N/A"}
-                                                    </span>
-                                                </div>
-                                                <button
-                                                    onClick={() =>
-                                                        this.setCnfOpen(true)
-                                                    }
-                                                    className="btn mt-3 btn-sm btn-outline-danger"
-                                                >
-                                                    Remove
-                                                </button>
-                                                <button
-                                                    onClick={() =>
-                                                        this.setEditOpen(true)
-                                                    }
-                                                    className="btn mt-3 ml-3 btn-sm btn-outline-default"
-                                                >
-                                                    Edit
-                                                </button>
-                                                <ConfirmationModal
-                                                    isCnfOpen={
-                                                        this.state.isCnfOpen
-                                                    }
-                                                    setCnfOpen={this.setCnfOpen}
-                                                    id={addr._id}
-                                                />
-                                                <EditModal
-                                                    isEditOpen={
-                                                        this.state.isEditOpen
-                                                    }
-                                                    setEditOpen={
-                                                        this.setEditOpen
-                                                    }
-                                                    id={addr._id}
-                                                    addr={addr}
-                                                />
-                                            </div>
-                                        </div>
-                                        </label>
-                                    </div>
-                                ))
-                            ) : (
-                                <div className="ml-4">
-                                <p>
-                                    No saved
-                                    addresses
-                            </p>
-                            </div>
-                            )}
-                            <div className="col-md-6">
-                                <label className="row">
+            </div>
+
+            <div className='col-8' id='address-box'>
+                <p>Delivery Information</p>
+
+                {/* {this.props.order.addresses.length > 0 ?
+                 (this.props.order.addresses.map((addr,index) => {(<addressCard addr={addr} key={index}></addressCard>)} ))
+                 :(<p>Empty </p>)} */}
+
+                <div id='add-card-container'>
+                 {this.props.order.addresses.length > 0 ? (
+                    this.props.order.addresses.map((addr, index) => (
+                        <div key={index} className="col-md-6" >
+                            <label className="row">
                                 <div className="col-2">
-                                                                  
-                                                                                        </div>
-                                                                                        <div className="card col-10" style={{height:"300px",borderWidth:4,borderStyle: 'dashed',borderRadius: 4}}>
-                                            <div className="card-body">
-                                            <span className="add" onClick={()=>this.setModalOpen(true)}>+</span>
-                                                <span className="add2">Add Address</span>
-                                            </div>
-                                            {" "} 
+                                    <input
+                                        type="radio"
+                                        name="address"
+                                        value={
+                                            addr._id
+                                        }
+                                        onChange={
+                                            this
+                                                .setSelectedAddress
+                                        }
+                                    />
+                                </div>
+                                <div className="card h-200 col-10" style={{ height: "350px", display:"inline" }}>
+                                    <div className="card-body">
+                                        <div>
+                                            <span className="font-weight-bold">
+                                                Address:{" "}
+                                            </span>
+                                            <span>{addr.address}</span>
                                         </div>
-                                </label>
-                            </div>
-                                                        </div>
-                                                        <AddressModal
+                                        <div>
+                                            <span className="font-weight-bold">
+                                                State:{" "}
+                                            </span>
+                                            <span>
+                                                {addr.state || "N/A"}
+                                            </span>
+                                        </div>
+                                        {/* <div>
+                                            <span className="font-weight-bold">
+                                                Floor:{" "}
+                                            </span>
+                                            <span>
+                                                {addr.floor || "N/A"}
+                                            </span>
+                                        </div> */}
+                                        {/* <div>
+                                            <span className="font-weight-bold">
+                                                Landmark:{" "}
+                                            </span>
+                                            <span>
+                                                {addr.landmark || "N/A"}
+                                            </span>
+                                        </div> */}
+                                        <div>
+                                            <span className="font-weight-bold">
+                                                Phone:{" "}
+                                            </span>
+                                            <span>
+                                                {addr.phone || "N/A"}
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={() =>
+                                                this.setCnfOpen(true)
+                                            }
+                                            className="btn mt-3 btn-sm btn-outline-danger"
+                                        >
+                                            Remove
+                                                </button>
+                                        <button
+                                            onClick={() =>
+                                                this.setEditOpen(true)
+                                            }
+                                            className="btn mt-3 ml-3 btn-sm btn-outline-default"
+                                        >
+                                            Edit
+                                                </button>
+                                        <ConfirmationModal
+                                            isCnfOpen={
+                                                this.state.isCnfOpen
+                                            }
+                                            setCnfOpen={this.setCnfOpen}
+                                            id={addr._id}
+                                        />
+                                        <EditModal
+                                            isEditOpen={
+                                                this.state.isEditOpen
+                                            }
+                                            setEditOpen={
+                                                this.setEditOpen
+                                            }
+                                            id={addr._id}
+                                            addr={addr}
+                                        />
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    ))
+                ) : (
+                        <div className="ml-4">
+                            <p>
+                                No saved
+                                addresses
+                            </p>
+                        </div>
+                    )} 
+
+                    <div className="card" style={{ height: "350px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
+                        <div className="card-body">
+                            <span className="add" onClick={() => this.setModalOpen(true)}>+Add Address</span>
+                        </div>
+                        {" "}
+                    </div>
+                    </div>
+
+                
+
+                <AddressModal
                     isOpen={this.state.isOpen}
                     setModalOpen={this.setModalOpen}
                 />
-            <button className="checkout-button" onClick={ this
-                                                            .handlePlaceDirectOrder}>Pay</button>
+                <button className="checkout-button" onClick={this
+                    .handlePlaceDirectOrder}>Pay</button>
+
+            </div>
         </div>
     )}
 }
