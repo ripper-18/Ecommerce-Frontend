@@ -58,7 +58,7 @@ a:active {
     padding: 8px;
     height: 40px;
     margin-right: 10px;
-    background-color: #53a2df;
+    background-color: #00a8ff;
     color: white;
     margin-left: 5px;
     align-items: center;
@@ -67,7 +67,7 @@ a:active {
 
 .header-search-icon-div:hover {
 
-    background-color: #427fae;
+    background-color: #0097e6;
 
 }
 
@@ -103,7 +103,7 @@ a:active {
 }
 
 .header-option :hover {
-    background-color: #eff8ff;
+    background-color: #ddf3ff;
     color: black;
     transition: all 0.2s ease-out;
     border-radius: 5px;
@@ -118,7 +118,7 @@ a:active {
     -moz-border-radius: 9px;
     border-radius: 9px;
     font-size: 12px;
-    background: #427fae;
+    background: #192a56;
     color: #fff;
     padding: 0 5px;
     vertical-align: top;
