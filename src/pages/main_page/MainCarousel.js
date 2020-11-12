@@ -17,9 +17,9 @@ function MainCarousel() {
         >
             <div
           className="SlideContainer"
-          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
             >
-          <p className="SlideText" style={{ color: "white" }}>
+          <p className="SlideText">
             DU <br />
             BookX
             <br />
@@ -33,9 +33,9 @@ function MainCarousel() {
 
         <div
           className="SlideContainer"
-          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
             >
-          <p className="SlideText" style={{ color: "white)" }}>
+          <p className="SlideText" >
           DU <br />
             BookX
             <br />
@@ -48,9 +48,9 @@ function MainCarousel() {
 
         <div
           className="SlideContainer"
-          style={{ backgroundImage: "url(https://images.pexels.com/photos/4905078/pexels-photo-4905078.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
             >
-          <p className="SlideText" style={{ color: "white" }}>
+          <p className="SlideText">
           DU <br />
             BookX
             <br />
