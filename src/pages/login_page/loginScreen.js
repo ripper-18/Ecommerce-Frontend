@@ -160,67 +160,73 @@ class Login extends Component {
     };
     render() {
         return (
-
             <div className={styles.parent_div}>
-                
                 <div className={styles.left_section} >
-                    <h1 className={styles.welcome_heading}>Welcome to DUBookX</h1>
+                    <h1 className={styles.welcome_heading}>Hi there! </h1>
                     <br></br><br></br>
-                    <div className={styles.card_container}>
-                        <div className={styles.card}>
+                    <div className="justify-content-center row">
+                    <div className=" col-md-8 col-sm-8">
+                    <div className={"card"} >
+                        <div className={"card-body"} style={{width:"80%"}}>
                             <Tabs
                                 defaultActiveKey="login"
                                 id="uncontrolled-tab-example"
+                               
                             >
                                 <Tab eventKey="login" title="Login" className = {styles.login_tab}>
-                                    <h2 className={styles.supplement_heading}>Login</h2>
-                                    <form>
+                                    <div className="mt-3">
+                                        <div className={styles.form}>
+                                        <form style={{justifyContent:"center"}}>
                                         
-                                            <label>
-                                                Email:
-                    <input size="100" type="email" placeholder="Enter email or phone"
-                                                                className="form-control"
-                                                                required
-                                                                value={
-                                                                    this.state
-                                                                        .login
-                                                                        .cred
-                                                                }
-                                                                onChange={(e) =>
-                                                                    this.handleLoginEmail(
-                                                                        e
-                                                                    )
-                                                                
-                                                                }/>
-                                            </label>
-                                    
-                                        <br />
-
-                                        <label>
-                                            Password:
-                  <input size="100"  type="password" placeholder="Enter your password"
-                                                                className="form-control"
-                                                                required
-                                                                value={
-                                                                    this.state
-                                                                        .login
-                                                                        .password
-                                                                }
-                                                                onChange={(e) =>
-                                                                    this.handleLoginPassword(
-                                                                        e
-                                                                    )
-                                                                } />
-                                        </label>
-                                        <br />
-                                        <div className = {styles.user_login_button}>
-                                        <input className= {styles.login_tab_button} type="button" value="Login" onClick={
-                                                                this.handleLogin
+                                        <label style={{width:"100%"}}>
+                                            Email:
+                                                 <input type="email" placeholder="Enter your registered email"
+                                                            className="form-control"
+                                                            required
+                                                            value={
+                                                                this.state
+                                                                    .login
+                                                                    .cred
                                                             }
-                                                             />
-                                                             <span style={{color:"#517fda",cursor:"pointer"}} onClick={()=>this.setModalOpen(true)}>Forgot Password</span>
+                                                            onChange={(e) =>
+                                                                this.handleLoginEmail(
+                                                                    e
+                                                                )
+                                                            
+                                                            }/>
+                                        </label>
+                                
+                                    <br />
+
+                                    <label style={{width:"100%"}}>
+                                        Password:
+                                         <input   type="password" placeholder="Enter your password"
+                                                            className="form-control"
+                                                            required
+                                                            value={
+                                                                this.state
+                                                                    .login
+                                                                    .password
+                                                            }
+                                                            onChange={(e) =>
+                                                                this.handleLoginPassword(
+                                                                    e
+                                                                )
+                                                            } />
+                                    </label>
+                                    <br />
+                                    <div className = {styles.user_login_button}>
+                                    <input className= {styles.login_tab_button} type="button" value="Login" onClick={
+                                                            this.handleLogin
+                                                        }
+                                                         />
+                                                         <span style={{color:"#007bff",cursor:"pointer"}} onClick={()=>this.setModalOpen(true)}>Forgot Password</span>
+                                    </div>
+                                </form>
                                         </div>
-                                    </form>
+
+                                    </div>
+                                    
                                     <br />
                                     <ForgotPModal  isOpen={this.state.isOpen}
                     setModalOpen={this.setModalOpen}/>
@@ -263,9 +269,9 @@ class Login extends Component {
                                    
                                 </Tab>
                                 <Tab eventKey="signup" title="Create Account">
-                                    <h2 className={styles.supplement_heading}>Sign Up</h2>
+                                   
                                     <form>
-                                        <label>
+                                        <label style={{width:"100%"}}> 
                                             Name:
                   <input size="100"  type="text" placeholder="Enter your name"
                                                                 className="form-control"
@@ -284,7 +290,7 @@ class Login extends Component {
 
                                         <br />
 
-                                        <label>
+                                        <label style={{width:"100%"}}>
                                             Email:
                   <input size="100"  type="email" placeholder="Enter your email address"
                                                                 className="form-control"
@@ -303,9 +309,9 @@ class Login extends Component {
 
                                         <br />
 
-                                        <label>
+                                        <label style={{width:"100%"}}>
                                              Phone:
-                  <input size="100" type="number" placeholder="Enter your phone number"
+                  <input size="100"  placeholder="Enter your phone number"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -322,7 +328,7 @@ class Login extends Component {
 
                                         <br />
 
-                                        <label>
+                                        <label style={{width:"100%"}}>
                                             Password:
                   <input size="100"  type="password" placeholder="Enter your password"
                                                                 className="form-control"
@@ -339,9 +345,9 @@ class Login extends Component {
                                                                 } />
                                         </label>
                                         <br />
-                                        <label>
-                                            Password:
-                  <input size="100"  type="password" placeholder="Enter your password"
+                                        <label style={{width:"100%"}}>
+                                           Confirm Password:
+                  <input size="100"  type="password" placeholder="Please re-enter the password"
                                                                 className="form-control"
                                                                 required
                                                                 value={
@@ -370,6 +376,10 @@ class Login extends Component {
 
 
                     </div>
+                    </div>
+                    </div>
+                    
+                    
                     
                     
                 </div>

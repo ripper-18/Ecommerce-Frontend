@@ -6,14 +6,37 @@
   margin-bottom: 30px;
 }
 
-form {
+.form {
   align-items: center;
   align-content: center;
+  width: 100%;
+  justify-content: center;
+}
+.left_section h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #273c75; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .17em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 50% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #273c75; }
+}
 
 .welcome_heading {
-  font-family: 'Noto Sans', sans-serif;
+
   font-size: 50px;
 }
 
@@ -27,6 +50,7 @@ form {
 
 .left_section {
   flex: 40;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -38,34 +62,11 @@ form {
   flex: 1;
 }
 
-.card p,
-.card h2 {
-  text-align: center;
-}
 
 .left_section lablel {
   justify-content: center;
 }
 
-.card_container {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
-.card {
-  /* Add shadows to create the "card" effect */
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-  transition: 0.3s;
-  background-color: white;
-  flex: .8;
-  align-items: center;
-  align-content: center;
-}
-
-.supplement_heading {
-  margin-top: 40px;
-}
 
 
 input {
@@ -86,7 +87,7 @@ input {
 .tabs a {
   flex: 2;
   text-align: center;
-  background-color: aqua;
+  
 }
 
 .tabs a:focus {
@@ -98,7 +99,7 @@ input {
   width: 100%;
   padding: 15px;
   padding-left: 16px;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   border: 1px solid #c8cacc;
   border-radius: 0;
   height: auto;
@@ -109,7 +110,7 @@ input {
 
 .form input:hover,
 .form select:hover {
-  border: 1px solid #d8173c;
+  border: 1px solid #007bff;
 }
 
 .form input[type="button"] {
@@ -121,9 +122,10 @@ input {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  background: linear-gradient(180deg, #db4663, #ba0a2f);
+  background: #273c75;
   color: #fff;
-  border: 2px solid #d8173c;
+  border: 2px solid #273c75;
+  width: 200px;
 }
 
 .form input[type="button"]:hover {
@@ -141,7 +143,7 @@ input {
 
 .login_tab_button {
   color: white;
-  background: #517fda;
+  background: #273c75;
   padding: 15px;
   border-radius: 5px;
   border: 0px;

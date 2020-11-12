@@ -1,6 +1,6 @@
 import React, {  Suspense } from "react";
 import Loader from "./components/Loader/Loader";
-import { Route,BrowserRouter} from "react-router-dom";
+import { Route,BrowserRouter,Switch} from "react-router-dom";
 import "./App.css";
 import "./bootstrap.min.css";
 import {Modal} from 'react-bootstrap'
@@ -21,6 +21,7 @@ import PrivacyPage from './pages/privacy_page/Privacy'
 import DisclaimerPage from './pages/disclaimer_page/Disclaimer'
 import ReturnsPage from './pages/returns_page/Returns' 
 import TermsPage from './pages/terms_page/Terms'
+import PrivateRoute from "./pages/common/PrivateRoute"
 
 function App(props)   {
 
@@ -34,18 +35,26 @@ function App(props)   {
                     </React.Fragment>
                 }
                 >
-
-               
-                
                     <Header />
                     <main style={{ minHeight: "60vh" }}>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
-                        <Route path="/order" exact component={OrderPage}/>
-                        <Route path="/profile" exact component={ProfilePage}/>
-                        <Route path="/checkout" exact component={CheckOutPage}/>
-                        <Route path="/address" exact component={AddressPage} />
+                        <Switch>
+                        <PrivateRoute path="/order" exact component={OrderPage}/>
+                        </Switch>
+                        
+                        <Switch>
+                        <PrivateRoute path="/profile" exact component={ProfilePage}/>
+                        </Switch>
+                       
+                        <Switch>
+                            <PrivateRoute path="/checkout" exact component={CheckOutPage}/>
+                        </Switch>
+                        <Switch>
+                        <PrivateRoute path="/address" exact component={AddressPage} />
+                        </Switch>
+                        
                         <Route  path="/product/:id" exact component={ProductPage} />
                         <Route path = "/faq" exact component={FaqPage}/>
                         <Route path = "/privacy" exact component={PrivacyPage}/>
