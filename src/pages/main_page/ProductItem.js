@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './ProductItem.css'
-import {Link,withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getBookbyId} from '../../actions/book_actions'
 
@@ -24,13 +24,10 @@ handleRemoveFromCart = () => {
         <div className = "product-individual">
            
             {/* <div className="product-image"> */}
-            <img className="product-image"
-           src={this.props.data.image[0]}
-           
-           />
+            <img className="product-image" src={this.props.data.image[0]} alt="product-image" />
             {/* </div> */}
-            <div className="product-info">
-                <p onClick={() => { this.props.getBookbyId(this.props.data._id); this.props.history.push(`/product/${this.props.data._id}`) }}><b>{this.props.data.name}</b></p> 
+            <div className="product-info" >
+                <p onClick={() => { this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}><b>{this.props.data.name}</b></p> 
                 <p className= "product-price">
                     <small>Rs.</small>
                     <strong>{

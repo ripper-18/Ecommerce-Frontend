@@ -60,11 +60,11 @@ class Product extends Component {
             <ListGroup.Item>
             <span className="product-heading"> Publisher:</span> {this.props.book.publisher}
             </ListGroup.Item>
-            <ListGroup.Item>
-            <span className="product-heading"> Edition:</span> {this.props.book.edition}
+            <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
+            <span className="product-heading"> Edition:  {this.props.book.edition} </span>  <span className="product-heading"> Weight:  {this.props.book.weight}gms</span> 
             </ListGroup.Item>
-            <ListGroup.Item>
-            <span className="product-heading"> Weight:</span> {this.props.book.weight}gms
+            <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
+                    <span className="product-heading">Subject: {(this.props.book.subject).charAt(0).toUpperCase()+(this.props.book.subject).substring(1)}</span>  <span className="product-heading">Course: {this.props.book.course}</span> <span className="product-heading">Year: {this.props.book.year}</span>
             </ListGroup.Item>
           </ListGroup>
           </Card>

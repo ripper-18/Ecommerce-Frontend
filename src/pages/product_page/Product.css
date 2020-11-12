@@ -10,10 +10,14 @@
 
 .images{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 200px;
+    margin-left: 25px;
 }
 
 .image-container{
+    cursor: pointer;
     position: relative;
     left: -60px;
     top: -50px;
@@ -21,6 +25,7 @@
     width: 80px;
     align-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .image{
@@ -31,10 +36,19 @@
 
 .product-heading{
     font-weight: 700;
+    height: 100%;
+}
+.product-divider{
+    margin-left: 10px;
+    width: 1.5px;
+    background-color: #273c75;
+    height: 20px;
+    margin-right: 10px;
+   
 }
 
 .ac-btn{
-    background-color: #517fda;
+    background-color: #273c75;
     border-radius: 5px;
     height: 35px;
     font-weight: 600;
@@ -48,8 +62,8 @@
     height: 35px;
     font-weight: 600;
     font-size: 14px;
-    border: 2px solid #517fda;
-    color: #517fda;
+    border: 2px solid #273c75;
+    color: #273c75;
     align-items: center;
     align-content: center;
     text-align: center;
@@ -58,19 +72,19 @@
 .cc-btn{
     background-color: #fff;
     border-radius: 5px;
-    height: 25px;
+    height: 35px;
     font-weight: 600;
     font-size: 14px;
-    border: 2px solid #517fda;
+    border: 2px solid #273c75;
     color: #517fda;
     align-items: center;
     align-content: center;
     text-align: center;
 }
 .cc-btn:hover{
-    background-color: #517fda;
+    background-color: #273c75;
     border-radius: 5px;
-    height: 25px;
+    height: 35px;
     font-weight: 600;
     font-size: 14px;
     border: 2px solid white;
