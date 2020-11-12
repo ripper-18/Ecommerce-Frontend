@@ -15,6 +15,7 @@ class Header extends Component{
 
     componentDidMount(){
        // console.log(this.props)
+       //this.props.logoutUser(this.props.history)
     }
 
     setKeyword(e){

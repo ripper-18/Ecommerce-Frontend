@@ -1,20 +1,9 @@
-import React, {
-    Component
-} from 'react';
-import {
-    Tabs
-} from "react-bootstrap";
-import {
-    Tab
-} from "react-bootstrap";
-import {
-    withRouter,
-    Link
-} from 'react-router-dom'
+import React, {Component} from 'react';
+import {Tabs} from "react-bootstrap";
+import {Tab} from "react-bootstrap";
+import {withRouter,Link} from 'react-router-dom'
 import "./profile.css";
-import {
-    connect
-} from 'react-redux';
+import { connect} from 'react-redux';
 import {
     logoutUser,
     updateUser
@@ -53,11 +42,10 @@ class Profile extends Component {
 
         //console.log(this.state)
         let a = []
-        this.props.pastOrders.map((order, index) => {
-            //console.log(order)
+        
+        this.props.pastOrders.map((order)=>(
             a.push(order)
-
-        })
+        ))
         this.setState({
             ...this.state,
             orderhistory: {
@@ -102,29 +90,18 @@ class Profile extends Component {
         }
     }
     render() {
-        return ( <
-            div className = 'outer_container' >
+        return ( <div className = 'outer_container' >
 
-            <
-            br > < /br> <
-            div className = "card_container" >
-            <
-            div className = 'card' >
-            <
-            Tabs defaultActiveKey = "overview"
-            id = "uncontrolled-tab-example" >
-            <
-            Tab eventKey = "overview"
+            <br/> <br/> <div className = "card_container" >
+            <div className = 'card' >
+            < Tabs defaultActiveKey = "overview"
+             id = "uncontrolled-tab-example" >
+            <Tab eventKey = "overview"
             title = "Account Overview" >
-            <
-            h1 className = "welcome-heading" > Your Account Details < /h1> <
-            br / >
+            <h1 className = "welcome-heading" > Your Account Details </h1> <br/>
 
-            <
-            p > Name: < /p> <
-            div className = "center-form" >
-            <
-            input className = "input-fields-main"
+            <p > Name: </p> <div className = "center-form" >
+            <input className = "input-fields-main"
             value = {
                 this.state.user.name
             }
@@ -138,18 +115,13 @@ class Profile extends Component {
                     })
                 }
             }
-            value = {
-                this.state.user.name
-            }
+            
             disabled = {
                 this.state.isDisabled
             }
-            /> <
-            /div> <
-            p > Email: < /p> <
-            div className = "center-form" >
-            <
-            input value = {
+            /> </div> 
+            <p > Email: </p> <div className = "center-form" >
+            <input value = {
                 this.state.user.email
             }
             onChange = {
@@ -162,18 +134,13 @@ class Profile extends Component {
                     })
                 }
             }
-            value = {
-                this.state.user.email
-            }
+            
             disabled = {
                 this.state.isDisabled
             }
-            /> <
-            /div> <
-            p > Phone: < /p> <
-            div className = "center-form" >
-            <
-            input value = {
+            /> </div> 
+            <p > Phone: </p> <div className = "center-form" >
+            <input value = {
                 this.state.user.phone
             }
             onChange = {
@@ -186,41 +153,28 @@ class Profile extends Component {
                     })
                 }
             }
-            value = {
-                this.state.user.phone
-            }
+            
             disabled = {
                 this.state.isDisabled
             }
-            /> <
-            /div> <
-            br / >
-            <
-            p > Address: < /p> <
-            div className = "manage-address-div"
+            /> </div> <br/>
+            <p > Address: </p> <div className = "manage-address-div"
             style = {
                 {
                     textAlign: "center"
                 }
             } >
-            <
-            Link to = "/address" > Manage Addresses < /Link>
-
-            <
-            /div>
-
-            <
-            hr style = {
+            <Link to = "/address" > Manage Addresses </Link>
+            </div>
+            <hr style = {
                 {
                     width: "200px"
                 }
             }
             />
 
-            <
-            center >
-            <
-            input className = "edit-button"
+            <center >
+            <input className = "edit-button"
             type = "button"
             value = "Edit"
             disabled = {
@@ -233,94 +187,67 @@ class Profile extends Component {
                     })
                 }
             }
-            /> <
-            button className = "update-button"
+            /> <button className = "update-button"
             disabled = {
                 this.state.isDisabled
             }
             onClick = {
                 () => this.updateUserfunc()
-            } > Update < /button>   <
-            /center> <
-            div class = "account-page-button" >
-            <
-            button className = "account-button"
+            } > Update </button>  
+             </center>
+              <div class = "account-page-button" >
+            <button className = "account-button"
             onClick = {
                 () => this.props.logoutUser(this.props.history)
-            } > Logout User < /button>
-
-            <
-            /div> <
-            /Tab> <
-            Tab eventKey = "orders"
+            } > Logout User </button>
+            </div>
+             </Tab> 
+             <Tab eventKey = "orders"
             title = "Previous Orders" >
-            <
-            br > < /br> <
-            br > < /br>
-
-            <
-            div className = 'order_container' >
-
-
-            <
-            div className = "py-2 row" >
-            <
-            h1 className = "welcome-heading" > Your Previous Orders < /h1>
-
-            <
-            div className = "col-8" > {
+           
+            <div className = 'order_container' >
+            <div className = "py-2 row" >
+            <h1 className = "welcome-heading" > Your Previous Orders </h1>
+            <div className = "col-8" > {
                 this.props.pastOrders.length > 0 ? (
                     this.props.pastOrders.map(
-                        (order, index) => ( <
-                            div className = "card my-3 p-2"
+                        (order, index) => ( <div className = "card my-3 p-2"
                             key = {
                                 index
                             } >
-                            <
-                            div >
-                            <
-                            span className = "font-weight-bold" >
+                            < div >
+                            <span className = "font-weight-bold" >
                             Order ID:
-                            <
-                            /span>{" "} <
-                            span > {
+                            </span>{" "} 
+                            <span > {
                                 order.orderId
-                            } <
-                            /span> <
-                            br / >
-                            <
-                            span className = "font-weight-bold" >
+                            } </span> 
+                            <br/>
+                            <span className = "font-weight-bold" >
                             Order Status:
-                            <
-                            /span>{" "} <
-                            span className = "text-capitalize" > {
+                            </span>{" "} 
+                            <span className = "text-capitalize" > {
                                 order.orderStatus
-                            } <
-                            /span> <
-                            br / >
-                            <
-                            span className = "font-weight-bold" >
+                            } </span> 
+                            <br/>
+                            <span className = "font-weight-bold" >
                             Date:
-                            <
-                            /span>{" "} <
-                            span > {
+                            </span>{" "} 
+                            <span > {
                                 new Date(
                                     order.placedAt
                                 ).toLocaleDateString(
                                     "en-GB"
                                 )
-                            } <
-                            /span> <
-                            br / >
-                            <
-                            /div> <
-                            div className = "order-information"
+                            } </span> 
+                            <br/>
+                            </div>
+                             <div className = "order-information"
                             onClick = {
                                 () => this.setInfOpen(true, index)
                             } >
-                            Click here to get full information about the order <
-                            /div> <
-                            InfoModal infOpen = {
+                            Click here to get full information about the order </div> 
+                            <InfoModal infOpen = {
                                 this.state.orderhistory.isInfOpen[index]
                             }
                             setModalOpen = {
@@ -332,27 +259,23 @@ class Profile extends Component {
                             index = {
                                 index
                             }
-                            /> <
-                            /div>
+                            />
+                             </div>
                         )
                     )
-                ) : ( <
-                    p > < /p>
+                ) : (<p> </p>
                 )
             }
 
-            <
-            /div> <
-            /div> <
-            /div>
-
-            <
-            /Tab> <
-            /Tabs> <
-            /div> <
-            /div> <
-            /div>
-
+            </div>
+             </div>
+              </div>
+            
+            </Tab> 
+            </Tabs>
+             </div>
+              </div> 
+              </div>
         )
     }
 }

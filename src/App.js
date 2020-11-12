@@ -12,7 +12,7 @@ import MainPage from './pages/main_page/MainPage'
 import LoginPage from "./pages/login_page/loginScreen"
 import CartPage from "./pages/cart_page/Cart"
 import OrderPage from './pages/order_page/OrderPage'
-import ProfilePage from './pages/profile_page/profile'
+import ProfilePage from './pages/profile_page/profilet'
 import CheckOutPage from './pages/checkout_page/CheckOut'
 import AddressPage from './pages/address_page/address'
 import ProductPage from './pages/product_page/Product'

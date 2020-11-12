@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
-
-import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { GoogleLogin } from "react-google-login";
 import { Tabs } from "react-bootstrap";
 import { Tab } from "react-bootstrap";
 import styles from "./Login.module.css";
-import imgg from '../../assets/login_page/imgg.jpeg';
 import {
     registerUser,
     loginUser,
     loginGoogle,
 } from "../../actions/auth_actions";
+import {showDialog} from '../../actions/dialog_actions'
 import google from '../../assets/google.svg'
 
 class Login extends Component {
@@ -104,26 +102,18 @@ class Login extends Component {
         ) {
             this.props.loginUser(this.state.login, this.props.history);
         } else {
-            //this.props.showDialog("Invalid Inputs");
+            this.props.showDialog("Invalid Inputs");
         }
     };
 
-    /*handleFbLogin = ({ name, email, id }) => {
-        let data = {
-            name,
-            email,
-            id,
-        };
-        this.props.loginFb(data, this.props.history);
-    };
-*/
+   
     handleGoogleLogin = ({ profileObj }) => {
         let data = {
             name: profileObj.name,
             email: profileObj.email,
             id: profileObj.googleId,
         };
-        console.log("google-login")
+        //console.log("google-login")
         this.props.loginGoogle(data, this.props.history);
     };
 
@@ -133,7 +123,7 @@ class Login extends Component {
             this.state.register.email.length > 0 &&
             this.state.register.phone.length > 0
         ) {
-            if (this.state.register.password.length > 6) {
+            if (this.state.register.password.length > 8) {
                 if (
                     this.state.register.password ===
                     this.state.register.confirmpassword
@@ -146,18 +136,18 @@ class Login extends Component {
                     this.props.auth.user.name = this.state.register.name
                     this.props.auth.user.email = this.state.register.email
                     this.props.auth.user.phone = this.state.register.phone
-                    console.log(this.props)
-                   // this.props.showDialog("Passwords do not match");
+                   // console.log(this.props)
+                    this.props.showDialog("Passwords do not match");
                 }
             } else {
                 this.props.auth.user.name = this.state.register.name
                 this.props.auth.user.email = this.state.register.email
                 this.props.auth.user.phone = this.state.register.phone
-               // this.props.showDialog("Password length should be 8 or more");
+                this.props.showDialog("Password length should be 8 or more");
 
             }
         } else {
-          //  this.props.showDialog("Invalid Inputs");
+            this.props.showDialog("Invalid Inputs");
         }
     };
     render() {
@@ -226,7 +216,7 @@ class Login extends Component {
 
                                     <hr></hr>
                                     <p>Or Login with </p>
-                                    {/* <FaGoogle></FaGoogle> */}
+                                    
                                     <div className={styles.google_button_container}>
                                     <GoogleLogin
                                     render={(
@@ -251,8 +241,8 @@ class Login extends Component {
                                                 .handleGoogleLogin
                                         }
                                         onFailure={() =>
-                                            alert(
-                                                `Login failed`
+                                            this.props.showDialog(
+                                                `Google Login failed`
                                             )
                                         }
                                         cookiePolicy={
@@ -389,7 +379,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
     registerUser,
     loginUser,
-    
+    showDialog,
     loginGoogle
 })(Login);
 
