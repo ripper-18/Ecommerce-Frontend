@@ -37,16 +37,15 @@ a:active {
     width: 70%;
     border-radius: 5px;
     border: 0 solid;
-    box-shadow: inset 2px 1px 5px #cfcfcf,
-        inset -2px -2px 5px #ffffff;
+    box-shadow: inset 0px 0px 3px #CFCFCE, inset 0px 1px 0px #ffffff;
 }
 
 
 .header-search-input:hover {
     border-radius: 5px;
     border: 0 solid;
-    box-shadow: inset 2px 1px 10px #cfcfcf,
-        inset -2px -2px 10px #ffffff;
+    box-shadow: inset 0px 0px 6px #CFCFCE, inset 0px 1px 3px #ffffff;
+
 }
 
 .header-search-icon {
@@ -68,6 +67,7 @@ a:active {
 .header-search-icon-div:hover {
 
     background-color: #0097e6;
+
 
 }
 
@@ -107,6 +107,7 @@ a:active {
     color: black;
     transition: all 0.2s ease-out;
     border-radius: 5px;
+
 }
 
 
