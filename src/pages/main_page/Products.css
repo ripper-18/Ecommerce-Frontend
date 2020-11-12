@@ -10,12 +10,22 @@
     margin-right: 5px;
 }
 
+.all-products{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
 .product-card {
-    flex: 1;
+
     /* display: flex;
     flex-direction: column;
     flex-wrap: wrap; */
-    width: 33%;
+    max-width: 300px;
+    width: 250px;
 }
 
 .product-card:hover {

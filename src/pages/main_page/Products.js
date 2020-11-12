@@ -76,13 +76,11 @@ class Products extends Component {
                             />
                         </button>
                     </div>
-
-            {
+                    <div className="all-products">
+                    {
                 display.map((book,index)=>(
                     <Col className="product-card"
-                    xs={6}
-                                lg={6}
-                                xl={4}>
+                   >
                     
                     <ProductItem
                     isEditable={true}
@@ -95,6 +93,7 @@ class Products extends Component {
                 ))
             }
             
+                    </div>
         </Row>
         
     )}
