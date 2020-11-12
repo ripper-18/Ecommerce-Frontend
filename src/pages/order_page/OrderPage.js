@@ -139,9 +139,78 @@ class OrderPage extends Component{
     render(){
         return (
             <div>
-                <div className='card-container'>
-                    <div className='card payment'>
-                        <p>Confirm payment to place order</p>
+                <div className='card-cont'>
+                    <div className='payment-card'>
+                        <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>
+                        <br></br>
+                        <div style={{borderBottom:"1px solid lightgrey"}}></div>
+                        <br></br>
+
+                        <div className="card-body">
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    Total Payable:{" "}
+                                </span>
+                                <span>
+                                    {this.props.currentOrder.finalAmount}
+                                </span>
+                            </div>
+                            <br></br>
+                            <div className="d-flex justify-content-between mx-3 mt-3">
+                                <div>
+                                    <span className="font-weight-bold">
+                                        Payment Mode:{" "}
+                                    </span>
+                                </div>
+                                <div className="d-flex flex-column">
+                                    <label>
+                                        {" "}
+                                        <input
+                                            type="radio"
+                                            name="mode"
+                                            value="online"
+                                            onChange={(e) =>
+                                                this.setState({
+                                                    ...this.state,
+                                                    mode:
+                                                        e.target.value,
+                                                })
+                                            }
+                                        />{" "}
+                                                Online Payment
+                                            </label>
+                                    <label>
+                                        {" "}
+                                        <input
+                                            type="radio"
+                                            name="mode"
+                                            value="cash"
+                                            onChange={(e) =>
+                                                this.setState({
+                                                    ...this.state,
+                                                    mode:
+                                                        e.target.value,
+                                                })
+                                            }
+                                        />{" "}
+                                                Cash On delivery
+                                            </label>
+                                </div>
+                            </div>
+                            <div style={{ borderBottom: "1px solid lightgrey",marginTop:"10px" }}></div>
+                        </div>
+
+                        <div className="card-footer bg-white">
+                            <button 
+                                className='place-order-button'
+                                style={{marginTop:"2%"}}
+                                
+                                onClick={this.stagePayment}
+                            >
+                                Place Order
+                                    </button>
+                        </div>
+
                     </div>
                 </div>
             </div>

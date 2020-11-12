@@ -287,7 +287,7 @@ class CheckOut extends Component {
                 />
                 
                 <button className="place-order-button" onClick={this
-                    .handlePlaceDirectOrder} style={{marginLeft:"40%", marginTop:"7%"}}>Place Order</button>
+                    .handlePlaceDirectOrder} >Place Order</button>
                 
             </div>
         </div>
