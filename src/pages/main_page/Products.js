@@ -83,6 +83,7 @@ class Products extends Component {
                     xs={6}
                                 lg={6}
                                 xl={4}>
+                    
                     <ProductItem
                     isEditable={true}
                     data={book}

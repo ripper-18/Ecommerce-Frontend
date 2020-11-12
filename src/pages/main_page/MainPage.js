@@ -82,7 +82,7 @@ class MainPage extends Component {
                 </Col>
                 <Col 
                 className="bg-white" sm={12} md={9}>
-                <h1 style={{textAlign : 'center'}}> Best Place to Buy Books </h1>
+                <h1 style={{textAlign : 'center'}} className="welcome-heading"> Best Place to Buy Books </h1>
                 <div  className="main">
                         <Products
                         filters={this.state.filters}
