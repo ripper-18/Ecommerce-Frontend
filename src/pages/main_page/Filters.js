@@ -37,7 +37,7 @@ class Filters extends Component {
                             ...theme.colors,
                             primary25: "#f5f5f5",
                             primary50: "#f5f5f5",
-                            primary: "#517fda",
+                            primary: "#273c75",
                         },
                     })}
                     onChange={(e) => this.props.setSortValue(e.value)}
