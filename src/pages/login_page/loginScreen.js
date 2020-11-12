@@ -11,6 +11,7 @@ import {
 } from "../../actions/auth_actions";
 import {showDialog} from '../../actions/dialog_actions'
 import google from '../../assets/google.svg'
+import ForgotPModal from './ForgotPModal'
 
 class Login extends Component {
     state = {
@@ -25,12 +26,19 @@ class Login extends Component {
             password: "",
             confirmpassword: "",
         },
+        isOpen: false,
     };
     componentDidMount() {
         window.scrollTo(0, 0)
         console.log(this.props)
     }
 
+    setModalOpen = (value) => {
+        this.setState({
+            ...this.state,
+            isOpen: value,
+        });
+    };
     handleLoginEmail = (e) => {
         this.setState({
             ...this.state,
@@ -210,10 +218,12 @@ class Login extends Component {
                                                                 this.handleLogin
                                                             }
                                                              />
+                                                             <span style={{color:"#517fda",cursor:"pointer"}} onClick={()=>this.setModalOpen(true)}>Forgot Password</span>
                                         </div>
                                     </form>
                                     <br />
-
+                                    <ForgotPModal  isOpen={this.state.isOpen}
+                    setModalOpen={this.setModalOpen}/>
                                     <hr></hr>
                                     <p>Or Login with </p>
                                     

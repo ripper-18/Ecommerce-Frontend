@@ -135,6 +135,8 @@ input {
 .user_login_button {
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .login_tab_button {
