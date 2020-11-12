@@ -16,6 +16,11 @@ import ProfilePage from './pages/profile_page/profile'
 import CheckOutPage from './pages/checkout_page/CheckOut'
 import AddressPage from './pages/address_page/address'
 import ProductPage from './pages/product_page/Product'
+import FaqPage from './pages/faq_page/Faq'
+import PrivacyPage from './pages/privacy_page/Privacy'
+import DisclaimerPage from './pages/disclaimer_page/Disclaimer'
+import ReturnsPage from './pages/returns_page/Returns' 
+import TermsPage from './pages/terms_page/Terms'
 
 function App(props)   {
 
@@ -42,6 +47,12 @@ function App(props)   {
                         <Route path="/checkout" exact component={CheckOutPage}/>
                         <Route path="/address" exact component={AddressPage} />
                         <Route  path="/product/:id" exact component={ProductPage} />
+                        <Route path = "/faq" exact component={FaqPage}/>
+                        <Route path = "/privacy" exact component={PrivacyPage}/>
+                        <Route path = "/disclaimer" exact component={DisclaimerPage}/>
+                        <Route path = "/returns" exact component={ReturnsPage}/>
+                        <Route path = "/terms" exact component ={TermsPage}/>
+
                    </main>
                    </Suspense>
                    <Modal
