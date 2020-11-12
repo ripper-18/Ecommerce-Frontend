@@ -21,7 +21,7 @@ class FilterAccordion extends Component {
     render() {
         return (
             <Accordion className="my-3">
-                <Card className='filter-card my-4'>
+                <Card className='card my-4'>
                     <Accordion.Toggle
                         as={Card.Header}
                         className='cardHeader col-sm-12 p-0'
@@ -91,7 +91,7 @@ class FilterAccordion extends Component {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
-                <Card className="filter-card my-3 my-md-4">
+                <Card className="card my-3 my-md-4">
                     <Accordion.Toggle
                         as={Card.Header}
                         className="cardHeader col-sm-12 p-0"

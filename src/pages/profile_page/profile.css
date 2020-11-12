@@ -24,7 +24,11 @@
     flex: .8;
     align-items: center;
     align-content: center;
-    /* border-radius: 50px; */
+
+}
+
+.card:hover {
+
     background: #fcfcfc;
     box-shadow: 5px 5px 10px #d6d6d6,
         -5px -5px 10px #ffffff;
