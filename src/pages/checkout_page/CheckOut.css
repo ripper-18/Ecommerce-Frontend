@@ -26,11 +26,18 @@
     display: flex;
     padding:0 10%;
   }
+
+  
+
   #subtotal-box{
     
     margin-top: 10%;
     margin-bottom: 5%;
     padding: 0 2%;
+  }
+  #subtotal-box p{
+    text-align: center;
+    font-size: 20px;
   }
 
   #address-box{
@@ -48,8 +55,10 @@
 
 #address-box p{
   text-align: center;
-  font-size: 20px;
-}
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
 
 .lefty{
   margin: 5% 0;
@@ -75,3 +84,7 @@ hr{
   color: black;
 }
 
+.total-amount{
+  font-size: 20px;
+  color: aqua;
+}

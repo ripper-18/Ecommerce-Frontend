@@ -119,6 +119,10 @@ class CheckOut extends Component {
             
            
     render(){
+        const subt = this.getSubTotal();
+        const gst = 0.05*subt;
+        const final = Math.floor(subt + gst + 30);
+        
     return (
         <div id='checkout-container'>
             <div className='col-3' id='subtotal-box'>
@@ -129,19 +133,19 @@ class CheckOut extends Component {
                 <p>Order Summary!</p>
 
                 <span className='lefty'>Subtotal</span>
-                <span className='righty'>100</span><br></br>
+                <span className='righty'>{subt}</span><br></br>
                 <span className='lefty'>Delivery</span>
-                <span className='righty'>100</span><br></br>
-                <span className='lefty'>Gst</span>
-                <span className='righty'>100</span><br></br>
+                <span className='righty'>30</span><br></br>
+                <span className='lefty'>Gst(5%)</span>
+                <span className='righty'>{gst}</span><br></br>
                 <span className='lefty'>Discount</span>
-                <span className='righty'>100</span><br></br>
+                <span className='righty'>0</span><br></br>
                 
                 
-                <div className='total-container'>
-                <span className='lefty'>Total</span>
-                <span className='righty'>100</span><br></br>
-                </div>
+                
+                <span className='lefty total-amount'>Total</span>
+                <span className='righty total-amount'>{final}</span><br></br>
+                
             
 
 
@@ -273,9 +277,10 @@ class CheckOut extends Component {
                     isOpen={this.state.isOpen}
                     setModalOpen={this.setModalOpen}
                 />
-                <button className="checkout-button" onClick={this
-                    .handlePlaceDirectOrder}>Pay</button>
-
+                
+                <button className="add-to-cart-button" onClick={this
+                    .handlePlaceDirectOrder} style={{marginLeft:"40%", marginTop:"7%"}}>Pay</button>
+                
             </div>
         </div>
     )}
