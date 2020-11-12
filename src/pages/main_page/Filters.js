@@ -2,9 +2,8 @@ import React,{Component} from 'react'
 import { Form, Container, Card } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import Select from "react-select";
-import styles from  './Filters.module.css'
+import './Filters.css'
 import FilterAccordion from "./FiltersArcadion";
-import cx from 'classnames';
 
 const options = [
     {value:"0",label:"None"},
@@ -52,8 +51,8 @@ class Filters extends Component {
                 <div className="col-sm-12 p-0">
                     <button
                         onClick={() => window.location.reload()}
-                        className="btn btn-lg btn-outline-danger w-100"
-                        style={{borderColor:"#517fda"}}
+                        className="btn btn-lg btn-outline-danger w-100 reset-button"
+                        style={{borderColor:"#273c75"}}
                     >
                         Reset
                         </button>

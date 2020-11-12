@@ -6,9 +6,11 @@
     font-size: 36px;
     font-weight: 700;
 }
+
 .select {
     position: relative;
 }
+
 .select {
     width: 100%;
     padding: 15px;
@@ -22,6 +24,7 @@
     background: inherit;
     appearance: none;
 }
+
 .chevronDown {
     background-repeat: no-repeat;
     background-position-x: 50%;
@@ -35,6 +38,7 @@
     z-index: 200;
     right: 15px;
 }
+
 .resetContainer button {
     height: 52px;
     border-radius: 0 !important;
@@ -42,9 +46,18 @@
     font-weight: 600;
     background: #fff;
     color: #000;
-    border: 2px solid #517fda !important;
 }
+
 .resetContainer button:hover {
     color: #fff !important;
 }
 
+.reset-button {
+    background: white;
+}
+
+.reset-button:hover {
+    background: #273c75;
+    box-shadow: -5px 5px 5px #e8e8e8,
+        5px -5px 5px #ffffff;
+}
