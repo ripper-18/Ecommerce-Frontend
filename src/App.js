@@ -23,6 +23,8 @@ import ReturnsPage from './pages/returns_page/Returns'
 import TermsPage from './pages/terms_page/Terms'
 import PrivateRoute from "./pages/common/PrivateRoute"
 
+
+
 function App(props)   {
 
         return (

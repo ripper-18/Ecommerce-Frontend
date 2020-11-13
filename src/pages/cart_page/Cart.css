@@ -72,3 +72,17 @@ border-bottom: 1px solid lightgray;
   margin-right: 10%;
   flex: 3;
 }
+
+.pbar{
+  
+  width: 80%;
+  margin: auto auto;
+  height: 80px;
+  margin-top: 20px;
+  padding-top: 8px;
+ 
+}
+.spbar{
+  margin: auto auto;
+  margin-top: 40px;
+}

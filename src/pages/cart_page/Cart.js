@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import './Cart.css'
-import {Row, Col,Button} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {addToCart,removeFromCart,clearCart} from '../../actions/cart_actions'
 import Item from './Item'
 import Subtotal from './Subtotal';
+import {Steps} from 'rsuite'
+import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
+import ReceiptRoundedIcon from '@material-ui/icons/ReceiptRounded';
+import LocalAtmRoundedIcon from '@material-ui/icons/LocalAtmRounded';
+import 'rsuite/dist/styles/rsuite-default.css';
+
 
 
 class Cart  extends Component  {
@@ -42,6 +48,15 @@ class Cart  extends Component  {
         const dev_charge = this.props.cart.bookCart.length?(30):(0);
     return (
         <div>
+            <div className="pbar">
+            <Steps current={0} className="spbar">
+    <Steps.Item title="Cart" icon={<ShoppingCartRoundedIcon size="lg"/>} />
+    <Steps.Item title="Checkout" icon={<ReceiptRoundedIcon size="lg"/>} />
+    <Steps.Item title="Order" icon={<LocalAtmRoundedIcon size="lg"/>} />
+    
+  </Steps>
+            </div>
+
              <div>
                 <h2 className="checkout-title"> Your Cart</h2>
             </div>
