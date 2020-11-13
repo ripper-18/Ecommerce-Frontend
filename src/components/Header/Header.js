@@ -42,7 +42,7 @@ class Header extends Component{
             <div className="header-search">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
                 <div className="header-search-icon-div">
-                    <SearchIcon className="header-search-icon" onClick={this.submitSearch}></SearchIcon> 
+                    <SearchIcon className="header-search-icon icon" onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
 
@@ -50,12 +50,12 @@ class Header extends Component{
                 <div className="header-option">
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className="header-links">
-                        <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon"></ExitToAppIcon></span>
+                        <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
                         <span className="header-option-lineTwo">Login</span>
                     </Link>
                     ):(
                         <Link to="/profile"  className="header-links">
-                        <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon" /></span>
+                        <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon icon" /></span>
                         <span className="header-option-lineTwo">Account</span>
                     </Link>
                     )}
@@ -63,11 +63,11 @@ class Header extends Component{
                 </div>
                 
 
-                <div className="header-option">
-                    {this.props.cart.bookCart.length ? (<Link to="/cart" className="header-links">
-                        <span className='header-option-lineOne'>
+                <div className="header-option" >
+                    {(<Link to="/cart" className="header-links">
+                        <span className='header-option-lineOne' >
                             
-                    <span className='dynamic_cart'>{this.props.cart.bookCart.length}</span>
+                    <span className='dynamic_cart' style={{visibility:this.props.cart.bookCart.length===0?'hidden':'initial'}}>{this.props.cart.bookCart.length} </span>
 
                             <span className=""><ShoppingCartIcon></ShoppingCartIcon></span>
                            
@@ -75,9 +75,6 @@ class Header extends Component{
                         
                         
                         
-                        <span className="header-option-lineTwo">Cart</span>
-                    </Link>) : (<Link to="/cart" className="header-links">
-                        <span className="header-option-lineOne"><ShoppingCartIcon></ShoppingCartIcon></span>
                         <span className="header-option-lineTwo">Cart</span>
                     </Link>)}
 

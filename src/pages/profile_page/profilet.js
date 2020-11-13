@@ -102,13 +102,14 @@ class Profile extends Component {
             title = "Account Overview" 
             >
            <div className="row justify-content-center mt-sm-3 pb-sm-5">
-                            <div className="col-sm-4 mt-sm-3">
-                                <div className="row pt-3 pt-sm-0 py-4 px-sm-3">
+                            <div className="col-sm-3 mt-sm-3">
+                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3">
                                     <div className="pb-1 m-sm-0 d-sm-flex w-100">
                                         <div className="card-header bg-white mt-4 mx-3 px-0">
-                                            <h2>Welcome Back</h2>
-                                            <h2>{this.props.auth.user.name}</h2>
+                                            <h2  >Welcome Back</h2>
+                                            <h2  >{this.props.auth.user.name}</h2>
                                             <button
+                                              style={{marginTop:"10px"}}
                                                 className="btn btn-danger"
                                                 onClick={() =>
                                                     this.props.logoutUser(
@@ -119,7 +120,7 @@ class Profile extends Component {
                                                 Logout
                                             </button>
                                             <button
-                                            style={{marginLeft:"20px"}}
+                                            style={{marginLeft:"20px",marginTop:"10px"}}
                                                 className="btn btn-outline-danger"
                                                 onClick={() =>
                                                     this.setState({
@@ -130,6 +131,20 @@ class Profile extends Component {
                                                 disabled={!this.state.isDisabled}
                                             >
                                                 Edit
+                                            </button>
+                                            <button
+                                           style={{marginLeft:"20px",marginTop:"10px"}}
+                                                className="btn btn-outline-danger"
+                                                onClick={() =>
+                                                    {this.setState({
+                                                        ...this.state,
+                                                        isDisabled:true
+                                                    });
+                                                this.updateUserfunc()}
+                                                }
+                                                disabled={this.state.isDisabled}
+                                            >
+                                                Update
                                             </button>
                                         </div>
                                     </div>
@@ -153,24 +168,23 @@ class Profile extends Component {
                                         <span className="font-weight-bold">
                                             Email:{" "}
                                         </span>
-                                        <span>
-                                            {this.props.auth.user.email}
-                                        </span>
+                                    <span>{this.props.auth.user.email}</span>
                                         <br />
                                         <span className="font-weight-bold">
                                             Phone:{" "}
                                         </span>
-                                        <span>
-                                            {this.props.auth.user.phone || ""}
-                                        </span>
+                                        <span>{(this.state.isDisabled)?(this.props.auth.user.phone):(<input value={this.state.user.phone} onChange={(e)=>this.setState({...this.state,
+                                        user:{
+                                            ...this.state.user,
+                                            phone:e.target.value
+                                        }})}  />)}</span>
                                         <br />
                                     </div>
                                     <div className="pb-1 m-sm-0 d-sm-flex w-100">
                                         <div
-                                            className={cx(
-                                                styles.address,
+                                            className={
                                                 "card-body bg-white mt-2 mx-3 px-0"
-                                            )}
+                                            }
                                         >
                                             <button
                                                 onClick={() =>
@@ -191,73 +205,75 @@ class Profile extends Component {
              </Tab> 
              <Tab eventKey = "orders"
             title = "Previous Orders" >
-           
-            <div className = 'order_container' >
-            <div className = "py-2 row" >
-            <h1 className = "welcome-heading" > Your Previous Orders </h1>
-            <div className = "col-8" > {
-                this.props.pastOrders.length > 0 ? (
-                    this.props.pastOrders.map(
-                        (order, index) => ( <div className = "card my-3 p-2"
-                            key = {
-                                index
-                            } >
-                            < div >
-                            <span className = "font-weight-bold" >
-                            Order ID:
-                            </span>{" "} 
-                            <span > {
-                                order.orderId
-                            } </span> 
-                            <br/>
-                            <span className = "font-weight-bold" >
-                            Order Status:
-                            </span>{" "} 
-                            <span className = "text-capitalize" > {
-                                order.orderStatus
-                            } </span> 
-                            <br/>
-                            <span className = "font-weight-bold" >
-                            Date:
-                            </span>{" "} 
-                            <span > {
-                                new Date(
-                                    order.placedAt
-                                ).toLocaleDateString(
-                                    "en-GB"
-                                )
-                            } </span> 
-                            <br/>
-                            </div>
-                             <div className = "order-information"
-                            onClick = {
-                                () => this.setInfOpen(true, index)
-                            } >
-                            Click here to get full information about the order </div> 
-                            <InfoModal infOpen = {
-                                this.state.orderhistory.isInfOpen[index]
-                            }
-                            setModalOpen = {
-                                this.setInfOpen
-                            }
-                            data = {
-                                order
-                            }
-                            index = {
-                                index
-                            }
-                            />
-                             </div>
-                        )
-                    )
-                ) : (<p> </p>
-                )
-            }
 
-            </div>
-             </div>
-              </div>
-            
+<div className="col-12 p-0 col-md-7" style={{marginLeft:"35%"}}>
+                            <div className="py-4 px-3 mb-5" >
+                                <div className="py-2 row">
+                                    <div className="col-12 col-md-8">
+                                        <h2 className="font-weight-bold">
+                                            Your Past Orders
+                                        </h2>
+                                    </div>
+                                </div>
+                              
+                                
+                                    <div className="py-2 row">
+                                    <div className="col-8">
+                                        {this.props.pastOrders.length > 0 ? (
+                                            this.props.pastOrders.map(
+                                                (order, index) => (
+                                                    <div
+                                                        className="card my-3 p-2"
+                                                        key={index}
+                                                    >
+                                                        <div>
+                                                            <span className="font-weight-bold">
+                                                                Order ID:
+                                                            </span>{" "}
+                                                            <span >
+                                                                {order.orderId}
+                                                            </span>
+                                                            <br />
+                                                            <span className="font-weight-bold">
+                                                                Order Status:
+                                                            </span>{" "}
+                                                            <span className="text-capitalize">
+                                                                {
+                                                                    order.orderStatus
+                                                                }
+                                                            </span>
+                                                            <br />
+                                                            <span className="font-weight-bold">
+                                                                Date:
+                                                            </span>{" "}
+                                                            <span>
+                                                                {new Date(
+                                                                    order.placedAt
+                                                                ).toLocaleDateString(
+                                                                    "en-GB"
+                                                                )}
+                                                            </span>
+                                                            <br />
+                                                        </div>
+                                                        <div className={styles.more} onClick={()=>this.setInfOpen(true,index)}>
+                                                           <span style={{color:"blue",fontSize:"px"}}>...</span> Click here to get full information about the order
+                                                        </div>
+                                                        <InfoModal 
+                                                        infOpen={this.state.orderhistory.isInfOpen[index]}
+                                                        setModalOpen={this.setInfOpen}
+                                                        data={order}
+                                                        index={index}
+                                                        />
+                                                    </div>
+                                                )
+                                            )
+                                        ) : (
+                                            <p>No past orders</p>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </Tab> 
             </Tabs>
              </div>

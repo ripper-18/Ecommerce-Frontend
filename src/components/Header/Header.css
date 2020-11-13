@@ -125,8 +125,19 @@ a:active {
     padding: 0 5px;
     vertical-align: top;
     margin-left: -10px;
+    width: 100px;
 }
 
+
+@media screen and (max-width:820px){
+    .header-search{
+        font-size: 10px;
+    }
+    .header-logo {
+        width: 60px;
+        height: 40px;
+    }
+}
 
 @media screen and (max-width: 650px) {
     .header-option-lineTwo {
@@ -165,5 +176,16 @@ a:active {
     .header-logo {
         width: 40px;
         height: 20px;
+    }
+    .header-search{
+        font-size: 8px;
+        font-weight: 600;
+    }
+    .header-search-input{
+        padding: 10px;
+    }
+    .icon{
+        height: 8px;
+        width: 8px;
     }
 }
