@@ -164,8 +164,9 @@ class AddressModal extends Component {
                     <div className="row w-100">
                         <div className="col-sm-12">
                             <button
+                                
                                 className={cx(
-                                    styles.toBilling,
+                                    styles.standardButton,
                                     "btn btn-lg w-100 mt-4 mb-sm-3"
                                 )}
                                 onClick={this.handleAddress}
