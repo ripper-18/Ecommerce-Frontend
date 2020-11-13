@@ -137,12 +137,13 @@ class OrderPage extends Component{
     }
 
     render(){
-        console.log(this.state.currentOrder)
+        console.log(this.props)
         return (
             <div>
                 <div className='card-cont'>
                     <div className='payment-card'>
                         <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>
+                        
                         <br></br>
                         <div style={{borderBottom:"1px solid lightgrey"}}></div>
                         <br></br>
@@ -157,6 +158,41 @@ class OrderPage extends Component{
                                 </span>
                             </div>
                             <br></br>
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    Delivery address:{" "}
+                                </span>
+                                <div style={{}}>
+                                <p style={{maxWidth:"30%",float:"right",clear:"both",textAlign:"right"}}>
+                                    {this.props.currentOrder.finalAddress.address}
+                                </p>
+                                <br></br>
+                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
+                                    {this.props.currentOrder.finalAddress.city}
+
+                                </p><br></br>
+                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
+                                        {this.props.currentOrder.finalAddress.state}
+
+                                    </p><br></br>
+                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
+                                        {this.props.currentOrder.finalAddress.pincode}
+
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <br></br>
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    Contact Number:{" "}
+                                </span>
+                                <span>
+                                    {this.props.currentOrder.finalAddress.phone}
+                                </span>
+                            </div>
+                            <br></br>
+                            
                             <div className="d-flex justify-content-between mx-3 mt-3">
                                 <div>
                                     <span className="font-weight-bold">
