@@ -7,11 +7,7 @@ import {placeDirectOrder} from '../../actions/order_actions'
 import {clearCart} from '../../actions/cart_actions'
 import { showDialog } from "../../actions/dialog_actions";
 import config from "../../config";
-import {Steps} from 'rsuite'
-import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
-import ReceiptRoundedIcon from '@material-ui/icons/ReceiptRounded';
-import LocalAtmRoundedIcon from '@material-ui/icons/LocalAtmRounded';
-import 'rsuite/dist/styles/rsuite-default.css';
+
 
 
 const loadScript = (src) => {
@@ -145,14 +141,7 @@ class OrderPage extends Component{
         console.log(this.props)
         return (
             <div>
-                <div className="pbar">
-            <Steps current={2} className="spbar">
-    <Steps.Item title="Cart" icon={<ShoppingCartRoundedIcon size="lg"/>} />
-    <Steps.Item title="Checkout" icon={<ReceiptRoundedIcon size="lg"/>} />
-    <Steps.Item title="Order" icon={<LocalAtmRoundedIcon size="lg"/>} />
-    
-  </Steps>
-            </div>
+                
                 <div className='card-cont'>
                     <div className='payment-card'>
                         <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>

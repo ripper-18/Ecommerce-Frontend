@@ -10,11 +10,8 @@ import {showDialog} from '../../actions/dialog_actions'
 import ConfirmationModal from "../address_page/ConfirmationModal";
 import EditModal from "../address_page/EditModal";
 import AddressModal from "../address_page/AddressModal";
-import {Steps} from 'rsuite'
-import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
-import ReceiptRoundedIcon from '@material-ui/icons/ReceiptRounded';
-import LocalAtmRoundedIcon from '@material-ui/icons/LocalAtmRounded';
-import 'rsuite/dist/styles/rsuite-default.css';
+
+
 
 class CheckOut extends Component {
 
@@ -144,14 +141,7 @@ class CheckOut extends Component {
         
     return (
         <>
-        <div className="pbar">
-            <Steps current={1} className="spbar">
-    <Steps.Item title="Cart" icon={<ShoppingCartRoundedIcon size="lg"/>} />
-    <Steps.Item title="Checkout" icon={<ReceiptRoundedIcon size="lg"/>} />
-    <Steps.Item title="Order" icon={<LocalAtmRoundedIcon size="lg"/>} />
-    
-  </Steps>
-            </div>
+       
         <div id='checkout-container'>
             
             <div className='col-3' id='subtotal-box'>

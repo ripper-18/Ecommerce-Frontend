@@ -2,6 +2,7 @@ import React, {  Suspense } from "react";
 import Loader from "./components/Loader/Loader";
 import { Route,BrowserRouter,Switch} from "react-router-dom";
 import "./App.css";
+
 import "./bootstrap.min.css";
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
