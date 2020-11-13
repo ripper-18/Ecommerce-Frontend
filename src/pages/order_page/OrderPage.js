@@ -161,6 +161,7 @@ class OrderPage extends Component{
                                     <span className="font-weight-bold">
                                         Payment Mode:{" "}
                                     </span>
+                                    <p>{this.state.selectedAddress}</p>
                                 </div>
                                 <div className="d-flex flex-column">
                                     <label>

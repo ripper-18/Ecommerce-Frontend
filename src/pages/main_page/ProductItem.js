@@ -61,7 +61,7 @@ handleRemoveFromCart = () => {
                                         </button> 
                                         
                                         
-                        <button className='add-subtract-button'>
+                        <button className='amount-button'>
                                         {
                                             this.props.container.filter(
                                                 (item) =>
