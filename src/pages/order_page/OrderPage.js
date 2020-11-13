@@ -137,6 +137,7 @@ class OrderPage extends Component{
     }
 
     render(){
+        console.log(this.state.currentOrder)
         return (
             <div>
                 <div className='card-cont'>
