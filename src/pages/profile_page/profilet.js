@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Tabs} from "react-bootstrap";
 import {Tab} from "react-bootstrap";
 import {withRouter,Link} from 'react-router-dom'
-import "./profile.css";
+import styles from "./profile.module.css";
 import { connect} from 'react-redux';
 import {
     logoutUser,
@@ -13,6 +13,8 @@ import {
 } from '../../actions/order_actions'
 import "./order.css";
 import InfoModal from './InfoModal'
+import cx from 'classnames'
+
 
 class Profile extends Component {
 
@@ -97,110 +99,95 @@ class Profile extends Component {
             <Tabs defaultActiveKey = "overview"
              id = "uncontrolled-tab-example" >
             <Tab eventKey = "overview"
-            title = "Account Overview" >
-            <h1 className = "welcome-heading" > Your Account Details </h1> <br/>
-
-            <p > Name: </p> <div className = "center-form" >
-            <input className = "input-fields-main"
-            value = {
-                this.state.user.name
-            }
-            onChange = {
-                e => {
-                    this.setState({
-                        user: {
-                            ...this.state.user,
-                            name: e.target.value
-                        }
-                    })
-                }
-            }
-            
-            disabled = {
-                this.state.isDisabled
-            }
-            /> </div> 
-            <p > Email: </p> <div className = "center-form" >
-            <input value = {
-                this.state.user.email
-            }
-            onChange = {
-                e => {
-                    this.setState({
-                        user: {
-                            ...this.state.user,
-                            email: e.target.value
-                        }
-                    })
-                }
-            }
-            
-            disabled = {
-                this.state.isDisabled
-            }
-            /> </div> 
-            <p > Phone: </p> <div className = "center-form" >
-            <input value = {
-                this.state.user.phone
-            }
-            onChange = {
-                e => {
-                    this.setState({
-                        user: {
-                            ...this.state.user,
-                            phone: e.target.value
-                        }
-                    })
-                }
-            }
-            
-            disabled = {
-                this.state.isDisabled
-            }
-            /> </div> <br/>
-            <p > Address: </p> <div className = "manage-address-div"
-            style = {
-                {
-                    textAlign: "center"
-                }
-            } >
-            <Link to = "/address" > Manage Addresses </Link>
-            </div>
-            <hr style = {
-                {
-                    width: "200px"
-                }
-            }
-            />
-
-            <center >
-            <input className = "edit-button"
-            type = "button"
-            value = "Edit"
-            disabled = {
-                !this.state.isDisabled
-            }
-            onClick = {
-                () => {
-                    this.setState({
-                        isDisabled: !this.state.isDisabled
-                    })
-                }
-            }
-            /> <button className = "update-button"
-            disabled = {
-                this.state.isDisabled
-            }
-            onClick = {
-                () => this.updateUserfunc()
-            } > Update </button>  
-             </center>
-              <div class = "account-page-button" >
-            <button className = "logout-button"
-            onClick = {
-                () => this.props.logoutUser(this.props.history)
-            } > Logout User </button>
-            </div>
+            title = "Account Overview" 
+            >
+           <div className="row justify-content-center mt-sm-3 pb-sm-5">
+                            <div className="col-sm-4 mt-sm-3">
+                                <div className="row pt-3 pt-sm-0 py-4 px-sm-3">
+                                    <div className="pb-1 m-sm-0 d-sm-flex w-100">
+                                        <div className="card-header bg-white mt-4 mx-3 px-0">
+                                            <h2>Welcome Back</h2>
+                                            <h2>{this.props.auth.user.name}</h2>
+                                            <button
+                                                className="btn btn-danger"
+                                                onClick={() =>
+                                                    this.props.logoutUser(
+                                                        this.props.history
+                                                    )
+                                                }
+                                            >
+                                                Logout
+                                            </button>
+                                            <button
+                                            style={{marginLeft:"20px"}}
+                                                className="btn btn-outline-danger"
+                                                onClick={() =>
+                                                    this.setState({
+                                                        ...this.state,
+                                                        isDisabled:false
+                                                    })
+                                                }
+                                                disabled={!this.state.isDisabled}
+                                            >
+                                                Edit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row pt-3 pt-sm-0 py-4 px-sm-3">
+                                    <div
+                                        className={cx(
+                                            styles.address,
+                                            "card-body bg-white mt-2 mx-3 px-0"
+                                        )}
+                                    >
+                                        <span className="font-weight-bold">
+                                            Name:{" "}
+                                        </span>
+                                        <span>{(this.state.isDisabled)?(this.props.auth.user.name):(<input value={this.state.user.name} onChange={(e)=>this.setState({...this.state,
+                                        user:{
+                                            ...this.state.user,
+                                            name:e.target.value
+                                        }})}  />)}</span>
+                                        <br />
+                                        <span className="font-weight-bold">
+                                            Email:{" "}
+                                        </span>
+                                        <span>
+                                            {this.props.auth.user.email}
+                                        </span>
+                                        <br />
+                                        <span className="font-weight-bold">
+                                            Phone:{" "}
+                                        </span>
+                                        <span>
+                                            {this.props.auth.user.phone || ""}
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div className="pb-1 m-sm-0 d-sm-flex w-100">
+                                        <div
+                                            className={cx(
+                                                styles.address,
+                                                "card-body bg-white mt-2 mx-3 px-0"
+                                            )}
+                                        >
+                                            <button
+                                                onClick={() =>
+                                                    this.props.history.push(
+                                                        "/address"
+                                                    )
+                                                }
+                                                className="btn btn-outline-danger"
+                                            >
+                                                Manage Addresses
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
              </Tab> 
              <Tab eventKey = "orders"
             title = "Previous Orders" >

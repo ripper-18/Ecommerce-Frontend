@@ -44,7 +44,7 @@
     margin-top: 30px;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 50px;
+    font-size: 3rem;
 }
 
 .center-form {
@@ -142,20 +142,6 @@
     border-radius: 5px;
 }
 
-.tabs {
-    justify-content: space-evenly;
-}
-
-
-.tabs a {
-    flex: 2;
-    text-align: center;
-    background-color: aqua;
-}
-
-.tabs a:focus {
-    outline: none;
-}
 
 @media screen and (min-width: 769px) {
     .wrapper {
@@ -183,6 +169,10 @@
     text-align: center;
 }
 
+
+.tab{
+    width: 100%;
+}
 @media screen and (max-width: 500px) {
     .order-information {
         font-size: 10px;

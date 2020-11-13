@@ -17,6 +17,7 @@ class CheckOut extends Component {
         delivery: 29,
         selectedAddress: "",
         selectedCartValue: [],
+        fullAddress:""
        
     }
 
@@ -62,11 +63,23 @@ class CheckOut extends Component {
             this.props.cart.bookCart.reduce((a, b) => a + b.price, 0)
         );
     };
-    setSelectedAddress = (e) => {
-        this.setState({
+    setSelectedAddress = async(e) => {
+        console.log(e.target.value)
+        await this.setState({
             ...this.state,
             selectedAddress: e.target.value,
+           
         });
+        console.log(this.state.selectedAddress)
+        for(let i=0;i<this.props.order.addresses.length;i++){
+            if(this.props.order.addresses[i]._id===e.target.value){
+                this.setState({
+                    ...this.state,
+                    finalAddress:this.props.order.addresses[i]
+                })
+                break;
+            }
+        }
     };
     setModalOpen = (value) => {
         this.setState({
@@ -89,11 +102,12 @@ class CheckOut extends Component {
     handlePlaceDirectOrder = () => {
         //console.log(this.props.coupon.appliedDiscount)
       
-        
+        console.log(this.state.selectedAddress)
         if (this.state.selectedAddress.length > 0) {
             this.props.setCurrentOrder(
                 // address
                 this.state.selectedAddress,
+                this.state.finalAddress,
                 // originalBill
                 this.getSubTotal().toFixed(2),
                

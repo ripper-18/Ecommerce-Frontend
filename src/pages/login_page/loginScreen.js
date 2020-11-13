@@ -269,8 +269,8 @@ class Login extends Component {
                                    
                                 </Tab>
                                 <Tab eventKey="signup" title="Create Account">
-                                   
-                                    <form>
+                                   <div className={styles.form}>
+                                   <form>
                                         <label style={{width:"100%"}}> 
                                             Name:
                   <input size="100"  type="text" placeholder="Enter your name"
@@ -368,6 +368,8 @@ class Login extends Component {
                                         }  />
                                         </div>
                                     </form>
+                                   </div>
+                                   
                                     <br />
                                 </Tab>
                             </Tabs>
