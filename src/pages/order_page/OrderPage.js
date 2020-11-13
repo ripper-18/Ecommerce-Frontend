@@ -7,6 +7,7 @@ import {placeDirectOrder} from '../../actions/order_actions'
 import {clearCart} from '../../actions/cart_actions'
 import { showDialog } from "../../actions/dialog_actions";
 import config from "../../config";
+import Stepper from '../common/stepper'
 
 
 
@@ -141,7 +142,7 @@ class OrderPage extends Component{
         console.log(this.props)
         return (
             <div>
-                
+                <Stepper number={2}/>
                 <div className='card-cont'>
                     <div className='payment-card'>
                         <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>

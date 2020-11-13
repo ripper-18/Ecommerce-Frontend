@@ -1,7 +1,5 @@
 import React,{Component} from 'react'
-import Subtotal from './Subtotal'
-import OrderDetails from './OrderDetails'
-import addressCard from './AddressCard'
+
 import './CheckOut.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
@@ -10,7 +8,7 @@ import {showDialog} from '../../actions/dialog_actions'
 import ConfirmationModal from "../address_page/ConfirmationModal";
 import EditModal from "../address_page/EditModal";
 import AddressModal from "../address_page/AddressModal";
-
+import Stepper from '../common/stepper'
 
 
 class CheckOut extends Component {
@@ -29,6 +27,7 @@ class CheckOut extends Component {
             ...this.state,
             selectedCartValue: this.getCount(this.props.cart),
         });
+        this.props.getAddress(this.props.auth.token);
     }
     getFinalDishArray = (books) => {
         let counts = {};
@@ -137,11 +136,11 @@ class CheckOut extends Component {
     render(){
         const subt = this.getSubTotal();
         const gst = 0.05*subt;
-        const final = Math.floor(subt + gst + 30);
+        const final = (subt + gst + 30);
         
     return (
         <>
-       
+       <Stepper number={1}/>
         <div id='checkout-container'>
             
             <div className='col-3' id='subtotal-box'>
