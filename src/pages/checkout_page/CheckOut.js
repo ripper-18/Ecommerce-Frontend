@@ -205,6 +205,14 @@ class CheckOut extends Component {
                                         </div>
                                         <div>
                                             <span className="font-weight-bold">
+                                                City:{" "}
+                                            </span>
+                                            <span>
+                                                {addr.city || "N/A"}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span className="font-weight-bold">
                                                 State:{" "}
                                             </span>
                                             <span>
@@ -287,7 +295,7 @@ class CheckOut extends Component {
                         style={{display:"none", marginRight:"10%"}}
                         
                     />
-                    <div className="card" style={{ height: "350px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
+                    <div className="card" style={{ padding:"0 10%",height: "350px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
                         <div className="card-body">
                             <span className="add1" onClick={() => this.setModalOpen(true)}>+</span>
                             <br></br>
