@@ -143,7 +143,7 @@ class CheckOut extends Component {
        <Stepper number={1}/>
         <div id='checkout-container'>
             
-            <div className='col-3' id='subtotal-box'>
+            <div  id='subtotal-box'>
                 {/* <Subtotal
                     subtotal={this.getSubTotal()}
                     delivery={this.state.delivery}
@@ -169,7 +169,7 @@ class CheckOut extends Component {
 
             </div>
 
-            <div className='col-8' id='address-box'>
+            <div  id='address-box'>
                 <p>Delivery Information</p>
 
                 {/* {this.props.order.addresses.length > 0 ?
@@ -195,7 +195,7 @@ class CheckOut extends Component {
                                         style={{marginRight:"10%" }}
                                     />
                                 </div>
-                                <div className="card h-200 col-10" style={{ height: "auto",minHeight:"250px", display:"inline" }}>
+                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline" }}>
                                     <div className="card-body">
                                         <div>
                                             <span className="font-weight-bold">
@@ -263,7 +263,7 @@ class CheckOut extends Component {
                         style={{display:"none", marginRight:"10%"}}
                         
                     />
-                    <div className="card" style={{ padding:"0 10%",height: "250px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
+                    <div className="card" id="add-addr-box" style={{ padding:"0 8%",minHeight: "250px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4}}>
                         <div className="card-body">
                             <span className="add1" onClick={() => this.setModalOpen(true)}>+</span>
                             <br></br>
