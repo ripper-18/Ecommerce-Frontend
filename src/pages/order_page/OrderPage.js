@@ -140,6 +140,7 @@ class OrderPage extends Component{
 
     render(){
         console.log(this.props)
+        const arr = this.props.currentOrder.finalAddress.address.split(" ");
         return (
             <div>
                 <Stepper number={2}/>
@@ -165,13 +166,20 @@ class OrderPage extends Component{
                                 <span className="font-weight-bold">
                                     Delivery address:{" "}
                                 </span>
-                                <div style={{}}>
+
+                                <div style={{ wordWrap: "break-word",maxWidth: "30%",textAlign:"right"}}>
+                                    {this.props.currentOrder.finalAddress.address}
+                                </div>
+                                
+                                
+                                
+                                {/* <div style={{}}>
                                 <p style={{maxWidth:"30%",float:"right",clear:"both",textAlign:"right"}}>
                                     {this.props.currentOrder.finalAddress.address}
                                 </p>
                                 <br></br>
                                     <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
-                                    {this.props.currentOrder.finalAddress.city}
+                                    
 
                                 </p><br></br>
                                     <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
@@ -183,7 +191,31 @@ class OrderPage extends Component{
 
                                     </p>
                                     
-                                </div>
+                                </div> */}
+                            </div>
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    {" "}
+                                </span>
+                                <span>
+                                    {this.props.currentOrder.finalAddress.city}
+                                </span>
+                            </div>
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    {" "}
+                                </span>
+                                <span>
+                                    {this.props.currentOrder.finalAddress.state}
+                                </span>
+                            </div>
+                            <div className="d-flex justify-content-between mx-3">
+                                <span className="font-weight-bold">
+                                    {" "}
+                                </span>
+                                <span>
+                                    {this.props.currentOrder.finalAddress.pincode}
+                                </span>
                             </div>
                             <br></br>
                             <div className="d-flex justify-content-between mx-3">
