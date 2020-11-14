@@ -115,6 +115,14 @@ class Address extends Component {
                                                 </div>
                                                 <div>
                                                     <span className="font-weight-bold">
+                                                        City:{" "}
+                                                    </span>
+                                                    <span>
+                                                        {addr.city || "N/A"}
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span className="font-weight-bold">
                                                         State:{" "}
                                                     </span>
                                                     <span>
