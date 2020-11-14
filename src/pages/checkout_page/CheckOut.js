@@ -195,7 +195,7 @@ class CheckOut extends Component {
                                         style={{marginRight:"10%" }}
                                     />
                                 </div>
-                                <div className="card h-200 col-10" style={{ height: "350px", display:"inline" }}>
+                                <div className="card h-200 col-10" style={{ height: "250px", display:"inline" }}>
                                     <div className="card-body">
                                         <div>
                                             <span className="font-weight-bold">
@@ -243,39 +243,7 @@ class CheckOut extends Component {
                                                 {addr.phone || "N/A"}
                                             </span>
                                         </div>
-                                        <button
-                                            onClick={() =>
-                                                this.setCnfOpen(true)
-                                            }
-                                            className="btn mt-3 btn-sm btn-outline-danger"
-                                        >
-                                            Remove
-                                                </button>
-                                        <button
-                                            onClick={() =>
-                                                this.setEditOpen(true)
-                                            }
-                                            className="btn mt-3 ml-3 btn-sm btn-outline-default"
-                                        >
-                                            Edit
-                                                </button>
-                                        <ConfirmationModal
-                                            isCnfOpen={
-                                                this.state.isCnfOpen
-                                            }
-                                            setCnfOpen={this.setCnfOpen}
-                                            id={addr._id}
-                                        />
-                                        <EditModal
-                                            isEditOpen={
-                                                this.state.isEditOpen
-                                            }
-                                            setEditOpen={
-                                                this.setEditOpen
-                                            }
-                                            id={addr._id}
-                                            addr={addr}
-                                        />
+                                      
                                     </div>
                                 </div>
                             </label>
@@ -295,7 +263,7 @@ class CheckOut extends Component {
                         style={{display:"none", marginRight:"10%"}}
                         
                     />
-                    <div className="card" style={{ padding:"0 10%",height: "350px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
+                    <div className="card" style={{ padding:"0 10%",height: "250px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4,margin:"0 0 0 8%" }}>
                         <div className="card-body">
                             <span className="add1" onClick={() => this.setModalOpen(true)}>+</span>
                             <br></br>

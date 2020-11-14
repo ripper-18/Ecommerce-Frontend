@@ -21,19 +21,7 @@
     top: 67%;
   } */
   
-.pbar{
-  
-  width: 80%;
-  margin: auto auto;
-  height: 80px;
-  margin-top: 20px;
-  padding-top: 8px;
- 
-}
-.spbar{
-  margin: auto auto;
-  margin-top: 40px;
-}
+
 
   #checkout-container{
    
@@ -104,8 +92,9 @@ hr{
 }
 
 .add1{
-  font-size: 150px;
+  font-size: 110px;
   text-align: center;
+  margin-left: 10px;
 }
 
 .place-order-button {
