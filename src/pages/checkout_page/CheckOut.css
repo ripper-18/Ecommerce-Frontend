@@ -36,6 +36,7 @@
     margin-top: 10%;
     margin-bottom: 5%;
     padding: 0 2%;
+    flex: 3;
   }
   #subtotal-box p{
     text-align: center;
@@ -45,7 +46,8 @@
   #address-box{
     padding: 0 2%;
     margin-top: 10%;
-    margin-bottom: 5%;    
+    margin-bottom: 5%;  
+    flex: 8;  
     
     
 }
@@ -114,7 +116,7 @@ hr{
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  margin-left: 40%;
+  margin-left: 35%;
   margin-top: 7%;
   /* margin-bottom: 7%; */
 
@@ -133,4 +135,36 @@ hr{
 
 .place-order-button:focus {
   outline: 0;
+}
+
+#add-addr-box{
+  width: 45.66%;
+  height: fit-content;
+}
+
+@media(max-width:767px){
+  #add-addr-box{
+  width: 91.66%;
+  height: fit-content;
+}
+
+}
+@media (max-width:620px){
+  #checkout-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+    
+  }
+
+  #subtotal-box{
+    width: 70%;
+    margin: 0 15%;
+  }
+  #add-addr-box{
+    width: 91.66%;
+  }
+
+
 }
