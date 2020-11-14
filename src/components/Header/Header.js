@@ -25,19 +25,30 @@ class Header extends Component{
         })
         //console.log(e.target.value)
     }
-    submitSearch=()=>{
+    submitSearch=async()=>{
         if(this.state.keyword===''){
             this.props.showDialog('Search cant be empty!')
             return
         }
+        
         this.props.history.push(`/?search=${this.state.keyword}`)
+        window.location.reload()
+    }
+    submitSearch2=async()=>{
+        
+        
+        this.props.history.push(`/`)
         window.location.reload()
     }
 
     render(){
     return (
         <div className="header">
-           <Link to="/"><img className="header-logo" src="https://i.ibb.co/3CWFddk/header-logo-1.png" alt="DUBookX"/></Link> 
+           <Link to="/"><img className="header-logo" onClick={async()=>{await this.setState({
+            ...this.state,
+            keyword: ""
+        });
+        this.submitSearch2()}} src="https://i.ibb.co/3CWFddk/header-logo-1.png" alt="DUBookX"/></Link> 
 
             <div className="header-search">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>

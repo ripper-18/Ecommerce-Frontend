@@ -29,9 +29,9 @@ handleRemoveFromCart = () => {
             <div className="product-info" >
                 <p onClick={() => { this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}><b>{this.props.data.name}</b></p> 
                 <p className= "product-price">
-                    <small>Rs.</small>
-                    <strong>{
-                    this.props.data.price}</strong>
+               
+                    <strong>₹ {
+                   ( this.props.data.price).toFixed(2)}</strong>
                 </p>
             </div>
             

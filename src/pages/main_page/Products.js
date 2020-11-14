@@ -23,7 +23,7 @@ class Products extends Component {
         
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-         // console.log(token)//123
+          console.log(token)//123
           if(token===null){
             token=''
         }
@@ -32,18 +32,18 @@ class Products extends Component {
        // console.log(this.props)
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.filters !== this.props.filters) {
+    /*componentDidUpdate() {
+      
             const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
           console.log(token)
           if(token===null){
               token=''
           }
-            this.props.getBooksByKeyword(this.props.filters,token);
-        }
+          //  this.props.getBooksByKeyword(this.props.filters,token);
+        
       //  console.log( this.props)
-    }
+    }*/
     render(){
         let {books}=this.props.book
         let { sortValue } = this.props;
@@ -64,6 +64,7 @@ class Products extends Component {
     return (
         <Row className= "products-page">
             <div className={" d-md-none py-1 filterSideNav"}>
+                <span style={{fontSize:"20px"}}>FILTERS</span>
                         <button
                             className={"filterSideNavBtn"}
                             onClick={this.props.handleSideFilterOpen}

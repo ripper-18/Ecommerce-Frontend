@@ -69,7 +69,8 @@ class MainPage extends Component {
             <div className="main-carousel">
                 <MainCarousel></MainCarousel>
             </div>
-            <Container>
+            <div className={styles.containerWrap}>
+            <Container >
             <Row>
                 <Col 
                   sm={12}
@@ -134,6 +135,8 @@ class MainPage extends Component {
                             />
                         </div>
                     </div>
+            </div>
+            
         </div>
 
         

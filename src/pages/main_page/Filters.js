@@ -1,12 +1,11 @@
 import React,{Component} from 'react'
-import { Form, Container, Card } from 'react-bootstrap';
+import {  Container, Card } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import Select from "react-select";
 import './Filters.css'
 import FilterAccordion from "./FiltersArcadion";
 
 const options = [
-    {value:"0",label:"None"},
     { value: "1", label: "Name A-Z" },
     { value: "2", label: "Name Z-A" },
     { value: "3", label: "Price (Low to High)" },
@@ -23,7 +22,7 @@ class Filters extends Component {
     };
     render(){
     return (
-        <Container className="pl-md-0">
+        <Container className="pl-md-0 center">
             <div className='heading mt-5 m-0 mb-md-4'>
                 <h2>Filter Books</h2>
             </div>
@@ -60,153 +59,7 @@ class Filters extends Component {
             </div>
             
         </Container>
-        // <Container>
-        //     <Card>
-        //         <Form>
-        //         <Container style={{textAlign: 'center'}}>
-        //             <div>
-        //             <div>
-        //             <label>Sort By</label>
-        //             <Select
-        //                 theme={(theme) => ({
-        //                     ...theme,
-        //                     borderRadius: 0,
-        //                     colors: {
-        //                         ...theme.colors,
-        //                         primary25: "#f5f5f5",
-        //                         primary50: "#f5f5f5",
-        //                         primary: "#d8173c",
-        //                     },
-        //                 })}
-        //                 onChange={(e) => this.props.setSortValue(e.value)}
-        //                 options={options}
-        //             />
-        //             </div>
-
-        //            <div>
-        //                Select Year
-        //            <ul className={ "row d-flex m-0"}>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="year:1"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>1</p>
-        //                             </label>
-        //                         </li>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="year:2"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>2</p>
-        //                             </label>
-        //                         </li>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="year:3"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>3</p>
-        //                             </label>
-        //                         </li>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="year:4"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>4</p>
-        //                             </label>
-        //                         </li>
-        //                     </ul>
-        //            </div>
-
-        //            <div>
-        //                Select Course
-        //            <ul className={ "row d-flex m-0"}>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="course:Bsc"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>Bsc</p>
-        //                             </label>
-        //                         </li>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="course:Bcom"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>Bcom</p>
-        //                             </label>
-        //                         </li>
-                                
-        //                     </ul>
-        //            </div>
-
-        //            <div>
-        //                Select Subject
-        //            <ul className={ "row d-flex m-0"}>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="subject:maths"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>maths</p>
-        //                             </label>
-        //                         </li>
-        //                         <li className="col-6">
-        //                             <label>
-        //                                 <input
-        //                                     value="subject:physics"
-        //                                     onChange={(e) =>
-        //                                         this.handleCheck(e)
-        //                                     }
-        //                                     type="checkbox"
-        //                                 />
-        //                                 <p>Physics</p>
-        //                             </label>
-        //                         </li>
-                                
-        //                     </ul>
-        //            </div>
-        //                 </div>
-                    
-
-
-        //         </Container>
-                
-        //         </Form>
-        //     </Card>
-        // </Container>
+      
     )}
 }
 
