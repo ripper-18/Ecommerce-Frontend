@@ -34,17 +34,17 @@ class OrderPage extends Component{
     displayRazorpay = async (data) => {
          console.log(data);
         const res = await loadScript(
-            "https:checkout.razorpay.com/v1/checkout.js"
+            "https://checkout.razorpay.com/v1/checkout.js"
         ); 
 
+        console.log(res)
         if (!res) {
+            console.log(data)
             alert("Razorpay failed to load. Are you online?");
             return;
         }
 
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Authorization", this.props.auth.token);
+      
 
         const options = {
             key: config.rzp_id,//make a flexible dev and live mode key accepter
@@ -67,7 +67,7 @@ class OrderPage extends Component{
     };
 
      stagePayment = () => {
-         console.log(this.props)
+         //console.log(this.props)
          if (this.state.mode === "") {
             this.props.showDialog("Please select a payment mode");
          } else {
@@ -87,6 +87,8 @@ class OrderPage extends Component{
                      if (res.order.orderStatus === "staged") {
                          this.displayRazorpay(res);
                      } else if (res.order.orderStatus === "placed") {
+                         
+                         this.props.showDialog("Your order was placed succesfully.")
                          this.props.clearCart()
                          this.props.history.push("/profile");
                      } else {
@@ -135,11 +137,11 @@ class OrderPage extends Component{
 
     componentDidMount() {
         window.scrollTo(0, 0)
-        console.log(this.props)
+     //   console.log(this.props)
     }
 
     render(){
-        console.log(this.props)
+       // console.log(this.props)
         const arr = this.props.currentOrder.finalAddress.address.split(" ");
         return (
             <div>

@@ -58,16 +58,16 @@ a:active {
     padding: 8px;
     height: 40px;
     margin-right: 10px;
-    background-color: #273c75;
+    background-color: #00a8ff;
     color: #f5f6fa;
     margin-left: 5px;
     align-items: center;
     border-radius: 5px;
-    border:  1px solid #273c75;
+    border:  1px solid #00a8ff;
 }
 
 .header-search-icon-div:hover {
-    background-color: #192a56;
+    background-color: #8c7ae6;
 }
 
 .header-option-lineOne {

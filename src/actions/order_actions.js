@@ -174,7 +174,7 @@ export const placeDirectOrder = (
         
     });
 
-    console.log(JSON.parse(raw))
+    //console.log(JSON.parse(raw))
     var requestOptions = {
         method: "POST",
         headers: myHeaders,
@@ -185,7 +185,7 @@ export const placeDirectOrder = (
     return fetch(config.user + "order", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
+            //console.log(result);
             return result;
         })
         .catch((error) => {
@@ -210,7 +210,7 @@ export const getPastOrders = (token) => (dispatch) => {
     fetch(config.user + "order", requestOptions)
         .then((response) => response.json())
         .then((res) => {
-             console.log(res);
+          //   console.log(res);
              
             dispatch({
                 type: GET_PAST_ORDERS,
