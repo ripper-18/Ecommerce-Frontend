@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeAddress,getAddress } from "../../actions/order_actions";
-
 import Modal from "react-bootstrap/Modal";
 
 class ConfirmationModal extends Component {

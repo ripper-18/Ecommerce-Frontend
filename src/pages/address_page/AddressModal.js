@@ -8,27 +8,18 @@ import Modal from "react-bootstrap/Modal";
 
 class AddressModal extends Component {
     state = {
-        
         delivery1: "",
-     
         city: "",
         pincode: "",
         state: "",
         phone: "",
-        
     };
 
     handleAddress = () => {
-        console.log(this.state)
         this.props.addAddress(this.state, this.props.auth.token);
         this.props.setModalOpen(false);
         this.props.getAddress(this.props.auth.token);
     };
-
-       componentDidMount(){
-        
-       }
-    
 
     render() {
         return (
@@ -153,11 +144,8 @@ class AddressModal extends Component {
                             </div>
                         </div>
                         <hr />
-                        
-                        
                         </div>
                         </div>
-                    
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

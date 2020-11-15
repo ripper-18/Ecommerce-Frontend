@@ -2,11 +2,10 @@ import React, {  Suspense } from "react";
 import Loader from "./components/Loader/Loader";
 import { Route,BrowserRouter,Switch} from "react-router-dom";
 import "./App.css";
-
 import "./bootstrap.min.css";
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import {showDialog,hideDialog} from './actions/dialog_actions'
+import {hideDialog} from './actions/dialog_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import MainPage from './pages/main_page/MainPage'

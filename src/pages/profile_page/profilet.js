@@ -11,7 +11,6 @@ import {
 import {
     getPastOrders
 } from '../../actions/order_actions'
-import "./order.css";
 import InfoModal from './InfoModal'
 import cx from 'classnames'
 
@@ -33,16 +32,12 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        //console.log(this.state)
         this.props.getPastOrders(this.props.auth.token);
-        // console.log(this.props)
+
         let address = []
         this.props.pastOrders.map((addr, index) => (
             address[index] = false
         ))
-        //console.log(address)
-
-        //console.log(this.state)
         let a = []
         
         this.props.pastOrders.map((order)=>(
@@ -57,14 +52,11 @@ class Profile extends Component {
             }
 
         })
-
-        console.log(this.state)
     }
 
     setInfOpen = (value, index) => {
         let address = this.state.orderhistory.isInfOpen
         address[index] = value
-        // console.log(this.state)
         this.setState({
             ...this.state,
             orderhistory: {
@@ -78,12 +70,10 @@ class Profile extends Component {
 
         if (this.state.user.name !== 0) {
             if (this.state.user.email !== 0) {
-                console.log("update")
                 this.setState({
                     isDisabled: !this.state.isDisabled
                 })
                 this.props.updateUser(this.state.user, this.props.auth.token)
-                console.log(this.props.auth)
             } else {
                 alert("Email can't be empty!")
             }
@@ -93,12 +83,10 @@ class Profile extends Component {
     }
     render() {
         return ( <div style={{overflowX:"hidden"}}>
-
             <br/> <br/> <div className = "card_container" >
             <div className = 'card' style={{marginBottom:"10px",margin:"auto"}} >
             <Tabs defaultActiveKey = "overview"
              id = "uncontrolled-tab-example" 
-          
              >
             <Tab eventKey = "overview"
             title = "Account Overview" 
@@ -203,7 +191,6 @@ class Profile extends Component {
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
              </Tab> 
              <Tab eventKey = "orders"
@@ -218,8 +205,6 @@ class Profile extends Component {
                                         </h2>
                                     </div>
                                 </div>
-                              
-                                
                                     <div className="py-2 row justify-content-center">
                                     <div className="col-8">
                                         {this.props.pastOrders.length > 0 ? (

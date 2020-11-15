@@ -1,5 +1,4 @@
 import { GET_ADDRESS, GET_PAST_ORDERS, SET_CURRENT_ORDER } from "./types";
-
 import config from "../config";
 import { showDialog} from './dialog_actions'
 
@@ -27,14 +26,9 @@ export const addAddress = (address, token) => (dispatch) => {
         .then((response) => {
             if (response.status === 200) {
                 dispatch(showDialog("Address Added"));
-
-                // dispatch(showDialog("Address Added"));
-                // window.location.reload();
-                console.log("adress added")
             } else {
                 dispatch(
                    showDialog( "Address could not be added, check your input and try again"))
-                //console.log("Address could not be added, check your input and try again")
             }
         })
         .catch((err) => console.log(err));
@@ -54,7 +48,6 @@ export const getAddress = (token) => (dispatch) => {
     fetch(config.user + "address/", requestOptions)
         .then((response) => response.json())
         .then((res) => {
-             console.log(res);
             dispatch({
                 type: GET_ADDRESS,
                 payload: res,
@@ -71,16 +64,10 @@ export const removeAddress = (id, token) => (dispatch) => {
         headers: myHeaders,
         redirect: "follow",
     };
-    console.log(id)
-    
 
     fetch(config.user + "address/" + id, requestOptions).then((response) => {
         if (response.status === 200) {
-            console.log(response)
-            //dispatch(showDialog("Address Removed"));
              dispatch(showDialog("Address Removed"));
-            // window.location.reload();
-            //console.log("address removed")
         } else {
             dispatch(
                 showDialog("Address could not be removed, Something went wrong")
@@ -105,12 +92,8 @@ export const editAddress = (id, addr, token) => (dispatch) => {
 
     fetch(config.user + "address/" + id, requestOptions)
         .then((response) => {
-           // console.log(response)
             if (response.status === 200) {
                 dispatch(showDialog("Address Updated"));
-                // showDialog("Address Updated");
-                //console.log("address updated")
-                // window.location.reload();
             } else {
                 dispatch(
                     showDialog(
@@ -159,8 +142,6 @@ export const placeDirectOrder = (
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
-   // console.log(originalBill)
-    
     
     var raw = JSON.stringify({
         orderType: "normal",
@@ -174,7 +155,6 @@ export const placeDirectOrder = (
         
     });
 
-    //console.log(JSON.parse(raw))
     var requestOptions = {
         method: "POST",
         headers: myHeaders,
@@ -185,7 +165,6 @@ export const placeDirectOrder = (
     return fetch(config.user + "order", requestOptions)
         .then((response) => response.json())
         .then((result) => {
-            //console.log(result);
             return result;
         })
         .catch((error) => {
@@ -210,8 +189,6 @@ export const getPastOrders = (token) => (dispatch) => {
     fetch(config.user + "order", requestOptions)
         .then((response) => response.json())
         .then((res) => {
-          //   console.log(res);
-             
             dispatch({
                 type: GET_PAST_ORDERS,
                 payload: res,

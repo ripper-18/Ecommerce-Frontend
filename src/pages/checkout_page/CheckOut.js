@@ -1,12 +1,9 @@
 import React,{Component} from 'react'
-
 import './CheckOut.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getAddress,removeAddress,setCurrentOrder,addAddress} from '../../actions/order_actions'
 import {showDialog} from '../../actions/dialog_actions'
-import ConfirmationModal from "../address_page/ConfirmationModal";
-import EditModal from "../address_page/EditModal";
 import AddressModal from "../address_page/AddressModal";
 import Stepper from '../common/stepper'
 
@@ -18,11 +15,9 @@ class CheckOut extends Component {
         selectedAddress: "",
         selectedCartValue: [],
         fullAddress:""
-       
-    }
+       }
 
     componentDidMount(){
-        //console.log(this.props)
         this.setState({
             ...this.state,
             selectedCartValue: this.getCount(this.props.cart),
@@ -46,7 +41,6 @@ class CheckOut extends Component {
                 book:names[Object.keys(counts)[i]]
             };
         }
-        console.log(result)
         return result;
     };
     getCount = (cart) => {
@@ -54,24 +48,19 @@ class CheckOut extends Component {
         if (cart.bookCart.length > 0) {
             result.push(...this.getFinalDishArray(cart.bookCart));
         }
-        
         return result;
     };
     getSubTotal = () => {
-       
-        //   console.log(this.props.cart)
         return (
             this.props.cart.bookCart.reduce((a, b) => a + b.price, 0)
         );
     };
     setSelectedAddress = async(e) => {
-        console.log(e.target.value)
         await this.setState({
             ...this.state,
             selectedAddress: e.target.value,
            
         });
-        console.log(this.state.selectedAddress)
         for(let i=0;i<this.props.order.addresses.length;i++){
             if(this.props.order.addresses[i]._id===e.target.value){
                 this.setState({
@@ -101,9 +90,6 @@ class CheckOut extends Component {
         });
     };
     handlePlaceDirectOrder = () => {
-        //console.log(this.props.coupon.appliedDiscount)
-      
-        console.log(this.state.selectedAddress)
         if (this.state.selectedAddress.length > 0) {
             this.props.setCurrentOrder(
                 // address
@@ -111,7 +97,6 @@ class CheckOut extends Component {
                 this.state.finalAddress,
                 // originalBill
                 this.getSubTotal().toFixed(2),
-               
                 //books
                 this.state.selectedCartValue,
                 //finalAmount
@@ -122,16 +107,13 @@ class CheckOut extends Component {
                 this.state.delivery,
                 //gst
              5)
-           console.log(this.props)
+         //  console.log(this.props)
             this.props.history.push("/order");
         } else {
             this.props.showDialog("Please select an address");
         }
     };
-    componentDidUpdate(){
-      //  window.location.reload()
-    }
-            
+
            
     render(){
         const subt = this.getSubTotal();
@@ -142,12 +124,8 @@ class CheckOut extends Component {
         <>
        <Stepper number={1}/>
         <div id='checkout-container'>
-            
             <div  id='subtotal-box'>
-                {/* <Subtotal
-                    subtotal={this.getSubTotal()}
-                    delivery={this.state.delivery}
-                    gst={5} /> */}
+
                 <p>Order Summary!</p>
 
                 <span className='lefty'>Subtotal</span>
@@ -156,27 +134,12 @@ class CheckOut extends Component {
                 <span className='righty'>₹30</span><br></br>
                 <span className='lefty'>Gst(5%)</span>
                 <span className='righty'>₹{gst}</span><br></br>
-
-                {/* Add discount field */}
-                {/* <span className='lefty'>Discount</span>
-                <span className='righty'>₹0</span><br></br> */}    
-                
-                
-                
                 <span className='lefty total-amount'>Total</span>
                 <span className='righty total-amount'>₹{final}</span><br></br>
-                
-            
-
-
             </div>
 
             <div  id='address-box'>
                 <p>Delivery Information</p>
-
-                {/* {this.props.order.addresses.length > 0 ?
-                 (this.props.order.addresses.map((addr,index) => {(<addressCard addr={addr} key={index}></addressCard>)} ))
-                 :(<p>Empty </p>)} */}
 
                 <div id='add-card-container'>
                  {this.props.order.addresses.length > 0 ? (
@@ -221,22 +184,6 @@ class CheckOut extends Component {
                                                 {addr.state || "N/A"}
                                             </span>
                                         </div>
-                                        {/* <div>
-                                            <span className="font-weight-bold">
-                                                Floor:{" "}
-                                            </span>
-                                            <span>
-                                                {addr.floor || "N/A"}
-                                            </span>
-                                        </div> */}
-                                        {/* <div>
-                                            <span className="font-weight-bold">
-                                                Landmark:{" "}
-                                            </span>
-                                            <span>
-                                                {addr.landmark || "N/A"}
-                                            </span>
-                                        </div> */}
                                         <div>
                                             <span className="font-weight-bold">
                                                 Phone:{" "}
@@ -277,17 +224,12 @@ class CheckOut extends Component {
                         {" "}
                     </div>
                     </div>
-
-                
-
                 <AddressModal
                     isOpen={this.state.isOpen}
                     setModalOpen={this.setModalOpen}
                 />
-                
                 <button className="place-order-button" onClick={this
                     .handlePlaceDirectOrder} >Place Order</button>
-                
             </div>
         </div>
         </>

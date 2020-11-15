@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import "./Item.css"
 import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 class Item extends Component {
-
-    componentDidMount(){
-        console.log(this.props)
-    }
 
     handleAddToCart = (elem) => {
         this.props.addToCart(elem);
@@ -36,8 +31,6 @@ class Item extends Component {
                 <div className='price-area'>
                     <span className='quantity-multiplier' >{this.props.item.quantity}x </span>
                     <span>{this.props.item.book.name}</span>
- 
-
                 </div>
                 <div className='button-area'>
                     <p id='final-price'>{price_of_item}</p>
@@ -51,22 +44,8 @@ class Item extends Component {
                             this.props.item.book
                         )
                     }> - </button>
-
                 </div>
-                
-
             </div>
-            {/* <div className="product-info">
-                <p>{this.props.item.book.name}</p>
-                <p className= "product-price">
-                    <small>Rs.</small>
-                    <strong>{this.props.item.book.price}</strong>
-                    <strong>x</strong>
-                    <small></small>
-                </p>
-            </div> */}
-            
-            
             <hr></hr>
         </div>
     )}

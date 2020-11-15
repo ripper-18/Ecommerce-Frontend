@@ -23,17 +23,14 @@ export const registerUser = (user,history) => (dispatch) => {
     };
 
     fetch(config.user + "auth/signup", requestOptions).then((res) =>res.json().then((response)=> {
-        console.log(response)
         if (response.message === "Registration Completed" ) {
             dispatch({
                 type: REGISTER_USER,
             });
-            console.log("Account created")
             history.push("/profile");
             dispatch(showDialog("Account Created"));
             
         } else {
-            console.log(response.message)
             dispatch(showDialog(response.message));
         }
     }));
@@ -44,7 +41,6 @@ export const loginUser = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    //console.log("Login")
     var raw = JSON.stringify({
         cred: user.cred,
         password: user.password,
@@ -59,7 +55,6 @@ export const loginUser = (user, history) => (dispatch) => {
 
     fetch(config.user + "auth/login", requestOptions).then((response) =>
         response.json().then((res) => {
-            console.log(res);
             if (res.data && res.data.token.length > 1) {
                 dispatch({
                     type: LOGIN_USER,
@@ -67,7 +62,6 @@ export const loginUser = (user, history) => (dispatch) => {
                 });
                 history.push("/profile");
             } else {
-                console.log("error")
                 dispatch(showDialog(`${res.message}`));
             }
         })
@@ -93,7 +87,6 @@ export const loginGoogle = (user, history) => (dispatch) => {
 
     fetch(config.user + "auth/google", requestOptions).then((response) =>
         response.json().then((res) => {
-             console.log(res);
             if (res.data && res.data.token.length > 1) {
                 dispatch({
                     type: LOGIN_USER,
@@ -111,8 +104,7 @@ export const updateUser = (user, token) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", token);
-  //  myHeaders.append("set-cookie", "httponly;secure;samesite=none")
-  console.log("updae_action")
+
     var raw = JSON.stringify({
         email:user.email,
         phone: user.phone,
@@ -128,14 +120,11 @@ export const updateUser = (user, token) => (dispatch) => {
 
     fetch(config.user + "auth/update", requestOptions).then((response) =>
         response.json().then((res) => {
-            console.log(res);
-            
             if (res.data) {
                 dispatch({
                     type: UPDATE_USER,
                     payload: res.data,
                 });
-               
                 dispatch(showDialog("Information got updated!"))
             } else {
                 dispatch(showDialog("Something went wrong"));
@@ -161,7 +150,7 @@ export const forgotPassword =(user,history)=>(dispatch)=>{
 
     fetch(config.user + "auth/recover", requestOptions).then((response) =>
         response.json().then((res) => {
-            console.log(res);
+            
             if (res.data) {
                 dispatch({
                     type: FORGOT_PASS

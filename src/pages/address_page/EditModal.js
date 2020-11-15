@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { editAddress,getAddress } from "../../actions/order_actions";
-
 import cx from "classnames";
 import styles from "./Address.module.css";
 import Modal from "react-bootstrap/Modal";
@@ -24,10 +23,6 @@ class EditModal extends Component {
         this.props.setEditOpen(false,this.props.index);
         this.props.getAddress(this.props.auth.token)
     };
-
-    
-
-    
 
     render() {
         return (
@@ -152,10 +147,8 @@ class EditModal extends Component {
                             </div>
                         </div>
                         <hr />
-                       
                         </div>
                         </div>
-                    
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

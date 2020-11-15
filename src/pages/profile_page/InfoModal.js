@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux";
-
 import cx from "classnames";
 import styles from "./Info.module.css";
 import Modal from "react-bootstrap/Modal";
 
  class InfoModal extends Component {
-    state={
 
-    }
-    
-    componentDidMount(){
-      //  console.log(this.props.data)
-    }
     render() {
         return (
             <Modal
@@ -113,10 +105,8 @@ import Modal from "react-bootstrap/Modal";
                             </div>
                         </div>
                     </div>
-             
                     </div>
                 </Modal.Body>
-
             </Modal>
         )
     }

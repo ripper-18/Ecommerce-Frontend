@@ -1,25 +1,4 @@
-.bread {
-    background: #fff;
-}
-.bread a {
-    color: #000;
-    font-size: 16px;
-}
-.checkoutCard {
-    border: none;
-}
-.checkoutHeader {
-    background: transparent;
-    border-bottom: 1px solid #c8cacc;
-    margin-bottom: 0 !important;
-    padding-bottom: 0;
-}
-.checkoutHeader button {
-    width: 100%;
-    border: none;
-    background: transparent;
-    text-align: left;
-}
+
 .accordion label {
     font-weight: bold;
 }
@@ -40,25 +19,7 @@
 .accordion select:hover {
     border: 1px solid #d8173c;
 }
-.toBilling {
-    height: 52px;
-    border-radius: 26px;
-    border: none;
-    padding: initial;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    background: linear-gradient(180deg, #db4663, #ba0a2f);
-    color: #fff;
-    border: 2px solid #d8173c;
-}
-.toBilling:hover {
-    color: #fff;
-}
-.checkoutHeader button:focus {
-    outline: none;
-}
+
 .add{
     font-size: 150px;
     font-weight: 300;

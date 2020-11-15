@@ -122,7 +122,6 @@ class Login extends Component {
             email: profileObj.email,
             id: profileObj.googleId,
         };
-        //console.log("google-login")
         this.props.loginGoogle(data, this.props.history);
     };
 
@@ -145,7 +144,6 @@ class Login extends Component {
                     this.props.auth.user.name = this.state.register.name
                     this.props.auth.user.email = this.state.register.email
                     this.props.auth.user.phone = this.state.register.phone
-                   // console.log(this.props)
                     this.props.showDialog("Passwords do not match");
                 }
             } else {

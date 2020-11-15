@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-
-import cx from "classnames";
 import styles from "./Address.module.css";
 import { connect } from "react-redux";
 import { getAddress } from "../../actions/order_actions";
-
-import { Link } from "react-router-dom";
 import AddressModal from "./AddressModal";
 import ConfirmationModal from "./ConfirmationModal";
 import EditModal from "./EditModal";
@@ -24,21 +20,14 @@ class Address extends Component {
       this.props.addresses.map((addr,index)=>(
         address[index]=false
       ))
-      console.log(address)
       this.setState({
           ...this.state,
           isCnfOpen:address,
           addr:address
       })
-      console.log(this.state)
        window.scrollTo(0, 0)
-      
     }
     
-    // componentDidUpdate(prevProps) {
-    //     this.props.getAddress(this.props.auth.token);
-    // }
-
     setModalOpen = (value) => {
         this.setState({
             ...this.state,
@@ -48,14 +37,11 @@ class Address extends Component {
     setCnfOpen = (value,index) => {
         let address=this.state.isCnfOpen
         address[index]=value
-        console.log(this.state)
         this.setState({
             ...this.state,
             isCnfOpen: address,
             
         });
-        console.log(this.state)
-        
     };
     setEditOpen = (value,index) => {
         let address2=this.state.isEditOpen
@@ -65,13 +51,10 @@ class Address extends Component {
             isEditOpen: address2,
             
         });
-        console.log("edit")
-        console.log(this.state)
     };
 
     render() {
-        // console.log(this.props.auth.token);
-        
+
         return (
             <>
                 <div className={styles.wrapper}>
@@ -180,8 +163,6 @@ class Address extends Component {
                     isOpen={this.state.isOpen}
                     setModalOpen={this.setModalOpen}
                 />
-                
-
             </>
         );
     }

@@ -4,7 +4,7 @@ const initialState = {
     isOpen: false,
     msg: "",
 };
-
+// eslint-disable-next-line
 export default function (state = initialState, action) {
     switch (action.type) {
         case SHOW_DIALOG:

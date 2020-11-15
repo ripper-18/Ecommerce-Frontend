@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './Cart.css'
-import {Row, Col,Button} from 'react-bootstrap';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {addToCart,removeFromCart,clearCart} from '../../actions/cart_actions'
@@ -10,10 +9,7 @@ import Stepper from '../common/stepper'
 
 
 
-class Cart  extends Component  {
-    componentDidMount(){
-        console.log(this.props)
-    }    
+class Cart  extends Component  { 
 
     getCount = (cart) => {
         let counts = {};
@@ -22,7 +18,7 @@ class Cart  extends Component  {
             let index = cart[i]._id;
             counts[index] = counts[index] ? counts[index] + 1 : 1;
         }
-        // return counts;
+     
         for (let i = 0; i < Object.keys(counts).length; i++) {
             result[i] = {
                 book: cart.find((o) => o._id === Object.keys(counts)[i]),
@@ -34,7 +30,6 @@ class Cart  extends Component  {
 
     getSubTotal = () => {
        
-        //   console.log(this.props.cart)
         return (
             this.props.cart.bookCart.reduce((a, b) => a + b.price, 0)
         );
@@ -45,13 +40,11 @@ class Cart  extends Component  {
     return (
         <div>
            <Stepper number={0}/>
-
              <div>
                 <h2 className="checkout-title"> Your Cart</h2>
             </div>
             <div className='checkout-wrapper'>
-                
-                    
+         
                 <div className="checkout-left">
                 <div id='subheading-div'>
                     <div className='sub1'>Items</div>
@@ -67,11 +60,7 @@ class Cart  extends Component  {
                                     ))}
 
                 </div>
-                
-
-                
                 <div className="checkout-right">
-
                 <div className="subtotal">
             <CurrencyFormat
             renderText= {(value) => (
@@ -83,7 +72,7 @@ class Cart  extends Component  {
                
                 <p>
                     Delivery :
-                    <strong> {30} </strong>
+                    <strong> {dev_charge} </strong>
                 </p>
                 <p> GST (5%):
             <strong>{(this.getSubTotal()*0.05)}</strong>

@@ -11,7 +11,7 @@ export const getBookbyId = (id) => (dispatch) => {
         headers: myHeaders,
         redirect: "follow",
     };
-    //console.log(id)
+
 
     fetch(config.user + `book/${id}` , requestOptions)
         .then((response) => response.json())
@@ -20,7 +20,6 @@ export const getBookbyId = (id) => (dispatch) => {
                 type: CURRENT_BOOK,
                 payload: res,
             });
-           // console.log(res)
         })
         .catch((err) => console.log(err));
 };
@@ -35,7 +34,6 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
         body: raw,
         redirect: "follow",
     };
-//console.log(keyword)
 
     fetch(config.user + `book/query?keyword=${keyword}`, requestOptions)
         .then((response) => response.json())
@@ -44,7 +42,6 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
                 type: GET_BOOKS,
                 payload: res,
             });
-          //  console.log(res)
         })
         .catch((err) => console.log(err));
 };

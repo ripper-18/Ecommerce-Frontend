@@ -32,14 +32,14 @@ class OrderPage extends Component{
     };
     
     displayRazorpay = async (data) => {
-         console.log(data);
+         //console.log(data);
         const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
         ); 
 
-        console.log(res)
+      //  console.log(res)
         if (!res) {
-            console.log(data)
+           // console.log(data)
             alert("Razorpay failed to load. Are you online?");
             return;
         }
