@@ -1,6 +1,6 @@
 const data = {
-    api: "http://127.0.0.1:4000/api/",
-    user: "http://localhost:4000/api/user/",
+    api: "https://du-book-server.herokuapp.com/api/",
+    user: "https://du-book-server.herokuapp.com/api/user/",
     rzp_id: "rzp_test_sGuLHAlHRrdevT",
 };
 

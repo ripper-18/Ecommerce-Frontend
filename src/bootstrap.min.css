@@ -16,7 +16,7 @@
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
-    --purple: #9b479f;
+    --purple: #273c75;
     --pink: #e83e8c;
     --red: #d9230f;
     --orange: #d9831f;
@@ -32,7 +32,7 @@
     --success: #469408;
     --info: #029acf;
     --warning: #d9831f;
-    --danger: #9b479f;
+    --danger: #273c75;
     --light: #fff;
     --dark: #373a3c;
     --breakpoint-xs: 0;
@@ -2645,7 +2645,7 @@ textarea.form-control.is-valid {
     width: 100%;
     margin-top: .25rem;
     font-size: 80%;
-    color: #9b479f
+    color: #273c75
 }
 
 .invalid-tooltip {
@@ -2673,9 +2673,9 @@ textarea.form-control.is-valid {
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
-    border-color: #9b479f;
+    border-color: #273c75;
     padding-right: calc(1.5em + .75rem);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%239b479f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%239b479f' stroke='none'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23#273c75' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23#273c75' stroke='none'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right calc(.375em + .1875rem) center;
     background-size: calc(.75em + .375rem) calc(.75em + .375rem)
@@ -2683,7 +2683,7 @@ textarea.form-control.is-valid {
 
 .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
-    border-color: #9b479f;
+    border-color: #273c75;
     box-shadow: 0 0 0 .2rem rgba(155, 71, 159, .25)
 }
 
@@ -2695,20 +2695,20 @@ textarea.form-control.is-invalid {
 
 .custom-select.is-invalid,
 .was-validated .custom-select:invalid {
-    border-color: #9b479f;
+    border-color: #273c75;
     padding-right: calc(.75em + 2.3125rem);
-    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23373a3c' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%239b479f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%239b479f' stroke='none'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem)
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23373a3c' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23#273c75' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23#273c75' stroke='none'/%3e%3c/svg%3e") #fff no-repeat center right 1.75rem/calc(.75em + .375rem) calc(.75em + .375rem)
 }
 
 .custom-select.is-invalid:focus,
 .was-validated .custom-select:invalid:focus {
-    border-color: #9b479f;
+    border-color: #273c75;
     box-shadow: 0 0 0 .2rem rgba(155, 71, 159, .25)
 }
 
 .form-check-input.is-invalid~.form-check-label,
 .was-validated .form-check-input:invalid~.form-check-label {
-    color: #9b479f
+    color: #273c75
 }
 
 .form-check-input.is-invalid~.invalid-feedback,
@@ -2720,12 +2720,12 @@ textarea.form-control.is-invalid {
 
 .custom-control-input.is-invalid~.custom-control-label,
 .was-validated .custom-control-input:invalid~.custom-control-label {
-    color: #9b479f
+    color: #273c75
 }
 
 .custom-control-input.is-invalid~.custom-control-label::before,
 .was-validated .custom-control-input:invalid~.custom-control-label::before {
-    border-color: #9b479f
+    border-color: #273c75
 }
 
 .custom-control-input.is-invalid:checked~.custom-control-label::before,
@@ -2741,17 +2741,17 @@ textarea.form-control.is-invalid {
 
 .custom-control-input.is-invalid:focus:not(:checked)~.custom-control-label::before,
 .was-validated .custom-control-input:invalid:focus:not(:checked)~.custom-control-label::before {
-    border-color: #9b479f
+    border-color: #273c75
 }
 
 .custom-file-input.is-invalid~.custom-file-label,
 .was-validated .custom-file-input:invalid~.custom-file-label {
-    border-color: #9b479f
+    border-color: #273c75
 }
 
 .custom-file-input.is-invalid:focus~.custom-file-label,
 .was-validated .custom-file-input:invalid:focus~.custom-file-label {
-    border-color: #9b479f;
+    border-color: #273c75;
     box-shadow: 0 0 0 .2rem rgba(155, 71, 159, .25)
 }
 
@@ -3095,8 +3095,8 @@ fieldset:disabled a.btn {
 
 .btn-danger {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f
+    background-color: #273c75;
+    border-color: #273c75
 }
 
 .btn-danger:hover {
@@ -3116,8 +3116,8 @@ fieldset:disabled a.btn {
 .btn-danger.disabled,
 .btn-danger:disabled {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f
+    background-color: #273c75;
+    border-color: #273c75
 }
 
 .btn-danger:not(:disabled):not(.disabled).active,
@@ -3397,14 +3397,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-danger {
-    color: #9b479f;
-    border-color: #9b479f
+    color: #273c75;
+    border-color: #273c75
 }
 
 .btn-outline-danger:hover {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f
+    background-color: #273c75;
+    border-color: #273c75
 }
 
 .btn-outline-danger.focus,
@@ -3414,7 +3414,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-danger.disabled,
 .btn-outline-danger:disabled {
-    color: #9b479f;
+    color: #273c75;
     background-color: transparent
 }
 
@@ -3422,8 +3422,8 @@ fieldset:disabled a.btn {
 .btn-outline-danger:not(:disabled):not(.disabled):active,
 .show>.btn-outline-danger.dropdown-toggle {
     color: #fff;
-    background-color: #9b479f;
-    border-color: #9b479f
+    background-color: #273c75;
+    border-color: #273c75
 }
 
 .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
@@ -4684,7 +4684,7 @@ input[type=submit].btn-block {
 .nav-tabs .nav-link {
     color: #000;
     padding: 10px;
-    font-size: 18px;
+    font-size: 17px;
     border: none;
 }
 
@@ -5747,7 +5747,7 @@ a.badge-warning:focus {
 
 .badge-danger {
     color: #fff;
-    background-color: #9b479f
+    background-color: #273c75
 }
 
 a.badge-danger:focus,
@@ -7387,7 +7387,7 @@ button.bg-warning:hover {
 }
 
 .bg-danger {
-    background-color: #9b479f !important
+    background-color: #273c75 !important
 }
 
 a.bg-danger:focus,
@@ -7488,7 +7488,7 @@ button.bg-dark:hover {
 }
 
 .border-danger {
-    border-color: #9b479f !important
+    border-color: #273c75 !important
 }
 
 .border-light {
@@ -11293,7 +11293,7 @@ a.text-warning:hover {
 }
 
 .text-danger {
-    color: #9b479f !important
+    color: #273c75 !important
 }
 
 a.text-danger:focus,
@@ -11543,7 +11543,7 @@ a.text-dark:hover {
 
 .btn-danger,
 .btn-danger:hover {
-    background-image: linear-gradient(#a54caa, #9b479f 6%, #914294);
+    background-image: linear-gradient(#192a56, #273c75 6%, #192a56);
     background-repeat: no-repeat;
     -webkit-filter: none;
     filter: none;

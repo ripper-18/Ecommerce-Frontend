@@ -92,20 +92,21 @@ class Profile extends Component {
         }
     }
     render() {
-        return ( <div className = 'outer_container' >
+        return ( <div style={{overflowX:"hidden"}}>
 
             <br/> <br/> <div className = "card_container" >
             <div className = 'card' style={{marginBottom:"10px",margin:"auto"}} >
             <Tabs defaultActiveKey = "overview"
              id = "uncontrolled-tab-example" 
-            
+          
              >
             <Tab eventKey = "overview"
             title = "Account Overview" 
+            className={cx(styles.tab)}
             >
            <div className="row justify-content-center mt-sm-6 pb-sm-5">
-                            <div className="col-sm-3 jmt-sm-6">
-                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3 ">
+                            <div className="col-sm-3 mt-sm-6 justify-content-center">
+                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3 p-6 ">
                                     <div className="pb-1 m-sm-0 d-sm-flex w-100">
                                         <div className="card-header bg-white mt-4 mx-3 px-0">
                                             <h2  >Welcome Back</h2>
@@ -208,9 +209,9 @@ class Profile extends Component {
              <Tab eventKey = "orders"
             title = "Previous Orders" >
 
-<div className="col-12 p-0 col-md-7" style={{marginLeft:"35%"}}>
+<div className="col-12 p-0 col-md-7" style={{margin:"auto"}}>
                             <div className="py-4 px-3 mb-5" >
-                                <div className="py-2 row">
+                                <div className="py-2 row justify-content-center">
                                     <div className="col-12 col-md-8">
                                         <h2 className="font-weight-bold">
                                             Your Past Orders
@@ -219,7 +220,7 @@ class Profile extends Component {
                                 </div>
                               
                                 
-                                    <div className="py-2 row">
+                                    <div className="py-2 row justify-content-center">
                                     <div className="col-8">
                                         {this.props.pastOrders.length > 0 ? (
                                             this.props.pastOrders.map(

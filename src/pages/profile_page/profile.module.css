@@ -3,3 +3,9 @@
     font-size: 10px;
     color: blueviolet;
 }
+
+@media screen and (max-width:380px){
+    .tab{
+        font-size: 10px;
+    }
+}

@@ -75,16 +75,7 @@ class Address extends Component {
         return (
             <>
                 <div className={styles.wrapper}>
-                    <div className="col border-bottom p-0">
-                        <div
-                            className={cx(
-                                styles.bread,
-                                "m-auto breadcrumb container "
-                            )}
-                        >
-                            <Link to="/account">Account</Link>
-                        </div>
-                    </div>
+                    
                     <div className={"container my-5"}>
                         <div className="d-md-flex mb-5 w-100 justify-content-between">
                             <h3 className="font-weight-bold">
