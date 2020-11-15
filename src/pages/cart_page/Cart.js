@@ -49,8 +49,8 @@ class Cart  extends Component  {
              <div>
                 <h2 className="checkout-title"> Your Cart</h2>
             </div>
-            <Row>
-                <Col xs="9">
+            <div className='checkout-wrapper'>
+                
                     
                 <div className="checkout-left">
                 <div id='subheading-div'>
@@ -67,9 +67,9 @@ class Cart  extends Component  {
                                     ))}
 
                 </div>
-                </Col>
+                
 
-                <Col xs="3">
+                
                 <div className="checkout-right">
 
                 <div className="subtotal">
@@ -112,8 +112,8 @@ class Cart  extends Component  {
         </div>
                         <button className='clear-cart-button' onClick={this.props.clearCart}>Clear Cart</button>
                 </div>
-                </Col>
-            </Row>
+                
+            </div>
 
         </div>
     )}

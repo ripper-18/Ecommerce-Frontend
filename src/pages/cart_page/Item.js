@@ -36,17 +36,17 @@ class Item extends Component {
                 <div className='price-area'>
                     <span className='quantity-multiplier' >{this.props.item.quantity}x </span>
                     <span>{this.props.item.book.name}</span>
-
+ 
 
                 </div>
                 <div className='button-area'>
                     <p id='final-price'>{price_of_item}</p>
-                    <button className="add-subtract-button" onClick={() =>
+                    <button className="add-subtract-button width-controller" onClick={() =>
                         this.handleAddToCart(
                             this.props.item.book
                         )
                     }>+</button>
-                    <button className="add-subtract-button" onClick={() =>
+                    <button className="add-subtract-button width-controller" onClick={() =>
                         this.handleRemoveFromCart(
                             this.props.item.book
                         )
