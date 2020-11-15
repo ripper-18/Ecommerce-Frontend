@@ -104,9 +104,9 @@ class Cart  extends Component  {
             prefix={"Rs."}
             />
             {this.props.auth.token?(
-  <Button className="btn  btn-sm" disabled={!this.getSubTotal()} onClick={()=>this.props.history.push('/checkout')}>Go to Checkout! </Button>
+  <button className="standardButton" disabled={!this.getSubTotal()} onClick={()=>this.props.history.push('/checkout')}>Go to Checkout! </button>
             ):(
-                <Button className="btn  "onClick={()=>this.props.history.push('/login')}>Please sign in to Continue</Button>
+                 <button className="standardButton" onClick={()=>this.props.history.push('/login')}>Please sign in to Continue</button>
             )}
          
         </div>
