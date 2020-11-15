@@ -8,6 +8,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/auth_actions";
 import {showDialog} from '../../actions/dialog_actions'
+import logo from '../../assets/logo2.png'
 class Header extends Component{
     state={
         keyword:""
@@ -48,7 +49,7 @@ class Header extends Component{
             ...this.state,
             keyword: ""
         });
-        this.submitSearch2()}} src="https://i.ibb.co/3CWFddk/header-logo-1.png" alt="DUBookX"/></Link> 
+        this.submitSearch2()}} src={logo} alt="DUBookX"/></Link> 
 
             <div className="header-search">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
@@ -62,12 +63,12 @@ class Header extends Component{
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className="header-links">
                         <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
-                        <span className="header-option-lineTwo">Login</span>
+                        <span className="header-option-lineTwo">LOGIN</span>
                     </Link>
                     ):(
                         <Link to="/profile"  className="header-links">
                         <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon icon" /></span>
-                        <span className="header-option-lineTwo">Account</span>
+                        <span className="header-option-lineTwo">ACCOUNT</span>
                     </Link>
                     )}
                 
@@ -86,14 +87,9 @@ class Header extends Component{
                         
                         
                         
-                        <span className="header-option-lineTwo">Cart</span>
+                        <span className="header-option-lineTwo">CART</span>
                     </Link>)}
 
-
-                {/* <Link to="/cart" className="header-links">
-                    <span className="header-option-lineOne"><ShoppingCartIcon></ShoppingCartIcon></span>
-                    <span className="header-option-lineTwo">Cart</span>
-                </Link> */}
                 </div>
             </div>
         </div>

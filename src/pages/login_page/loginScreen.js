@@ -12,6 +12,7 @@ import {
 import {showDialog} from '../../actions/dialog_actions'
 import google from '../../assets/google.svg'
 import ForgotPModal from './ForgotPModal'
+import cx from 'classnames'
 
 class Login extends Component {
     state = {
@@ -166,12 +167,12 @@ class Login extends Component {
                     <br></br><br></br>
                     <div className="justify-content-center row">
                     <div className=" col-md-8 col-sm-8">
-                    <div className={"card"} >
-                        <div className={"card-body"} style={{width:"80%"}}>
+                    <div className={"card"} style={{alignItems:"center"}} >
+                        <div className={"card-body"} style={{width:"80%",justifyContent:"center"}}>
                             <Tabs
                                 defaultActiveKey="login"
                                 id="uncontrolled-tab-example"
-                               
+                               className={cx(styles.tabs)}
                             >   
                                 <Tab eventKey="login" title="Login" className = {styles.login_tab}>
                                     <div className="mt-3">

@@ -95,15 +95,17 @@ class Profile extends Component {
         return ( <div className = 'outer_container' >
 
             <br/> <br/> <div className = "card_container" >
-            <div className = 'card' >
+            <div className = 'card' style={{marginBottom:"10px",margin:"auto"}} >
             <Tabs defaultActiveKey = "overview"
-             id = "uncontrolled-tab-example" >
+             id = "uncontrolled-tab-example" 
+            
+             >
             <Tab eventKey = "overview"
             title = "Account Overview" 
             >
-           <div className="row justify-content-center mt-sm-3 pb-sm-5">
-                            <div className="col-sm-3 mt-sm-3">
-                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3">
+           <div className="row justify-content-center mt-sm-6 pb-sm-5">
+                            <div className="col-sm-3 jmt-sm-6">
+                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3 ">
                                     <div className="pb-1 m-sm-0 d-sm-flex w-100">
                                         <div className="card-header bg-white mt-4 mx-3 px-0">
                                             <h2  >Welcome Back</h2>
