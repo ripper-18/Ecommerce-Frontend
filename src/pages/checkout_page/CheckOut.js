@@ -197,7 +197,7 @@ class CheckOut extends Component {
                                         style={{marginRight:"10%" }}
                                     />
                                 </div>
-                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline" }}>
+                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer" }}>
                                     <div className="card-body">
                                         <div>
                                             <span className="font-weight-bold">

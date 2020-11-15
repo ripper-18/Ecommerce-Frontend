@@ -150,6 +150,10 @@ hr{
   height: fit-content;
 }
 
+.card-inside-div{
+  cursor: pointer;
+}
+
 @media(max-width:767px){
   #add-addr-box{
   width: 91.66%;
