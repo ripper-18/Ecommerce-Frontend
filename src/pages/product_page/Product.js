@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
-import {Row, Col, Image, ListGroup, Card, Button, Form} from 'react-bootstrap';
+import {Row, Col, Image, ListGroup, Card} from 'react-bootstrap';
 import './Product.css';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getBookbyId} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
-
+import {showDialog} from '../../actions/dialog_actions'
 
 class Product extends Component {
     state={
@@ -18,19 +18,25 @@ class Product extends Component {
             ...this.state,
             selectedImage:image
         })
-        //console.log(this.state.selectedImage)
       }; 
      
+     componentDidMount(){
 
-      componentDidMount(){
-          console.log(this.props)
-      }
+      if(this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length===this.props.book.countInStock){
+        this.props.showDialog('Maximum no of items in stock reached!')
+       }
+     }
+       
 
     render(){
-
+      let disabled=false
       let quantity=this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length
+      if(quantity===this.props.book.countInStock){
+        disabled=true
+      }
+      
     return (
-        <Row className="product-container">
+        <Row className="product-container" style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
           <Image src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
         </Col>
@@ -99,6 +105,7 @@ class Product extends Component {
                   <div style={{display:"flex",justifyContent:"space-evenly"}}>
                     <button
                   onClick={()=>this.props.addToCart(this.props.book)}
+                  disabled={disabled}
                   className="cc-btn"
                 >
                   +
@@ -148,6 +155,7 @@ export default connect(mapStateToProps, {
     
     addToCart,
     removeFromCart,
-    getBookbyId
+    getBookbyId,
+    showDialog
 })(withRouter(Product));
 

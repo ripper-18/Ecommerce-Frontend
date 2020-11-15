@@ -44,8 +44,9 @@ handleRemoveFromCart = () => {
                                         <button className='add-to-cart-button'
                                         // style={{ color: "red" }}
                                         onClick={this.handleAddToCart}
+                                        disabled={this.props.data.countInStock===0}
                                     >
-                                        {"Add To Cart"}
+                                        {this.props.data.countInStock===0?"Out of Stock":"Add to Cart"}
                                     </button>
                                     </div>
 
@@ -86,7 +87,12 @@ handleRemoveFromCart = () => {
                                                 </button>
                                                 
                                             ) : (
-                                                <span />
+                                                <button className='add-subtract-button'
+                                                    // style={{ color: "red" }}
+                                                   style={{fontSize:"8px"}}
+                                                >
+                                                    {"Max Limit"}
+                                                </button>
                                             )}
 
                                         </div>

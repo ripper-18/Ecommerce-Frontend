@@ -7,6 +7,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     
