@@ -159,7 +159,7 @@ class FilterAccordion extends Component {
                                 <li className="col-6">
                                     <label>
                                         <input
-                                            value="cours:BA"
+                                            value="course:BA"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
