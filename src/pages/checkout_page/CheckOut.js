@@ -156,8 +156,10 @@ class CheckOut extends Component {
                 <span className='righty'>₹30</span><br></br>
                 <span className='lefty'>Gst(5%)</span>
                 <span className='righty'>₹{gst}</span><br></br>
-                <span className='lefty'>Discount</span>
-                <span className='righty'>₹0</span><br></br>
+
+                {/* Add discount field */}
+                {/* <span className='lefty'>Discount</span>
+                <span className='righty'>₹0</span><br></br> */}    
                 
                 
                 
@@ -264,10 +266,13 @@ class CheckOut extends Component {
                         
                     />
                     <div className="card" id="add-addr-box" style={{ padding:"0 8%",minHeight: "250px", borderWidth: 4, borderStyle: 'dashed', borderRadius: 4}}>
-                        <div className="card-body">
-                            <span className="add1" onClick={() => this.setModalOpen(true)}>+</span>
-                            <br></br>
-                            <span className="add2" onClick={() => this.setModalOpen(true)}>Add Address</span>
+                            <div className="card-body" onClick={() => this.setModalOpen(true)} >
+                            <div className='card-inside-div'>
+                                    <div className="add1" style={{ textAlign: "center" }} >+</div>
+                                    <br></br>
+                                    <div className="add2" >Add Address</div>
+                            </div>
+                            
                         </div>
                         {" "}
                     </div>

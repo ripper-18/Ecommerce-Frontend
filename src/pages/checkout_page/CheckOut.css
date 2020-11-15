@@ -93,10 +93,18 @@ hr{
   color: blue;
 }
 
-.add1{
+ .add1{
   font-size: 110px;
   text-align: center;
-  margin-left: 10px;
+ 
+} 
+
+.add2{
+  width:fit-content;
+  margin: auto;
+  /* text-align: center;
+  margin-left: 30%; */
+
 }
 
 .place-order-button {
