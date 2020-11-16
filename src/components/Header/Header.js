@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/auth_actions";
 import {showDialog} from '../../actions/dialog_actions'
 import logo from '../../assets/logo2.png'
+import Sidebar from './Sidebar'
 class Header extends Component{
     state={
         keyword:""
@@ -45,6 +46,7 @@ class Header extends Component{
     render(){
     return (
         <div className="header">
+            <Sidebar />
            <Link to="/"><img className="header-logo" onClick={async()=>{await this.setState({
             ...this.state,
             keyword: ""
@@ -81,7 +83,7 @@ class Header extends Component{
                             
                     <span className='dynamic_cart' style={{visibility:this.props.cart.bookCart.length===0?'hidden':'initial'}}>{this.props.cart.bookCart.length} </span>
 
-                            <span className=""><ShoppingCartIcon></ShoppingCartIcon></span>
+                            <span className=""><ShoppingCartIcon className="icon"></ShoppingCartIcon></span>
                            
                         </span>
                         
