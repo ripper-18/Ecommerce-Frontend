@@ -65,6 +65,7 @@ function App(props)   {
                 >
                     <Header />
                     <main style={{ minHeight: "60vh" }}>
+                        <Route path="/loader" exact component={Loader}/>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
