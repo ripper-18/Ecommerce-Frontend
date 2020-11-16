@@ -53,12 +53,11 @@ class Product extends Component {
             <ListGroup.Item variant='flush'>
             <div className="images">
                     {this.props.book.image.map((x) => (
+                      <Lazyload offset={400}>
                       <div key={x} onClick={() => this.changeImage(x)} className="image-container">
-                        <Lazyload offset={400}>
-                           <img src={x} alt="product" className="image" />
-                        </Lazyload>
-                         
+                        <img src={x} alt="product" className="image" />
                       </div>
+                      </Lazyload>
                     ))}
                   </div>
             </ListGroup.Item>
@@ -76,7 +75,7 @@ class Product extends Component {
             <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
             <span className="product-heading"> Edition:  {this.props.book.edition} </span>  <span className="product-heading"> Weight:  {this.props.book.weight}gms</span> 
             </ListGroup.Item>
-            <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
+            <ListGroup.Item style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",margin:"5px" }}>
                     <span className="product-heading">Subject: {(this.props.book.subject).charAt(0).toUpperCase()+(this.props.book.subject).substring(1)}</span>  <span className="product-heading">Course: {this.props.book.course}</span> <span className="product-heading">Year: {this.props.book.year}</span>
             </ListGroup.Item>
           </ListGroup>

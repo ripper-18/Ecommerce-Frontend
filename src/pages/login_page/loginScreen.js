@@ -14,6 +14,7 @@ import google from '../../assets/google.svg'
 import ForgotPModal from './ForgotPModal'
 import cx from 'classnames'
 
+
 class Login extends Component {
     state = {
         login: {
@@ -374,20 +375,15 @@ class Login extends Component {
                             </Tabs>
 
                         </div>
-
-
                     </div>
                     </div>
                     </div>
-                    
-                    
-                    
-                    
                 </div>
-
+               
                 <div className={styles.right_section} >
-                    
                 </div>
+               
+               
             </div>
         );
     }

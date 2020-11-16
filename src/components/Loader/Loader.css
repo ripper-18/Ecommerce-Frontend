@@ -1,6 +1,11 @@
 .loader-gif{
     margin: auto;
 }
+.head{
+    margin: auto;
+    font-size: 4rem;
+    font-family: cursive;
+}
 
 @media (max-width:550px){
     .loader-gif{
