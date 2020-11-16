@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./Item.css"
 import {connect} from 'react-redux'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
+import Lazyload from 'react-lazyload'
 class Item extends Component {
 
     handleAddToCart = (elem) => {
@@ -19,11 +20,14 @@ class Item extends Component {
         <div className = "product-vin">
             <div className='column-ni'>
             <div className='product-image-wrap'>
-            <img
+                <Lazyload offset={400}>
+                <img
             className='product-img'
-            src={this.props.item.book.image[0]
-            }
+            src={this.props.item.book.image[0]}
+            alt={"cart-img"}
             />
+                </Lazyload>
+            
             </div>
             </div>
 

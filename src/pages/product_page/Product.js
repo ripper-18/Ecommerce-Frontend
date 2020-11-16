@@ -6,6 +6,7 @@ import {withRouter} from 'react-router-dom'
 import {getBookbyId} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {showDialog} from '../../actions/dialog_actions'
+import Lazyload from 'react-lazyload'
 
 class Product extends Component {
     state={
@@ -38,7 +39,10 @@ class Product extends Component {
     return (
         <Row className="product-container" style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
+          <Lazyload offset={400}>
           <Image src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
+          </Lazyload>
+         
         </Col>
         <Col md={3} xs={6}>
           <Card style={{margin:"20px"}}>
@@ -50,7 +54,10 @@ class Product extends Component {
             <div className="images">
                     {this.props.book.image.map((x) => (
                       <div key={x} onClick={() => this.changeImage(x)} className="image-container">
-                          <img src={x} alt="product" className="image" />
+                        <Lazyload offset={400}>
+                           <img src={x} alt="product" className="image" />
+                        </Lazyload>
+                         
                       </div>
                     ))}
                   </div>

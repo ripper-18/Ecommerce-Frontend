@@ -1,0 +1,10 @@
+.loader-gif{
+    margin: auto;
+}
+
+@media (max-width:550px){
+    .loader-gif{
+        height: 250px;
+        width: 250px;
+    }
+}

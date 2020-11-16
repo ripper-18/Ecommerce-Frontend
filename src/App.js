@@ -8,24 +8,50 @@ import {connect} from 'react-redux'
 import {hideDialog} from './actions/dialog_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
-import MainPage from './pages/main_page/MainPage'
-import LoginPage from "./pages/login_page/loginScreen"
-import CartPage from "./pages/cart_page/Cart"
-import OrderPage from './pages/order_page/OrderPage'
-import ProfilePage from './pages/profile_page/profilet'
-import CheckOutPage from './pages/checkout_page/CheckOut'
-import AddressPage from './pages/address_page/address'
-import ProductPage from './pages/product_page/Product'
-import FaqPage from './pages/faq_page/Faq'
-import PrivacyPage from './pages/privacy_page/Privacy'
-import DisclaimerPage from './pages/disclaimer_page/Disclaimer'
-import ReturnsPage from './pages/returns_page/Returns' 
-import TermsPage from './pages/terms_page/Terms'
+
 import PrivateRoute from "./pages/common/PrivateRoute"
 
 
 
 function App(props)   {
+    const MainPage=React.lazy(()=>
+    import('./pages/main_page/MainPage'))
+
+    const LoginPage=React.lazy(()=>
+    import('./pages/login_page/loginScreen'))
+
+    const CartPage=React.lazy(()=>
+    import('./pages/cart_page/Cart'))
+
+    const OrderPage=React.lazy(()=>
+    import('./pages/order_page/OrderPage'))
+
+    const ProfilePage=React.lazy(()=>
+    import('./pages/profile_page/profilet'))
+
+    const CheckOutPage=React.lazy(()=>
+    import('./pages/checkout_page/CheckOut'))
+
+    const AddressPage=React.lazy(()=>
+    import('./pages/address_page/address'))
+
+    const ProductPage=React.lazy(()=>
+    import('./pages/product_page/Product'))
+
+    const FaqPage=React.lazy(()=>
+    import('./pages/faq_page/Faq'))
+
+    const PrivacyPage=React.lazy(()=>
+    import('./pages/privacy_page/Privacy'))
+
+    const DisclaimerPage=React.lazy(()=>
+    import('./pages/disclaimer_page/Disclaimer'))
+
+    const ReturnsPage=React.lazy(()=>
+    import('./pages/returns_page/Returns'))
+
+    const TermsPage=React.lazy(()=>
+    import('./pages/terms_page/Terms'))
 
         return (
             <BrowserRouter>
