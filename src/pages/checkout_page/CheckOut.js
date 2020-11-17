@@ -162,7 +162,7 @@ class CheckOut extends Component {
                                         style={{marginRight:"10%" }}
                                     />
                                     </div>*/}
-                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer",border:this.state.selectedAddress===addr._id?`2px solid #00a8ff`:`` }}
+                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer",border:this.state.selectedAddress===addr._id?`2px solid #273c75`:`` }}
                                 
                                 onClick={()=>
                                     this
