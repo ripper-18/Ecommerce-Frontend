@@ -3,7 +3,7 @@ import { Container, Card } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import Select from "react-select";
 import './Filters_pwc.css'
-import FilterAccordion from "./FiltersArcadion_pwc";
+
 
 const options = [
     { value: "1", label: "Name A-Z" },
@@ -24,10 +24,10 @@ class Filters extends Component {
         return (
             <div className='pwc_filter_container'>
 
-                {/* className="col-12 col-sm-12 order-sm-12 p-0" */}
+           
                  
                 <div style={{ flex: "1" }}>
-                    {/* <label>Sort By</label> */}
+                 
                     <Select
                         theme={(theme) => ({
                             ...theme,
@@ -44,22 +44,7 @@ class Filters extends Component {
                         options={options}
                     />
                 </div>
-                {/* <div style={{flex:"1"}}>
-                    <FilterAccordion setFilters={this.props.setFilters} />
-                </div> */}
-                {/* className='resetContainer mb-md-5 pb-4' */}
-                {/* <div style={{ flex: "1" }}> */}
-                    {/* className="col-sm-12 p-0" */}
-                    {/* <div >
-                        <button
-                            onClick={() => window.location.reload()}
-                            className="btn btn-lg btn-outline-danger w-100 reset-button"
-                            style={{ borderColor: "#273c75" }}
-                        >
-                            Reset
-                        </button>
-                    </div>
-                </div> */}
+               
             </div>
             
 

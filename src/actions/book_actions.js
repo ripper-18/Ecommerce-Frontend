@@ -34,6 +34,7 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
         body: raw,
         redirect: "follow",
     };
+    //console.log(raw)
 
     fetch(config.user + `book/query?keyword=${keyword}`, requestOptions)
         .then((response) => response.json())

@@ -106,13 +106,15 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                                <li className="col-6">
+                                
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/1')}>
+
                                    1st Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/3')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -142,13 +144,13 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6">
+                            <li className="col-6" onClick={()=>props.history.push('/category/Bsc/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bsc/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bsc/3')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -178,13 +180,13 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6">
+                            <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -214,16 +216,16 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6">
+                            <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/3')}>
                                 3rd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/4')}>
                                 4th Year
                                 </li>
                             </ul>
@@ -253,16 +255,16 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6">
+                            <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                 3rd Year
                                 </li>
-                                <li className="col-6">
+                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                 4th Year
                                 </li>
                             </ul>

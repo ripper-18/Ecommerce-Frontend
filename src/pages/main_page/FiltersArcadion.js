@@ -5,8 +5,6 @@ import styles from "./FiltersArcadion.module.css";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ChevronIcon from "../../assets/main_page/chevron_down.svg";
-
-
 // import { connect } from "react-redux";
 
 class FilterAccordion extends Component {

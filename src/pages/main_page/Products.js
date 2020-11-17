@@ -23,7 +23,7 @@ class Products extends Component {
         
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-          console.log(token)//123
+         // console.log(token)//123
           if(token===null){
             token=''
         }
@@ -37,16 +37,18 @@ class Products extends Component {
         if (prevProps.filters !== this.props.filters) {
             const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-          console.log(token)//123
+        //  console.log(token)//123
           if(token===null){
             token=''
         }
+        //console.log(this.props.filters)
             this.props.getBooksByKeyword(this.props.filters,token);
         }
         
      
     }
     render(){
+       
         let {books}=this.props.book
         let { sortValue } = this.props;
         let display = books;

@@ -73,7 +73,7 @@ function App(props)   {
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
 
-                        <Route path='/pwc' exact component={PWC}/>
+                        <Route path='/category/:course/:year' exact component={PWC}/>
                         <Switch>
                         <PrivateRoute path="/order" exact component={OrderPage}/>
                         </Switch>
