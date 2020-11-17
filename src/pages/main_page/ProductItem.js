@@ -25,12 +25,12 @@ handleRemoveFromCart = () => {
         <div className = "product-individual">
            
           <Lazyload offset={400}>
-          <img className="product-image" src={this.props.data.image[0]} alt={"product-image"} />
+          <img className="product-image" src={this.props.data.image[0]} alt={"product-image"}   onClick={() => { this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}/>
           </Lazyload>
           
         
-            <div className="product-info" >
-                <p onClick={() => { this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}><b>{this.props.data.name}</b></p> 
+            <div className="product-info" onClick={() => { this.props.getBookbyId(this.props.data._id);this.props.history.push(`/product/${this.props.data._id}`)}}>
+                <p ><b>{this.props.data.name}</b></p> 
                 <p className= "product-price">
                
                     <strong>₹ {

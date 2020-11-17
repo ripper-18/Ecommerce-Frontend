@@ -37,8 +37,11 @@
 #address-box p{
   text-align: center;
     font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+  }
+  #address-box > span{
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
   }
 
 .lefty{

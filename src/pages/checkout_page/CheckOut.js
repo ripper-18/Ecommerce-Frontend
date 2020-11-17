@@ -58,11 +58,11 @@ class CheckOut extends Component {
     setSelectedAddress = async(e) => {
         await this.setState({
             ...this.state,
-            selectedAddress: e.target.value,
+            selectedAddress: e,
            
         });
         for(let i=0;i<this.props.order.addresses.length;i++){
-            if(this.props.order.addresses[i]._id===e.target.value){
+            if(this.props.order.addresses[i]._id===e){
                 this.setState({
                     ...this.state,
                     finalAddress:this.props.order.addresses[i]
@@ -141,12 +141,14 @@ class CheckOut extends Component {
             <div  id='address-box'>
                 <p>Delivery Information</p>
 
+                <span> Select Delivery Address: </span>
                 <div id='add-card-container'>
+                  
                  {this.props.order.addresses.length > 0 ? (
                     this.props.order.addresses.map((addr, index) => (
                         <div key={index} className="col-md-6" >
                             <label className="row">
-                                <div className="col-2">
+                                {/*<div className="col-2">
                                     <input
                                         type="radio"
                                         name="address"
@@ -159,8 +161,14 @@ class CheckOut extends Component {
                                         }
                                         style={{marginRight:"10%" }}
                                     />
-                                </div>
-                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer" }}>
+                                    </div>*/}
+                                <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer",border:this.state.selectedAddress===addr._id?`2px solid #00a8ff`:`` }}
+                                
+                                onClick={()=>
+                                    this
+                                        .setSelectedAddress(addr._id)
+                                }
+                                >
                                     <div className="card-body">
                                         <div>
                                             <span className="font-weight-bold">
