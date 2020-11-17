@@ -278,7 +278,7 @@ class OrderPage extends Component{
 
                         <div className="card-footer bg-white">
                             <button 
-                                className='place-order-button'
+                                className='place-orrder-button'
                                 style={{marginTop:"2%"}}
                                 
                                 onClick={this.stagePayment}
