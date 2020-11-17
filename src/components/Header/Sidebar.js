@@ -40,7 +40,7 @@ const Line2 = useRef()
     >
     <List style={{width:"100%",padding:"0px"}}>
         <ListItem style={{width:"100%",padding:"0px"}}>
-            <ListItemAvatar style={{backgroundColor:" #192a56",height:"60px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <ListItemAvatar style={{backgroundColor:" #232b2b",height:"60px",display:"flex",justifyContent:"center",alignItems:"center"}}>
             <AccountCircleIcon className="ic" />
             </ListItemAvatar>
             {!props.auth.isAuth?(
@@ -286,11 +286,13 @@ const Line2 = useRef()
                 <div className="hs-item">Your Account</div>
                 </Link>
                {!props.auth.isAuth?(
+                     <Link to="/login" style={{width:"100%",color:"#231f20"}}>
                     <div className="hs-item">
-                <Link to="/login" style={{width:"100%",color:"#231f20"}}>
+              
                     <span>Sign In</span>
-                </Link>
+               
                 </div>
+                 </Link>
             ):(
                 <div className="hs-item" onClick={()=>props.logoutUser(props.history)}>
                      <span  style={{cursor:"pointer"}}>Logout</span></div>

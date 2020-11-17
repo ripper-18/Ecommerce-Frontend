@@ -1,5 +1,5 @@
 import React from 'react'
-import gif from '../../assets/loader/DU (1).gif'
+import gif from '../../assets/loader/Loadergif.gif'
 import './Loader.css'
 
 function Loader() {

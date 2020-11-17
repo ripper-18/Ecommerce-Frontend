@@ -40,7 +40,7 @@ class Product extends Component {
         <Row className="product-container" style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
           <Lazyload offset={400}>
-          <Image src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
+          <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
           </Lazyload>
          
         </Col>

@@ -45,6 +45,7 @@ class Header extends Component{
 
     render(){
     return (
+        <>
         <div className="header">
             <Sidebar />
            <Link to="/"><img className="header-logo" onClick={async()=>{await this.setState({
@@ -53,7 +54,7 @@ class Header extends Component{
         });
         this.submitSearch2()}} src={logo} alt="DUBookX"/></Link> 
 
-            <div className="header-search">
+            <div className="header-search one">
                 <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
                 <div className="header-search-icon-div">
                     <SearchIcon className="header-search-icon icon" onClick={this.submitSearch}></SearchIcon> 
@@ -61,7 +62,7 @@ class Header extends Component{
             </div>
 
             <div className="header-nav">
-                <div className="header-option">
+                <div className="header-option acc">
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className="header-links">
                         <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
@@ -95,6 +96,13 @@ class Header extends Component{
                 </div>
             </div>
         </div>
+        <div className="header-search two">
+                <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
+                <div className="header-search-icon-div">
+                    <SearchIcon className="header-search-icon icon" onClick={this.submitSearch}></SearchIcon> 
+                </div>
+            </div>
+        </>
     )}
 }
 const mapStateToProps = (state) => ({

@@ -14,7 +14,7 @@
 
 .hello{
     height: 60px;
-    background-color: #192a56;
+    background-color: #232b2b;
     width: 100%;
     margin: 0px;
     padding: 10px;
@@ -35,11 +35,12 @@
     width: 100%;
     padding: 20px;
     background-color: #f5f6fa;
+    color: #232b2b;
    
 }
 .bhead{
     font-size: 1.5rem;
-
+    color: #232b2b;
 }
 
 .c{
@@ -99,7 +100,7 @@
 .hs-item{
     cursor: pointer;
     padding: 20px;
-    color: #231f20;
+    color: #232b2b;
     font-size: 1.1rem;
 }
 
@@ -128,4 +129,11 @@
     padding: 0;
     margin: 0;
     margin-top: 20px;
+  }
+
+  @media screen and (max-width: 450px){
+      .menu-icon{
+          width: 10px;
+          height: 10px;
+      }
   }
