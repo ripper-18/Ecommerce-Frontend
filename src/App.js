@@ -17,6 +17,9 @@ function App(props)   {
     const MainPage=React.lazy(()=>
     import('./pages/main_page/MainPage'))
 
+    const PWC = React.lazy(()=>
+    import('./pages/product_without_carousel_page/pwc'))
+
     const LoginPage=React.lazy(()=>
     import('./pages/login_page/loginScreen'))
 
@@ -69,6 +72,8 @@ function App(props)   {
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
+
+                        <Route path='/pwc' exact component={PWC}/>
                         <Switch>
                         <PrivateRoute path="/order" exact component={OrderPage}/>
                         </Switch>
