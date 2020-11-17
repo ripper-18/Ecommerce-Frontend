@@ -97,6 +97,7 @@ function App(props)   {
                         <Route path = "/terms" exact component ={TermsPage}/>
 
                    </main>
+                   <Footer />  
                    </Suspense>
                    <Modal
                     show={props.dialog.isOpen}
@@ -118,7 +119,7 @@ function App(props)   {
                         </button>
                     </Modal.Footer>
                 </Modal>
-                <Footer />  
+               
             </div>
             </BrowserRouter>   
         );
