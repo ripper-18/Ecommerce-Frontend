@@ -234,13 +234,13 @@ class Login extends Component {
                                     <p>Or Login with </p>
                                     
                                     <div className={styles.google_button_container}>
-                                    <GoogleLogin
+                                    {<GoogleLogin
                                     render={(
                                         renderProps
                                     ) => (
                                             <button
                                                 className = {styles.login_with_google_button}
-                                                onClick={
+                                                onClick={()=>
                                                     renderProps.onClick
                                                 }
                                                 disabled={
@@ -264,7 +264,7 @@ class Login extends Component {
                                         cookiePolicy={
                                             "single_host_origin"
                                         }
-                                    />
+                                    />}
                                     </div>
                                    
                                 </Tab>

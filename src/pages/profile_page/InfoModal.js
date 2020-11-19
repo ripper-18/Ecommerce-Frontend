@@ -81,7 +81,7 @@ import Modal from "react-bootstrap/Modal";
                             <div className="row m-2 ">
                             <div className="col-sm-12" >
                              <h6 style={{display:"flex",justifyContent:"space-between"}} >
-                              <span className="font-weight-bold mr-4 ">Delivery Details : </span><div><span className="text-right text-capitalize ">Delivered By:  {this.props.data.assignDelivery.name}</span><br></br> <span className="text-right text-capitalize ">Phone No:  {this.props.data.assignDelivery.phone}</span> </div>
+
                              </h6> 
                             </div>
                         </div>
