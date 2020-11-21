@@ -240,7 +240,7 @@ class Login extends Component {
                                     ) => (
                                             <button
                                                 className = {styles.login_with_google_button}
-                                                onClick={()=>
+                                                onClick={
                                                     renderProps.onClick
                                                 }
                                                 disabled={

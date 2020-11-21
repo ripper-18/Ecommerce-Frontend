@@ -1,26 +1,14 @@
-.background-carousel {
-    background: url(https://i.ibb.co/kympBHS/Copy-of-Untitled-2.png);
+
+.dabba{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-
-
-.sideFilter {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    transform: translateX(-100%);
-    width: 90vw;
-    background-color: #fff;
-    font-size: 1.1rem;
-    border-top: 0.5px solid #444;
-    min-height: 100vh;
-    transition: transform 0.5s ease-in-out;
-}
-
-.sideFilterOpen {
-    transform: translate(0);
+@media (max-width:600px){
+    .dabba{
+        display: flex;
+        flex-direction: column;
+    }
 }
 @media screen and (min-width: 769px) {
     .containerWrap {
@@ -28,3 +16,4 @@
         background: linear-gradient(90deg, #f5f6fa, #f5f6fa 40%, #fff 0);
     }
 }
+

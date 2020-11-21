@@ -93,7 +93,7 @@ class MainPage extends Component {
                             <Col
                                 className="bg-white" sm={12} md={12}>
                                 <br></br>
-                                <div style={{display:"flex",flexWrap:"wrap"}}>
+                                <div className={(styles.dabba)}>
 
                                 
                                 <div style={{flex:"6"}}>
@@ -149,4 +149,4 @@ const mapStateToProps = (state) => ({
    
 });
 
-export default connect(mapStateToProps,{getBooksByKeyword})(withRouter(MainPage))
+export default connect(mapStateToProps,{getBooksByKeyword,addToCart,removeFromCart})(withRouter(MainPage))
