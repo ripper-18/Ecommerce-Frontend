@@ -56,6 +56,9 @@ function App(props)   {
     const TermsPage=React.lazy(()=>
     import('./pages/terms_page/Terms'))
 
+    const ErrorPage = React.lazy(() =>
+    import('./pages/error_page/error404_page'))
+
         return (
             <BrowserRouter>
            
@@ -98,7 +101,14 @@ function App(props)   {
                         <Route path = "/disclaimer" exact component={DisclaimerPage}/>
                         <Route path = "/returns" exact component={ReturnsPage}/>
                         <Route path = "/terms" exact component ={TermsPage}/>
+<<<<<<< HEAD
+                        <Route path="/404" exact component={ErrorPage} />
+
+||||||| 73bdc90
+
+=======
                        
+>>>>>>> f33e29eb54ac37d265f69765de711f9e84fdf85b
                    </main>
                    <Footer />  
                    
