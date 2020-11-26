@@ -11,7 +11,7 @@ class ProductItem extends Component {
   }
   handleAddToCart = () => {
    
-        this.props.addFunction({  ...this.props.data});
+        this.props.addFunction({...this.props.data});
     
 };
 handleRemoveFromCart = () => {
