@@ -81,6 +81,7 @@
 	height: 30px;
 	width: 30px;
 	transition: transform 0.5s;
+	cursor: pointer;
 }
 
  .lower-half .left .buy:hover {

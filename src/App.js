@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 import {hideDialog} from './actions/dialog_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
-
+import {ScrollArea} from 'react-scrollbar'
 import PrivateRoute from "./pages/common/PrivateRoute"
 
 
@@ -58,6 +58,7 @@ function App(props)   {
 
         return (
             <BrowserRouter>
+           
             <div className="App">
                 <Suspense
                 fallback={
@@ -66,8 +67,10 @@ function App(props)   {
                     </React.Fragment>
                 }
                 >
-                    <Header />
+                    
+                    <Header style={{position:"sticky"}} />
                     <main style={{ minHeight: "60vh" }}>
+                    
                         <Route path="/loader" exact component={Loader}/>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
@@ -95,9 +98,10 @@ function App(props)   {
                         <Route path = "/disclaimer" exact component={DisclaimerPage}/>
                         <Route path = "/returns" exact component={ReturnsPage}/>
                         <Route path = "/terms" exact component ={TermsPage}/>
-
+                       
                    </main>
                    <Footer />  
+                   
                    </Suspense>
                    <Modal
                     show={props.dialog.isOpen}
@@ -121,6 +125,7 @@ function App(props)   {
                 </Modal>
                
             </div>
+            
             </BrowserRouter>   
         );
     
