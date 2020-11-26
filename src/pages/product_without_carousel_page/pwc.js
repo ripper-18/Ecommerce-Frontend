@@ -1,7 +1,7 @@
 import React, { useEffect, Component } from 'react'
 
 import Filters from './Filters_pwc'
-import '../main_page/Products.css'
+import '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
