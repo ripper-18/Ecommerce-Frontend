@@ -1,7 +1,7 @@
 import React, { useEffect, Component } from 'react'
 
 import Filters from './Filters_pwc'
-import '../main_page/Products.css'
+import styles2 from '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
@@ -97,7 +97,7 @@ class MainPage extends Component {
 
                                 
                                 <div style={{flex:"6"}}>
-                                <h1 style={{ textAlign: 'center' }} className="welcome-heading"> Best Place to Buy Books </h1>
+                                <h1 style={{ textAlign: 'center' }} > Best Place to Buy Books </h1>
 
                                 </div>
 
@@ -110,12 +110,12 @@ class MainPage extends Component {
                                 
                             
                                 <div className="main">
-                                <Row className= "products-page">
+                                <Row className= {styles2.products_page}>
          
-                    <div className="all-products" style={{justifyContent:"center"}}>
+                    <div className={styles2.all_products} style={{justifyContent:"center"}}>
                     {
                 display.map((book,index)=>(
-                    <Col className="product-card"
+                    <Col className={styles2.product_card}
                    >
                     
                     <ProductItem

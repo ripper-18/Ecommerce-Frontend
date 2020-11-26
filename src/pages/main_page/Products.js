@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './Products.css'
+import styles from './Products.module.css'
+import cx from 'classnames'
 import ProductItem from './ProductItem'
 import {Row,Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
@@ -66,25 +67,25 @@ class Products extends Component {
             display = books.sort((a, b) => b.price - a.price);
         }
     return (
-        <Row className= "products-page">
-            <div className={" d-md-none py-1 filterSideNav"}>
+        <Row className= {styles.product_page}>
+            <div className={cx(styles.filterSideNav," d-md-none py-1 ")}>
                 <span style={{fontSize:"20px"}}>FILTERS</span>
                         <button
-                            className={"filterSideNavBtn"}
+                            className={styles.filterSideNavBtn}
                             onClick={this.props.handleSideFilterOpen}
                         >
                             <div
-                                className={"filterIcon"}
+                                className={styles.filterIcon}
                                 style={{
                                     backgroundImage: `url(${filterIcon})`,
                                 }}
                             />
                         </button>
                     </div>
-                    <div className="all-products">
+                    <div className={styles.all_products}>
                     {
                 display.map((book,index)=>(
-                    <Col className="product-card"
+                    <Col className={styles.product_card}
                    >
                     
                     <ProductItem

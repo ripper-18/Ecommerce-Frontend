@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Card } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import Select from "react-select";
-import './Filters_pwc.css'
+import styles from './Filters_pwc.module.css'
 
 
 const options = [
@@ -22,10 +22,7 @@ class Filters extends Component {
     };
     render() {
         return (
-            <div className='pwc_filter_container'>
-
-           
-                 
+            <div className={styles.pwc_filter_container}>
                 <div style={{ flex: "1" }}>
                  
                     <Select

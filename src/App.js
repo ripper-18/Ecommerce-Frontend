@@ -56,6 +56,9 @@ function App(props)   {
     const TermsPage=React.lazy(()=>
     import('./pages/terms_page/Terms'))
 
+    const ErrorPage = React.lazy(() =>
+    import('./pages/error_page/error404_page'))
+
         return (
             <BrowserRouter>
            
@@ -70,38 +73,29 @@ function App(props)   {
                     
                     <Header style={{position:"sticky"}} />
                     <main style={{ minHeight: "60vh" }}>
-                    
+                    <Switch>
                         <Route path="/loader" exact component={Loader}/>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
-
                         <Route path='/category/:course/:year' exact component={PWC}/>
-                        <Switch>
-                        <PrivateRoute path="/order" exact component={OrderPage}/>
-                        </Switch>
-                        
-                        <Switch>
-                        <PrivateRoute path="/profile" exact component={ProfilePage}/>
-                        </Switch>
-                       
-                        <Switch>
-                            <PrivateRoute path="/checkout" exact component={CheckOutPage}/>
-                        </Switch>
-                        <Switch>
-                        <PrivateRoute path="/address" exact component={AddressPage} />
-                        </Switch>
-                        
                         <Route  path="/product/:id" exact component={ProductPage} />
                         <Route path = "/faq" exact component={FaqPage}/>
                         <Route path = "/privacy" exact component={PrivacyPage}/>
                         <Route path = "/disclaimer" exact component={DisclaimerPage}/>
                         <Route path = "/returns" exact component={ReturnsPage}/>
                         <Route path = "/terms" exact component ={TermsPage}/>
+
+                        <PrivateRoute path="/order" exact component={OrderPage}/>                       
+                        <PrivateRoute path="/profile" exact component={ProfilePage}/>
+                        <PrivateRoute path="/checkout" exact component={CheckOutPage}/>                 
+                        <PrivateRoute path="/address" exact component={AddressPage} />                     
+                        
+                        <Route  component={ErrorPage} />
+                        </Switch>     
                        
                    </main>
                    <Footer />  
-                   
                    </Suspense>
                    <Modal
                     show={props.dialog.isOpen}
