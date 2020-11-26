@@ -2,8 +2,9 @@ import React,{Component} from 'react'
 import {  Container, Card } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import Select from "react-select";
-import './Filters.css'
+import styles from './Filters.module.css'
 import FilterAccordion from "./FiltersArcadion";
+import cx from 'classnames'
 
 const options = [
     { value: "1", label: "Name A-Z" },
@@ -23,7 +24,7 @@ class Filters extends Component {
     render(){
     return (
         <Container className="pl-md-0 center">
-            <div className='heading mt-5 m-0 mb-md-4'>
+            <div className={cx(styles.heading,'mt-5 m-0 mb-md-4')}>
                 <h2>Filter Books</h2>
             </div>
             <div className="col-12 col-sm-12 order-sm-12 p-0">
@@ -46,7 +47,7 @@ class Filters extends Component {
             <div>
                 <FilterAccordion setFilters={this.props.setFilters} />
             </div>
-            <div className='resetContainer mb-md-5 pb-4'>
+            <div className={cx(styles.resetContainer,' mb-md-5 pb-4')}>
                 <div className="col-sm-12 p-0">
                     <button
                         onClick={() => window.location.reload()}

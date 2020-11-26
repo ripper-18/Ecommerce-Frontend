@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './ProductItem.css'
-import {withRouter,Link} from 'react-router-dom'
+import styles from './ProductItem.module.css'
+import cx from 'classnames'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getBookbyId} from '../../actions/book_actions'
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
@@ -8,9 +9,6 @@ import DoneRoundedIcon from '@material-ui/icons/DoneRounded';
 import ClearRoundedIcon from '@material-ui/icons/ClearRounded';
 
 class ProductItem extends Component {
-  componentDidMount(){
-    //console.log(this.props)
-  }
   state={
       click:false,
       click2:false
@@ -33,9 +31,8 @@ for(let i=0;i<x;i++){
    
 };
 componentDidMount(){
-    if(this.props.container.filter(
-        (item) => item._id === this.props.data._id
-    ).length<=0){
+
+    if(this.props.container.filter( (item) => item._id === this.props.data._id).length<=0){
         this.setState({
             click:false
         })
@@ -48,40 +45,40 @@ componentDidMount(){
 }
     render(){
     return (
-        <div className="product-card2">
-            <div className="upper-half">
+        <div className={styles.product_card2}>
+            <div className={styles.upper_half}>
                 <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
             </div>
 
-<div className={this.state.click===true?"lower-half clicked":"lower-half"}>
+<div className={this.state.click===true?cx(styles.lower_half,styles.clicked):(styles.lower_half)}>
 
-<div className="left">
-        <div className="details">
+<div className={styles.left}>
+        <div className={styles.details}>
     <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
    </p>
-   <span className="author">By- {this.props.data.author}</span>
-    <span className="price">₹ {(this.props.data.price).toFixed(2)}</span>
+   <span className={styles.author}>By- {this.props.data.author}</span>
+    <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>
         </div>
-        <div className="buy"  onClick={()=>{this.setState({
+        <div className={styles.buy}  onClick={()=>{this.setState({
             click:true
         });
         this.handleAddToCart()
         }} >
-            <AddShoppingCartRoundedIcon  className="cart-ic"/>
+            <AddShoppingCartRoundedIcon  className={styles.cart_ic}/>
         </div>
       </div>
-      <div className="right">
-        <div className="done"> <DoneRoundedIcon className="cart-ic"/> </div>
-        <div className="details">
+      <div className={styles.right}>
+        <div className={styles.done}> <DoneRoundedIcon className={styles.cart_ic}/> </div>
+        <div className={styles.details}>
         <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
    </p>
-    <span className="price">₹ {(this.props.data.price).toFixed(2)}</span>
+    <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>
         </div>
-        <div className="remove" onClick={()=>{this.setState({
+        <div className={styles.remove} onClick={()=>{this.setState({
             click:false
         });
         this.handleRemoveFromCart()
-        }}> <ClearRoundedIcon className="cart-ic"/> </div>
+        }}> <ClearRoundedIcon className={styles.cart_ic}/> </div>
       </div>
 </div>   
         </div>
