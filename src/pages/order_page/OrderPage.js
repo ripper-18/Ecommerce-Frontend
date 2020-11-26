@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-import './OrderPage.css'
+import styles from './OrderPage.module.css'
 import {Row, Col} from 'react-bootstrap';
 import {placeDirectOrder} from '../../actions/order_actions'
 import {clearCart} from '../../actions/cart_actions'
@@ -137,26 +137,26 @@ class OrderPage extends Component{
 
     componentDidMount() {
         window.scrollTo(0, 0)
-     //   console.log(this.props)
+     
     }
 
     render(){
-       // console.log(this.props)
+       
         const arr = this.props.currentOrder.finalAddress.address.split(" ");
         return (
             <div>
                 <Stepper number={2}/>
-                <div className='card-cont'>
-                    <div className='payment-card'>
+                <div className={styles['card-cont']}>
+                    <div className={styles['payment-card']}>
                         <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>
                         
                         <br></br>
                         <div style={{borderBottom:"1px solid lightgrey"}}></div>
                         <br></br>
 
-                        <div className="card-body">
+                        <div className={styles["card-body"]}>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     Total Payable:{" "}
                                 </span>
                                 <span>
@@ -165,7 +165,7 @@ class OrderPage extends Component{
                             </div>
                             <br></br>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     Delivery address:{" "}
                                 </span>
 
@@ -175,28 +175,10 @@ class OrderPage extends Component{
                                 
                                 
                                 
-                                {/* <div style={{}}>
-                                <p style={{maxWidth:"30%",float:"right",clear:"both",textAlign:"right"}}>
-                                    {this.props.currentOrder.finalAddress.address}
-                                </p>
-                                <br></br>
-                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
-                                    
-
-                                </p><br></br>
-                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
-                                        {this.props.currentOrder.finalAddress.state}
-
-                                    </p><br></br>
-                                    <p style={{ maxWidth: "30%", float: "right", clear: "both", textAlign: "right" }}>
-                                        {this.props.currentOrder.finalAddress.pincode}
-
-                                    </p>
-                                    
-                                </div> */}
+                                
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     {" "}
                                 </span>
                                 <span>
@@ -204,7 +186,7 @@ class OrderPage extends Component{
                                 </span>
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     {" "}
                                 </span>
                                 <span>
@@ -212,7 +194,7 @@ class OrderPage extends Component{
                                 </span>
                             </div>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     {" "}
                                 </span>
                                 <span>
@@ -221,7 +203,7 @@ class OrderPage extends Component{
                             </div>
                             <br></br>
                             <div className="d-flex justify-content-between mx-3">
-                                <span className="font-weight-bold">
+                                <span className={styles["font-weight-bold"]}>
                                     Contact Number:{" "}
                                 </span>
                                 <span>
@@ -232,7 +214,7 @@ class OrderPage extends Component{
                             
                             <div className="d-flex justify-content-between mx-3 mt-3">
                                 <div>
-                                    <span className="font-weight-bold">
+                                    <span className={styles["font-weight-bold"]}>
                                         Payment Mode:{" "}
                                     </span>
                                     <p>{this.state.selectedAddress}</p>
@@ -278,7 +260,7 @@ class OrderPage extends Component{
 
                         <div className="card-footer bg-white">
                             <button 
-                                className='place-orrder-button'
+                                className={styles['place-orrder-button']}
                                 style={{marginTop:"2%"}}
                                 
                                 onClick={this.stagePayment}
@@ -290,90 +272,6 @@ class OrderPage extends Component{
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-        //     <div>
-        //         <div>
-        //             <h2 className="checkout-title"> Your Cart</h2>
-        //             <br />
-        //             <br />
-        //             <h3>Order Summary: </h3>
-        //             <br />
-        //         </div>
-        //         <Row>
-
-        //             <Col xs="9">
-        //                 <div className="checkout-left">
-        //                 <div className="d-flex flex-column">
-        //                                     <label>
-        //                                         {" "}
-        //                                         <input
-        //                                             type="radio"
-        //                                             name="mode"
-        //                                             value="online"
-        //                                             onChange={(e) =>
-        //                                                 this.setState({
-        //                                                     ...this.state,
-        //                                                     mode:
-        //                                                         e.target.value,
-        //                                                 })
-        //                                             }
-        //                                         />{" "}
-        //                                         Online Payment
-        //                                     </label>
-        //                                     <label>
-        //                                         {" "}
-        //                                         <input
-        //                                             type="radio"
-        //                                             name="mode"
-        //                                             value="cash"
-        //                                             onChange={(e) =>
-        //                                                 this.setState({
-        //                                                     ...this.state,
-        //                                                     mode:
-        //                                                         e.target.value,
-        //                                                 })
-        //                                             }
-        //                                         />{" "}
-        //                                         Cash On delivery
-        //                                     </label>
-        //                                 </div>
-        //                                 <button
-        //                                 className={
-        //                                     "btn w-100 btn-lg"
-        //                                 }
-        //                                 onClick={this.stagePayment}
-        //                             >
-        //                                 Place Order
-        //                             </button>
-        //                 </div>
-        //             </Col>
-
-        //             <Col xs="3">
-        //                 <div className="checkout-right">
-                            
-        //                 </div>
-        //             </Col>
-        //         </Row>
-
-        //         <div>
-        //             <h3>Total Price:  RS. To render </h3>
-        //         </div>
-
-        //         <div>
-        //             <h3> Delivery address: </h3>
-        // <p> {this.props.currentOrder.address} </p>
-        //             <p></p>
-        //         </div>
-        //     </div>
         )
     }
     

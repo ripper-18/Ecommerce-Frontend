@@ -1,13 +1,13 @@
 import React from 'react'
-import "./Item.css"
+import styles from "./Item.module.css"
 function Item() {
     return (
         <div>
-                <div className = "product">
+                <div className = {styles.product}>
                 
-                    <div className="producr-info">
+                    <div className={styles["producr-info"]}>
                         <p>Communist Manifesto</p>
-                        <p className= "product-price">
+                        <p className= {styles["product-price"]}>
                             <small>Rs.</small>
                             <strong>150.00</strong>
                         </p>
