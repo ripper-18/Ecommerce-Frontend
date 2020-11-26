@@ -112,7 +112,7 @@ class MainPage extends Component {
                                 <div className="main">
                                 <Row className= "products-page">
          
-                    <div className="all-products">
+                    <div className="all-products" style={{justifyContent:"center"}}>
                     {
                 display.map((book,index)=>(
                     <Col className="product-card"

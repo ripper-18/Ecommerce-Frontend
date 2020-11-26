@@ -66,12 +66,12 @@ class Header extends Component{
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className="header-links">
                         <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
-                        <span className="header-option-lineTwo">LOGIN</span>
+                        {/* <span className="header-option-lineTwo">LOGIN</span> */}
                     </Link>
                     ):(
                         <Link to="/profile"  className="header-links">
                         <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon icon" /></span>
-                        <span className="header-option-lineTwo">ACCOUNT</span>
+                        {/* <span className="header-option-lineTwo">ACCOUNT</span> */}
                     </Link>
                     )}
                 
@@ -90,7 +90,7 @@ class Header extends Component{
                         
                         
                         
-                        <span className="header-option-lineTwo">CART</span>
+                        {/* <span className="header-option-lineTwo">CART</span> */}
                     </Link>)}
 
                 </div>

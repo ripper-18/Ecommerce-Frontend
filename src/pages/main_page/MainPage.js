@@ -70,12 +70,12 @@ class MainPage extends Component {
                 <MainCarousel></MainCarousel>
             </div>
             <div className={styles.containerWrap}>
-            <Container >
-            <Row>
+            
+            <Row >
                 <Col 
                   sm={12}
                   md={3}
-                  className="d-none d-md-block px-4 pl-md-0"
+                  className="d-none d-md-block px-4 pl-md-2"
                 >
                    <Filters
                    setSortValue={this.setSortValue}
@@ -95,7 +95,7 @@ class MainPage extends Component {
                 </div>
                 </Col>
             </Row>
-            </Container>
+            
             <div
                         className={cx(styles.sideFilter, {
                             [styles.sideFilterOpen]: this.state

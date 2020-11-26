@@ -61,6 +61,7 @@ function App(props)   {
 
         return (
             <BrowserRouter>
+           
             <div className="App">
                 <Suspense
                 fallback={
@@ -69,8 +70,10 @@ function App(props)   {
                     </React.Fragment>
                 }
                 >
-                    <Header />
+                    
+                    <Header style={{position:"sticky"}} />
                     <main style={{ minHeight: "60vh" }}>
+                    
                         <Route path="/loader" exact component={Loader}/>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
@@ -98,10 +101,17 @@ function App(props)   {
                         <Route path = "/disclaimer" exact component={DisclaimerPage}/>
                         <Route path = "/returns" exact component={ReturnsPage}/>
                         <Route path = "/terms" exact component ={TermsPage}/>
+<<<<<<< HEAD
                         <Route path="/404" exact component={ErrorPage} />
 
+||||||| 73bdc90
+
+=======
+                       
+>>>>>>> f33e29eb54ac37d265f69765de711f9e84fdf85b
                    </main>
                    <Footer />  
+                   
                    </Suspense>
                    <Modal
                     show={props.dialog.isOpen}
@@ -125,6 +135,7 @@ function App(props)   {
                 </Modal>
                
             </div>
+            
             </BrowserRouter>   
         );
     

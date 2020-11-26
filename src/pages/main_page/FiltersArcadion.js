@@ -46,7 +46,7 @@ class FilterAccordion extends Component {
                                             }
                                             type="checkbox"
                                         />
-                                        <p>1</p>
+                                        <p>First</p>
                                     </label>
                                 </li>
                                 <li className="col-6">
@@ -58,7 +58,7 @@ class FilterAccordion extends Component {
                                             }
                                             type="checkbox"
                                         />
-                                        <p>2</p>
+                                        <p>Second</p>
                                     </label>
                                 </li>
                                 <li className="col-6">
@@ -70,7 +70,7 @@ class FilterAccordion extends Component {
                                             }
                                             type="checkbox"
                                         />
-                                        <p>3</p>
+                                        <p>Third</p>
                                     </label>
                                 </li>
                                 <li className="col-6">
@@ -82,7 +82,7 @@ class FilterAccordion extends Component {
                                             }
                                             type="checkbox"
                                         />
-                                        <p>4</p>
+                                        <p>Fourth</p>
                                     </label>
                                 </li>
                             </ul>
