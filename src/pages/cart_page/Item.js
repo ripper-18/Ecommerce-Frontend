@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./Item.css"
+import styles from "./Item.module.css"
 import {connect} from 'react-redux'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 
@@ -17,30 +17,30 @@ class Item extends Component {
     render(){
         let price_of_item = this.props.item.quantity * this.props.item.book.price;
     return (
-        <div className = "product-vin">
-            <div className='column-ni'>
-            <div className='product-image-wrap'>
+        <div className = {styles.product_vin}>
+            <div className={styles.column_ni}>
+            <div className={styles.product_image_wrap}>
                 <img
-            className='product-img'
+            className={styles.product_img}
             src={this.props.item.book.image[0]}
             alt={"cart-img"}
             />
             </div>
             </div>
 
-            <div className='product-details'>
-                <div className='price-area'>
-                    <span className='quantity-multiplier' >{this.props.item.quantity}x </span>
+            <div className={styles.product_details}>
+                <div className={styles.price_area}>
+                    <span className={styles.quantity_multiplier} >{this.props.item.quantity}x </span>
                     <span>{this.props.item.book.name}</span>
                 </div>
-                <div className='button-area'>
-                    <p id='final-price'>{price_of_item}</p>
-                    <button className="add-subtrac-button width-controller" onClick={() =>
+                <div className={styles.button_area}>
+                    <p id={styles.final_price}>{price_of_item}</p>
+                    <button className={styles.add_subtrac_button} onClick={() =>
                         this.handleAddToCart(
                             this.props.item.book
                         )
                     }>+</button>
-                    <button className="add-subtrac-button width-controller" onClick={() =>
+                    <button className={styles.add_subtrac_button} onClick={() =>
                         this.handleRemoveFromCart(
                             this.props.item.book
                         )

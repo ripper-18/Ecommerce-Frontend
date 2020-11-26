@@ -1,63 +1,61 @@
-
-
-.product-img {
+.product_img {
   width: 40%;
   height: 40%;
-  
+
 }
 
-.product-vin {
+.product_vin {
   padding: 1% 1%;
   display: flex;
   border-bottom: 1px solid lightgray;
-  
+
   margin-bottom: 10px;
-  
+
 }
 
-.product-details{
+.product_details {
   flex: 8;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  
+
 }
 
-.product-image-wrap{
-    flex: 2;
+.product_image_wrap {
+  flex: 2;
 }
 
-.column-ni {
+.column_ni {
   flex: 2.5;
-  
+
 }
 
-.button-area{
-    flex:1
+.button_area {
+  flex: 1
 }
 
-.price-area{
-    padding-left: 10%;
-    flex: 3;
-    font-size: 18px;
+.price_area {
+  padding-left: 10%;
+  flex: 3;
+  font-size: 18px;
 }
 
-.quantity-multiplier{
-    color: #273c75;
-    font-size: 24px;
+.quantity_multiplier {
+  color: #273c75;
+  font-size: 24px;
 }
 
-#final-price{
-    margin: auto;
-    padding-left: 20%;
-    padding-bottom: 20%;
-    font-size: 18px;
-    justify-content: space-evenly;
+#final_price {
+  margin: auto;
+  padding-left: 20%;
+  padding-bottom: 20%;
+  font-size: 18px;
+  justify-content: space-evenly;
 }
 
 
-.add-subtrac-button {
+.add_subtrac_button {
 
   width: 50px;
   height: 45px;
@@ -77,7 +75,7 @@
 
 }
 
-.add-subtrac-button:hover {
+.add_subtrac_button:hover {
   background-color: #273c75;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
@@ -86,21 +84,21 @@
 
 }
 
-.add-subtrac-button:active {
+.add_subtrac_button:active {
   border-color: white;
   border: 0;
   outline: 0;
 }
 
-.add-subtrac-button:focus {
+.add_subtrac_button:focus {
   outline: 0;
 }
 
 
-@media (max-width:750px){
-    
-    .width-controller{
-        width: 40px;
-        height: 35px;
-    }
+@media (max-width:750px) {
+
+  .add_subtrac_button {
+    width: 40px;
+    height: 35px;
+  }
 }

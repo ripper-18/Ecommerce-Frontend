@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Cart.css'
+import styles from './Cart.module.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {addToCart,removeFromCart,clearCart} from '../../actions/cart_actions'
@@ -42,15 +42,15 @@ class Cart  extends Component  {
         <div>
            <Stepper number={0}/>
              <div>
-                <h2 className="checkout-title"> Your Cart</h2>
+                <h2 className={styles.checkout_title}> Your Cart</h2>
             </div>
-            <div className='checkout-wrapper'>
+            <div className={styles.checkout_wrapper}>
          
-                <div className="checkout-left">
-                <div id='subheading-div'>
-                    <div className='sub1'>Items</div>
-                    <div className='sub2'></div>
-                    <div className='sub1'>Price</div>
+                <div className={styles.checkout_left}>
+                <div id={styles.subheading_div}>
+                    <div className={styles.sub1}>Items</div>
+                    <div className={styles.sub2}></div>
+                    <div className={styles.sub1}>Price</div>
                 </div>
                 {this.getCount(this.props.cart.bookCart)
                                     .sort((a, b) =>
@@ -61,8 +61,8 @@ class Cart  extends Component  {
                                     ))}
 
                 </div>
-                <div className="checkout-right">
-                <div className="subtotal">
+                <div className={styles.checkout_right}>
+                <div className={styles.subtotal}>
             <CurrencyFormat
             renderText= {(value) => (
                 <>
@@ -94,13 +94,13 @@ class Cart  extends Component  {
             prefix={"Rs."}
             />
             {this.props.auth.token?(
-  <button className="standardButton" disabled={!this.getSubTotal()} onClick={()=>this.props.history.push('/checkout')}>Proceed to Checkout</button>
+  <button className={styles.standardButton} disabled={!this.getSubTotal()} onClick={()=>this.props.history.push('/checkout')}>Proceed to Checkout</button>
             ):(
-                 <button className="standardButton" onClick={()=>this.props.history.push('/login')}>Please sign in to Continue</button>
+                 <button className={styles.standardButton} onClick={()=>this.props.history.push('/login')}>Please sign in to Continue</button>
             )}
          
         </div>
-                        <button className='clear-cart-button' onClick={this.props.clearCart}>Clear Cart</button>
+                        <button className={styles.clear_cart_button} onClick={this.props.clearCart}>Clear Cart</button>
                 </div>
                 
             </div>

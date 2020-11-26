@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import './Header.css'
+import styles from './Header.module.css'
 import {Link,withRouter} from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -46,31 +46,31 @@ class Header extends Component{
     render(){
     return (
         <>
-        <div className="header">
+        <div className={styles.header}>
             <Sidebar />
-           <Link to="/"><img className="header-logo" onClick={async()=>{await this.setState({
+           <Link to="/"><img className={styles.header_logo} onClick={async()=>{await this.setState({
             ...this.state,
             keyword: ""
         });
         this.submitSearch2()}} src={logo} alt="DUBookX"/></Link> 
 
-            <div className="header-search one">
-                <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
-                <div className="header-search-icon-div">
-                    <SearchIcon className="header-search-icon icon" onClick={this.submitSearch}></SearchIcon> 
+            <div className={styles.header_search}>
+                <input className={styles.header_search_input} placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
+                <div className={styles.header_search_icon_div}>
+                    <SearchIcon className={styles.header_search_icon} onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
 
-            <div className="header-nav">
-                <div className="header-option acc">
+            <div className={styles.header_nav}>
+                <div className={styles.header_option}>
                     {!this.props.auth.isAuth?(
-                        <Link to="/login" className="header-links">
-                        <span className="header-option-lineOne"><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
+                        <Link to="/login" className={styles.header_links}>
+                        <span className={styles.header_option_lineOne}><ExitToAppIcon className ="exit-app-icon icon"></ExitToAppIcon></span>
                         {/* <span className="header-option-lineTwo">LOGIN</span> */}
                     </Link>
                     ):(
-                        <Link to="/profile"  className="header-links">
-                        <span className="header-option-lineOne"><AccountCircleIcon className ="account-app-icon icon" /></span>
+                        <Link to="/profile"  className={styles.header_links}>
+                        <span className={styles.header_option_lineOne}><AccountCircleIcon className ="account-app-icon icon" /></span>
                         {/* <span className="header-option-lineTwo">ACCOUNT</span> */}
                     </Link>
                     )}
@@ -78,11 +78,11 @@ class Header extends Component{
                 </div>
                 
 
-                <div className="header-option" >
-                    {(<Link to="/cart" className="header-links">
-                        <span className='header-option-lineOne' >
+                <div className={styles.header_option} >
+                    {(<Link to="/cart" className={styles.header_links}>
+                        <span className={styles.header_option_lineOne} >
                             
-                    <span className='dynamic_cart' style={{visibility:this.props.cart.bookCart.length===0?'hidden':'initial'}}>{this.props.cart.bookCart.length} </span>
+                    <span className={styles.dynamic_cart} style={{visibility:this.props.cart.bookCart.length===0?'hidden':'initial'}}>{this.props.cart.bookCart.length} </span>
 
                             <span className=""><ShoppingCartIcon className="icon"></ShoppingCartIcon></span>
                            
@@ -96,10 +96,10 @@ class Header extends Component{
                 </div>
             </div>
         </div>
-        <div className="header-search two">
-                <input className="header-search-input" placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
-                <div className="header-search-icon-div">
-                    <SearchIcon className="header-search-icon icon" onClick={this.submitSearch}></SearchIcon> 
+        <div className={styles.header_search_two}>
+                <input className={styles.header_search_input} placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
+                <div className={styles.header_search_icon_div}>
+                    <SearchIcon className={styles.header_search_icon} onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
         </>

@@ -1,4 +1,4 @@
-.checkout-wrapper {
+.checkout_wrapper {
   display: flex;
 
   height: max-content;
@@ -6,14 +6,14 @@
   justify-content: space-around;
 }
 
-.checkout-title {
+.checkout_title {
   text-align: center;
   padding: 10px;
-  
+
 }
 
-.checkout-left {
-  flex:8;
+.checkout_left {
+  flex: 8;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -22,7 +22,7 @@
   flex-wrap: wrap;
 }
 
-.checkout-right{
+.checkout_right {
   flex: 3;
   display: flex;
   flex-direction: row;
@@ -33,11 +33,11 @@
 
 
 
-.clear-cart-button {
+.clear_cart_button {
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 5%;
-    display: inline;
+  display: inline;
   width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
@@ -53,34 +53,34 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  }
+}
 
-.clear-cart-button:hover {
+.clear_cart_button:hover {
   background-color: #273c75;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
-  
+
 }
 
-.clear-cart-button:focus{
+.clear_cart_button:focus {
   outline: 0;
 }
 
-#subheading-div{
+#subheading_div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
-.sub1{
+.sub1 {
   padding-left: 10%;
   flex: 1;
 }
 
-.sub2{
+.sub2 {
   margin-right: 10%;
   flex: 3;
 }
@@ -97,12 +97,12 @@ border-bottom: 1px solid lightgray;
   background-color: #f3f3f3;
   border: 1px solid #dddddd;
   border-radius: 3px;
-  
+
 }
 
-.standardButton{
-    display: inline;
-    
+.standardButton {
+  display: inline;
+
   width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
@@ -111,32 +111,32 @@ border-bottom: 1px solid lightgray;
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #fff;
- background-color: #273c75;
+  background-color: #273c75;
   border: none;
   border-radius: 45px;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
   margin: auto;
-  
+
 }
 
-.standardButton:hover{
-    color: #fff;
+.standardButton:hover {
+  color: #fff;
 }
 
 .standardButton:focus {
   outline: 0;
 }
 
-@media (max-width:750px){
-  .checkout-wrapper {
-  display: flex;
-  flex-direction: column;
-  /* height: max-content;
+@media (max-width:750px) {
+  .checkout_wrapper {
+    display: flex;
+    flex-direction: column;
+    /* height: max-content;
   padding: 20px;
   justify-content: space-around; */
-}
+  }
 
 
 }

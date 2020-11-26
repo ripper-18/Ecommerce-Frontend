@@ -1,18 +1,19 @@
-.drawer-icon{
+.drawer-icon {
     color: #f5f6fa;
     padding: 10px;
 }
-.menu-icon{
+
+.menu-icon {
     color: #f5f6fa;
 }
 
-.drawer{
+.drawer {
     width: 350px;
     background-color: #f5f6fa;
     height: 100%;
 }
 
-.hello{
+.hello {
     height: 60px;
     background-color: #232b2b;
     width: 100%;
@@ -24,39 +25,41 @@
     justify-content: center;
     align-items: center;
 }
-.ic{
+
+.ic {
     margin-left: 30px;
     height: 30px;
     width: 30px;
     color: #f5f6fa;
 }
 
-.books{
+.books {
     width: 100%;
     padding: 20px;
     background-color: #f5f6fa;
     color: #232b2b;
-   
+
 }
-.bhead{
+
+.bhead {
     font-size: 1.5rem;
     color: #232b2b;
 }
 
-.c{
+.c {
     border: none;
     margin-bottom: 0;
     background: transparent;
 }
 
-.ch{
+.ch {
     margin-bottom: 0 !important;
     background: transparent;
     border-bottom: 1px solid #231f20 !important;
     cursor: pointer;
 }
 
-.tog{
+.tog {
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -72,15 +75,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .ul li {
     padding-left: 1px;
     justify-content: center;
     text-align: center;
     margin: auto;
-   
+
 }
 
-.ul2 li{
+.ul2 li {
     font-size: 12px;
     text-decoration: underline;
     text-decoration-color: #00a8ff;
@@ -88,9 +92,9 @@
 }
 
 
-.help{
+.help {
     width: 100%;
-  
+
     background-color: #f5f6fa;
     display: flex;
     flex-direction: column;
@@ -98,43 +102,44 @@
     height: 52vh;
 }
 
-.hs-item{
+.hs-item {
     cursor: pointer;
     padding: 20px;
     color: #232b2b;
     font-size: 1.1rem;
 }
 
-.hs-item:hover{
+.hs-item:hover {
     background-color: #dcdde1;
 }
 
-.contact{
+.contact {
     width: 100%;
     padding: 20px;
     background-color: #f5f6fa;
 }
+
 .contact li {
     list-style: none;
     padding: 3px 0;
     color: #231f20;
     cursor: pointer;
-  }
-  
-  .contact li:hover {
+}
+
+.contact li:hover {
     text-decoration: underline;
-   
-  }
-  
-  .contact ul {
+
+}
+
+.contact ul {
     padding: 0;
     margin: 0;
     margin-top: 20px;
-  }
+}
 
-  @media screen and (max-width: 450px){
-      .menu-icon{
-          width: 10px;
-          height: 10px;
-      }
-  }
+@media screen and (max-width: 450px) {
+    .menu-icon {
+        width: 10px;
+        height: 10px;
+    }
+}
