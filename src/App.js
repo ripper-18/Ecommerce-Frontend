@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 import {hideDialog} from './actions/dialog_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
-import {ScrollArea} from 'react-scrollbar'
+
 import PrivateRoute from "./pages/common/PrivateRoute"
 
 
