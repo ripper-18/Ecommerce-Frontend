@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import {Row, Col, Image, ListGroup, Card} from 'react-bootstrap';
-import './Product.css';
+import styles from './Product.module.css';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {getBookbyId} from '../../actions/book_actions'
@@ -37,10 +37,10 @@ class Product extends Component {
       }
       
     return (
-        <Row className="product-container" style={{overflowX:"hidden"}}>
+        <Row className={styles['product-container']} style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
           <Lazyload offset={400}>
-          <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className="big-image" />
+          <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className={styles["big-image"]} />
           </Lazyload>
          
         </Col>
@@ -51,32 +51,32 @@ class Product extends Component {
               <h3 style={{fontWeight:"800"}}>{this.props.book.name}</h3>
             </ListGroup.Item>
             <ListGroup.Item variant='flush'>
-            <div className="images">
+            <div className={styles["images"]}>
                     {this.props.book.image.map((x) => (
                       <Lazyload offset={400}>
-                      <div key={x} onClick={() => this.changeImage(x)} className="image-container">
-                        <img src={x} alt="product" className="image" />
+                      <div key={x} onClick={() => this.changeImage(x)} className={styles["image-container"]}>
+                        <img src={x} alt="product" className={styles["image"]} />
                       </div>
                       </Lazyload>
                     ))}
                   </div>
             </ListGroup.Item>
            
-            <ListGroup.Item><span className="product-heading">Price:</span> Rs.{this.props.book.price}</ListGroup.Item>
+            <ListGroup.Item><span className={styles["product-heading"]}>Price:</span> Rs.{this.props.book.price}</ListGroup.Item>
             <ListGroup.Item>
-            <span className="product-heading"> Description:</span> {this.props.book.description}
+            <span className={styles["product-heading"]}> Description:</span> {this.props.book.description}
             </ListGroup.Item>
             <ListGroup.Item>
-            <span className="product-heading"> Author:</span> {this.props.book.author}
+            <span className={styles["product-heading"]}> Author:</span> {this.props.book.author}
             </ListGroup.Item>
             <ListGroup.Item>
-            <span className="product-heading"> Publisher:</span> {this.props.book.publisher}
+            <span className={styles["product-heading"]}> Publisher:</span> {this.props.book.publisher}
             </ListGroup.Item>
             <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
-            <span className="product-heading"> Edition:  {this.props.book.edition} </span>  <span className="product-heading"> Weight:  {this.props.book.weight}gms</span> 
+                <span className={styles["product-heading"]}> Edition:  {this.props.book.edition} </span>  <span className={styles["product-heading"]}> Weight:  {this.props.book.weight}gms</span> 
             </ListGroup.Item>
             <ListGroup.Item style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",margin:"5px" }}>
-                    <span className="product-heading">Subject: {(this.props.book.subject).charAt(0).toUpperCase()+(this.props.book.subject).substring(1)}</span>  <span className="product-heading">Course: {this.props.book.course}</span> <span className="product-heading">Year: {this.props.book.year}</span>
+                <span className={styles["product-heading"]}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>  <span className={styles["product-heading"]}>Course: {this.props.book.course}</span> <span className={styles["product-heading"]}>Year: {this.props.book.year}</span>
             </ListGroup.Item>
           </ListGroup>
           </Card>
@@ -85,16 +85,16 @@ class Product extends Component {
           <Card style={{margin:"20px"}}>
             <ListGroup variant='flush'>
             <ListGroup.Item>
-            <span className="product-heading">Total Price: </span> Rs. {this.props.book.price*quantity}
+            <span className={styles["product-heading"]}>Total Price: </span> Rs. {this.props.book.price*quantity}
             </ListGroup.Item>
 
               <ListGroup.Item>
-              <span className="product-heading"> Status: </span>   {this.props.book.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+              <span className={styles["product-heading"]}> Status: </span>   {this.props.book.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
               </ListGroup.Item>
 
               {this.props.book.countInStock > 0 && (
                 <ListGroup.Item>
-                   <span className="product-heading"> Qty: {quantity} </span> 
+                   <span className={styles["product-heading"]}> Qty: {quantity} </span> 
                 </ListGroup.Item>
               )}
 
@@ -102,7 +102,7 @@ class Product extends Component {
                 { quantity===0?(<button
                   
                   onClick={()=>this.props.addToCart(this.props.book)}
-                  className="ac-btn"
+                  className={styles["ac-btn"]}
                   disabled={this.props.book.countInStock === 0}
                   
                 >
@@ -112,7 +112,7 @@ class Product extends Component {
                     <button
                   onClick={()=>this.props.addToCart(this.props.book)}
                   disabled={disabled}
-                  className="cc-btn"
+                  className={styles["cc-btn"]}
                 >
                   +
                 </button>
@@ -120,7 +120,7 @@ class Product extends Component {
                     <button
                   
                   onClick={()=>this.props.removeFromCart(this.props.book)}
-                  className="cc-btn"
+                  className={styles["cc-btn"]}
                 >
                   -
                 </button>
@@ -136,13 +136,13 @@ class Product extends Component {
               <h3 style={{fontWeight:"800"}}>SELLER INFORMATION: </h3>
               </ListGroup.Item>
               <ListGroup.Item>
-              <span className="product-heading"> Name:  </span>{this.props.book.seller.name} 
+              <span className={styles["product-heading"]}> Name:  </span>{this.props.book.seller.name} 
               </ListGroup.Item>
               <ListGroup.Item>
-              <span className="product-heading"> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
+              <span className={styles["product-heading"]}> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
               </ListGroup.Item>
               <ListGroup.Item>
-              <span className="product-heading"> Address:  </span>{this.props.book.seller.address} 
+              <span className={styles["product-heading"]}> Address:  </span>{this.props.book.seller.address} 
               </ListGroup.Item>
             </ListGroup>
           </Card>

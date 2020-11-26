@@ -93,6 +93,7 @@ function App(props)   {
                         
                         <Route  component={ErrorPage} />
                         </Switch>     
+                       
                    </main>
                    <Footer />  
                    </Suspense>
