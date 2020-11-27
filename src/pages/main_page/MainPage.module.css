@@ -26,7 +26,7 @@
 }
 @media screen and (min-width: 769px) {
     .containerWrap {
-        background: #f5f6fa;
-        background: linear-gradient(90deg, #f5f6fa, #f5f6fa 40%, #fff 0);
+        background: #fff;
+        
     }
 }

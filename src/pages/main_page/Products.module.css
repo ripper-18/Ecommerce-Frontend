@@ -16,7 +16,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 20px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .product_card {
@@ -25,7 +25,7 @@
     flex-direction: column;
     flex-wrap: wrap; */
     max-width: 300px;
-    width: 240px;
+    width: 260px;
 }
 
 

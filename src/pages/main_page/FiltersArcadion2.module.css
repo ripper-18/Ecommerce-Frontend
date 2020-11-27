@@ -17,37 +17,27 @@
 .cardHeader {
     margin-bottom: 0 !important;
     background: transparent;
-border: none;
-    
+    border-radius: 0;
+    border-bottom: 1px solid hsl(0,0%,80%);
     cursor: pointer;
-    padding: 5px;
+    box-shadow: 10px 11px 18px -1px rgba(220,221,225,0.87);
+    padding: 2px;
 }
-
-.cardHeader span{
-    font-size: 1.15rem;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.4px;
-}
-
-
 .ul {
     list-style: none;
     padding-left: 1px;
 }
 .ul li {
     padding-left: 1px;
-    padding-bottom: 0px;
 }
 .ul li label {
     display: flex;
-    margin-bottom: 0.1rem;
 }
 .ul li label input {
     border-radius: 2px;
     width: 16px;
     height: 16px;
-    border: 1px solid #c3c2c9;
+    border: 1px solid #c9c9c9;
     background: #fff;
     margin-right: 10px;
     min-width: 16px;
@@ -55,7 +45,6 @@ border: none;
 }
 .ul li label p {
     margin-top: -4px;
-    margin-left: 4px;
 }
 .resetContainer button {
     height: 52px;

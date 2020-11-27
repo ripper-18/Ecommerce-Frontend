@@ -69,7 +69,7 @@ class Products extends Component {
     return (
         <Row className= {styles.product_page}>
             <div className={cx(styles.filterSideNav," d-md-none py-1 ")}>
-                <span style={{fontSize:"20px"}}>FILTERS</span>
+                <span style={{fontSize:"20px",cursor:"pointer"}} onClick={this.props.handleSideFilterOpen}>FILTERS</span>
                         <button
                             className={styles.filterSideNavBtn}
                             onClick={this.props.handleSideFilterOpen}

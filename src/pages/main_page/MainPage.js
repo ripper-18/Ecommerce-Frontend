@@ -1,6 +1,7 @@
 import React,{useEffect,Component} from 'react'
 import MainCarousel from './MainCarousel'
 import Filters from './Filters'
+import Filters2 from './Filters2'
 import Products from './Products'
 import {Row, Col,Container} from 'react-bootstrap';
 import {connect} from 'react-redux'
@@ -18,7 +19,7 @@ class MainPage extends Component {
            subject:[]      
           },
         sortValue: 0,
-        
+        size:0
 
     };
 
@@ -61,6 +62,36 @@ class MainPage extends Component {
             isSideFilterOpen: false,
         });
     };
+    updateDimensions = () => {
+      if(window.innerWidth<1150){
+          this.setState({
+            ...this.state,
+            size:3
+          })
+      }
+      else{
+        this.setState({
+            ...this.state,
+            size:2
+          })  
+    }
+      };
+      componentDidMount() {
+        if(window.innerWidth<1150){
+            this.setState({
+              ...this.state,
+              size:3
+            })
+        }
+        else{
+          this.setState({
+              ...this.state,
+              size:2
+            })  
+        }
+        window.addEventListener('resize', this.updateDimensions);
+      }
+    
 
     render(){
     return (
@@ -74,17 +105,18 @@ class MainPage extends Component {
             <Row >
                 <Col 
                   sm={12}
-                  md={3}
+                  md={this.state.size}
                   className="d-none d-md-block px-4 pl-md-2"
+                  style={{borderRight:"1px solid #edebef"}}
                 >
                    <Filters
                    setSortValue={this.setSortValue}
                    setFilters={this.setFilters}/>
                 </Col>
                 <Col 
-                className="bg-white" sm={12} md={9}>
+                className="bg-white" sm={12} md={this.state.size===2?10:9}>
                 <h1 style={{textAlign : 'center'}} > Best Place to Buy Books </h1>
-                <div  className="main">
+                <div  style={{borderTop:"1px solid #edebef"}}>
                         <Products
                         filters={this.state.filters}
                         sortValue={this.state.sortValue}
@@ -129,7 +161,7 @@ class MainPage extends Component {
                                     />
                                 </button>
                             </div>
-                            <Filters
+                            <Filters2
                                 setSortValue={this.setSortValue}
                                 setFilters={this.setFilters}
                             />

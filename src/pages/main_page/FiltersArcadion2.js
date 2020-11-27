@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import cx from 'classnames'
-import styles from "./FiltersArcadion.module.css";
+import styles from "./FiltersArcadion2.module.css";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ChevronIcon from "../../assets/main_page/chevron_down.svg";
@@ -20,18 +20,24 @@ class FilterAccordion extends Component {
         return (
             <Accordion className="my-3">
                 <Card className={cx(styles.card, "my-4")}>
-                    <Card.Header
-                       
+                    <Accordion.Toggle
+                        as={Card.Header}
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
-                        
+                        eventKey="0"
                     >
-                        <span>YEAR</span>
-                        
-                    </Card.Header>
-                   
+                        <span>Select Year</span>
+                        <div
+                            className={styles.chevronDownToggle}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={cx(styles.ul, "row d-flex m-0")}>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="year:1"
@@ -43,7 +49,7 @@ class FilterAccordion extends Component {
                                         <p>First</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="year:2"
@@ -55,7 +61,7 @@ class FilterAccordion extends Component {
                                         <p>Second</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="year:3"
@@ -67,7 +73,7 @@ class FilterAccordion extends Component {
                                         <p>Third</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="year:4"
@@ -81,19 +87,26 @@ class FilterAccordion extends Component {
                                 </li>
                             </ul>
                         </Card.Body>
-                   
+                    </Accordion.Collapse>
                 </Card>
                 <Card className={cx(styles.card, "my-3 my-md-4")}>
-                    <Card.Header
+                    <Accordion.Toggle
+                        as={Card.Header}
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
-                      
+                        eventKey="1"
                     >
-                        <span>COURSE</span>
-                        
-                    </Card.Header>
+                        <span style={{height:"50px"}}>Select Course</span>
+                        <div
+                            className={styles.chevronDownToggle}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={cx(styles.ul, "row d-flex m-0")}>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="course:Bcom"
@@ -105,7 +118,7 @@ class FilterAccordion extends Component {
                                         <p>Bcom</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="course:Bsc"
@@ -117,7 +130,7 @@ class FilterAccordion extends Component {
                                         <p>Bsc</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="course:Btech"
@@ -129,7 +142,7 @@ class FilterAccordion extends Component {
                                         <p>Btech</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="course:Mtech"
@@ -141,7 +154,7 @@ class FilterAccordion extends Component {
                                         <p>Mtech</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="course:BA"
@@ -155,20 +168,27 @@ class FilterAccordion extends Component {
                                 </li>
                             </ul>
                         </Card.Body>
+                    </Accordion.Collapse>
                 </Card>
                 <Card  className={cx(styles.card, "my-3 my-md-4")}>
-                    <Card.Header
-                        
+                    <Accordion.Toggle
+                        as={Card.Header}
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
-                       
+                        eventKey="3"
                     >
-                        <span>SUBJECT</span>
-                        
-                    </Card.Header>
-                 
+                        <span>Select Subject</span>
+                        <div
+                            className={styles.chevronDownToggle}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="3">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={cx(styles.ul, "row d-flex m-0")}>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="subject:physics"
@@ -180,7 +200,7 @@ class FilterAccordion extends Component {
                                         <p>Physics</p>
                                     </label>
                                 </li>
-                                <li className="col-12">
+                                <li className="col-6">
                                     <label>
                                         <input
                                             value="subject:chemistry"
@@ -194,6 +214,7 @@ class FilterAccordion extends Component {
                                 </li>
                             </ul>
                         </Card.Body>
+                    </Accordion.Collapse>
                 </Card>
                
 
