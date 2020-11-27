@@ -97,7 +97,7 @@ class Profile extends Component {
             <div className={styles.row}>
                                         <div className={styles.left}>
                                             <h2  className={styles.Welcome_heading}>Welcome <span className={styles.mid_heading}> Back </span></h2>
-                                            <h2  className={styles.User_Name}>{this.props.auth.user.name}</h2>
+                                            <h2  className={styles.User_Name}>{(this.props.auth.user.name).charAt(0).toUpperCase() + (this.props.auth.user.name).substring(1)}!</h2>
 
                                         </div>
                                         

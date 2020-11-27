@@ -70,7 +70,7 @@
 
 @media screen and (max-width:940px) {
     .Welcome_heading {
-        font-size: 30px;
+        font-size: 40px;
 
     }
 
@@ -79,8 +79,14 @@
     }
 
     .User_Name {
-        font-size: 20px;
+        font-size: 30px;
     }
+   .Profile_Attri{
+       font-size: 30px;
+   }
+   .Profile_Attri_Values{
+       font-size: 22px;
+   }
 }
 
 @media screen and (max-width:600px) {
@@ -99,21 +105,35 @@
     }
 
     .Welcome_heading {
-
+        font-weight: 700;
         margin-top: 70px;
         text-align: center;
 
     }
 
     .User_Name {
+        font-weight: 500;
         text-align: center;
     }
 
     .right {
         width: 100%;
     }
+    .Profile_Info_Block{
+        margin-left: 10px;
+    }
 }
-
+@media screen and (max-width:430px){
+    .Profile_Info_Block{
+        margin-left: 25px;
+    }
+    .Profile_Attri{
+        font-size: 25px;
+    }
+    .Profile_Attri_Values{
+        font-size: 17px;
+    }
+}
 @media screen and (max-width:380px) {
     .tab {
         font-size: 10px;
