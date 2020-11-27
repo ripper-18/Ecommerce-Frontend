@@ -1,11 +1,121 @@
-.more{
+.more {
     cursor: pointer;
     font-size: 10px;
     color: blueviolet;
 }
 
-@media screen and (max-width:380px){
-    .tab{
+.row {
+    display: flex;
+    min-height: 600px;
+}
+
+.left {
+    width: 60%;
+    background: url(https://i.ibb.co/Y84HWgH/Copy-of-Untitled-8.png);
+    clip-path: polygon(0 0, 100% 0, 73% 100%, 0% 100%);
+}
+
+.Welcome_heading {
+    font-size: 70px;
+    margin-top: 230px;
+    margin-left: 30px;
+}
+
+.User_Name {
+    font-size: 40px;
+    margin-left: 30px;
+
+}
+
+.right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right_container {
+    margin-top: 90px;
+}
+
+
+.address {
+    margin-top: 50px;
+}
+
+.Profile_Info_Block {
+    margin-bottom: 40px;
+}
+
+.Profile_Attri {
+    font-size: 40px;
+    font-weight: medium;
+    margin-bottom: 30px;
+}
+
+.Profile_Attri_Values {
+    font-size: 30px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+}
+
+.Manage_add_but_cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+@media screen and (max-width:940px) {
+    .Welcome_heading {
+        font-size: 30px;
+
+    }
+
+    .min_heading {
+        display: none;
+    }
+
+    .User_Name {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        clip-path: none;
+    }
+
+    .right_container {
+        margin-top: 0px;
+    }
+
+    .Welcome_heading {
+
+        margin-top: 70px;
+        text-align: center;
+
+    }
+
+    .User_Name {
+        text-align: center;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .tab {
         font-size: 10px;
     }
 }

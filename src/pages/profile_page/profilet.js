@@ -92,24 +92,63 @@ class Profile extends Component {
             title = "Account Overview" 
             className={cx(styles.tab)}
             >
-           <div className="row justify-content-center mt-sm-6 pb-sm-5">
-                            <div className="col-sm-3 mt-sm-6 justify-content-center">
-                                <div className="row pt-3 pt-sm-0 py-6 px-sm-3 p-6 ">
-                                    <div className="pb-1 m-sm-0 d-sm-flex w-100">
-                                        <div className="card-header bg-white mt-4 mx-3 px-0">
-                                            <h2  >Welcome Back</h2>
-                                            <h2  >{this.props.auth.user.name}</h2>
-                                            <button
-                                              style={{marginTop:"10px"}}
-                                                className="btn btn-danger"
-                                                onClick={() =>
-                                                    this.props.logoutUser(
-                                                        this.props.history
-                                                    )
-                                                }
-                                            >
-                                                Logout
-                                            </button>
+           <div className="">
+  
+            <div className={styles.row}>
+                                        <div className={styles.left}>
+                                            <h2  className={styles.Welcome_heading}>Welcome <span className={styles.mid_heading}> Back </span></h2>
+                                            <h2  className={styles.User_Name}>{this.props.auth.user.name}</h2>
+
+                                        </div>
+                                        
+                                    
+                                
+                                <div className={styles.right}>
+
+                                
+                                <div className={styles.right_container}>        
+
+                                    <div
+                                        className={cx(
+                                            styles.address,
+                                        
+                                        )}
+                                    >
+                                        <div className={styles.Profile_Info_Block}>
+                                        <span className={styles.Profile_Attri}>
+                                            Name:{" "}
+                                        </span>
+                                        <span className={styles.Profile_Attri_Values}>{(this.state.isDisabled)?(this.props.auth.user.name):(<input value={this.state.user.name} onChange={(e)=>this.setState({...this.state,
+                                        user:{
+                                            ...this.state.user,
+                                            name:e.target.value
+                                        }})}  />)}</span>
+                                        <br />
+                                        </div>
+
+                                        <div className={styles.Profile_Info_Block}>
+                                        <span className={styles.Profile_Attri}>
+                                            Email:{" "}
+                                        </span>
+                                    <span className={styles.Profile_Attri_Values}>{this.props.auth.user.email}</span>
+                                        <br />
+                                        </div>
+
+                                        <div className={styles.Profile_Info_Block}>
+                                        <span className={styles.Profile_Attri}>
+                                            Phone:{" "}
+                                        </span>
+                                        <span className={styles.Profile_Attri_Values}>{(this.state.isDisabled)?(this.props.auth.user.phone):(<input value={this.state.user.phone} onChange={(e)=>this.setState({...this.state,
+                                        user:{
+                                            ...this.state.user,
+                                            phone:e.target.value
+                                        }})}  />)}</span>
+                                        <br />
+                                        </div>
+                                    </div>
+
+                                        <div className={styles.button_container}>
+                                    
                                             <button
                                             style={{marginLeft:"20px",marginTop:"10px"}}
                                                 className="btn btn-outline-danger"
@@ -137,46 +176,22 @@ class Profile extends Component {
                                             >
                                                 Update
                                             </button>
-                                        </div>
+
+                                            <button
+                                              style={{marginLeft:"20px",marginTop:"10px" }}
+                                                className="btn btn-danger"
+                                                onClick={() =>
+                                                    this.props.logoutUser(
+                                                        this.props.history
+                                                    )
+                                                }
+                                            >
+                                                Logout
+                                            </button>
+
                                     </div>
-                                </div>
-                                <div className="row pt-3 pt-sm-0 py-4 px-sm-3">
-                                    <div
-                                        className={cx(
-                                            styles.address,
-                                            "card-body bg-white mt-2 mx-3 px-0"
-                                        )}
-                                    >
-                                        <span className="font-weight-bold">
-                                            Name:{" "}
-                                        </span>
-                                        <span>{(this.state.isDisabled)?(this.props.auth.user.name):(<input value={this.state.user.name} onChange={(e)=>this.setState({...this.state,
-                                        user:{
-                                            ...this.state.user,
-                                            name:e.target.value
-                                        }})}  />)}</span>
-                                        <br />
-                                        <span className="font-weight-bold">
-                                            Email:{" "}
-                                        </span>
-                                    <span>{this.props.auth.user.email}</span>
-                                        <br />
-                                        <span className="font-weight-bold">
-                                            Phone:{" "}
-                                        </span>
-                                        <span>{(this.state.isDisabled)?(this.props.auth.user.phone):(<input value={this.state.user.phone} onChange={(e)=>this.setState({...this.state,
-                                        user:{
-                                            ...this.state.user,
-                                            phone:e.target.value
-                                        }})}  />)}</span>
-                                        <br />
-                                    </div>
-                                    <div className="pb-1 m-sm-0 d-sm-flex w-100">
-                                        <div
-                                            className={
-                                                "card-body bg-white mt-2 mx-3 px-0"
-                                            }
-                                        >
+                                    <div className={styles.Manage_add_but_cont}>
+
                                             <button
                                                 onClick={() =>
                                                     this.props.history.push(
@@ -187,11 +202,13 @@ class Profile extends Component {
                                             >
                                                 Manage Addresses
                                             </button>
-                                        </div>
+
                                     </div>
                                 </div>
+                                </div>
                             </div>
-                        </div>
+            </div>    
+
              </Tab> 
              <Tab eventKey = "orders"
             title = "Previous Orders" >
