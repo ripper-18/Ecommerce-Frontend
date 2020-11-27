@@ -5,7 +5,7 @@ a:active {
 }
 
 .header {
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -55,6 +55,7 @@ a:active {
     width: 70%;
 
     border: 0 solid;
+    border-radius: 20px;
     /* box-shadow: inset 0px 0px 3px #CFCFCE, inset 0px 1px 0px #ffffff; */
 }
 

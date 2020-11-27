@@ -29,7 +29,7 @@ function MainCarousel() {
 
         <div
           className={styles.SlideContainer}
-          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/kM6DjBp/Untitled-design-10.png)" }}
             >
           <p className={styles.SlideText} >
           DU <br />
@@ -41,7 +41,7 @@ function MainCarousel() {
 
         <div
           className={styles.SlideContainer}
-          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
+          style={{ backgroundImage: "url(https://i.ibb.co/zNb01kp/Untitled-design-11.png)" }}
             >
           <p className={styles.SlideText}>
           DU <br />
