@@ -5,8 +5,10 @@
 }
 
 .product_vin {
+  
   padding: 1% 1%;
   display: flex;
+  background-color: #fff;
   border-bottom: 1px solid lightgray;
 
   margin-bottom: 10px;

@@ -39,7 +39,7 @@ class Cart  extends Component  {
     render(){
         const dev_charge = this.props.cart.bookCart.length?(30):(0);
     return (
-        <div>
+        <div style={{backgroundColor:"white"}}>
            <Stepper number={0}/>
              <div>
                 <h2 className={styles.checkout_title}> Your Cart</h2>
@@ -65,27 +65,35 @@ class Cart  extends Component  {
                 <div className={styles.subtotal}>
             <CurrencyFormat
             renderText= {(value) => (
-                <>
+                <div style={{backgroundColor:"white"}}>
                 <p>
-                    Subtotal  :  
-                    <strong>{this.getSubTotal().toFixed(2)}</strong>
+                                        <span style={{fontWeight:"bolder",fontSize:"20px"}}>Subtotal  :  </span>
+                                        <span style={{fontWeight:"lighter"}}>{this.getSubTotal().toFixed(2)}</span>
                 </p>
                
                 <p>
-                    Delivery :
-                    <strong> {dev_charge} </strong>
-                </p>
-                <p> GST (5%):
-            <strong>{(this.getSubTotal()*0.05)}</strong>
-                </p>
-                <p>
-                    Final Total :
-                    <strong> {(this.getSubTotal() +
-                    this.getSubTotal() * 0.05 +
-                    30).toFixed(2)} </strong>
+                                        <span style={{ fontWeight: "bolder", fontSize: "20px" }}>Delivery  :  </span>
+                                        <span style={{ fontWeight: "lighter" }}>{dev_charge}</span>
                 </p>
 
-                </>
+                                    <p>
+                                        <span style={{ fontWeight: "bolder", fontSize: "20px" }}>GST(5%)  :  </span>
+                                        <span style={{ fontWeight: "lighter" }}>{(this.getSubTotal() * 0.05)}</span>
+                                    </p>
+
+                                    
+
+                                    <p>
+                                        <span style={{ fontWeight: "bolder", fontSize: "20px" }}>Final Total:  </span>
+                                        <span style={{ fontWeight: "lighter" }}>{(this.getSubTotal() +
+                                            this.getSubTotal() * 0.05 +
+                                            30).toFixed(2)}</span>
+                                    </p>
+                
+                
+               
+
+                </div>
             )}
             decimalScale= {2}
             value={0}
