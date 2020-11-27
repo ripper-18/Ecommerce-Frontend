@@ -19,7 +19,8 @@ class MainPage extends Component {
            subject:[]      
           },
         sortValue: 0,
-        size:0
+        size:0,
+       
 
     };
 

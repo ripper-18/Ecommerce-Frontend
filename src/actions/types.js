@@ -19,3 +19,6 @@ export const SET_CURRENT_ORDER = "SET_CURRENT_ORDER";
 
 export const SHOW_DIALOG = "SHOW_DIALOG";
 export const HIDE_DIALOG = "SHOW_DIALOG";
+
+export const SHOW_LOADER = "SHOW_LOADER";
+export const HIDE_LOADER = "SHOW_LOADER";

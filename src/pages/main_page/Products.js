@@ -8,7 +8,9 @@ import {withRouter} from 'react-router-dom'
 import {getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {logoutUser} from '../../actions/auth_actions'
+import {showloader,hideloader} from '../../actions/isLoading_actions'
 import filterIcon from '../../assets/filter_icon.svg'
+import Loader from '../../components/Loader/Loader'
 
 class Products extends Component {
     state={
@@ -107,12 +109,15 @@ class Products extends Component {
 const mapStateToProps = (state) => ({
     book: state.book,
     cart: state.cart,
-    auth:state.auth
+    auth:state.auth,
+    loader:state.load
 });
 
 export default connect(mapStateToProps, {    
     addToCart,
     removeFromCart,
     getBooksByKeyword,
-    logoutUser
+    logoutUser,
+    showloader,
+    hideloader
 })(withRouter(Products));

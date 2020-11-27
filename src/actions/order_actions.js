@@ -1,8 +1,10 @@
 import { GET_ADDRESS, GET_PAST_ORDERS, SET_CURRENT_ORDER } from "./types";
 import config from "../config";
 import { showDialog} from './dialog_actions'
+import {showloader,hideloader} from './isLoading_actions'
 
-export const addAddress = (address, token) => (dispatch) => {
+export const addAddress = (address, token) => async(dispatch) => {
+    await dispatch(showloader())
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
@@ -30,11 +32,13 @@ export const addAddress = (address, token) => (dispatch) => {
                 dispatch(
                    showDialog( "Address could not be added, check your input and try again"))
             }
+            dispatch(hideloader())
         })
         .catch((err) => console.log(err));
 };
 
-export const getAddress = (token) => (dispatch) => {
+export const getAddress = (token) => async(dispatch) => {
+  
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
@@ -52,10 +56,13 @@ export const getAddress = (token) => (dispatch) => {
                 type: GET_ADDRESS,
                 payload: res,
             });
+            
         });
 };
 
-export const removeAddress = (id, token) => (dispatch) => {
+export const removeAddress = (id, token) => async(dispatch) => {
+
+    await dispatch(showloader())
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
 
@@ -73,10 +80,14 @@ export const removeAddress = (id, token) => (dispatch) => {
                 showDialog("Address could not be removed, Something went wrong")
             );
         }
+        dispatch(hideloader())
+     
     });
 };
 
-export const editAddress = (id, addr, token) => (dispatch) => {
+export const editAddress = (id, addr, token) => async(dispatch) => {
+
+    await dispatch(showloader())
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
@@ -101,6 +112,8 @@ export const editAddress = (id, addr, token) => (dispatch) => {
                     )
                 );
             }
+            dispatch(hideloader())
+           
         })
         .catch((err) => console.log(err));
 };
@@ -138,7 +151,9 @@ export const placeDirectOrder = (
     finalAmount,
     delivery,
     gst
-) => (dispatch) => {
+) => async(dispatch) => {
+
+    
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
@@ -172,10 +187,13 @@ export const placeDirectOrder = (
             dispatch(
                 showDialog("Something went wrong while placing the order")
             );
+           
         });
 };
 
-export const getPastOrders = (token) => (dispatch) => {
+export const getPastOrders = (token) => async(dispatch) => {
+
+  
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
     myHeaders.append("Content-Type", "application/json");
@@ -193,5 +211,6 @@ export const getPastOrders = (token) => (dispatch) => {
                 type: GET_PAST_ORDERS,
                 payload: res,
             });
+           
         });
 };

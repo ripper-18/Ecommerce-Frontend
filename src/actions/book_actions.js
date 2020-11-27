@@ -1,7 +1,9 @@
 import {GET_BOOKS,CURRENT_BOOK} from './types'
 import config from "../config";
+import {showloader,hideloader} from './isLoading_actions'
 
-export const getBookbyId = (id) => (dispatch) => {
+export const getBookbyId = (id) => async(dispatch) => {
+    await dispatch(showloader())
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
@@ -20,10 +22,13 @@ export const getBookbyId = (id) => (dispatch) => {
                 type: CURRENT_BOOK,
                 payload: res,
             });
+            dispatch(hideloader())
         })
         .catch((err) => console.log(err));
 };
-export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
+export const getBooksByKeyword = (filters,keyword) => async(dispatch) => {
+
+  
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify(filters);
@@ -36,7 +41,7 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
     };
     //console.log(raw)
 
-    fetch(config.user + `book/query?keyword=${keyword}`, requestOptions)
+    await fetch(config.user + `book/query?keyword=${keyword}`, requestOptions)
         .then((response) => response.json())
         .then((res) => {
             dispatch({
@@ -44,8 +49,10 @@ export const getBooksByKeyword = (filters,keyword) => (dispatch) => {
                 payload: res,
             });
             console.log(res)
+           
         })
         .catch((err) => console.log(err));
+     
 };
 
 

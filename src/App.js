@@ -1,4 +1,4 @@
-import React, {  Suspense } from "react";
+import React, {  Suspense ,useEffect} from "react";
 import Loader from "./components/Loader/Loader";
 import { Route,BrowserRouter,Switch} from "react-router-dom";
 import "./App.css";
@@ -6,9 +6,9 @@ import "./bootstrap.min.css";
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {hideDialog} from './actions/dialog_actions'
+import {hideloader} from './actions/isLoading_actions'
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
-
 import PrivateRoute from "./pages/common/PrivateRoute"
 
 
@@ -58,6 +58,11 @@ function App(props)   {
 
     const ErrorPage = React.lazy(() =>
     import('./pages/error_page/error404_page'))
+    
+    useEffect(() => {
+      
+       console.log(props.loader.isLoading)
+    }, [props])
 
         return (
             <BrowserRouter>
@@ -73,7 +78,14 @@ function App(props)   {
                     
                     <Header style={{position:"sticky"}} />
                     <main style={{ minHeight: "60vh" }}>
-                    <Switch>
+                        {
+                            props.loader.isLoading?
+                            <>
+                            <Loader/>
+                            </>:
+                            <>
+
+<Switch>
                         <Route path="/loader" exact component={Loader}/>
                         <Route path="/" exact component={MainPage} />
                         <Route path="/login" exact component={LoginPage}/>
@@ -93,6 +105,9 @@ function App(props)   {
                         
                         <Route  component={ErrorPage} />
                         </Switch>     
+                            </>
+                        }
+
                        
                    </main>
                    <Footer />  
@@ -126,5 +141,6 @@ function App(props)   {
 }
 const mapStateToProps = (state) => ({
     dialog: state.dialog,
+    loader:state.load
 });
 export default connect(mapStateToProps, { hideDialog })(App);

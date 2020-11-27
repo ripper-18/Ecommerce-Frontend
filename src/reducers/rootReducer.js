@@ -4,6 +4,7 @@ import bookReducer from './bookReducer';
 import orderReducer from './orderReducer'
 import cartReducer from './cartReducer'
 import dialogReducer from './dialogReducer'
+import loaderReducer from './loaderReducer'
 
 export default combineReducers({
   
@@ -11,5 +12,6 @@ export default combineReducers({
     order:orderReducer,
     book:bookReducer,
     cart:cartReducer,
-    dialog:dialogReducer
+    dialog:dialogReducer,
+    load: loaderReducer
 });

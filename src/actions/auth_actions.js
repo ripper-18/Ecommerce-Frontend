@@ -1,7 +1,7 @@
 import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, UPDATE_USER,FORGOT_PASS } from "./types";
 import config from "../config";
 import {showDialog} from './dialog_actions'
-
+import {showloader,hideloader} from './isLoading_actions'
 
 export const registerUser = (user,history) => (dispatch) => {
     var myHeaders = new Headers();
@@ -100,7 +100,9 @@ export const loginGoogle = (user, history) => (dispatch) => {
     );
 };
 
-export const updateUser = (user, token) => (dispatch) => {
+export const updateUser = (user, token) => async(dispatch) => {
+
+    await dispatch(showloader())
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", token);
@@ -129,6 +131,7 @@ export const updateUser = (user, token) => (dispatch) => {
             } else {
                 dispatch(showDialog("Something went wrong"));
             }
+            dispatch(hideloader())
         })
     );
 };
