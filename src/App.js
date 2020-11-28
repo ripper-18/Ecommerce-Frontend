@@ -24,7 +24,7 @@ function App(props)   {
     import('./pages/login_page/loginScreen'))
 
     const CartPage=React.lazy(()=>
-    import('./pages/cart_page/Cart'))
+    import('./pages/cart_page/Cart2'))
 
     const OrderPage=React.lazy(()=>
     import('./pages/order_page/OrderPage'))

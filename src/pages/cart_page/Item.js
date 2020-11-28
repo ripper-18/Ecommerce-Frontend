@@ -10,7 +10,7 @@ class Item extends Component {
     };
 
     handleRemoveFromCart = (elem) => {
-        this.props.removeFromCart(elem,-1);
+        this.props.removeFromCart(elem);
     };
     
     
