@@ -38,19 +38,12 @@ class Product extends Component {
       
     return (
         <Row className={styles['product-container']} style={{overflowX:"hidden"}}>
-        <Col md={6} xs={12} style={{display:"flex",justifyContent:"center"}}>
-          <Lazyload offset={400}>
+        <Col md={6} xs={12} style={{display:"flex",justifyContent:"center", flexDirection :"column"}}>
+          <Lazyload offset={400} className={styles.Main_Image} style={{display:"flex",justifyContent:"center"}}>
           <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className={styles["big-image"]} />
           </Lazyload>
          
-        </Col>
-        <Col md={3} xs={6}>
-          <Card style={{margin:"20px"}}>
-          <ListGroup variant='flush'>
-            <ListGroup.Item>
-              <h3 style={{fontWeight:"800"}}>{this.props.book.name}</h3>
-            </ListGroup.Item>
-            <ListGroup.Item variant='flush'>
+          <ListGroup.Item variant='flush'>
             <div className={styles["images"]}>
                     {this.props.book.image.map((x) => (
                       <Lazyload offset={400}>
@@ -60,28 +53,97 @@ class Product extends Component {
                       </Lazyload>
                     ))}
                   </div>
-            </ListGroup.Item>
-           
-            <ListGroup.Item><span className={styles["product-heading"]}>Price:</span> Rs.{this.props.book.price}</ListGroup.Item>
-            <ListGroup.Item>
-            <span className={styles["product-heading"]}> Description:</span> {this.props.book.description}
-            </ListGroup.Item>
-            <ListGroup.Item>
-            <span className={styles["product-heading"]}> Author:</span> {this.props.book.author}
-            </ListGroup.Item>
-            <ListGroup.Item>
-            <span className={styles["product-heading"]}> Publisher:</span> {this.props.book.publisher}
-            </ListGroup.Item>
-            <ListGroup.Item style={{display:"flex",justifyContent:"space-between" }}>
-                <span className={styles["product-heading"]}> Edition:  {this.props.book.edition} </span>  <span className={styles["product-heading"]}> Weight:  {this.props.book.weight}gms</span> 
-            </ListGroup.Item>
-            <ListGroup.Item style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",margin:"5px" }}>
-                <span className={styles["product-heading"]}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>  <span className={styles["product-heading"]}>Course: {this.props.book.course}</span> <span className={styles["product-heading"]}>Year: {this.props.book.year}</span>
-            </ListGroup.Item>
-          </ListGroup>
-          </Card>
+          </ListGroup.Item>
         </Col>
-        <Col md={3} xs={6} >
+        <Col md={6} xs={12}>
+          
+          
+            
+            <h1 style={{fontWeight:"800", fontSize: "50px"}}>{this.props.book.name}</h1>
+            <h3 className={styles.Product_description}> {this.props.book.description}</h3>
+            
+           
+             
+            <h1 className={styles.Product_Price}>Rs.  {this.props.book.price}</h1>
+            <p style={{color: "#273c75", fontWeight: "700"}}>(Inclusive of all taxes)</p>
+            <h3 className={styles.Product_Author}> Author: {this.props.book.author}</h3>
+                  
+            <div className={styles.Small_info}>
+              <span className={styles.Small_info_indi}> Edition:  {this.props.book.edition} </span>  
+              <span className={styles.Small_info_indi}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>  
+              <span className={styles.Small_info_indi}>Course: {this.props.book.course}</span> 
+              <span className={styles.Small_info_indi}>Year: {this.props.book.year}</span>
+            </div>
+
+           
+                    
+            <div className={styles.Quantity_Container}>
+            <h3 className={styles["product-heading"]}> Qty: {quantity} </h3> 
+            </div>
+            
+            <div className={styles.Buttons_Container}>
+            { quantity===0?(<button
+                  
+                  onClick={()=>this.props.addToCart(this.props.book)}
+                  className={styles["ac-btn"]}
+                  disabled={this.props.book.countInStock === 0}
+                  
+                >
+                  Add To Cart
+                </button>):(
+                  <div style={{display:"flex",justifyContent:"space-evenly"}}>
+                    <button
+                  onClick={()=>this.props.addToCart(this.props.book)}
+                  disabled={disabled}
+                  className={styles["cc-btn"]}
+                >
+                  +
+                </button>
+               
+                    <button
+                  
+                  onClick={()=>this.props.removeFromCart(this.props.book)}
+                  className={styles["cc-btn"]}
+                >
+                  -
+                </button>
+                  </div>
+                 
+                )}
+              </div>
+
+            <span > Weight:  {this.props.book.weight}gms</span> 
+            <h4> Publisher: {this.props.book.publisher}</h4>
+
+            {/* <span className={styles["product-heading"]}>Total Price: </span> Rs. {this.props.book.price*quantity} */}
+            
+            <div className = {styles.Seller_Info}>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+              <h3 style={{fontWeight:"600"}}>Seller Information: </h3>
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className={styles["product-heading"]}> Name:  </span>{this.props.book.seller.name} 
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className={styles["product-heading"]}> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
+              </ListGroup.Item>
+              <ListGroup.Item>
+              <span className={styles["product-heading"]}> Address:  </span>{this.props.book.seller.address} 
+              </ListGroup.Item>
+            </ListGroup>
+            </div>
+            
+
+            <div className={styles.OS_Buttons_Container}>
+
+            <button className = {styles.Other_Sellers_Button}>Find Other Sellers </button>
+            
+            </div>
+
+
+        </Col>
+        {/* <Col md={3} xs={6} >
           <Card style={{margin:"20px"}}>
             <ListGroup variant='flush'>
             <ListGroup.Item>
@@ -146,7 +208,7 @@ class Product extends Component {
               </ListGroup.Item>
             </ListGroup>
           </Card>
-        </Col>
+        </Col> */}
       </Row>
     )}
 }
