@@ -5,7 +5,6 @@ import cx from "classnames";
 import styles from "./Address.module.css";
 import Modal from "react-bootstrap/Modal";
 
-
 class AddressModal extends Component {
     state = {
         delivery1: "",
@@ -13,6 +12,8 @@ class AddressModal extends Component {
         pincode: "",
         state: "",
         phone: "",
+        country:"india",
+        region:''
     };
 
     handleAddress = () => {
@@ -20,7 +21,12 @@ class AddressModal extends Component {
         this.props.setModalOpen(false);
         this.props.getAddress(this.props.auth.token);
     };
-
+    selectCountry (val) {
+        this.setState({ country: val });
+      }
+    selectRegion (val) {
+        this.setState({ region: val });
+      }
     render() {
         return (
             <Modal
@@ -119,13 +125,14 @@ class AddressModal extends Component {
                                             })
                                         }
                                     />
+                                     
                                 </div>
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-sm-12">
-                                <div className="form-group pb-3">
+                                <div className="form-group pb-1">
                                     <label>Phone number</label>
                                     <input
                                         type="text"
@@ -143,7 +150,7 @@ class AddressModal extends Component {
                                 </div>
                             </div>
                         </div>
-                        <hr />
+                        
                         </div>
                         </div>
                     </div>

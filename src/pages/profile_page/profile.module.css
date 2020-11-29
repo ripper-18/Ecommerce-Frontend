@@ -130,15 +130,25 @@
 
 .Past_Order_Item_Container {
     width: 50%;
-
+    margin-bottom: 20px;
+}
+.Past_Order_Item_Container p{
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .Past_Order_Parent_Div {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
     background: url(https://i.ibb.co/HBQt2bb/bcg-po.png);
+    height: 100%;
 }
-
+.paginate{
+    margin-bottom: 20px;
+}
 .Past_Order_Item {
     padding: 20px;
     border: 1px solid #d8d8d8;
@@ -162,6 +172,9 @@
     text-align: center;
     margin: 10px;
     font-size: 15px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
 }
 
 .more:hover {
@@ -196,7 +209,9 @@
     .Profile_Attri_Values {
         font-size: 17px;
     }
-
+    .Past_Order_Written_Det{
+        width: 40%;
+    }
 
 }
 

@@ -14,7 +14,8 @@ import StepConnector from '@material-ui/core/StepConnector';
 
 
 
-
+/*background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);*/
 const ColorlibConnector = withStyles({
   alternativeLabel: {
     top: 22,
@@ -22,13 +23,16 @@ const ColorlibConnector = withStyles({
   active: {
     '& $line': {
       backgroundImage:
-        'linear-gradient(354deg, rgba(52,152,219,1) 35%, rgba(23,70,101,1) 100%)',
-    },
+        ' linear-gradient(315deg, #045de9 0%, #09c6f9 74%);',
+    }
+    ,
+    backgroundColor:'#045de9'
   },
   completed: {
     '& $line': {
       backgroundImage:
-        'linear-gradient(354deg, rgba(52,152,219,1) 35%, rgba(23,70,101,1) 100%)',
+        ' linear-gradient(315deg, #045de9 0%, #09c6f9 74%);',
+        backgroundColor:'#045de9'
     },
   },
   line: {
@@ -53,12 +57,14 @@ const useColorlibStepIconStyles = makeStyles({
   },
   active: {
     backgroundImage:
-      'linear-gradient(354deg, rgba(52,152,219,1) 35%, rgba(23,70,101,1) 100%)',
+      ' linear-gradient(315deg, #045de9 0%, #09c6f9 74%);',
     boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+    backgroundColor:'#045de9'
   },
   completed: {
     backgroundImage:
-      'linear-gradient(354deg, rgba(52,152,219,1) 35%, rgba(23,70,101,1) 100%)',
+      ' linear-gradient(315deg, #045de9 0%, #09c6f9 74%);',
+      backgroundColor:'#045de9'
   },
 });
 

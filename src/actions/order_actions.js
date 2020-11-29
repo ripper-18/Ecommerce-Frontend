@@ -204,7 +204,7 @@ export const getPastOrders = (token) => async(dispatch) => {
         redirect: "follow",
     };
 
-    fetch(config.user + "order", requestOptions)
+    fetch(config.user + `order`, requestOptions)
         .then((response) => response.json())
         .then((res) => {
             dispatch({

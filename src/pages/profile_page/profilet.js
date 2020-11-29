@@ -13,7 +13,7 @@ import {
 } from '../../actions/order_actions'
 import InfoModal from './InfoModal'
 import cx from 'classnames'
-
+import Pagination from '@material-ui/lab/Pagination';
 
 class Profile extends Component {
 
@@ -28,11 +28,15 @@ class Profile extends Component {
             orders: [],
             isInfOpen: [],
 
-        }
+        },
+     
+        currpg:1
     }
 
     componentDidMount() {
         this.props.getPastOrders(this.props.auth.token);
+
+       
 
         let address = []
         this.props.pastOrders.map((addr, index) => (
@@ -81,7 +85,18 @@ class Profile extends Component {
             alert("Name can't be empty!")
         }
     }
+    handlePage=(e)=>{
+        console.log(e)
+        this.setState({
+            currpg:e
+        })
+    }
     render() {
+        let x= this.props.pastOrders.length/10 +1;
+
+        if(this.props.pastOrders.length%10===0){
+            x--;
+        }
         return ( <div style={{overflowX:"hidden"}}>
             <br/> <br/> <div className = "card_container" >
             <div className = 'card' style={{marginBottom:"10px",margin:"auto"}} >
@@ -225,7 +240,7 @@ class Profile extends Component {
                                     <div className={styles.Past_Order_Parent_Div}>
                                     <div className={styles.Past_Order_Item_Container}>
                                         {this.props.pastOrders.length > 0 ? (
-                                            this.props.pastOrders.map(
+                                            this.props.pastOrders.slice((this.state.currpg-1)*10 ,10+(this.state.currpg-1)*10).map(
                                                 (order, index) => (
                                                     <div className={styles.Past_Order_Item_Wrapper}>
                                                     <div
@@ -278,6 +293,7 @@ class Profile extends Component {
                                             <p>No past orders</p>
                                         )}
                                     </div>
+                                    <Pagination count={Math.floor(x)} color="primary" className={styles.paginate} onChange={(e,v)=>this.handlePage(v)}/>
                                 </div>
                             </div>
                         </div>

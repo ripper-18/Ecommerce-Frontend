@@ -1,7 +1,7 @@
 import { SHOW_LOADER, HIDE_LOADER } from "./types";
 
 export const showloader = () => (dispatch) => {
-    console.log("show")
+    //console.log("show")
     dispatch({
         type: SHOW_LOADER,
         payload: {
@@ -10,7 +10,7 @@ export const showloader = () => (dispatch) => {
     });
 };
 export const hideloader = () => (dispatch) => {
-    console.log("hide")
+    //console.log("hide")
     dispatch({
         type: HIDE_LOADER,
         payload: {
