@@ -38,12 +38,12 @@ class Product extends Component {
       
     return (
         <Row className={styles['product-container']} style={{overflowX:"hidden"}}>
-        <Col md={6} xs={12} style={{display:"flex",justifyContent:"center", flexDirection :"column"}}>
-          <Lazyload offset={400} className={styles.Main_Image} style={{display:"flex",justifyContent:"center"}}>
+        <Col md={6} xs={12} style={{display:"flex", flexDirection :"column"}}>
+          <Lazyload offset={400} className={styles.Main_Image} style={{display:"flex",justifyContent:"center", marginTop: "50px"}}>
           <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className={styles["big-image"]} />
           </Lazyload>
          
-          <ListGroup.Item variant='flush'>
+
             <div className={styles["images"]}>
                     {this.props.book.image.map((x) => (
                       <Lazyload offset={400}>
@@ -53,7 +53,6 @@ class Product extends Component {
                       </Lazyload>
                     ))}
                   </div>
-          </ListGroup.Item>
         </Col>
         <Col md={6} xs={12}>
           
@@ -117,21 +116,13 @@ class Product extends Component {
 
             {/* <span className={styles["product-heading"]}>Total Price: </span> Rs. {this.props.book.price*quantity} */}
             
+            <div className={styles.Seller_Info_Container}>
             <div className = {styles.Seller_Info}>
-            <ListGroup variant="flush">
-              <ListGroup.Item>
-              <h3 style={{fontWeight:"600"}}>Seller Information: </h3>
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Name:  </span>{this.props.book.seller.name} 
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Address:  </span>{this.props.book.seller.address} 
-              </ListGroup.Item>
-            </ListGroup>
+              <h3 style={{fontWeight:"600"}}>Seller Information: </h3>   <br/>           
+              <h4 className={styles.Seller_Details}> Name:  {this.props.book.seller.name}     </h4>          
+              <h4 className={styles.Seller_Details}> Contact Info:  {this.props.book.seller.email}, +91-{this.props.book.seller.phone}     </h4>         
+              <h4 className={styles.Seller_Details}> Address:  {this.props.book.seller.address} </h4>
+            </div>
             </div>
             
 
