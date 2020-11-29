@@ -58,6 +58,9 @@ function App(props)   {
 
     const ErrorPage = React.lazy(() =>
     import('./pages/error_page/error404_page'))
+
+    const SellerRegPage = React.lazy(() =>
+    import('./pages/seller_registration_page/SellerReg'))
     
     useEffect(() => {
       
@@ -97,11 +100,13 @@ function App(props)   {
                         <Route path = "/disclaimer" exact component={DisclaimerPage}/>
                         <Route path = "/returns" exact component={ReturnsPage}/>
                         <Route path = "/terms" exact component ={TermsPage}/>
+                        <Route path ="/seller_reg" exact component ={SellerRegPage} />     
 
                         <PrivateRoute path="/order" exact component={OrderPage}/>                       
                         <PrivateRoute path="/profile" exact component={ProfilePage}/>
                         <PrivateRoute path="/checkout" exact component={CheckOutPage}/>                 
-                        <PrivateRoute path="/address" exact component={AddressPage} />                     
+                        <PrivateRoute path="/address" exact component={AddressPage} />  
+                                        
                         
                         <Route  component={ErrorPage} />
                         </Switch>     

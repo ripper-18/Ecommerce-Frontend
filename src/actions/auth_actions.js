@@ -37,6 +37,42 @@ export const registerUser = (user,history) => (dispatch) => {
     
 };
 
+export const registerSeller = (user, history) => (dispatch) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+
+    var raw = JSON.stringify({
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        password: user.password,
+        isStudent:user.isStudent,
+        isVendor:user.isVendor
+    });
+
+    var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+    };
+
+    fetch(config.user + "auth/signup", requestOptions).then((res) => res.json().then((response) => {
+        if (response.message === "Registration Completed") {
+            dispatch({
+                type: REGISTER_USER,
+            });
+            history.push("/profile");
+            dispatch(showDialog("Seller Account Created"));
+
+        } else {
+            dispatch(showDialog(response.message));
+        }
+    }));
+
+};
+
 export const loginUser = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
