@@ -20,7 +20,17 @@ class Product extends Component {
             selectedImage:image
         })
       }; 
-     
+      handleRemove=(elem)=>{
+        this.props.removeFromCart(elem)
+    }
+    handleAdd=(elem)=>{
+        let x=this.props.cart.bookCart.filter((item)=>item._id===elem._id).length
+        if(x===elem.countInStock-1){
+            this.props.showDialog('Sorry! Maximum Count In Stock Reached')
+            return
+        }
+        this.props.addToCart(elem)
+    }
      componentDidMount(){
 
       if(this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length===this.props.book.countInStock){
@@ -92,7 +102,7 @@ class Product extends Component {
                 </button>):(
                   <div style={{display:"flex",justifyContent:"space-evenly"}}>
                     <button
-                  onClick={()=>this.props.addToCart(this.props.book)}
+                  onClick={()=>this.handleAdd(this.props.book)}
                   disabled={disabled}
                   className={styles["cc-btn"]}
                 >
@@ -101,7 +111,8 @@ class Product extends Component {
                
                     <button
                   
-                  onClick={()=>this.props.removeFromCart(this.props.book)}
+                  onClick={()=>this.handleRemove(this.props.book)}
+                  disabled={quantity===0?true:false}
                   className={styles["cc-btn"]}
                 >
                   -

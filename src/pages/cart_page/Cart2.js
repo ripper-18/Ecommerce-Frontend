@@ -5,11 +5,15 @@ import {withRouter,Link} from 'react-router-dom'
 import {addToCart,removeFromCart,clearCart} from '../../actions/cart_actions'
 import cx from 'classnames'
 import Stepper from '../common/stepper'
+import {showDialog } from '../../actions/dialog_actions'
 
 
 
 
 class Cart  extends Component  { 
+    state={
+        size:'',
+    }
 
     getCount = (cart) => {
         let counts = {};
@@ -41,9 +45,49 @@ class Cart  extends Component  {
             this.props.removeFromCart(elem)
         }
     }
+    handleRemove=(elem)=>{
+        this.props.removeFromCart(elem)
+    }
+    handleAdd=(elem)=>{
+        let x=this.props.cart.bookCart.filter((item)=>item._id===elem._id).length
+        if(x===elem.countInStock-1){
+            this.props.showDialog('Sorry! Maximum Count In Stock Reached')
+            return
+        }
+        this.props.addToCart(elem)
+    }
+    updateDimensions = () => {
+        if(window.innerWidth<640){
+            this.setState({
+              ...this.state,
+              size:'col-6'
+            })
+        }
+        else{
+          this.setState({
+              ...this.state,
+              size:'col-12'
+            })  
+      }
+        };
+        componentDidMount() {
+          if(window.innerWidth<640){
+              this.setState({
+                ...this.state,
+                size:'col-6'
+              })
+          }
+          else{
+            this.setState({
+                ...this.state,
+                size:'col-12'
+              })  
+          }
+          window.addEventListener('resize', this.updateDimensions);
+        }
     
     render(){
-        const dev_charge = this.props.cart.bookCart.length?(30):(0);
+       
     return (
         <>
         <div style={{backgroundColor:"white"}}>
@@ -90,17 +134,29 @@ class Cart  extends Component  {
                                                                 {item.book.author}
                                                             </div>
                                                             <div className={styles.syq}>
-                                                                <div className={styles.lsyq}>
+                                                                <div className={styles.lsyq} style={{paddingLeft:"0px"}}>
                                                                     {item.book.year===2?'2nd Year':''}  {item.book.year===1?'1st Year':''}  {item.book.year===3?'3rd Year':''}  {item.book.year===4?'4th Year':''} {","} {item.book.course}
                                                                 </div>
                                                                 <div className={styles.lsyq}>
-                                                                    quantity baad mei
+                                                                   <div className={'row'}>
+                                                                       <div className={this.state.size} style={{display:'flex',justifyContent:"space-around"}}>
+                                                                           Qty: {this.props.cart.bookCart.filter((it)=>it._id===item.book._id).length}
+                                                                       </div>
+                                                                       <div className={this.state.size} style={{display:'flex',justifyContent:"space-around"}}>
+                                                                         <span className={styles.qit} onClick={()=>this.handleRemove(item.book)} style={{visibility:item.quantity===1?'hidden':'inherit'}}>{"-"}</span>
+                                                                         <span className={styles.qit} onClick={()=>this.handleAdd(item.book)}>{"+"}</span>
+                                                                       </div>
+                                                                   </div>
+                                                                  
+                                                                       
+                                                                       
+                                                                   
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className={cx(styles.right,"col-4")}>
                                                             <span className={styles.rprice}>
-                                                                {"₹"} {this.getSubTotal().toFixed(2)}
+                                                                {"₹"} {item.book.price*item.quantity}
                                                             </span>
                                                         </div>
                                                     </div>
@@ -212,5 +268,6 @@ export default connect(mapStateToProps, {
     addToCart,
     removeFromCart,
     clearCart,
+    showDialog
 })(withRouter(Cart));
 
