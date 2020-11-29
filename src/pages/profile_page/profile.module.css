@@ -136,13 +136,15 @@
 .Past_Order_Parent_Div {
     display: flex;
     justify-content: center;
+    background: url(https://i.ibb.co/HBQt2bb/bcg-po.png);
 }
 
 .Past_Order_Item {
     padding: 20px;
     border: 1px solid #d8d8d8;
-    margin-bottom: 10px;
+    margin-top: 10px;
     display: flex;
+    background: #fff;
 }
 
 .Past_Order_Written_Det {
@@ -166,6 +168,22 @@
     background: #192a56;
 }
 
+@media screen and (max-width: 600px) {
+    .more {
+        margin: 50px;
+    }
+}
+
+@media screen and (max-width:518px) {
+    .more {
+        margin: 50px;
+    }
+
+    .Past_Order_Item_Container {
+        width: 70%;
+    }
+}
+
 @media screen and (max-width:430px) {
     .Profile_Info_Block {
         margin-left: 25px;
@@ -178,6 +196,8 @@
     .Profile_Attri_Values {
         font-size: 17px;
     }
+
+
 }
 
 @media screen and (max-width:380px) {
