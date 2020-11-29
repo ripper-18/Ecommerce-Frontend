@@ -213,25 +213,26 @@ class Profile extends Component {
              <Tab eventKey = "orders"
             title = "Previous Orders" >
 
-<div className="col-12 p-0 col-md-7" style={{margin:"auto"}}>
-                            <div className="py-4 px-3 mb-5" >
-                                <div className="py-2 row justify-content-center">
-                                    <div className="col-12 col-md-8">
-                                        <h2 className="font-weight-bold">
+<div className="" style={{margin:"auto"}}>
+                            <div className="" >
+                                <div className="">
+                                    <div className="">
+                                        <h2 className="font-weight-bold" style={{textAlign: "center", marginTop: "20px", marginBottom: "20px"}}>
                                             Your Past Orders
                                         </h2>
                                     </div>
                                 </div>
-                                    <div className="py-2 row justify-content-center">
-                                    <div className="col-8">
+                                    <div className={styles.Past_Order_Parent_Div}>
+                                    <div className={styles.Past_Order_Item_Container}>
                                         {this.props.pastOrders.length > 0 ? (
                                             this.props.pastOrders.map(
                                                 (order, index) => (
+                                                    <div className={styles.Past_Order_Item_Wrapper}>
                                                     <div
-                                                        className="card my-3 p-2"
+                                                        className={styles.Past_Order_Item}
                                                         key={index}
                                                     >
-                                                        <div>
+                                                        <div className={styles.Past_Order_Written_Det}>
                                                             <span className="font-weight-bold">
                                                                 Order ID:
                                                             </span>{" "}
@@ -261,7 +262,7 @@ class Profile extends Component {
                                                             <br />
                                                         </div>
                                                         <div className={styles.more} onClick={()=>this.setInfOpen(true,index)}>
-                                                           <span style={{color:"blue",fontSize:"px"}}>...</span> Click here to get full information about the order
+                                                           Details
                                                         </div>
                                                         <InfoModal 
                                                         infOpen={this.state.orderhistory.isInfOpen[index]}
@@ -269,6 +270,7 @@ class Profile extends Component {
                                                         data={order}
                                                         index={index}
                                                         />
+                                                    </div>
                                                     </div>
                                                 )
                                             )

@@ -81,12 +81,14 @@
     .User_Name {
         font-size: 30px;
     }
-   .Profile_Attri{
-       font-size: 30px;
-   }
-   .Profile_Attri_Values{
-       font-size: 22px;
-   }
+
+    .Profile_Attri {
+        font-size: 30px;
+    }
+
+    .Profile_Attri_Values {
+        font-size: 22px;
+    }
 }
 
 @media screen and (max-width:600px) {
@@ -119,21 +121,65 @@
     .right {
         width: 100%;
     }
-    .Profile_Info_Block{
+
+    .Profile_Info_Block {
         margin-left: 10px;
     }
 }
-@media screen and (max-width:430px){
-    .Profile_Info_Block{
+
+
+.Past_Order_Item_Container {
+    width: 50%;
+
+}
+
+.Past_Order_Parent_Div {
+    display: flex;
+    justify-content: center;
+}
+
+.Past_Order_Item {
+    padding: 20px;
+    border: 1px solid #d8d8d8;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.Past_Order_Written_Det {
+    width: -webkit-fill-available;
+    font-size: medium;
+}
+
+.more {
+    background: #273c75;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.more:hover {
+    background: #192a56;
+}
+
+@media screen and (max-width:430px) {
+    .Profile_Info_Block {
         margin-left: 25px;
     }
-    .Profile_Attri{
+
+    .Profile_Attri {
         font-size: 25px;
     }
-    .Profile_Attri_Values{
+
+    .Profile_Attri_Values {
         font-size: 17px;
     }
 }
+
 @media screen and (max-width:380px) {
     .tab {
         font-size: 10px;
