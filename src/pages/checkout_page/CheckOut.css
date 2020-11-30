@@ -1,16 +1,24 @@
 
 
   #checkout-container{
-   
     display: flex;
-    padding:0 10%;
+    padding: 40px;
+    margin: 0px;
+    padding-top: 0px;
+  }
+ .heady{
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    margin: auto;
+    letter-spacing: 2px;
+    font-weight: 600;
   }
 
   
 
   #subtotal-box{
-    
-    margin-top: 10%;
+    margin-top: 20px;
     margin-bottom: 5%;
     padding: 0 2%;
     flex: 3;
@@ -22,7 +30,7 @@
 
   #address-box{
     padding: 0 2%;
-    margin-top: 10%;
+    margin-top: 20px;
     margin-bottom: 5%;  
     flex: 8;  
     
@@ -34,10 +42,7 @@
   flex-wrap: wrap;
 }
 
-#address-box p{
-  text-align: center;
-    font-size: 30px;
-  }
+
   #address-box > span{
     display: block;
     text-align: center;
@@ -71,6 +76,9 @@ hr{
 .total-amount{
   font-size: 20px;
   color: #353b48;
+}
+.righty.total-amount{
+  font-weight: 600;
 }
 
  .add1{

@@ -33,7 +33,7 @@ function App(props)   {
     import('./pages/profile_page/profilet'))
 
     const CheckOutPage=React.lazy(()=>
-    import('./pages/checkout_page/CheckOut'))
+    import('./pages/checkout_page/Checkout2'))
 
     const AddressPage=React.lazy(()=>
     import('./pages/address_page/address'))

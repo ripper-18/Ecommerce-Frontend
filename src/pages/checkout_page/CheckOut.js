@@ -117,12 +117,13 @@ class CheckOut extends Component {
            
     render(){
         const subt = this.getSubTotal();
-        const gst = 0.05*subt;
-        const final = (subt + gst + 30);
+        const gst = (0.05*subt);
+        const final = (subt + gst + 30).toFixed(2);
         
     return (
         <>
        <Stepper number={1}/>
+       <p className='heady'>Delivery Information</p>
         <div id='checkout-container'>
             <div  id='subtotal-box'>
 
@@ -132,14 +133,12 @@ class CheckOut extends Component {
                 <span className='righty'>₹{subt}</span><br></br>
                 <span className='lefty'>Delivery</span>
                 <span className='righty'>₹30</span><br></br>
-                <span className='lefty'>Gst(5%)</span>
-                <span className='righty'>₹{gst}</span><br></br>
                 <span className='lefty total-amount'>Total</span>
                 <span className='righty total-amount'>₹{final}</span><br></br>
             </div>
 
             <div  id='address-box'>
-                <p>Delivery Information</p>
+               
 
                 <span> Select Delivery Address: </span>
                 <div id='add-card-container'>
@@ -148,20 +147,7 @@ class CheckOut extends Component {
                     this.props.order.addresses.map((addr, index) => (
                         <div key={index} className="col-md-6" >
                             <label className="row">
-                                {/*<div className="col-2">
-                                    <input
-                                        type="radio"
-                                        name="address"
-                                        value={
-                                            addr._id
-                                        }
-                                        onChange={
-                                            this
-                                                .setSelectedAddress
-                                        }
-                                        style={{marginRight:"10%" }}
-                                    />
-                                    </div>*/}
+                                
                                 <div className="card h-200 col-11" style={{ height: "auto",minHeight:"250px", display:"inline",cursor:"pointer",border:this.state.selectedAddress===addr._id?`2px solid #273c75`:`` }}
                                 
                                 onClick={()=>

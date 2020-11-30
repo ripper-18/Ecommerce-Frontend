@@ -186,10 +186,10 @@ class Cart  extends Component  {
                                  </div>
                              </div>
                              <div className={cx(styles.subt,'row')}>
-                                 <div className={cx(styles.subtl,'col-8')}>
+                                 <div className={cx(styles.subtl,'col-6')}>
                                      {"Subtotal"}
                                  </div>
-                                 <div className={cx(styles.subtr,'col-4')}>
+                                 <div className={cx(styles.subtr,'col-6')}>
                                      <div className={styles.subtrd}>
                                          <span>
                                             ₹ {this.getSubTotal().toFixed(2)}
