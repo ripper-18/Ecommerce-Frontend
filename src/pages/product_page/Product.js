@@ -49,14 +49,14 @@ class Product extends Component {
     return (
         <Row className={styles['product-container']} style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex", flexDirection :"column"}}>
-          <Lazyload offset={400} className={styles.Main_Image} style={{display:"flex",justifyContent:"center", marginTop: "50px"}}>
+          <Lazyload offset={200} height={200}className={styles.Main_Image} style={{display:"flex",justifyContent:"center", marginTop: "50px"}}>
           <img src={this.state.selectedImage?this.state.selectedImage:this.props.book.image[0]} alt={this.props.book.name} className={styles["big-image"]} />
           </Lazyload>
          
 
             <div className={styles["images"]}>
                     {this.props.book.image.map((x) => (
-                      <Lazyload offset={400}>
+                      <Lazyload offset={200} height={200}>
                       <div key={x} onClick={() => this.changeImage(x)} className={styles["image-container"]}>
                         <img src={x} alt="product" className={styles["image"]} />
                       </div>
@@ -125,7 +125,7 @@ class Product extends Component {
             <span > Weight:  {this.props.book.weight}gms</span> 
             <h4> Publisher: {this.props.book.publisher}</h4>
 
-            {/* <span className={styles["product-heading"]}>Total Price: </span> Rs. {this.props.book.price*quantity} */}
+          
             
             <div className={styles.Seller_Info_Container}>
             <div className = {styles.Seller_Info}>
@@ -145,72 +145,7 @@ class Product extends Component {
 
 
         </Col>
-        {/* <Col md={3} xs={6} >
-          <Card style={{margin:"20px"}}>
-            <ListGroup variant='flush'>
-            <ListGroup.Item>
-            <span className={styles["product-heading"]}>Total Price: </span> Rs. {this.props.book.price*quantity}
-            </ListGroup.Item>
-
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Status: </span>   {this.props.book.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-              </ListGroup.Item>
-
-              {this.props.book.countInStock > 0 && (
-                <ListGroup.Item>
-                   <span className={styles["product-heading"]}> Qty: {quantity} </span> 
-                </ListGroup.Item>
-              )}
-
-              <ListGroup.Item>
-                { quantity===0?(<button
-                  
-                  onClick={()=>this.props.addToCart(this.props.book)}
-                  className={styles["ac-btn"]}
-                  disabled={this.props.book.countInStock === 0}
-                  
-                >
-                  Add To Cart
-                </button>):(
-                  <div style={{display:"flex",justifyContent:"space-evenly"}}>
-                    <button
-                  onClick={()=>this.props.addToCart(this.props.book)}
-                  disabled={disabled}
-                  className={styles["cc-btn"]}
-                >
-                  +
-                </button>
-               
-                    <button
-                  
-                  onClick={()=>this.props.removeFromCart(this.props.book)}
-                  className={styles["cc-btn"]}
-                >
-                  -
-                </button>
-                  </div>
-                 
-                )}
-              </ListGroup.Item>
-            </ListGroup>
-          </Card>
-          <Card style={{margin:"20px"}}>
-            <ListGroup variant="flush">
-              <ListGroup.Item>
-              <h3 style={{fontWeight:"800"}}>SELLER INFORMATION: </h3>
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Name:  </span>{this.props.book.seller.name} 
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Contact Info:  </span>{this.props.book.seller.email}, +91-{this.props.book.seller.phone}
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <span className={styles["product-heading"]}> Address:  </span>{this.props.book.seller.address} 
-              </ListGroup.Item>
-            </ListGroup>
-          </Card>
-        </Col> */}
+      
       </Row>
     )}
 }

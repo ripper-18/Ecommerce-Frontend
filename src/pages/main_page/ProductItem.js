@@ -7,6 +7,8 @@ import {getBookbyId} from '../../actions/book_actions'
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
 import DoneRoundedIcon from '@material-ui/icons/DoneRounded';
 import ClearRoundedIcon from '@material-ui/icons/ClearRounded';
+import  LazyLoad  from 'react-lazyload';
+
 
 class ProductItem extends Component {
   state={
@@ -45,6 +47,9 @@ componentDidMount(){
 }
     render(){
     return (
+        <LazyLoad height={200} offset={400} once >
+
+        
         <div className={styles.product_card2}>
             <div className={styles.upper_half}>
                 <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
@@ -82,6 +87,7 @@ componentDidMount(){
       </div>
 </div>   
         </div>
+        </LazyLoad>
     )}
 }
 const mapStateToProps = (state) => ({

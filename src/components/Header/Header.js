@@ -46,6 +46,7 @@ class Header extends Component{
     render(){
     return (
         <>
+
         <div className={styles.header}>
             <Sidebar />
            <Link to="/"><img className={styles.header_logo} onClick={async()=>{await this.setState({
@@ -107,6 +108,7 @@ class Header extends Component{
                     <SearchIcon className={styles.header_search_icon} onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
+
         </>
     )}
 }

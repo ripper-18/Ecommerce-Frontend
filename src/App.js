@@ -1,16 +1,16 @@
 import React, {  Suspense ,useEffect} from "react";
 import Loader from "./components/Loader/Loader";
-import { Route,BrowserRouter,Switch} from "react-router-dom";
+import { Route,BrowserRouter,Switch,Router,browserHistory,applyRouterMiddleware} from "react-router-dom";
 import "./App.css";
 import "./bootstrap.min.css";
 import {Modal} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {hideDialog} from './actions/dialog_actions'
-import {hideloader} from './actions/isLoading_actions'
+
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./pages/common/PrivateRoute"
-
+import { StickyContainer, Sticky } from 'react-sticky';
 
 
 function App(props)   {
@@ -69,7 +69,8 @@ function App(props)   {
 
         return (
             <BrowserRouter>
-           
+            
+           <StickyContainer>
             <div className="App">
                 <Suspense
                 fallback={
@@ -77,10 +78,9 @@ function App(props)   {
                         <Loader/>
                     </React.Fragment>
                 }
+                
                 >
-                    
-                    <Header style={{position:"sticky"}} />
-                    <main style={{ minHeight: "60vh" }}>
+                       <main style={{ minHeight: "60vh" }}>
                         {
                             props.loader.isLoading?
                             <>
@@ -114,8 +114,24 @@ function App(props)   {
                         }
 
                        
-                   </main>
+                   </main> 
+                    <Sticky>
+          {({
+            style,
+            isSticky
+            // the following are also available but unused in this example
+       
+          }) => (
+              <div style={{...style,width:"100%",zIndex:9999}}>
+                <Header />
+              </div>
+         
+          )}
+        </Sticky>
+
+                
                    <Footer />  
+                   
                    </Suspense>
                    <Modal
                     show={props.dialog.isOpen}
@@ -139,7 +155,8 @@ function App(props)   {
                 </Modal>
                
             </div>
-            
+            </StickyContainer>
+           
             </BrowserRouter>   
         );
     
