@@ -3,9 +3,10 @@ import React,{Component} from 'react';
 import { connect } from 'react-redux'
 import banner from './../terms_page/terms.module.css'
 import styles from './SellerReg.module.css'
-import logo from './logo.png'
+import athlete from './athlete.png'
 import {registerSeller} from "../../actions/auth_actions";
-import { showDialog } from '../../actions/dialog_actions'
+import { showDialog } from '../../actions/dialog_actions';
+import { DumpingDoodle } from "react-open-doodles";
 
 
 
@@ -134,8 +135,12 @@ class SellerReg extends Component{
                 <div className={banner.heroMobile}>
                     <h1>Become a Seller</h1>
                 </div>
+
+                {/* <DumpingDoodle />
+                <DumpingDoodle accent="#ff0083" ink="#484848" /> */}
                 <div className={styles.form_decor}>
-                    <img src={logo}></img>
+                    
+                    
                     <div className={styles.form_card}>
                     <form>
                             <label ><span className={styles.label_head}>Full Name:</span><br></br>
@@ -203,6 +208,7 @@ class SellerReg extends Component{
                     </form>
 
                     </div>
+                    <img src={athlete} className={styles.image}></img>
 
                 </div>
             </div>

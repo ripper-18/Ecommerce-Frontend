@@ -1,20 +1,21 @@
 .form_decor{
     display: flex;
     flex-direction: row;
-    justify-content: center;    
+    justify-content: space-around;    
     align-content: center;
-    padding: 40px 0;
+    padding: 40px 10px;
 }
 
 .form_card{
     
-    width: 350px;
+    
     display: flex;
     flex-direction: column;
     flex-direction: column;
     padding: 30px 20px;
-    box-shadow: 0px 1px 20px 1px hsla(213, 33%, 68%, .6);
-    border-radius: 20px;
+    
+    flex: 1;
+    
 }
 
 .form_card form{
@@ -27,7 +28,7 @@
 }
 
 .form_decor label{
-    margin: 20px 0;
+    margin: 10px 0;
     font-size: 20px;
 }
 
@@ -43,4 +44,15 @@
   border-radius: 5px;
   border: 0px;
   margin: 10px 0;
+}
+
+.image{
+    width: 55%;
+    
+}
+
+@media (max-width:600px){
+    .image{
+        display: none;
+    }
 }
