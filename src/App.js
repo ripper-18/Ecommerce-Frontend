@@ -83,18 +83,19 @@ function App(props)   {
                      <Sticky>
           {({
             style,
-            isSticky
+            isSticky,
+            
             // the following are also available but unused in this example
        
           }) => (
-              <div style={{...style,width:"100%",zIndex:9999}}>
+              <div style={{...style,width:"100%",zIndex:9999,display: props.loader.isLoading?'none':'initial'}}>
                 <Header />
               </div>
          
           )}
         </Sticky>
 
-                       <main style={{ minHeight: "60vh" }}>
+                       <main style={{ minHeight: "60vh"}}>
                         {
                             props.loader.isLoading?
                             <>

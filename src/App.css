@@ -9,9 +9,13 @@
 
 html,body{
     overflow-x: hidden;
+    
 }
 
 h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     
+}
+.App{
+    background: #ffffff;;
 }
