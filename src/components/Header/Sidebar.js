@@ -20,6 +20,7 @@ import {logoutUser} from '../../actions/auth_actions'
   const [state, setState] = React.useState({
     left: false,
   });
+  const [open2,setOpen]=React.useState(false)
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -27,6 +28,7 @@ import {logoutUser} from '../../actions/auth_actions'
     }
 
     setState({ ...state, [anchor]: open });
+    setOpen(!open2)
   };
 
 const Line1 = useRef()
@@ -342,7 +344,7 @@ const Line2 = useRef()
     <div className="drawer-icon">
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon className="menu-icon"/></Button>
+          <Button onClick={toggleDrawer(anchor, !open2)}><MenuIcon className="menu-icon"/></Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
