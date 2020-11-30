@@ -134,6 +134,7 @@ input {
 
 
 
+
 .user_login_button {
   display: flex;
   justify-content: center;
@@ -147,6 +148,9 @@ input {
   padding: 15px;
   border-radius: 5px;
   border: 0px;
+}
+.login_tab_button:focus{
+  outline: none;
 }
 
 @media screen and (min-width: 769px) {

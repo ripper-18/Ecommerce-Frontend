@@ -220,7 +220,7 @@ class Login extends Component {
                                                             this.handleLogin
                                                         }
                                                          />
-                                                         <span style={{color:"#007bff",cursor:"pointer"}} onClick={()=>this.setModalOpen(true)}>Forgot Password</span>
+                                                         <span style={{color:"#007bff",cursor:"pointer"}} onClick={()=>this.setModalOpen(true)}>Forgot Password?</span>
                                     </div>
                                 </form>
                                         </div>
