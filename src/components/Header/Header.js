@@ -62,6 +62,11 @@ class Header extends Component{
             </div>
 
             <div className={styles.header_nav}>
+                <Link to="/seller_reg">
+                <div className={styles.header_option2}>
+                    Become a Seller?
+                </div>
+                </Link>
                 <div className={styles.header_option}>
                     {!this.props.auth.isAuth?(
                         <Link to="/login" className={styles.header_links}>

@@ -299,6 +299,11 @@ const Line2 = useRef()
                 <div className="hs-item" onClick={()=>props.logoutUser(props.history)}>
                      <span  style={{cursor:"pointer"}}>Logout</span></div>
             )}
+            <Link to="/seller_reg" style={{width:"100%",color:"#231f20"}}>
+            <div className="hs-item">
+                    Become A Seller?
+            </div>
+            </Link>
              <Link to="/about" style={{width:"100%",color:"#231f20"}}>
             <div className="hs-item">
                     About Us
