@@ -88,7 +88,7 @@ function App(props)   {
             // the following are also available but unused in this example
        
           }) => (
-              <div style={{...style,width:"100%",zIndex:9999,display: props.loader.isLoading?'none':'initial'}}>
+              <div style={{...style,width:"100%",zIndex:20,display: props.loader.isLoading?'none':'initial'}}>
                 <Header />
               </div>
          
