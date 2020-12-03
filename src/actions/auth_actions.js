@@ -190,7 +190,7 @@ export const forgotPassword =(user,history)=>(dispatch)=>{
     fetch(config.user + "auth/recover", requestOptions).then((response) =>
         response.json().then((res) => {
             
-            if (res.data) {
+            if (res.message) {
                 dispatch({
                     type: FORGOT_PASS
                 });
