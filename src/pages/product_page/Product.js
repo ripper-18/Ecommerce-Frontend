@@ -45,6 +45,7 @@ class Product extends Component {
        }
        this.props.getBooksByKeyword2(this.state.filters,this.props.book.name)
        console.log(this.props.suggest.length)
+       
      }
        
 
