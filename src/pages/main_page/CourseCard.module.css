@@ -1,0 +1,71 @@
+.card_container{
+    min-width: 250px;
+    min-height: 350px;
+    max-width: 275px;
+    max-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: #000 url('./mtech.jpg');
+    position: relative;
+    flex: 1;
+    margin: 50px 20px;
+    
+    border-radius: 20px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.labelname{
+    background-color: antiquewhite;
+    margin-top: 80%;
+    z-index: 1;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    height: 50px;
+    opacity: 0.8;
+    
+}
+
+/* .card_container:hover{
+
+    min-width: 280px;
+    min-height: 380px;
+    max-width: 305px;
+    max-height: 380px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: #000 url('./mtech.jpg');
+    position: relative;
+    flex: 1;
+    
+    
+    border-radius: 20px;
+
+} */
+
+.overlay:hover{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.1;
+    position: absolute;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.labelname:hover{
+    cursor: pointer;
+    font-weight: bold;
+
+}

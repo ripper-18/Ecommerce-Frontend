@@ -9,6 +9,7 @@ import {logoutUser} from '../../actions/auth_actions'
 import cross from '../../assets/cross.svg'
 import cx from "classnames"
 import styles from './MainPage.module.css'
+import CourseCard from './CourseCard'
 
 class MainPage extends Component {
     state = {
@@ -100,6 +101,17 @@ class MainPage extends Component {
 
             <div className="main-carousel">
                 <MainCarousel></MainCarousel>
+            </div>
+            <div className={styles.courses_div} >
+                
+                <CourseCard name='Bcom' />
+                <CourseCard name='Bsc' />
+                <CourseCard name='BA' />
+                <CourseCard name='Btech' />
+                <CourseCard name='Mtech' />
+                
+                
+
             </div>
             <div className={styles.containerWrap}>
             

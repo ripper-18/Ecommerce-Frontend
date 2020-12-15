@@ -24,6 +24,18 @@
 .sideFilterOpen {
     transform: translate(0);
 }
+
+.courses_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 30px;
+
+    
+
+}
+
 @media screen and (min-width: 769px) {
     .containerWrap {
         background: #fff;
