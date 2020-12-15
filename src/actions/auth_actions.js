@@ -47,7 +47,7 @@ export const registerSeller = (user, history) => (dispatch) => {
         email: user.email,
         phone: user.phone,
         password: user.password,
-        isStudent:user.isStudent,
+        isStudentVendor:user.isStudent,
         isVendor:user.isVendor
     });
 
@@ -58,12 +58,12 @@ export const registerSeller = (user, history) => (dispatch) => {
         redirect: "follow",
     };
 
-    fetch(config.user + "auth/signup", requestOptions).then((res) => res.json().then((response) => {
-        if (response.message === "Registration Completed") {
+    fetch(config.user + "auth/newadmin", requestOptions).then((res) => res.json().then((response) => {
+        if (response.message === "Admin added..") {
             dispatch({
                 type: REGISTER_USER,
             });
-            history.push("/profile");
+            history.push("/");
             dispatch(showDialog("Seller Account Created"));
 
         } else {

@@ -17,7 +17,7 @@ class SellerReg extends Component{
     }
 
     state = {
-        fullname: "",
+        name: "",
         email: "",
         phone: "",
         isStudent: false,
@@ -38,7 +38,7 @@ class SellerReg extends Component{
 
         this.setState({
             ...this.state,
-            fullname: e.target.value
+            name: e.target.value
         });
     
     }
@@ -93,7 +93,7 @@ class SellerReg extends Component{
     
     SellerRegisterHandler = () => {
         if (
-            this.state.fullname.length > 0 &&
+            this.state.name.length > 0 &&
             this.state.email.length > 0 &&
             this.state.phone.length > 0
         ) {
@@ -104,16 +104,16 @@ class SellerReg extends Component{
                 ) {
                     this.props.registerSeller(
                         this.state,
-                        //this.props.history ... ye kyu chahiye hai hermit
+                        this.props.history
                     );
                 } else {
-                    this.props.auth.user.fullname = this.state.fullname
+                    this.props.auth.user.name = this.state.name
                     this.props.auth.user.email = this.state.email
                     this.props.auth.user.phone = this.state.phone
                     this.props.showDialog("Passwords do not match");
                 }
             } else {
-                this.props.auth.user.fullname = this.state.fullname
+                this.props.auth.user.name = this.state.name
                 this.props.auth.user.email = this.state.email
                 this.props.auth.user.phone = this.state.phone
                 this.props.showDialog("Password length should be 8 or more");
@@ -148,7 +148,7 @@ class SellerReg extends Component{
                              type="text"                             
                              placeholder="Enter Your Full Name"
                              className="form-control"
-                             required value={this.state.fullname}
+                             required value={this.state.name}
                              onChange={this.NameHandler}
                              />
                         </label>
