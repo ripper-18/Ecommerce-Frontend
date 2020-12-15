@@ -52,6 +52,7 @@
     color: #fff;
     background: #192a56;
   }
+  
   .checkoutHeader button:focus {
     outline: none;
   }
@@ -77,7 +78,52 @@
     margin: auto;
   
   }
-  
+  .bigBtn{
+     
+    display: none;
+    justify-content: space-around;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    padding: 16px 12px;
+    box-shadow: rgb(229, 229, 229) 0px 1px 0px 0px inset;
+    align-items: center;
+    align-content: center;
+  }
+  .btnBig2{
+   
+    vertical-align: top;
+    display: inline-block;
+    word-wrap: break-word;
+    word-spacing: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    background: #273c75;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 1;
+    
+}
+.btnBig2:hover{
+    opacity: 2;
+    background: #192a56;
+    border:2px solid transparent;
+
+}
+.btnBig2:disabled{
+    opacity: 0.65;
+}
   
   @media screen and (min-width: 769px) {
     .wrapper {
@@ -90,6 +136,12 @@
     .add_addr_box{
     width: 91.66%;
     height: fit-content;
+  }
+  .f{
+    display: none;
+  }
+  .bigBtn{
+    display: flex;
   }
   
   }

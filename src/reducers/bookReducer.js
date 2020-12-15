@@ -1,9 +1,9 @@
-import { CURRENT_BOOK, GET_BOOKS } from "../actions/types";
+import { CURRENT_BOOK, GET_BOOKS,GET_BOOKS2 } from "../actions/types";
 
 const initialState = {
     books: [],
-    currentBook:{}
-    
+    currentBook:{},
+    suggestBooks:[]
 };
 // eslint-disable-next-line
 export default function (state = initialState, action) {
@@ -12,6 +12,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 books: action.payload,
+            };
+            case GET_BOOKS2:
+            return {
+                ...state,
+                suggestBooks: action.payload,
             };
         case CURRENT_BOOK:
             return {

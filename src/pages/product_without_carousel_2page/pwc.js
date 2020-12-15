@@ -24,31 +24,25 @@ class MainPage extends Component {
     };
     componentDidMount=async()=>{
         console.log(this.props)
-       
-        await this.setState({
-            ...this.state,
-            filters: {
-                ...this.state.filters,
-                course: [...this.state.filters["course"], this.props.match.params.course],
-                year: [...this.state.filters["year"], this.props.match.params.year],
-            },
-        });
-        console.log(this.state.filters)
-        this.props.getBooksByKeyword(this.state.filters,'')
+        const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+         // console.log(token)//123
+          if(token===null){
+            token=''
+        }
+          
+        this.props.getBooksByKeyword(this.state.filters,token)
 
     }
     componentDidUpdate=async(prevProps)=>{
-        if ((prevProps.match.params.course !== this.props.match.params.course)||(prevProps.match.params.year !== this.props.match.params.year)){
-            await this.setState({
-                ...this.state,
-                filters: {
-                    ...this.state.filters,
-                    course: [...this.state.filters["course"], this.props.match.params.course],
-                    year: [...this.state.filters["year"], this.props.match.params.year],
-                },
-            });
-            console.log(this.state.filters)
-            this.props.getBooksByKeyword(this.state.filters,'')
+        if ((prevProps.location.search !== this.props.location.search)){
+            const query = new URLSearchParams(this.props.location.search);
+        let token = query.get('search')
+         // console.log(token)//123
+          if(token===null){
+            token=''
+        }
+        this.props.getBooksByKeyword(this.state.filters,token)
     
         window.location.reload()
         }

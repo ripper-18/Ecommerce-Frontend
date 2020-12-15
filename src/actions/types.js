@@ -1,4 +1,5 @@
 export const GET_BOOKS = "GET_BOOKS";
+export const GET_BOOKS2 = "GET_BOOKS2";
 export const CURRENT_BOOK="CURRENT_BOOK"
 
 export const ADD_TO_CART = "ADD_TO_CART";

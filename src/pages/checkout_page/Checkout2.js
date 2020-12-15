@@ -203,7 +203,7 @@ class Checkout extends Component {
                             </div>
                         </div>
                         <div className="col-sm-12 col-md-8 px-0 px-md-3">
-                            <div className="mt-5 py-4 px-3 p-md-4">
+                            <div className=" px-3 p-md-4">
                                 
                                 <div>
                                     <div>
@@ -319,7 +319,7 @@ class Checkout extends Component {
                                         </Accordion>
                                     </div>
                                     <hr />
-                                    <div className="row">
+                                    <div className={cx("row ",styles.f)}>
                                         <div className="col-sm-12">
                                          
 
@@ -343,6 +343,23 @@ class Checkout extends Component {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className={styles.bigBtn}>
+                <div className={'col-6'}>
+                <button
+                                                    className={cx(
+                                                        styles.btnBig2,
+
+                                                    )}
+                                                    onClick={
+                                                        this
+                                                            .handlePlaceDirectOrder
+                                                    }
+                                                    disabled={this.state.selectedAddress.length>0?false:true}
+                                                >
+                                                    Place order now
+                                                </button>
                 </div>
             </div>
             </>

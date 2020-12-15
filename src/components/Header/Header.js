@@ -33,7 +33,7 @@ class Header extends Component{
             return
         }
         
-        this.props.history.push(`/?search=${this.state.keyword}`)
+        this.props.history.push(`/search?search=${this.state.keyword}`)
         window.location.reload()
     }
     submitSearch2=async()=>{

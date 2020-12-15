@@ -68,6 +68,7 @@ class Products extends Component {
         else if (sortValue === "4") {
             display = books.sort((a, b) => b.price - a.price);
         }
+        display=books.filter((b)=>b.isLive===true)
     return (
         <Row className= {styles.product_page}>
             <div className={cx(styles.filterSideNav," d-md-none py-1 ")}>

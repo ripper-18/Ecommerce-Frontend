@@ -3,15 +3,22 @@ import {Row, Col, Image, ListGroup, Card} from 'react-bootstrap';
 import styles from './Product.module.css';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {getBookbyId} from '../../actions/book_actions'
+import {getBookbyId,getBooksByKeyword2} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
 import {showDialog} from '../../actions/dialog_actions'
 import Lazyload from 'react-lazyload'
+import ProductItem from '../../pages/main_page/ProductItem'
 
 class Product extends Component {
     state={
         id:"",
-        selectedImage:""
+        selectedImage:"",
+        open:false,
+        filters:{
+          year:[],
+          subject:[],
+          course:[]
+      }
     }
 
     changeImage = (image) => {
@@ -36,6 +43,8 @@ class Product extends Component {
       if(this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length===this.props.book.countInStock){
         this.props.showDialog('Maximum no of items in stock reached!')
        }
+       this.props.getBooksByKeyword2(this.state.filters,this.props.book.name)
+       console.log(this.props.suggest.length)
      }
        
 
@@ -47,6 +56,7 @@ class Product extends Component {
       }
       
     return (
+      <>
         <Row className={styles['product-container']} style={{overflowX:"hidden"}}>
         <Col md={6} xs={12} style={{display:"flex", flexDirection :"column"}}>
           <Lazyload offset={200} height={200}className={styles.Main_Image} style={{display:"flex",justifyContent:"center", marginTop: "50px"}}>
@@ -139,7 +149,8 @@ class Product extends Component {
 
             <div className={styles.OS_Buttons_Container}>
 
-            <button className = {styles.Other_Sellers_Button}>Find Other Sellers </button>
+                <button className = {styles.Other_Sellers_Button} onClick={()=>this.setState({open:!this.state.open})}
+                 disabled={this.props.suggest.length<2?true:false}>{this.state.open?'Hide':'Find Other Sellers'} </button>
             
             </div>
 
@@ -147,13 +158,38 @@ class Product extends Component {
         </Col>
       
       </Row>
+      <Row style={{display:this.state.open?'initial':'none'}} className= {styles.products_page}>
+     
+         
+         <div className={styles.all_products} style={{justifyContent:"center"}}>
+         {
+     this.props.suggest.filter((b)=>(b.isLive===true)&&(b._id!==this.props.book._id)).map((book,index)=>(
+         <Col className={styles.product_card}
+        >
+         
+         <ProductItem
+         isEditable={true}
+         data={book}
+         addFunction={this.props.addToCart}
+         removeFunction={this.props.removeFromCart}
+         container={this.props.cart.bookCart}
+         />  
+         </Col>
+     ))
+ }
+ 
+         </div>
+
+      </Row>
+      </>
     )}
 }
 
 const mapStateToProps = (state) => ({
     book: state.book.currentBook,
     cart: state.cart,
-    auth:state.auth
+    auth:state.auth,
+    suggest:state.book.suggestBooks
 });
 
 export default connect(mapStateToProps, {
@@ -161,6 +197,7 @@ export default connect(mapStateToProps, {
     addToCart,
     removeFromCart,
     getBookbyId,
+    getBooksByKeyword2,
     showDialog
 })(withRouter(Product));
 

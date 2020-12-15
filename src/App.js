@@ -20,6 +20,9 @@ function App(props)   {
     const PWC = React.lazy(()=>
     import('./pages/product_without_carousel_page/pwc'))
 
+    const PWC2=React.lazy(()=>
+    import('./pages/product_without_carousel_2page/pwc'))
+
     const LoginPage=React.lazy(()=>
     import('./pages/login_page/loginScreen'))
 
@@ -109,6 +112,7 @@ function App(props)   {
                         <Route path="/login" exact component={LoginPage}/>
                         <Route path="/cart" exact component={CartPage}/>
                         <Route path='/category/:course/:year' exact component={PWC}/>
+                        <Route path='/search' exact component={PWC2} />
                         <Route  path="/product/:id" exact component={ProductPage} />
                         <Route path = "/faq" exact component={FaqPage}/>
                         <Route path = "/privacy" exact component={PrivacyPage}/>
