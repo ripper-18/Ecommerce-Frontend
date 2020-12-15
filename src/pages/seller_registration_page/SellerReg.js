@@ -79,14 +79,15 @@ class SellerReg extends Component{
 
     };
 
-    IsVendorHandler = (e) => {
-        console.log(e.target.value)
-        this.setState((prevState,props) => {
+    IsVendorHandler = async(e) => {
+        
+        await this.setState((prevState,props) => {
             return{
                 isStudent:!prevState.isStudent,
-                isVendor: prevState.isStudent
+                isVendor: true
             };
-        });        
+        });   
+        console.log(this.state)     
 
     };
 
