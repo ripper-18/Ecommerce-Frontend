@@ -14,11 +14,7 @@ class Product extends Component {
         id:"",
         selectedImage:"",
         open:false,
-        filters:{
-          year:[],
-          subject:[],
-          course:[]
-      }
+        
     }
 
     changeImage = (image) => {
@@ -43,7 +39,7 @@ class Product extends Component {
       if(this.props.cart.bookCart.filter((item)=>item._id===this.props.book._id).length===this.props.book.countInStock){
         this.props.showDialog('Maximum no of items in stock reached!')
        }
-       this.props.getBooksByKeyword2(this.state.filters,this.props.book.name)
+      
        console.log(this.props.suggest.length)
        
      }

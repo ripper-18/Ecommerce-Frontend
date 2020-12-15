@@ -3,7 +3,7 @@ import styles from './ProductItem.module.css'
 import cx from 'classnames'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {getBookbyId} from '../../actions/book_actions'
+import {getBookbyId,getBooksByKeyword2} from '../../actions/book_actions'
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
 import DoneRoundedIcon from '@material-ui/icons/DoneRounded';
 import ClearRoundedIcon from '@material-ui/icons/ClearRounded';
@@ -13,7 +13,12 @@ import  LazyLoad  from 'react-lazyload';
 class ProductItem extends Component {
   state={
       click:false,
-      click2:false
+      click2:false,
+      filters:{
+        year:[],
+        subject:[],
+        course:[]
+    }
   }
   handleAddToCart = () => {
    
@@ -52,14 +57,14 @@ componentDidMount(){
         
         <div className={styles.product_card2}>
             <div className={styles.upper_half}>
-                <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
+                <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
             </div>
 
 <div className={this.state.click===true?cx(styles.lower_half,styles.clicked):(styles.lower_half)}>
 
 <div className={styles.left}>
         <div className={styles.details}>
-    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
+    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name); await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
    </p>
    <span className={styles.author}>By- {this.props.data.author}</span>
     <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>
@@ -75,7 +80,7 @@ componentDidMount(){
       <div className={styles.right}>
         <div className={styles.done}> <DoneRoundedIcon className={styles.cart_ic}/> </div>
         <div className={styles.details}>
-        <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
+        <p onClick={async() => { await this.props.getBookbyId(this.props.data._id); await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name); await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
    </p>
     <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>
         </div>
@@ -96,4 +101,4 @@ const mapStateToProps = (state) => ({
     auth:state.auth
 });
 
-export default connect(mapStateToProps,{getBookbyId})(withRouter(ProductItem))
+export default connect(mapStateToProps,{getBookbyId,getBooksByKeyword2})(withRouter(ProductItem))
