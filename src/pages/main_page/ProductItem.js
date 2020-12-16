@@ -56,6 +56,9 @@ componentDidMount(){
 
         
         <div className={styles.product_card2}>
+            <div className={styles.topl}>
+                {this.props.data.hand===1?'Fresh':'2nd Hand'}
+            </div>
             <div className={styles.upper_half}>
                 <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
             </div>

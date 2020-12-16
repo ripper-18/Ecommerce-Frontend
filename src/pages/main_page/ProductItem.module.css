@@ -9,10 +9,26 @@
 	overflow: hidden;
 	transform: scale(0.95);
 	transition:  transform 0.5s;
+	position:relative;
+
 }
 .product_card2:hover{
 	transform: scale(1);
 	
+}
+.topl{
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	border-bottom-right-radius:20px ;
+	background-color: #2f3640;
+	color: #f5f6fa;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	font-size: 20px;
+	z-index: 9999;
+	font-weight: 400;
 }
 .upper_half{
 	height: 240px;

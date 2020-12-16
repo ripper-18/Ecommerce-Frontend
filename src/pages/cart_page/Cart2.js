@@ -204,7 +204,7 @@ class Cart  extends Component  {
                                  <div className={cx(styles.subtr,'col-4')}>
                                      <div className={styles.subtrd}>
                                          <span>
-                                            ₹ {30}
+                                            ₹ {this.getSubTotal()?'30':'0'}
                                          </span>
                                      </div>
                                  </div>
@@ -221,7 +221,7 @@ class Cart  extends Component  {
                                     <span>
                                     ₹ {(this.getSubTotal() +
                                             this.getSubTotal() * 0.05 +
-                                            30).toFixed(2)} 
+                                            this.getSubTotal()?30:0).toFixed(2)} 
                                         </span> 
                                      </p>
                                  </div>
