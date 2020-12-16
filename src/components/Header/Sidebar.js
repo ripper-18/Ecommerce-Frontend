@@ -185,10 +185,10 @@ const Line2 = useRef()
                             <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BA/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BA/3')}>
                                 3rd Year
                                 </li>
                             </ul>
