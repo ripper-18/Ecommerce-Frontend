@@ -14,6 +14,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ChevronIcon from "../../assets/main_page/chevron_down.svg";
 import {logoutUser} from '../../actions/auth_actions'
+import {showloader} from '../../actions/isLoading_actions'
 
  function SwipeableTemporaryDrawer(props) {
 
@@ -221,7 +222,7 @@ const Line2 = useRef()
                             <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/2')}>
+                                <li className="col-6" onClick={async()=>{await props.history.push('/category/Engg/2')}}>
                                   2nd Year
                                 </li>
                                 <li className="col-6" onClick={()=>props.history.push('/category/Engg/3')}>
@@ -365,4 +366,4 @@ const mapStateToProps = (state) => ({
 
 });
 
-export default connect(mapStateToProps,{logoutUser})(withRouter(SwipeableTemporaryDrawer))
+export default connect(mapStateToProps,{logoutUser,showloader})(withRouter(SwipeableTemporaryDrawer))

@@ -12,6 +12,7 @@ import styles from './pwc.module.css'
 import {withRouter} from 'react-router-dom'
 import {getBooksByKeyword} from '../../actions/book_actions'
 import {addToCart,removeFromCart} from '../../actions/cart_actions'
+import {hideloader} from '../../actions/isLoading_actions'
 
 class MainPage extends Component {
     state = {
@@ -34,8 +35,8 @@ class MainPage extends Component {
             },
         });
         console.log(this.state.filters)
-        this.props.getBooksByKeyword(this.state.filters,'')
-
+        await this.props.getBooksByKeyword(this.state.filters,'')
+        
     }
     componentDidUpdate=async(prevProps)=>{
         if ((prevProps.match.params.course !== this.props.match.params.course)||(prevProps.match.params.year !== this.props.match.params.year)){
@@ -150,4 +151,4 @@ const mapStateToProps = (state) => ({
    
 });
 
-export default connect(mapStateToProps,{getBooksByKeyword,addToCart,removeFromCart})(withRouter(MainPage))
+export default connect(mapStateToProps,{getBooksByKeyword,addToCart,removeFromCart,hideloader})(withRouter(MainPage))

@@ -2351,9 +2351,9 @@ pre code {
 .form-control:focus {
     color: #444;
     background-color: #fff;
-    border-color: #f57f72;
+  
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(217, 35, 15, .25)
+    
 }
 
 .form-control::-webkit-input-placeholder {
