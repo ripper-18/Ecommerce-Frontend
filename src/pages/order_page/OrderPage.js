@@ -87,9 +87,9 @@ class OrderPage extends Component{
                      if (res.order.orderStatus === "staged") {
                          this.displayRazorpay(res);
                      } else if (res.order.orderStatus === "placed") {
-                         
+                        this.props.clearCart() 
                          this.props.showDialog("Your order was placed succesfully.")
-                         this.props.clearCart()
+                        
                          this.props.history.push("/profile");
                      } else {
                         this.props.showDialog("Your order could not be placed");
