@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import OwlCarousel from 'react-owl-carousel';  
+import 'owl.carousel/dist/assets/owl.carousel.css';  
+import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import styles from './MainCarousel.module.css'
 
 function MainCarousel() {
     return (
       <React.Fragment>
-        <Carousel 
-        showThumbs={false}
-        infiniteLoop={true}
-        showIndicators={false}
-        showStatus={false}
-        autoPlay
-        interval={7000}
-        stopOnHover={false}
+        <OwlCarousel 
+        items={1}
+         loop={true}
+         autoplay ={true}
+         slideBy={2}
+         autoplayTimeout={5000}
+         autoplayHoverPause={true}
+         navigation={true}
+         autoHeightClass
+         margin={2}
         >
-             <div
+            <div
           className={styles.SlideContainer}
      
             >
@@ -53,7 +56,7 @@ function MainCarousel() {
           </p>
          
         </div>
-    </Carousel>
+    </OwlCarousel>
     </React.Fragment>
     )
 }

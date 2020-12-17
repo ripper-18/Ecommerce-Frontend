@@ -61,8 +61,8 @@
 @media(max-width:420px){
 
     .card_container{
-    width: 125px;
-    height: 190px;
+    width: 95px;
+    height: 160px;
      min-width: 140px;
     min-height: 200px;
     max-width: 250px;

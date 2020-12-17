@@ -99,7 +99,7 @@ class MainPage extends Component {
     return (
         <div>
 
-            <div className="main-carousel">
+            <div className={styles.main_carousel}>
                 <MainCarousel></MainCarousel>
             </div>
             <h1 style={{textAlign : 'center'}} > Find Books By Courses</h1> 
