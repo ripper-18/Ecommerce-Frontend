@@ -1,6 +1,11 @@
+.outer{
+    display: flex;
+    flex-direction: column;
+   text-align: center;
+}
 .card_container{
-    width: 250px;
-    height: 350px;
+    width: 200px;
+    height: 280px;
     min-width: 175px;
     min-height: 200px;
     max-width: 275px;
@@ -8,16 +13,22 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    background: #000 url('./mtech.jpg');
+    
     position: relative;
-    flex: 1;
+    
     margin: 50px 20px;
+    margin-bottom: 5px;
     transform: scale(0.95);
-    border-radius: 20px;
+   
     transition: all 0.5s;
 }
 .card_container:hover{
+
     transform: scale(1);
+}
+.cardimg{
+    width: 100%;
+    height: 100%;
 }
 
 .overlay{
@@ -26,24 +37,9 @@
     background: #000;
     opacity: 0.4;
     position: absolute;
-    border-radius: 20px;
+   
     transition: all 0.5s;
 }
-
-.labelname{
-    background-color:#9c88ff;
-    margin-top: 80%;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    width: 100%;
-    height: 50px;
-    opacity: 0.9;
-    
-}
-
-
 
 .overlay:hover{
     width: 100%;
@@ -55,12 +51,18 @@
     cursor: pointer;
 }
 
+.label{
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color:#273c75;
+}
 
 @media(max-width:420px){
 
     .card_container{
-    width: 145px;
-    height: 250px;
+    width: 125px;
+    height: 190px;
      min-width: 140px;
     min-height: 200px;
     max-width: 250px;
@@ -72,6 +74,7 @@
     position: relative;
     flex: 1;
     margin: 50px 2px;
+    margin-bottom: 5px;
     transform: scale(0.95);
     border-radius: 20px;
     transition: all 0.5s;
@@ -79,17 +82,5 @@
     
 }
 
-.labelname{
-    background-color:#9c88ff;
-    margin-top: 65%;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    width: 100%;
-    height: 50px;
-    opacity: 0.9;
-    
-}
 
 }

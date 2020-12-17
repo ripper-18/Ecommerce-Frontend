@@ -31,16 +31,15 @@ class CourseCard extends Component{
         };
         
         return(
-            <div className={styles.card_container} style={mystyle} onClick={() => this.props.history.push(link)}>
-                <div className={styles.labelname}>
-                    {this.props.name}
-
-                </div>
-
+            <div className={styles.outer}>
+            <div className={styles.card_container}  onClick={() => this.props.history.push(link)}>
+                <img src={imagee} alt={'course'} className={styles.cardimg}/>
                 <div className={styles.overlay}>
-                    
-
                 </div>
+            </div>
+            <div className={styles.label}  onClick={() => this.props.history.push(link)}>
+                {(this.props.name).toUpperCase()}
+            </div>
             </div>
         )
     }

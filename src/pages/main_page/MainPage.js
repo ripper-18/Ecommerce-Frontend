@@ -102,15 +102,17 @@ class MainPage extends Component {
             <div className="main-carousel">
                 <MainCarousel></MainCarousel>
             </div>
+            <h1 style={{textAlign : 'center'}} > Find Books By Courses</h1> 
             <div className={styles.courses_div} >
-                
+          
                 <CourseCard name='Bcom' />
                 <CourseCard name='Bsc' />
                 <CourseCard name='BA' />
                 <CourseCard name='Btech' />
                 <CourseCard name='Mtech' />
-                
-                
+                <CourseCard name='BA' />
+                <CourseCard name='Btech' />
+                <CourseCard name='Mtech' />
 
             </div>
             <div className={styles.containerWrap}>
