@@ -21,6 +21,7 @@ function MainCarousel() {
             >
                 <img src={`https://i.ibb.co/jT82Cmk/DU-Book-X-1.png`} alt={'bg'}/>
           <p className={styles.SlideText}>
+            Welcome<br/> to
             DU <br />
             BookX
             <br />
@@ -34,8 +35,12 @@ function MainCarousel() {
             >
                 <img src={`https://i.ibb.co/kM6DjBp/Untitled-design-10.png`} alt={'bg'}/>
           <p className={styles.SlideText} >
-          DU <br />
-            BookX
+          <span className={styles.SmallText}>Get your Books</span>
+          <br/>
+          <span className= {styles.MedText}> at Unbeatable Prices</span>
+          <br/>
+           <span className={styles.SmallText}>delivered to your doorstep
+           </span>
             <br />
           </p>
 
@@ -47,8 +52,9 @@ function MainCarousel() {
             >
                 <img src={`https://i.ibb.co/zNb01kp/Untitled-design-11.png`} alt={'bg'}/>
           <p className={styles.SlideText}>
-          DU <br />
-            BookX
+          Become <br />
+           A <br/>
+           Seller
             <br />
           </p>
          

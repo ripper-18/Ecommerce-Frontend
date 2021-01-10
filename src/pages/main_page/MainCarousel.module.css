@@ -3,10 +3,12 @@
     position: relative;
 
 }
-.SlideContainer img{
-   height: 100%;
+
+.SlideContainer img {
+    height: 100%;
     width: 100%;
 }
+
 .SlideText {
     left: 120px;
     top: 5%;
@@ -14,9 +16,17 @@
     font-weight: bold;
     color: #353b48;
     letter-spacing: 1px;
-    font-size: 200px;
+    font-size: 130px;
     position: absolute;
 
+}
+
+.MedText {
+    font-size: 100px;
+}
+
+.SmallText {
+    font-size: 50px;
 }
 
 .SlideContainer .RedButton {
@@ -78,14 +88,29 @@
 @media screen and (max-width: 1100px) {
     .SlideText {
         left: 40px;
-        font-size: 150px;
+        font-size: 110px;
+    }
+
+    .SmallText {
+        font-size: 40px;
+    }
+
+    .MedText {
+        font-size: 70px;
     }
 
     .SlideContainer .RedButton {
         left: 40px;
     }
 
-    
+
+}
+
+@media screen and (max-width: 920px) {
+    .MedText {
+        font-size: 50px;
+        top: 0%;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -94,10 +119,17 @@
     }
 
     .SlideText {
-     font-size: 70px;
+        font-size: 50px;
     }
 
+    .SmallText {
+        font-size: 20px;
+    }
 
+    .MedText {
+        font-size: 30px;
+        top: 0%;
+    }
 }
 
 
@@ -115,5 +147,5 @@
         font-size: 300%;
     }
 
-  
+
 }

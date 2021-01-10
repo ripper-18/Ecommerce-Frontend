@@ -2,7 +2,7 @@
     background: url(https://i.ibb.co/kympBHS/Copy-of-Untitled-2.png);
 }
 
-.containerWrap{
+.containerWrap {
     padding-left: 30px;
 }
 
@@ -25,14 +25,14 @@
     transform: translate(0);
 }
 
-.courses_div{
+.courses_div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 0;
     margin-bottom: 30px;
 
-    
+
 
 }
 
@@ -42,12 +42,10 @@
 @media screen and (min-width: 769px) {
     .containerWrap {
         background: #fff;
-        
+
     }
 }
 
-@media(max-width:600px){
-    .main_carousel{
-        margin: 25px;
-    }
+.main_carousel {
+    margin: 25px;
 }

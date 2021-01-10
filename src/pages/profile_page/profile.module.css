@@ -132,7 +132,8 @@
     width: 50%;
     margin-bottom: 20px;
 }
-.Past_Order_Item_Container p{
+
+.Past_Order_Item_Container p {
     font-size: 30px;
     font-weight: 700;
 }
@@ -146,9 +147,11 @@
     background: url(https://i.ibb.co/HBQt2bb/bcg-po.png);
     height: 100%;
 }
-.paginate{
+
+.paginate {
     margin-bottom: 20px;
 }
+
 .Past_Order_Item {
     padding: 20px;
     border: 1px solid #d8d8d8;
@@ -209,7 +212,8 @@
     .Profile_Attri_Values {
         font-size: 17px;
     }
-    .Past_Order_Written_Det{
+
+    .Past_Order_Written_Det {
         width: 40%;
     }
 
