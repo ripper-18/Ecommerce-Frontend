@@ -25,7 +25,7 @@ export default  function (state = initialState, action) {
                 token: "",
             };
         case UPDATE_USER:
-            console.log(action.payload)
+            console.log(action.payload.oldUser)
             return {
                 ...state,
                 isAuth: true,

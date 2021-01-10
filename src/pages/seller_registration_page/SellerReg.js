@@ -1,19 +1,19 @@
 
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import banner from './../terms_page/terms.module.css'
 import styles from './SellerReg.module.css'
 import athlete from './athlete.png'
-import {registerSeller} from "../../actions/auth_actions";
+import { registerSeller } from "../../actions/auth_actions";
 import { showDialog } from '../../actions/dialog_actions';
 import { DumpingDoodle } from "react-open-doodles";
+import AgreementModal from './AgreementModal';
 
 
-
-class SellerReg extends Component{
-    constructor(props){
+class SellerReg extends Component {
+    constructor(props) {
         super(props);
-        
+
     }
 
     state = {
@@ -23,31 +23,33 @@ class SellerReg extends Component{
         isStudent: false,
         password: "",
         confPassword: "",
-        isVendor:true,
+        isVendor: true,
+        isOpen: false,
+        isAgree: false,
     }
 
-    componentDidMount(){
-        window.scrollTo(0,0)
+    componentDidMount() {
+        window.scrollTo(0, 0)
     }
 
 
 
     //handlers
 
-    NameHandler = (e) =>{
+    NameHandler = (e) => {
 
         this.setState({
             ...this.state,
             name: e.target.value
         });
-    
+
     }
 
     EmailHandler = (e) => {
 
         this.setState({
             ...this.state,
-            email:e.target.value
+            email: e.target.value
         });
 
     };
@@ -79,19 +81,33 @@ class SellerReg extends Component{
 
     };
 
-    IsVendorHandler = async(e) => {
-        
-        await this.setState((prevState,props) => {
-            return{
-                isStudent:!prevState.isStudent,
+    IsVendorHandler = async (e) => {
+
+        await this.setState((prevState, props) => {
+            return {
+                isStudent: !prevState.isStudent,
                 isVendor: true
             };
-        });   
-        console.log(this.state)     
+        });
+        console.log(this.state)
 
     };
 
-    
+    OpenModal = () => {
+        this.setState({
+            ...this.state,
+            isOpen: true
+        })
+    }
+
+    CloseModal = () => {
+        this.setState({
+            ...this.state,
+            isOpen: false
+        })
+    }
+
+
     SellerRegisterHandler = () => {
         if (
             this.state.name.length > 0 &&
@@ -124,12 +140,12 @@ class SellerReg extends Component{
             this.props.showDialog("Invalid Inputs");
         }
     };
-       
 
 
-    render(){
-        return(
-            <div className={banner.ain}>            
+
+    render() {
+        return (
+            <div className={banner.ain}>
                 <div className={banner.hero}>
                     <h1>Become a Seller</h1>
                 </div>
@@ -140,78 +156,86 @@ class SellerReg extends Component{
                 {/* <DumpingDoodle />
                 <DumpingDoodle accent="#ff0083" ink="#484848" /> */}
                 <div className={styles.form_decor}>
-                    
-                    
+
+
                     <div className={styles.form_card}>
-                    <form>
+                        <form>
                             <label ><span className={styles.label_head}>Full Name:</span><br></br>
-                            <input
-                             type="text"                             
-                             placeholder="Enter Your Full Name"
-                             className="form-control"
-                             required value={this.state.name}
-                             onChange={this.NameHandler}
-                             />
-                        </label>
+                                <input
+                                    type="text"
+                                    placeholder="Enter Your Full Name"
+                                    className="form-control"
+                                    required value={this.state.name}
+                                    onChange={this.NameHandler}
+                                />
+                            </label>
                             <label ><span className={styles.label_head}>Email:</span><br></br>
-                        <input
-                            type="email"
-                            
-                            placeholder="Enter Your Email Address"
-                            className="form-control"
-                            required value={this.state.email}
-                            onChange={this.EmailHandler}
-                            />
-                        </label>
+                                <input
+                                    type="email"
+
+                                    placeholder="Enter Your Email Address"
+                                    className="form-control"
+                                    required value={this.state.email}
+                                    onChange={this.EmailHandler}
+                                />
+                            </label>
                             <label ><span className={styles.label_head}>Mobile Number:</span><br></br>
-                        <input
-                                                      
-                            placeholder="Enter Your Contact Number"
-                            className="form-control"
-                            required value={this.state.phone}
-                            onChange={this.PhoneHandler}
-                            />
-                        </label>
+                                <input
+
+                                    placeholder="Enter Your Contact Number"
+                                    className="form-control"
+                                    required value={this.state.phone}
+                                    onChange={this.PhoneHandler}
+                                />
+                            </label>
                             <label ><span className={styles.label_head}>Password:</span><br></br>
-                        <input
-                            type="password"                            
-                            placeholder="Enter Your Password"
-                            className="form-control"
-                            required value={this.state.password}
-                            onChange={this.PasswordHandler}
-                            />
-                        </label>
+                                <input
+                                    type="password"
+                                    placeholder="Enter Your Password"
+                                    className="form-control"
+                                    required value={this.state.password}
+                                    onChange={this.PasswordHandler}
+                                />
+                            </label>
                             <label ><span className={styles.label_head}>Confirm Password:</span><br></br>
-                        <input
-                            type="password"
-                            
-                            placeholder="ReEnter Your Password"
-                            className="form-control"
-                            required value={this.state.confPassword}
-                            onChange={this.ConfPasswordHandler}
-                        />
-                        </label>
+                                <input
+                                    type="password"
+
+                                    placeholder="ReEnter Your Password"
+                                    className="form-control"
+                                    required value={this.state.confPassword}
+                                    onChange={this.ConfPasswordHandler}
+                                />
+                            </label>
                             <label ><span className={styles.label_head}>Are you a student</span>
                                 <input
-                                    type="checkbox"                                    
+                                    type="checkbox"
                                     className="form-control"
-                                    required 
+                                    required
                                     onChange={this.IsVendorHandler}
                                 />
                             </label>
 
-                        <div className={styles.user_login_button}>
-                            <input className={styles.reg_button} type="button" value="Become A Seller"
-                                onClick={this.SellerRegisterHandler} />
-                        </div>
+                            <div className={styles.user_login_button}>
+                                <input className={styles.reg_button} type="button" value="Proceed"
+                                    onClick={this.OpenModal} />
+                            </div>
 
-                    
-                    </form>
+
+                        </form>
 
                     </div>
                     <img src={athlete} className={styles.image}></img>
 
                 </div>
+                <AgreementModal
+                    OpenModal={this.OpenModal}
+                    isOpen={this.state.isOpen}
+                    CloseModal={this.CloseModal}
+                    SellerRegisterHandler={this.SellerRegisterHandler}
+
+
+                />
             </div>
         );
     }
@@ -223,6 +247,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     registerSeller,
-    showDialog,    
+    showDialog,
 })(SellerReg);
 

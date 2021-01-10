@@ -51,6 +51,33 @@
     
 }
 
+.standardButton{
+    display: inline;
+    
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+ background-color: #273c75;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.standardButton:hover{
+    color: #fff;
+}
+
+.standardButton:focus {
+  outline: 0;
+}
+
 @media (max-width:600px){
     .image{
         display: none;
