@@ -36,9 +36,18 @@
 
 }
 
+
+
+
 @media screen and (min-width: 769px) {
     .containerWrap {
         background: #fff;
         
+    }
+}
+
+@media(max-width:600px){
+    .main_carousel{
+        margin: 25px;
     }
 }

@@ -15,10 +15,11 @@ function MainCarousel() {
         interval={7000}
         stopOnHover={false}
         >
-            <div
+             <div
           className={styles.SlideContainer}
-          style={{ backgroundImage: "url(https://i.ibb.co/jT82Cmk/DU-Book-X-1.png)" }}
+     
             >
+                <img src={`https://i.ibb.co/jT82Cmk/DU-Book-X-1.png`} alt={'bg'}/>
           <p className={styles.SlideText}>
             DU <br />
             BookX
@@ -29,8 +30,9 @@ function MainCarousel() {
 
         <div
           className={styles.SlideContainer}
-          style={{ backgroundImage: "url(https://i.ibb.co/kM6DjBp/Untitled-design-10.png)" }}
+          
             >
+                <img src={`https://i.ibb.co/kM6DjBp/Untitled-design-10.png`} alt={'bg'}/>
           <p className={styles.SlideText} >
           DU <br />
             BookX
@@ -41,8 +43,9 @@ function MainCarousel() {
 
         <div
           className={styles.SlideContainer}
-          style={{ backgroundImage: "url(https://i.ibb.co/zNb01kp/Untitled-design-11.png)" }}
+      
             >
+                <img src={`https://i.ibb.co/zNb01kp/Untitled-design-11.png`} alt={'bg'}/>
           <p className={styles.SlideText}>
           DU <br />
             BookX

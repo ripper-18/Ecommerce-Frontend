@@ -1,11 +1,12 @@
 .SlideContainer {
-    min-height: 500px;
+    height: 100%;
     position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
 
+}
+.SlideContainer img{
+   height: 100%;
+    width: 100%;
+}
 .SlideText {
     left: 120px;
     top: 5%;
@@ -84,9 +85,7 @@
         left: 40px;
     }
 
-    .DiscountBanner {
-        left: 100px;
-    }
+    
 }
 
 @media screen and (max-width: 750px) {
@@ -95,35 +94,13 @@
     }
 
     .SlideText {
-        top: 0;
-        padding-top: 10rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        left: 0;
-        color: #fff !important;
-        text-align: center;
-        font-size: 100px;
-        height: 100%;
+     font-size: 70px;
     }
 
-    .SlideContainer .RedButton {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
-    .DiscountBanner {
-        transform: translateX(-50%);
-        left: 50%;
-    }
 }
 
-@media screen and (max-width: 650px) {
-    .HomePageS1Star {
-        padding-left: 0;
-        display: block;
-        margin: 0 auto;
-    }
-}
+
 
 @media screen and (max-width: 450px) {
     .SlideContainer {
@@ -131,22 +108,12 @@
     }
 }
 
-@media screen and (max-width: 400px) {
-    .DiscountBanner {
-        font-size: 19px;
-    }
-}
 
-@media screen and (max-width: 380px) {
+
+@media screen and (max-width: 435px) {
     .SlideText {
         font-size: 300%;
     }
 
-    .RedButton {
-        white-space: nowrap;
-    }
-
-    .DiscountBanner {
-        flex-direction: column;
-    }
+  
 }
