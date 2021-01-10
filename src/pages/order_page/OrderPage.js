@@ -28,7 +28,7 @@ const loadScript = (src) => {
 class OrderPage extends Component{  
 
     state = {
-        mode: "",
+        mode: "online",
     };
     
     displayRazorpay = async (data) => {
@@ -129,6 +129,7 @@ class OrderPage extends Component{
             res.json().then((res) => {
                 if (res.sucessOrder.orderStatus === "placed") {
                     this.props.clearCart()
+                    this.props.showDialog("Your order was placed succesfully.")
                     this.props.history.push("/profile");
                 }
             })
@@ -222,37 +223,11 @@ class OrderPage extends Component{
                                 <div className="d-flex flex-column">
                                     <label>
                                         {" "}
-                                        <input
-                                            type="radio"
-                                            name="mode"
-                                            value="online"
-                                            onChange={(e) =>
-                                                this.setState({
-                                                    ...this.state,
-                                                    mode:
-                                                        e.target.value,
-                                                })
-                                            }
-                                        />{" "}
+                                        
                                             Online Payment
                                                 
                                             </label>
-                                    <label>
-                                        {" "}
-                                        <input
-                                            type="radio"
-                                            name="mode"
-                                            value="cash"
-                                            onChange={(e) =>
-                                                this.setState({
-                                                    ...this.state,
-                                                    mode:
-                                                        e.target.value,
-                                                })
-                                            }
-                                        />{" "}
-                                                Cash On delivery
-                                            </label>
+                                   
                                 </div>
                             </div>
                             <div style={{ borderBottom: "1px solid lightgrey",marginTop:"10px" }}></div>
