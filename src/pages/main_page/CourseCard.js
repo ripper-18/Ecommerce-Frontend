@@ -15,10 +15,7 @@ class CourseCard extends Component{
     render(){
         var str = './' + this.props.name + '.jpg';
         var imagee = bt;
-        if(this.props.name === "Mtech")imagee = mt;
-        if (this.props.name === "Bcom") imagee = bc;
-        if (this.props.name === "Bsc") imagee = bs;
-        if (this.props.name === "BA") imagee = ba;
+      
 
         var link = './category/'
 

@@ -97,7 +97,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bcom</span>
+                        <span >Bms</span>
                         <div
                             className={"tog"}
                             style={{
@@ -110,14 +110,14 @@ const Line2 = useRef()
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
                                 
-                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/1')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bms/1')}>
 
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/2')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bms/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Bcom/3')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/Bms/3')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -135,7 +135,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bsc</span>
+                        <span >Bcom-Hon</span>
                         <div
                             className={"tog"}
                             style={{
@@ -147,13 +147,13 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6" onClick={()=>props.history.push('/category/Bsc/1')}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BcomH/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Bsc/2')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BcomH/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Bsc/3')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BcomH/3')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -171,7 +171,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >BA</span>
+                        <span >Bcom-Psy</span>
                         <div
                             className={"tog"}
                             style={{
@@ -183,13 +183,13 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6" onClick={()=>props.history.push('/category/BA/1')}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BcomP/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BA/2')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BcomP/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BA/3')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BcomP/3')}>
                                 3rd Year
                                 </li>
                             </ul>
@@ -207,7 +207,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Btech</span>
+                        <span >BA(Hon)-Eco</span>
                         <div
                             className={"tog"}
                             style={{
@@ -219,18 +219,16 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BAHEco/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={async()=>{await props.history.push('/category/Engg/2')}}>
+                                <li className="col-6" onClick={async()=>{await props.history.push('/category/BAHEco/2')}}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/3')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHEco/3')}>
                                 3rd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/4')}>
-                                4th Year
-                                </li>
+                               
                             </ul>
                         </Card.Body>
                     </Accordion.Collapse>
@@ -246,7 +244,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Mtech</span>
+                        <span >BA(Hon)-Eng</span>
                         <div
                             className={"tog"}
                             style={{
@@ -258,18 +256,164 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BAHEng/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHEng/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHEng/3')}>
                                 3rd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/Engg/1')}>
-                                4th Year
+                                
+                            </ul>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
                                 </li>
+                                <li className="col-6">
+                                <Accordion className="my-3">
+                <Card className={("my-4 c")}>
+                    <Accordion.Toggle
+                        as={Card.Header}
+                        className={( "col-sm-12 p-0 ch")}
+                        eventKey="0"
+                        style={{textAlign:"center"}}
+                    >
+                        <span >BA(Hon)-Psy</span>
+                        <div
+                            className={"tog"}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body className="px-0 pt-4 pb-0">
+                            <ul className={("row d-flex m-0 ul ul2")}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BAHPsy/1')}>
+                                   1st Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHPsy/2')}>
+                                  2nd Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHPsy/3')}>
+                                3rd Year
+                                </li>
+                                
+                            </ul>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+                                </li>
+                                <li className="col-6">
+                                <Accordion className="my-3">
+                <Card className={("my-4 c")}>
+                    <Accordion.Toggle
+                        as={Card.Header}
+                        className={( "col-sm-12 p-0 ch")}
+                        eventKey="0"
+                        style={{textAlign:"center"}}
+                    >
+                        <span >BA(Hon)-Soc</span>
+                        <div
+                            className={"tog"}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body className="px-0 pt-4 pb-0">
+                            <ul className={("row d-flex m-0 ul ul2")}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/1')}>
+                                   1st Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/2')}>
+                                  2nd Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/3')}>
+                                3rd Year
+                                </li>
+                                
+                            </ul>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+                                </li>
+                                <li className="col-6">
+                                <Accordion className="my-3">
+                <Card className={("my-4 c")}>
+                    <Accordion.Toggle
+                        as={Card.Header}
+                        className={( "col-sm-12 p-0 ch")}
+                        eventKey="0"
+                        style={{textAlign:"center"}}
+                    >
+                        <span >Bsc(Hon)-Stat</span>
+                        <div
+                            className={"tog"}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body className="px-0 pt-4 pb-0">
+                            <ul className={("row d-flex m-0 ul ul2")}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BscHSta/1')}>
+                                   1st Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BscHSta/2')}>
+                                  2nd Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BscHSta/3')}>
+                                3rd Year
+                                </li>
+                                
+                            </ul>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+                                </li>
+                                <li className="col-6">
+                                <Accordion className="my-3">
+                <Card className={("my-4 c")}>
+                    <Accordion.Toggle
+                        as={Card.Header}
+                        className={( "col-sm-12 p-0 ch")}
+                        eventKey="0"
+                        style={{textAlign:"center"}}
+                    >
+                        <span >Bsc(Hon)-Math</span>
+                        <div
+                            className={"tog"}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                            
+                        />
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <Card.Body className="px-0 pt-4 pb-0">
+                            <ul className={("row d-flex m-0 ul ul2")}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/BscHMat/1')}>
+                                   1st Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BscHMat/2')}>
+                                  2nd Year
+                                </li>
+                                <li className="col-6" onClick={()=>props.history.push('/category/BscHMat/3')}>
+                                3rd Year
+                                </li>
+                                
                             </ul>
                         </Card.Body>
                     </Accordion.Collapse>

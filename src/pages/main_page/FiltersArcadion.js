@@ -96,61 +96,109 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:Bcom"
+                                            value="course:Bms"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Bcom</p>
+                                        <p>Bachelor of Management Studies</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:Bsc"
+                                            value="course:BcomH"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Bsc</p>
+                                        <p>Bcom(Hons)</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:Btech"
+                                            value="course:BcomP"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Btech</p>
+                                        <p>Bcom(P)</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:Mtech"
+                                            value="course:BAHEco"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Mtech</p>
+                                        <p>BA(Hons) Economics</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:BA"
+                                            value="course:BAHEng"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>BA</p>
+                                        <p>BA(Hons) English</p>
+                                    </label>
+                                </li>
+                                <li className="col-12">
+                                    <label>
+                                        <input
+                                            value="course:BAHPsy"
+                                            onChange={(e) =>
+                                                this.handleCheck(e)
+                                            }
+                                            type="checkbox"
+                                        />
+                                        <p>BA(Hons) Psychology</p>
+                                    </label>
+                                </li>
+                                <li className="col-12">
+                                    <label>
+                                        <input
+                                            value="course:BAHSoc"
+                                            onChange={(e) =>
+                                                this.handleCheck(e)
+                                            }
+                                            type="checkbox"
+                                        />
+                                        <p>BA(Hons) Sociology</p>
+                                    </label>
+                                </li>
+                                <li className="col-12">
+                                    <label>
+                                        <input
+                                            value="course:BscHSta"
+                                            onChange={(e) =>
+                                                this.handleCheck(e)
+                                            }
+                                            type="checkbox"
+                                        />
+                                        <p>BSc(Hons) Statistics</p>
+                                    </label>
+                                </li>
+                                <li className="col-12">
+                                    <label>
+                                        <input
+                                            value="course:BscHMat"
+                                            onChange={(e) =>
+                                                this.handleCheck(e)
+                                            }
+                                            type="checkbox"
+                                        />
+                                        <p>BSc(Hons) Mathematics</p>
                                     </label>
                                 </li>
                             </ul>
