@@ -16,7 +16,7 @@ class ProductItem extends Component {
       click2:false,
       filters:{
         year:[],
-        subject:[],
+        hand:[],
         course:[]
     }
   }
@@ -60,14 +60,14 @@ componentDidMount(){
                 {this.props.data.hand===1?'Fresh':'2nd Hand'}
             </div>
             <div className={styles.upper_half}>
-                <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
+                <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
             </div>
 
 <div className={this.state.click===true?cx(styles.lower_half,styles.clicked):(styles.lower_half)}>
 
 <div className={styles.left}>
         <div className={styles.details}>
-    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.getBooksByKeyword2(this.state.filters,this.props.data.name); await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
+    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id); await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
    </p>
    <span className={styles.author}>By- {this.props.data.author}</span>
     <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>

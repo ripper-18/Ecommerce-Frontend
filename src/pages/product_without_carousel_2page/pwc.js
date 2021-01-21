@@ -63,7 +63,7 @@ class MainPage extends Component {
         let {books}=this.props.book
         let { sortValue } = this.state;
         let display = books;
-        //console.log(display)
+        console.log(display)
         if (sortValue === "0") {
             display = books.sort((a, b) => a._id - b._id);
         } else if (sortValue === "1") {

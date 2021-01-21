@@ -171,7 +171,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bcom-Psy</span>
+                        <span >Bcom-Pro</span>
                         <div
                             className={"tog"}
                             style={{

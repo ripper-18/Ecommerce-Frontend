@@ -210,7 +210,7 @@ class FilterAccordion extends Component {
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
                        
                     >
-                        <span>HAND</span>
+                        <span>CONDITION</span>
                         
                     </Card.Header>
                  
