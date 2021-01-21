@@ -16,7 +16,7 @@ class Products extends Component {
     state = {
         filters: {
             year: [],
-            subject: [],
+            hand: [],
             course: []
         },
 

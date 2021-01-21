@@ -219,50 +219,43 @@ class FilterAccordion extends Component {
                     </Accordion.Collapse>
                 </Card>
                 <Card  className={cx(styles.card, "my-3 my-md-4")}>
-                    <Accordion.Toggle
-                        as={Card.Header}
+                    <Card.Header
+                        
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
-                        eventKey="3"
+                       
                     >
-                        <span>Select Subject</span>
-                        <div
-                            className={styles.chevronDownToggle}
-                            style={{
-                                background: `url(${ChevronIcon})`,
-                            }}
-                            
-                        />
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="3">
+                        <span>HAND</span>
+                        
+                    </Card.Header>
+                 
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={cx(styles.ul, "row d-flex m-0")}>
-                                <li className="col-6">
+                                <li className="col-12">
                                     <label>
                                         <input
-                                            value="subject:physics"
+                                            value="hand:1"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Physics</p>
+                                        <p>New</p>
                                     </label>
                                 </li>
-                                <li className="col-6">
+                                <li className="col-12">
                                     <label>
                                         <input
-                                            value="subject:chemistry"
+                                            value="hand:2"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Chemistry</p>
+                                        <p>Used</p>
                                     </label>
                                 </li>
                             </ul>
                         </Card.Body>
-                    </Accordion.Collapse>
                 </Card>
                
 
