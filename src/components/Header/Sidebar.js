@@ -97,7 +97,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bms</span>
+                        <span >B.Ms</span>
                         <div
                             className={"tog"}
                             style={{
@@ -135,7 +135,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bcom-Hon</span>
+                        <span >B.Com-Hon</span>
                         <div
                             className={"tog"}
                             style={{
@@ -171,7 +171,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bcom-Pro</span>
+                        <span >B.Com-Pro</span>
                         <div
                             className={"tog"}
                             style={{
@@ -207,7 +207,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >BA(Hon)-Eco</span>
+                        <span >B.A(Hon)-Eco</span>
                         <div
                             className={"tog"}
                             style={{
@@ -244,7 +244,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >BA(Hon)-Eng</span>
+                        <span >B.A(Hon)-Eng</span>
                         <div
                             className={"tog"}
                             style={{
@@ -281,7 +281,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >BA(Hon)-Psy</span>
+                        <span >B.A(Hon)-Psy</span>
                         <div
                             className={"tog"}
                             style={{
@@ -318,7 +318,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >BA(Hon)-Soc</span>
+                        <span >Shivdas</span>
                         <div
                             className={"tog"}
                             style={{
@@ -330,13 +330,13 @@ const Line2 = useRef()
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={("row d-flex m-0 ul ul2")}>
-                            <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/1')}>
+                            <li className="col-6" onClick={()=>props.history.push('/category/Shivdas/1')}>
                                    1st Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/2')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/Shivdas/2')}>
                                   2nd Year
                                 </li>
-                                <li className="col-6" onClick={()=>props.history.push('/category/BAHSoc/3')}>
+                                <li className="col-6" onClick={()=>props.history.push('/category/Shivdas/3')}>
                                 3rd Year
                                 </li>
                                 
@@ -355,7 +355,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bsc(Hon)-Stat</span>
+                        <span >B.Sc(Hon)-Stat</span>
                         <div
                             className={"tog"}
                             style={{
@@ -392,7 +392,7 @@ const Line2 = useRef()
                         eventKey="0"
                         style={{textAlign:"center"}}
                     >
-                        <span >Bsc(Hon)-Math</span>
+                        <span >B.Sc(Hon)-Math</span>
                         <div
                             className={"tog"}
                             style={{

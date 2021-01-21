@@ -118,15 +118,14 @@ class MainPage extends Component {
                 <h1 style={{ textAlign: 'center' }} > Find Books By Courses</h1>
                 <div className={styles.courses_div} >
 
-                    <CourseCard name='Bms' />
-                    <CourseCard name='Bcom-Hon' />
-                    <CourseCard name='Bcom-Psy' />
-                    <CourseCard name='BA(Hon)-Eco' />
-                    <CourseCard name='BA(Hon)-Eng' />
-                    <CourseCard name='BA(Hon)-Psy' />
-                    <CourseCard name='BA(Hon)-Soc' />
-                    <CourseCard name='Bsc(Hon)-Stat' />
-                    <CourseCard name='Bsc(Hon)-Math' />
+                <CourseCard name='Bms' />
+                    <CourseCard name='BcomH' />
+                    <CourseCard name='BcomP' />
+                    <CourseCard name='BaHEco' />
+                    <CourseCard name='BaHEng' />
+                    <CourseCard name='BaHPsy' />
+                    <CourseCard name='Shivdas' />
+                    <CourseCard name='BscHMat' />
 
                 </div>
                 <div className={styles.containerWrap}>

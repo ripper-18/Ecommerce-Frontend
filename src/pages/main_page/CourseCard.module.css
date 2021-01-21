@@ -70,7 +70,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    background: #000 url('./mtech.jpg');
+    
     position: relative;
     flex: 1;
     margin: 50px 2px;
