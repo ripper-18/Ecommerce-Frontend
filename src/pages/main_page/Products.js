@@ -100,7 +100,7 @@ class Products extends Component {
                 <div className={styles.all_products}>
                     {
 
-                        display.slice(0, this.props.show_all ? display.length : 8).map((book, index) => (
+                        display.slice(0, this.state.show_all ? display.length : 8).map((book, index) => (
                             <Col className={styles.product_card}
                             >
 
