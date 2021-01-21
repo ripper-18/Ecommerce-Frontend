@@ -475,8 +475,8 @@ const Line2 = useRef()
             Contact Us
                 </div>
                 <ul>
-        <li>Ramon Contact Number</li>
-        <a href="mailto:delhibookx@gmail.com"><li>delhiboox@gmail.com</li></a>
+            <a href="tel:9910208293"> <li>9910208293</li></a>
+             <a href="mailto:dubookx@gmail.com"><li>duboox@gmail.com</li></a>
        
       </ul>
                 </div>

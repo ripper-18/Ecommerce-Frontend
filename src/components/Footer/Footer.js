@@ -14,7 +14,7 @@ const Footer = () => {
 
     </div>
 
-    (c) 2020 @ DelhiBookX 
+    (c) 2020 @ DuBookX 
     </div>
   );
 };
@@ -26,8 +26,8 @@ const ColumnOne = () => {
         CONTACT US
       </div>
       <ul>
-        <li>Ramon Contact Number</li>
-        <a href="mailto:delhibookx@gmail.com"><li>delhiboox@gmail.com</li></a>
+        <a href="tel:9910208293"><li>9910208293</li></a>
+        <a href="mailto:dubookx@gmail.com"><li>dubookx@gmail.com</li></a>
       </ul>
     </div>
   );
@@ -44,10 +44,7 @@ const ColumnTwo = () => (
       <Link to="/about">
         <li> About</li>
       </Link>
-      <Link to="/menu">
-      <li> Menu</li>
-      </Link>
-      
+
     </ul>
   </div>
 );

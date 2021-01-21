@@ -168,13 +168,13 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:BAHSoc"
+                                            value="course:Shivdas"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>BA(Hons) Sociology</p>
+                                        <p>Shivdas</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
