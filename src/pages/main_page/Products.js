@@ -19,6 +19,7 @@ class Products extends Component {
             hand: [],
             course: []
         },
+        show_all: false
 
     }
 
@@ -51,6 +52,16 @@ class Products extends Component {
 
 
     }
+
+    updateShowAll = () => {
+        this.setState({
+            ...this.state,
+            show_all: true
+        })
+
+    }
+
+
     render() {
 
         let { books } = this.props.book
@@ -105,6 +116,8 @@ class Products extends Component {
                     }
 
                 </div>
+
+                <button className={this.state.show_all || display.length <= 8 ? styles.hide_button : styles.show_all_button} onClick={this.updateShowAll}>Show All Books</button>
             </Row>
 
         )

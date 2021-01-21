@@ -28,6 +28,19 @@
     width: 260px;
 }
 
+.show_all_button{
+  color: white;
+  background: #273c75;
+  padding: 15px;
+  border-radius: 5px;
+  border: 0px;
+  margin-left: 40%;
+}
+
+.hide_button{
+    display: none;
+}
+
 
 
 .filterSideNav {
@@ -53,4 +66,17 @@
     height: 32px;
     background-repeat: no-repeat;
     background-position-x: 50%;
+}
+
+@media (max-width:550px){
+    
+
+    .show_all_button{
+        color: white;
+        background: #273c75;
+        padding: 15px;
+        border-radius: 5px;
+        border: 0px;
+        margin-left: 30%;
+    }
 }

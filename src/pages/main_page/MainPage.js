@@ -21,7 +21,8 @@ class MainPage extends Component {
         },
         sortValue: 0,
         size: 0,
-        show_all: false
+        show_all: false,
+
 
 
     };
@@ -66,13 +67,7 @@ class MainPage extends Component {
         });
     };
 
-    updateShowAll = () => {
-        this.setState({
-            ...this.state,
-            show_all: true
-        })
 
-    }
     updateDimensions = () => {
         if (window.innerWidth < 1150) {
             this.setState({
@@ -87,6 +82,13 @@ class MainPage extends Component {
             })
         }
     };
+
+    updateProdsSize = (n) => {
+        this.setState({
+            ...this.state,
+            prods_num: n
+        })
+    }
     componentDidMount() {
         if (window.innerWidth < 1150) {
             this.setState({
@@ -151,8 +153,9 @@ class MainPage extends Component {
                                         this.handleSideFilterOpen
                                     }
                                     show_all={this.state.show_all}
+                                    updateProdsSize={this.updateProdsSize}
                                 ></Products>
-                                <button className={this.state.show_all ? styles.hide_button : styles.show_all_button} onClick={this.updateShowAll}>Show All Books</button>
+
                             </div>
                         </Col>
                     </Row>
