@@ -17,7 +17,7 @@ class MainPage extends Component {
         filters: {
             year: [],
             course: [],
-            subject: []
+            hand: []
         },
         sortValue: 0,
         size: 0,

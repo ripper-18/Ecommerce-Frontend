@@ -210,7 +210,7 @@ class FilterAccordion extends Component {
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
                        
                     >
-                        <span>SUBJECT</span>
+                        <span>HAND</span>
                         
                     </Card.Header>
                  
@@ -219,25 +219,25 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="subject:physics"
+                                            value="hand:1"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Physics</p>
+                                        <p>New</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="subject:chemistry"
+                                            value="hand:2"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
                                             type="checkbox"
                                         />
-                                        <p>Chemistry</p>
+                                        <p>Used</p>
                                     </label>
                                 </li>
                             </ul>
