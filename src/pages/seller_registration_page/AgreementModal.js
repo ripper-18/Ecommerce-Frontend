@@ -24,20 +24,20 @@ class AgreementModal extends Component {
 
     };
 
-    IsAgreeHandlerr = () => {
-        let t = this.state.isAgree;
+    // IsAgreeHandlerr = () => {
+    //     let t = this.state.isAgree;
 
-        if (t) t = false;
-        else t = true;
-
-
+    //     if (t) t = false;
+    //     else t = true;
 
 
-        this.setState({
-            ...this.state,
-            isAgree: t
-        })
-    }
+
+
+    //     this.setState({
+    //         ...this.state,
+    //         isAgree: t
+    //     })
+    // }
 
     becomeSellerHandler = () => {
 
