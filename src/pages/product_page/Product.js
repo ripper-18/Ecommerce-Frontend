@@ -129,7 +129,7 @@ class Product extends Component {
                 )}
             </div>
 
-            <span > Weight:  {this.props.book.weight}gms</span>
+            <span > Weight:  {this.props.book.weight/1000}kgs</span>
             <h4> Publisher: {this.props.book.publisher}</h4>
 
 
