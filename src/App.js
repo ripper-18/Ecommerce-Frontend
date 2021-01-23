@@ -74,7 +74,7 @@ function App(props)   {
     
     useEffect(() => {
       
-       console.log(props.loader.isLoading)
+      // console.log(props.loader.isLoading)
     }, [props])
 
         return (

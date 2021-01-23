@@ -38,7 +38,7 @@ for(let i=0;i<x;i++){
    
 };
 componentDidMount(){
-
+    
     if(this.props.container.filter( (item) => item._id === this.props.data._id).length<=0){
         this.setState({
             click:false
@@ -48,7 +48,24 @@ componentDidMount(){
         this.setState({
             click:true
         })
+      //  console.log(this.props.data.name)
     }
+}
+componentDidUpdate(prevProps){
+    if(prevProps!==this.props){
+        if(this.props.container.filter( (item) => item._id === this.props.data._id).length<=0){
+            this.setState({
+                click:false
+            })
+        }
+        else{
+            this.setState({
+                click:true
+            })
+         //   console.log(this.props.data.name)
+        }
+    }
+    
 }
     render(){
     return (

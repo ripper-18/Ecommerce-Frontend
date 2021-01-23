@@ -187,7 +187,7 @@ class FilterAccordion extends Component {
                                             }
                                             type="checkbox"
                                         />
-                                        <p>BA(Hons) Sociology</p>
+                                        <p>Shivdas</p>
                                     </label>
                                 </li>
                                 <li className="col-12">
@@ -219,15 +219,20 @@ class FilterAccordion extends Component {
                     </Accordion.Collapse>
                 </Card>
                 <Card  className={cx(styles.card, "my-3 my-md-4")}>
-                    <Card.Header
-                        
+                <Accordion.Toggle
+                        as={Card.Header}
                         className={cx(styles.cardHeader, "col-sm-12 p-0")}
-                       
+                        eventKey="2"
                     >
-                        <span>HAND</span>
-                        
-                    </Card.Header>
-                 
+                        <span>Select Condition</span>
+                        <div
+                            className={styles.chevronDownToggle}
+                            style={{
+                                background: `url(${ChevronIcon})`,
+                            }}
+                        />
+                   </Accordion.Toggle>
+                   <Accordion.Collapse eventKey="2">
                         <Card.Body className="px-0 pt-4 pb-0">
                             <ul className={cx(styles.ul, "row d-flex m-0")}>
                                 <li className="col-12">
@@ -256,6 +261,7 @@ class FilterAccordion extends Component {
                                 </li>
                             </ul>
                         </Card.Body>
+                        </Accordion.Collapse>
                 </Card>
                
 

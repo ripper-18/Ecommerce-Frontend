@@ -48,7 +48,7 @@ export const getBooksByKeyword = (filters,keyword) => async(dispatch) => {
                 type: GET_BOOKS,
                 payload: res,
             });
-            console.log(res)
+       //     console.log(res)
            
         })
         .catch((err) => console.log(err));
@@ -78,7 +78,7 @@ export const getBooksByKeyword2 = (filters,keyword) => async(dispatch) => {
                 type: GET_BOOKS2,
                 payload: res,
             });
-            console.log(res)
+        //    console.log(res)
            
         })
         .catch((err) => console.log(err));

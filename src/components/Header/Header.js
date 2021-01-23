@@ -21,6 +21,10 @@ class Header extends Component{
     }
 
     setKeyword(e){
+        if(e.key==='Enter'){
+            this.submitSearch();
+            return
+        }
         this.setState({
             ...this.state,
             keyword:e.target.value
@@ -42,6 +46,7 @@ class Header extends Component{
         this.props.history.push(`/`)
         window.location.reload()
     }
+   
 
     render(){
     return (
@@ -56,7 +61,12 @@ class Header extends Component{
         this.submitSearch2()}} src={logo} alt="DUBookX"/></Link> 
 
             <div className={styles.header_search}>
-                <input className={styles.header_search_input} placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)} ></input>
+                <input className={styles.header_search_input} placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)}
+                onKeyPress={event => {
+                    if (event.key === 'Enter') {
+                      this.submitSearch()
+                    }
+                  }}></input>
                 <div className={styles.header_search_icon_div}>
                     <SearchIcon className={styles.header_search_icon} onClick={this.submitSearch}></SearchIcon> 
                 </div>

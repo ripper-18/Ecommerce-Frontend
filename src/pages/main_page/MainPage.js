@@ -174,7 +174,7 @@ class MainPage extends Component {
                     >
                         <div
                             className="col-12"
-                            style={{ position: "relative", top: "100px" }}
+                            style={{ position: "relative", top: "50px" }}
                         >
                             <div
                                 style={{
