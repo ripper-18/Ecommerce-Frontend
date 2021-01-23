@@ -1,0 +1,470 @@
+/* HERO CONTAINER */
+
+.hero {
+    background-image: url(../../assets/about_page/Header.png);
+    height: 724px;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.hero-container {
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-hero {
+    display: none;
+}
+
+.hero-container hr {
+    height: 8px;
+    width: 96px;
+    background-color: #d8173c;
+    margin: 0;
+}
+
+.hero-container h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin-top: 30px;
+    width: fit-content;
+}
+
+.hero-container h1 {
+    margin-top: 33px;
+    font-family: Shentox, sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 64px;
+    color: white;
+    width: fit-content;
+}
+
+.hero-container p {
+    margin-top: 43px;
+    margin-bottom: 0;
+    font-family: Shentox Regular, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: white;
+}
+
+.mobile-hero {
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.mobile-hero h1 {
+    margin-top: 39px;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.mobile-hero p {
+    margin-top: 24px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.mobile-hero .left-button {
+    margin-top: 40px;
+    width: 131px;
+    margin-bottom: 42px;
+}
+
+.left-button {
+    margin-top: 90px;
+    background-image: linear-gradient(rgb(219, 70, 99), rgb(186, 10, 47));
+    border: none;
+    border: 2px solid #d8173c;
+    color: white;
+    border-radius: 26px;
+    width: 176px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+/* BADGES */
+
+.badges {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.badges>div {
+    height: 150px;
+    width: 150px;
+    padding: 0 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.badges>div:nth-of-type(1) {
+    background-image: url('../../assets/about_page/About-Us-Icons-01.svg');
+}
+
+.badges>div:nth-of-type(2) {
+    background-image: url('../../assets/about_page/About-Us-Icons-02.svg');
+}
+
+.badges>div:nth-of-type(3) {
+    background-image: url('../../assets/about_page/About-Us-Icons-03.svg');
+}
+
+.badges>div:nth-of-type(4) {
+    background-image: url('../../assets/about_page/About-Us-Icons-04.svg');
+}
+
+.badges>div:nth-of-type(5) {
+    background-image: url('../../assets/about_page/About-Us-Icons-05.svg');
+}
+
+.badges>div:nth-of-type(6) {
+    background-image: url('../../assets/about_page/About-Us-Icons-06.svg');
+}
+
+/* ABOUT 1 */
+.container {
+    background: url(../../assets/about_page/about.png);
+
+}
+
+.about1,
+.about2 {
+    margin-top: 3rem;
+}
+
+.about1,
+.about2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.about1>img,
+.about1>div,
+.about2>img,
+.about2>div {
+    width: 50%;
+}
+
+.about1>div {
+    padding-left: 111px;
+}
+
+.about2>div {
+    padding-right: 111px;
+}
+
+.about1>div>h2,
+.about2>div>h2 {
+    margin-bottom: 32px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-family: Shentox Bold, sans-serif;
+}
+
+.about1>div>p,
+.about2>div>p {
+    font-family: Radnika Light, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+/* RATING SECTION */
+
+.rating {
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.rating h5 {
+    margin-bottom: 0;
+    font-family: Helvetica Neue;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.rating h5 span {
+    color: #80b826;
+}
+
+.rating img {
+    width: 200px;
+    margin-top: 2rem;
+}
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 31%;
+    margin-right: 3.5%;
+}
+
+.card:last-of-type {
+    margin-right: 0;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h5 {
+    display: block;
+    display: -webkit-box;
+    margin-top: 56px;
+    margin-bottom: 0;
+    width: 100%;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-family: Shentox, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+.card p {
+    margin-top: 35px;
+    text-overflow: ellipsis;
+    font-family: Radnika Light, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+/* REVIEW SECTION */
+
+.review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.review-top {
+    height: 640px;
+    background-image: url('../../assets//about_page//pattern-black.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 3rem;
+    width: 100vw;
+}
+
+.review-top h1 {
+    margin-top: 111px;
+    text-transform: uppercase;
+    font-size: 47px;
+    letter-spacing: 0.8px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.review-top p {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.review-bottom {
+    background-image: url('../../assets//about_page/Homepage-AmbassadorSliceV2.jpg');
+    width: 100%;
+    max-width: 1214px;
+    height: 615px;
+    margin: 0 auto;
+    margin-top: -307px;
+    margin-bottom: 86px;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+/* ORDER NOW */
+
+.order {
+    display: flex;
+    width: 100vw;
+    background: #f7f7f8;
+    margin-bottom: 0;
+    justify-content: center;
+    padding: 40px;
+}
+
+.order h3 {
+    font-weight: 700;
+}
+
+.order button {
+    margin-left: 50px;
+    margin-top: -10px;
+    width: 176px;
+    height: 52px;
+    background-image: linear-gradient(rgb(219, 70, 99), rgb(186, 10, 47));
+    border: none;
+    border: 2px solid #d8173c;
+    color: white;
+    border-radius: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1200px) {
+    .hero-container {
+        width: 950px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .hero-container {
+        width: 800px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .main {
+        margin-top: 0;
+    }
+
+    .hero {
+        background-image: url(../../assets/about_page/Header-m.png);
+        height: 320px;
+    }
+
+    .hero-container {
+        display: none;
+    }
+
+    .mobile-hero {
+        display: flex;
+    }
+
+    .badges {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+    .about1,
+    .about2 {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .about2 {
+        flex-direction: column-reverse;
+    }
+
+    .about2 div,
+    .about1 div {
+        padding: 0;
+        width: 100%;
+    }
+
+    .about2 img,
+    .about1 img {
+        padding: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .card {
+        width: 48%;
+        margin: 38px 0;
+    }
+
+    .review-top {
+        text-align: center;
+    }
+
+    .review-top h1 {
+        margin-top: 30px;
+    }
+
+    .review-bottom {
+        height: 300px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .order {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .order h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .card {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .card h5 {
+        margin-top: 20px;
+    }
+
+    .card p {
+        margin-top: 15px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .review-bottom {
+        height: 300px;
+        overflow: hidden;
+        margin-top: -150px;
+    }
+}

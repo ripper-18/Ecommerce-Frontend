@@ -67,6 +67,10 @@ function App(props)   {
 
     const SellerRegPage = React.lazy(() =>
     import('./pages/seller_registration_page/SellerReg'))
+
+    const AboutUsPage = React.lazy(() =>
+    import('./pages/about_us/AboutUs')
+    )
     
     useEffect(() => {
       
@@ -124,12 +128,13 @@ function App(props)   {
                         <Route path = "/terms" exact component ={TermsPage}/>
                         <Route path ="/seller_reg" exact component ={SellerRegPage} /> 
                         <Route path='/category/:course' exact component={PWC3} />    
+                        <Route path='/about' exact component={AboutUsPage}/>
 
                         <PrivateRoute path="/order" exact component={OrderPage}/>                       
                         <PrivateRoute path="/profile" exact component={ProfilePage}/>
                         <PrivateRoute path="/checkout" exact component={CheckOutPage}/>                 
                         <PrivateRoute path="/address" exact component={AddressPage} />  
-                                        
+                             
                         
                         <Route  component={ErrorPage} />
                         </Switch>     

@@ -3,6 +3,7 @@ import MainCarousel from './MainCarousel'
 import Filters from './Filters'
 import Filters2 from './Filters2'
 import Products from './Products'
+import Testimonial from './Testimonial'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { logoutUser } from '../../actions/auth_actions'
@@ -10,6 +11,9 @@ import cross from '../../assets/cross.svg'
 import cx from "classnames"
 import styles from './MainPage.module.css'
 import CourseCard from './CourseCard'
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 class MainPage extends Component {
     state = {
@@ -127,6 +131,9 @@ class MainPage extends Component {
                     <CourseCard name='Shivdas' />
                     <CourseCard name='BscHMat' />
 
+                </div>
+                <div className={styles.testimonial_div}>
+                    <Testimonial></Testimonial>
                 </div>
                 <div className={styles.containerWrap}>
 
