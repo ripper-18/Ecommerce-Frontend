@@ -116,7 +116,7 @@ class AddressModal extends Component {
 
                                         <Select
                                             required
-                                            className="form-control"
+
                                             placeholder="Select state"
                                             theme={(theme) => ({
                                                 ...theme,
