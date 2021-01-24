@@ -5,7 +5,7 @@ import cx from "classnames";
 import styles from "./Address.module.css";
 import Modal from "react-bootstrap/Modal";
 import Select from 'react-select'
-import { obj, options } from '../../delivery_data/rates'
+
 class AddressModal extends Component {
     state = {
         delivery1: "",
@@ -29,6 +29,40 @@ class AddressModal extends Component {
         this.setState({ region: val });
     }
     render() {
+        const options = [
+            { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
+            { value: 'Assam', label: 'Assam' },
+            { value: 'Bihar', label: 'Bihar' },
+            { value: 'Chhattisgarh', label: 'Chhattisgarh' },
+            { value: 'Chandigarh', label: 'Chandigarh' },
+            { value: 'Delhi', label: 'Delhi' },
+            { value: 'Goa', label: 'Goa' },
+            { value: 'Gujarat', label: 'Gujarat' },
+            { value: 'Haryana', label: 'Haryana' },
+            { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
+            { value: 'Jammu and Kahmir', label: 'Jammu and Kahmir' },
+            { value: 'Jharkhand', label: 'Jharkhand' },
+            { value: 'Karnataka', label: 'Karnataka' },
+            { value: 'Kerala', label: 'Kerala' },
+            { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
+            { value: 'Maharashtra', label: 'Maharashtra' },
+            { value: 'Manipur', label: 'Manipur' },
+            { value: 'Meghalaya', label: 'Meghalaya' },
+            { value: 'Mizoram', label: 'Mizoram' },
+            { value: 'Nagaland', label: 'Nagaland' },
+            { value: 'Odisha', label: 'Odisha' },
+            { value: 'Pudducherry', label: 'Pudducherry' },
+            { value: 'Punjab', label: 'Punjab' },
+            { value: 'Rajasthan', label: 'Rajasthan' },
+            { value: 'Sikkim', label: 'Sikkim' },
+            { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+            { value: 'Telangana', label: 'Telangana' },
+            { value: 'Tripura', label: 'Tripura' },
+            { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
+            { value: 'Uttarakhand', label: 'Uttarakhand' },
+            { value: 'West Bengal', label: 'West Bengal' }
+        ]
+
         return (
             <Modal
                 show={this.props.isOpen}
