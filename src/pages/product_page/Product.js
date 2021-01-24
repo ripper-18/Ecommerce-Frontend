@@ -46,6 +46,7 @@ class Product extends Component {
 
 
   render() {
+    console.log(this.props.book)
     let disabled = false
     let quantity = this.props.cart.bookCart.filter((item) => item._id === this.props.book._id).length
     if (quantity === this.props.book.countInStock) {
@@ -89,6 +90,7 @@ class Product extends Component {
               <span className={styles.Small_info_indi}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>
               <span className={styles.Small_info_indi}>Course: {this.props.book.course}</span>
               <span className={styles.Small_info_indi}>Year: {this.props.book.year}</span>
+              <span className={styles.Small_info_indi}>Condition: {this.props.book.hand == 1 ? "New" : "Second Hand"}</span>
             </div>
 
 
@@ -129,7 +131,7 @@ class Product extends Component {
                 )}
             </div>
 
-            <span > Weight:  {this.props.book.weight/1000}kgs</span>
+            <span > Weight:  {this.props.book.weight}kgs</span>
             <h4> Publisher: {this.props.book.publisher}</h4>
 
 
