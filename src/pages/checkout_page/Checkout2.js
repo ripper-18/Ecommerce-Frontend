@@ -103,7 +103,7 @@ class Checkout extends Component {
                 this.state.selectedCartValue,
                 //finalAmount
                 (this.getSubTotal() +
-                    this.getSubTotal() * 0.05 +
+                     +
                     this.state.delivery).toFixed(2),
                 //delivery
                 this.state.delivery,
@@ -151,8 +151,8 @@ class Checkout extends Component {
                                         <span className="font-weight-bold text-danger">
                                             ₹{" "}
                                             {(this.getSubTotal() +
-                                                this.state.delivery +
-                                             this.getSubTotal() * 0.05
+                                                this.state.delivery 
+                                            
                                             ).toFixed(2)}
                                         </span>
                                     </div>
@@ -192,8 +192,6 @@ class Checkout extends Component {
                                                 ₹{" "}
                                                 {(
                                                         this.getSubTotal() +
-                                                        this.getSubTotal() *
-                                                        0.05 +
                                                         this.state.delivery
                                                     ).toFixed(2)}
                                             </p>

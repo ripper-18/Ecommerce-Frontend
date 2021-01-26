@@ -220,7 +220,7 @@ class Cart  extends Component  {
                                      <p className={styles.pr}>
                                     <span>
                                     ₹ {(this.getSubTotal() +
-                                            this.getSubTotal() * 0.05 +
+                                            +
                                            ( this.getSubTotal()?30:0)).toFixed(2)} 
                                         </span> 
                                      </p>
