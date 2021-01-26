@@ -311,7 +311,7 @@ class Login extends Component {
 
                                                     <label style={{ width: "100%" }}>
                                                         Phone:
-                  <input size="100" placeholder="Enter your phone number"
+                  <input size="100" placeholder="Enter your phone number" type="text"
                                                             className="form-control"
                                                             required
                                                             value={
