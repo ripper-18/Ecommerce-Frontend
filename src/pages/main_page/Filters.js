@@ -1,6 +1,6 @@
-import React,{Component} from 'react'
-import {  Container, Card } from 'react-bootstrap';
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { Container, Card } from 'react-bootstrap';
+import { connect } from 'react-redux'
 import Select from "react-select";
 import styles from './Filters.module.css'
 import FilterAccordion from "./FiltersArcadion";
@@ -21,48 +21,49 @@ class Filters extends Component {
         console.log(value)
         this.props.setFilters(key, value, e.target.checked);
     };
-    render(){
-    return (
-        <Container className="pl-md-0 center">
-            <div className={cx(styles.heading,'mt-5 m-0 mb-md-4')}>
-                <span>Filters</span>
-                <div className={cx(styles.resetContainer,' mb-md-5 pb-4')}>
-                <div className="col-sm-12 p-0">
-                    <button
-                        onClick={() => window.location.reload()}
-                        className="btn btn-lg btn-outline-danger w-100 reset-button"
-                        style={{borderColor:"#273c75"}}
-                    >
-                        Reset
+    render() {
+        return (
+            <Container className="pl-md-0 center">
+                <div className={cx(styles.heading, 'mt-5 m-0 mb-md-4')}>
+                    <span>Filters</span>
+                    <div className={cx(styles.resetContainer, ' mb-md-5 pb-4')}>
+                        <div className="col-sm-12 p-0">
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="btn btn-lg btn-outline-danger w-100 reset-button"
+                                style={{ borderColor: "#273c75" }}
+                            >
+                                Reset
                         </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div className={cx(styles.sel,"col-12 col-sm-12 order-sm-12 p-0")}>
-                <label>SORT BY</label>
-                <Select
-                    theme={(theme) => ({
-                        ...theme,
-                        borderRadius: 0,
-                        colors: {
-                            ...theme.colors,
-                            primary25: "#f5f5f5",
-                            primary50: "#f5f5f5",
-                            primary: "#273c75",
-                        },
-                    })}
-                    onChange={(e) => this.props.setSortValue(e.value)}
-                    options={options}
-                />
-            </div>
-            <div>
-                <FilterAccordion setFilters={this.props.setFilters} />
-            </div>
-            
-            
-        </Container>
-      
-    )}
+                <div className={cx(styles.sel, "col-12 col-sm-12 order-sm-12 p-0")}>
+                    <label>SORT BY</label>
+                    <Select
+                        theme={(theme) => ({
+                            ...theme,
+                            borderRadius: 0,
+                            colors: {
+                                ...theme.colors,
+                                primary25: "#f5f5f5",
+                                primary50: "#f5f5f5",
+                                primary: "#273c75",
+                            },
+                        })}
+                        onChange={(e) => this.props.setSortValue(e.value)}
+                        options={options}
+                    />
+                </div>
+                <div>
+                    <FilterAccordion setFilters={this.props.setFilters} />
+                </div>
+
+
+            </Container>
+
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({
