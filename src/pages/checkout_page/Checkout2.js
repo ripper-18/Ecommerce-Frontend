@@ -43,7 +43,7 @@ class Checkout extends Component {
 
         fetch(config.api + `delivery/rates`, requestOptions)
             .then((response) => response.json())
-            .then((res) => {//async?
+            .then((res) => {
                 console.log(res)
                 this.setState({
                     ...this.state,
@@ -139,7 +139,7 @@ class Checkout extends Component {
                 //finalAmount
                 (this.getSubTotal() +
                     +
-                    this.state.delivery).toFixed(2),
+                    this.getDeliveryPrice()).toFixed(2),
                 //delivery
                 this.state.delivery,
                 //gst
