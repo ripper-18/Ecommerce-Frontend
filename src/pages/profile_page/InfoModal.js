@@ -28,7 +28,7 @@ import Modal from "react-bootstrap/Modal";
                             <div className="row m-0">
                                 <div className="col-sm-12" >
                                  <h6 style={{display:"flex",justifyContent:"space-between"}}>
-                                  <span className="font-weight-bold mr-3 "> Your Order Subtotal (Without delivery+ GST charges): </span><span className="text">{this.props.data.billAmount}</span> 
+                                  <span className="font-weight-bold mr-3 "> Your Order Subtotal (Without delivery charge): </span><span className="text">{this.props.data.billAmount}</span> 
                                  </h6> 
                                 </div>
                             </div>
