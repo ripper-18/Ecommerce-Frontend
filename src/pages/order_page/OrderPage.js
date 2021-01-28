@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import styles from './OrderPage.module.css'
-import {Row, Col} from 'react-bootstrap';
-import {placeDirectOrder} from '../../actions/order_actions'
-import {clearCart} from '../../actions/cart_actions'
+import { Row, Col } from 'react-bootstrap';
+import { placeDirectOrder } from '../../actions/order_actions'
+import { clearCart } from '../../actions/cart_actions'
 import { showDialog } from "../../actions/dialog_actions";
 import config from "../../config";
 import Stepper from '../common/stepper'
@@ -25,26 +25,26 @@ const loadScript = (src) => {
     });
 };
 
-class OrderPage extends Component{  
+class OrderPage extends Component {
 
     state = {
         mode: "online",
     };
-    
+
     displayRazorpay = async (data) => {
-         //console.log(data);
+        //console.log(data);
         const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
-        ); 
+        );
 
-      //  console.log(res)
+        //  console.log(res)
         if (!res) {
-           // console.log(data)
+            // console.log(data)
             alert("Razorpay failed to load. Are you online?");
             return;
         }
 
-      
+
 
         const options = {
             key: config.rzp_id,//make a flexible dev and live mode key accepter
@@ -66,41 +66,41 @@ class OrderPage extends Component{
         paymentObject.open();
     };
 
-     stagePayment = () => {
-         //console.log(this.props)
-         if (this.state.mode === "") {
+    stagePayment = () => {
+        //console.log(this.props)
+        if (this.state.mode === "") {
             this.props.showDialog("Please select a payment mode");
-         } else {
-             this.props
-                 .placeDirectOrder(
-                     this.props.currentOrder.address,
-                     this.state.mode,
-                     this.props.currentOrder.books,
-                     this.props.auth.token,
-                     this.props.currentOrder.originalBill,
-                     this.props.currentOrder.finalAmount,
-                     this.props.currentOrder.delivery,
-                     this.props.currentOrder.gst
+        } else {
+            this.props
+                .placeDirectOrder(
+                    this.props.currentOrder.address,
+                    this.state.mode,
+                    this.props.currentOrder.books,
+                    this.props.auth.token,
+                    this.props.currentOrder.originalBill,
+                    this.props.currentOrder.finalAmount,
+                    this.props.currentOrder.delivery,
+                    this.props.currentOrder.gst
 
-                 )
-                 .then((res) => {
-                     if (res.order.orderStatus === "staged") {
-                         this.displayRazorpay(res);
-                     } else if (res.order.orderStatus === "placed") {
-                        this.props.clearCart() 
-                         this.props.showDialog("Your order was placed succesfully.")
-                        
-                         this.props.history.push("/profile");
-                     } else {
+                )
+                .then((res) => {
+                    if (res.order.orderStatus === "staged") {
+                        this.displayRazorpay(res);
+                    } else if (res.order.orderStatus === "placed") {
+                        this.props.clearCart()
+                        this.props.showDialog("Your order was placed succesfully.")
+
+                        this.props.history.push("/profile");
+                    } else {
                         this.props.showDialog("Your order could not be placed");
-                     }
-                 })
-                 .catch((err) => {
-                     console.log(err);
-                     this.props.showDialog("Your order could not be placed");
-                 });
-         }
-     };
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    this.props.showDialog("Your order could not be placed");
+                });
+        }
+    };
 
 
     onPaymentComplete = ({
@@ -138,21 +138,21 @@ class OrderPage extends Component{
 
     componentDidMount() {
         window.scrollTo(0, 0)
-     
+
     }
 
-    render(){
-       
+    render() {
+
         const arr = this.props.currentOrder.finalAddress.address.split(" ");
         return (
             <div>
-                <Stepper number={2}/>
+                <Stepper number={2} />
                 <div className={styles['card-cont']}>
                     <div className={styles['payment-card']}>
-                        <p style={{fontSize:"24px",margin:"0 80px"}}>Confirm payment to place order</p>
-                        
+                        <p style={{ fontSize: "24px", margin: "0 80px" }}>Confirm payment to place order</p>
+
                         <br></br>
-                        <div style={{borderBottom:"1px solid lightgrey"}}></div>
+                        <div style={{ borderBottom: "1px solid lightgrey" }}></div>
                         <br></br>
 
                         <div className={styles["card-body"]}>
@@ -170,13 +170,13 @@ class OrderPage extends Component{
                                     Delivery address:{" "}
                                 </span>
 
-                                <div style={{ wordWrap: "break-word",maxWidth: "30%",textAlign:"right"}}>
+                                <div style={{ wordWrap: "break-word", maxWidth: "30%", textAlign: "right" }}>
                                     {this.props.currentOrder.finalAddress.address}
                                 </div>
-                                
-                                
-                                
-                                
+
+
+
+
                             </div>
                             <div className="d-flex justify-content-between mx-3">
                                 <span className={styles["font-weight-bold"]}>
@@ -212,7 +212,7 @@ class OrderPage extends Component{
                                 </span>
                             </div>
                             <br></br>
-                            
+
                             <div className="d-flex justify-content-between mx-3 mt-3">
                                 <div>
                                     <span className={styles["font-weight-bold"]}>
@@ -223,21 +223,21 @@ class OrderPage extends Component{
                                 <div className="d-flex flex-column">
                                     <label>
                                         {" "}
-                                        
+
                                             Online Payment
-                                                
+
                                             </label>
-                                   
+
                                 </div>
                             </div>
-                            <div style={{ borderBottom: "1px solid lightgrey",marginTop:"10px" }}></div>
+                            <div style={{ borderBottom: "1px solid lightgrey", marginTop: "10px" }}></div>
                         </div>
 
-                        <div className="card-footer bg-white">
-                            <button 
+                        <div className="card-footer bg-white" style={{ display: "flex" }}>
+                            <button
                                 className={styles['place-orrder-button']}
-                                style={{marginTop:"2%"}}
-                                
+                                style={{ marginTop: "2%" }}
+
                                 onClick={this.stagePayment}
                             >
                                 Place Order
@@ -249,7 +249,7 @@ class OrderPage extends Component{
             </div>
         )
     }
-    
+
 }
 
 const mapStateToProps = (state) => ({
@@ -261,5 +261,5 @@ export default connect(mapStateToProps, {
     placeDirectOrder,
     clearCart,
     showDialog
-   
+
 })(withRouter(OrderPage));

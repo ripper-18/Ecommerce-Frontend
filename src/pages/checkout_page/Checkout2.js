@@ -208,8 +208,8 @@ class Checkout extends Component {
                                         </span>
                                             <span className="font-weight-bold text-danger">
                                                 ₹{" "}
-                                                {(this.getSubTotal() +
-                                                    this.getDeliveryPrice()
+                                                {(this.getSubTotal()
+
 
                                                 ).toFixed(2)}
                                             </span>
@@ -235,7 +235,7 @@ class Checkout extends Component {
                                                 <p>
                                                     ₹{" "}
                                                     {!this.state.finalAddress ? 'Please Select a Delivery Address' : this.getDeliveryPrice().toFixed(2)}
-                                                    {/* {this.state.delivery.toFixed(2)} */}
+
                                                 </p>
                                             </div>
                                         </div>
@@ -250,10 +250,7 @@ class Checkout extends Component {
                                                 <p className={styles.total}>
                                                     ₹{" "}
                                                     {!this.state.finalAddress ? 'Select A delivery Address' : (this.getSubTotal() + this.getDeliveryPrice()).toFixed(2)}
-                                                    {/* {(
-                                                        this.getSubTotal() +
-                                                        this.state.delivery
-                                                    ).toFixed(2)} */}
+
                                                 </p>
                                             </div>
                                         </div>
