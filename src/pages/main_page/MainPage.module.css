@@ -6,6 +6,11 @@
     padding-left: 30px;
 }
 
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+}
+
 
 .sideFilter {
     position: fixed;
@@ -36,35 +41,38 @@
 
 
 }
+
 .main_carousel {
     margin: 260px;
     margin-top: 20px;
     margin-bottom: 40px;
-  
+
 }
 
 
 
-@media (max-width:1150px){
-    .main_carousel{
+@media (max-width:1150px) {
+    .main_carousel {
         margin: 100px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 }
-@media (max-width:900px){
-    .main_carousel{
+
+@media (max-width:900px) {
+    .main_carousel {
         margin: 50px;
-    
+
     }
 }
-@media (max-width:400px){
-    .main_carousel{
+
+@media (max-width:400px) {
+    .main_carousel {
         margin: 20px;
-    
+
     }
 
-    
+
 }
 
 @media screen and (min-width: 769px) {
@@ -73,6 +81,5 @@
 
     }
 
-    
-}
 
+}

@@ -15,19 +15,10 @@ function MainCarousel() {
         interval={5000}
         stopOnHover={false}
         >
-             <div
-          className={styles.SlideContainer}
-     
-            >
-                <img src={`https://i.ibb.co/jT82Cmk/DU-Book-X-1.png`} alt={'bg'}/>
-          <p className={styles.SlideText}>
-            Welcome<br/> to
-            DU <br />
-            BookX
-            <br />
-
-          </p>
-        </div>
+          <div
+            className={styles.SlideContainer}>
+              <img src={`https://i.ibb.co/XtFGZRw/DDD19-B52-2856-42-B2-8-ECB-7-A26735-BA8-BC.png`} alt={'bg'}/>
+          </div>
 
         <div
           className={styles.SlideContainer}

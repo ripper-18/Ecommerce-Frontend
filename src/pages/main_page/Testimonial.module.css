@@ -14,12 +14,25 @@
     left: 120px;
     top: 5%;
     text-align: left;
-    font-weight: bold;
     color: #353b48;
-    letter-spacing: 1px;
-    font-size: 50px;
     position: absolute;
     margin-top: 20px;
+    width: 30%;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.SlideText2 {
+
+    left: 800px;
+    top: 5%;
+    text-align: left;
+    color: #353b48;
+    position: absolute;
+    margin-top: 20px;
+    width: 30%;
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
 }
 
 .MedText {

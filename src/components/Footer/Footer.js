@@ -14,7 +14,7 @@ const Footer = () => {
 
     </div>
 
-    (c) 2020 @ DuBookX 
+    (c) 2020 @ DUbookX 
     </div>
   );
 };
@@ -25,6 +25,7 @@ const ColumnOne = () => {
       <div className={styles.Title} style={{ marginBottom: "0rem" }}>
         CONTACT US
       </div>
+      <br></br>
       <ul>
         <a href="tel:9910208293"><li>9910208293</li></a>
         <a href="mailto:dubookx@gmail.com"><li>dubookx@gmail.com</li></a>

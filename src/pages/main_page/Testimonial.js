@@ -20,10 +20,19 @@ function MainCarousel() {
      
             >
                 <img src={`https://i.ibb.co/P155QR9/Untitled-design-22.png`} alt={'bg'}/>
+
+          <div className={styles.divider}>
+          
           <p className={styles.SlideText}>
             " Better than amazon honestly ! "
 
           </p>
+          <p className={styles.SlideText2}>
+            " Better than amazon honestly ! "
+
+          </p>
+
+          </div>
         </div>
 
         <div
