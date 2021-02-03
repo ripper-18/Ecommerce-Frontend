@@ -1,12 +1,12 @@
-import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, UPDATE_USER,FORGOT_PASS } from "./types";
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER, UPDATE_USER, FORGOT_PASS } from "./types";
 import config from "../config";
-import {showDialog} from './dialog_actions'
-import {showloader,hideloader} from './isLoading_actions'
+import { showDialog } from './dialog_actions'
+import { showloader, hideloader } from './isLoading_actions'
 
-export const registerUser = (user,history) => (dispatch) => {
+export const registerUser = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-   
+
 
     var raw = JSON.stringify({
         name: user.name,
@@ -22,19 +22,19 @@ export const registerUser = (user,history) => (dispatch) => {
         redirect: "follow",
     };
 
-    fetch(config.user + "auth/signup", requestOptions).then((res) =>res.json().then((response)=> {
-        if (response.message === "Registration Completed" ) {
+    fetch(config.user + "auth/signup", requestOptions).then((res) => res.json().then((response) => {
+        if (response.message === "Registration Completed") {
             dispatch({
                 type: REGISTER_USER,
             });
             history.push("/profile");
             dispatch(showDialog("Account Created"));
-            
+
         } else {
             dispatch(showDialog(response.message));
         }
     }));
-    
+
 };
 
 export const registerSeller = (user, history) => (dispatch) => {
@@ -47,8 +47,8 @@ export const registerSeller = (user, history) => (dispatch) => {
         email: user.email,
         phone: user.phone,
         password: user.password,
-        isStudentVendor:user.isStudent,
-        isVendor:user.isVendor
+        isStudentVendor: user.isStudent,
+        isVendor: user.isVendor
     });
 
     var requestOptions = {
@@ -63,7 +63,7 @@ export const registerSeller = (user, history) => (dispatch) => {
             dispatch({
                 type: REGISTER_USER,
             });
-            history.push("/");
+            history.push("/admin_site_info");
             dispatch(showDialog("Seller Account Created"));
 
         } else {
@@ -107,7 +107,7 @@ export const loginUser = (user, history) => (dispatch) => {
 export const loginGoogle = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-   
+
     var raw = JSON.stringify({
         name: user.name,
         email: user.email,
@@ -136,7 +136,7 @@ export const loginGoogle = (user, history) => (dispatch) => {
     );
 };
 
-export const updateUser = (user, token) => async(dispatch) => {
+export const updateUser = (user, token) => async (dispatch) => {
 
     await dispatch(showloader())
     var myHeaders = new Headers();
@@ -144,9 +144,9 @@ export const updateUser = (user, token) => async(dispatch) => {
     myHeaders.append("Authorization", token);
 
     var raw = JSON.stringify({
-        email:user.email,
+        email: user.email,
         phone: user.phone,
-        name:user.name,
+        name: user.name,
     });
 
     var requestOptions = {
@@ -172,7 +172,7 @@ export const updateUser = (user, token) => async(dispatch) => {
     );
 };
 
-export const forgotPassword =(user,history)=>(dispatch)=>{
+export const forgotPassword = (user, history) => (dispatch) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -189,7 +189,7 @@ export const forgotPassword =(user,history)=>(dispatch)=>{
 
     fetch(config.user + "auth/recover", requestOptions).then((response) =>
         response.json().then((res) => {
-            
+
             if (res.message) {
                 dispatch({
                     type: FORGOT_PASS
