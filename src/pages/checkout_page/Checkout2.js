@@ -152,22 +152,30 @@ class Checkout extends Component {
     };
 
     getDeliveryPrice = () => {
-        const num_books = this.props.cart.bookCart.length
+        const num_books = this.props.cart.bookCart.length;
+
         if (this.state.delivery_mode === 1) {
-            const delivery_price = num_books * this.state.delivery;
+            let shiv = 0;
+            for (let i = 0; i < num_books; i++) {
+                if (this.props.cart.bookCart[i].course === "Shivdas") shiv++;
+
+            }
+            const delivery_price = (num_books - shiv) * this.state.delivery + shiv * 35;
             return delivery_price;
         }
         else if (this.state.delivery_mode === 2) {
-            const new_books = 0;
-            const old_books = 0;
+            let new_books = 0;
+            let old_books = 0;
+            let shiv_das = 0;
 
             for (let i = 0; i < num_books; i++) {
-                if (this.props.bookCart[i].hand === 1) new_books++;
+                if (this.props.cart.bookCart[i].course === "Shivdas") shiv_das++;
+                if (this.props.cart.bookCart[i].hand === 1) new_books++;
                 else old_books++;
             }
 
-            const delivery_price = old_books * this.state.delivery + new_books * this.state.delivery -
-                new_books * this.state.delivery * (new_books - 1) * 0.12
+            const delivery_price = old_books * this.state.delivery + new_books * this.state.delivery - shiv_das * this.state.delivery -
+                new_books * this.state.delivery * (new_books - 1) * 0.12 + shiv_das * 35;
 
             return delivery_price
         }
