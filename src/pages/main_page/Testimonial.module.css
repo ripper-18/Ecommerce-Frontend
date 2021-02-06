@@ -9,17 +9,25 @@
     width: 100%;
 }
 
+h1 {
+    text-align: center;
+}
+
 .SlideText {
 
     left: 120px;
     top: 5%;
     text-align: left;
-    color: #353b48;
+    color: #ffffff;
     position: absolute;
     margin-top: 20px;
-    width: 30%;
-    font-size: 40px;
+    font-size: 38px;
     font-family: 'Dancing Script', cursive;
+}
+
+.TestiName {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
 }
 
 .SlideText2 {
@@ -49,7 +57,7 @@
 @media screen and (max-width: 1100px) {
     .SlideText {
         left: 40px;
-        font-size: 60px;
+        font-size: 30px;
     }
 
     .SmallText {
@@ -82,7 +90,7 @@
     }
 
     .SlideText {
-        font-size: 40px;
+        font-size: 25px;
     }
 
     .SmallText {
@@ -95,20 +103,25 @@
     }
 }
 
+@media screen and (max-width: 550px) {
+    .SlideContainer {
+        background-position: right top;
+    }
+
+    .SlideText {
+        font-size: 20px;
+    }
+}
+
 
 
 @media screen and (max-width: 450px) {
     .SlideContainer {
         background-position: right top;
     }
-}
 
-
-
-@media screen and (max-width: 435px) {
     .SlideText {
-        font-size: 270%;
+        font-size: 20px;
     }
-
 
 }

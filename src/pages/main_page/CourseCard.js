@@ -36,7 +36,7 @@ class CourseCard extends Component{
         }
         else if(this.props.name==="Bms"){
             imagee=Bms
-            message="B.Ms"
+            message="BMS"
         }
         else if(this.props.name==="BscHMat"){
             imagee=BscHMat
