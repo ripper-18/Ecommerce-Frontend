@@ -476,7 +476,8 @@ const Line2 = useRef()
                 </div>
                 <ul>
             <a href="tel:9910208293"> <li>9910208293</li></a>
-             <a href="mailto:dubookx@gmail.com"><li>duboox@gmail.com</li></a>
+            <a href="tel:9953897446"><li>9953897446</li></a>
+             <a href="mailto:dubookx@gmail.com"><li>dubookx@gmail.com</li></a>
        
       </ul>
                 </div>
