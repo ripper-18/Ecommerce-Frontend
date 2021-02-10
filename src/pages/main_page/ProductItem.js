@@ -80,13 +80,14 @@ componentDidUpdate(prevProps){
                 <img src={this.props.data.image[0]} alt="imag" onClick={async() => { await this.props.getBookbyId(this.props.data._id);await this.props.history.push(`/product/${this.props.data._id}`)}}/>
             </div>
 
-<div className={this.state.click===true?cx(styles.lower_half,styles.clicked):(styles.lower_half)}>
+<div className={this.state.click===true?cx(styles.lower_half,styles.clicked):(styles.lower_half)} >
 
 <div className={styles.left}>
         <div className={styles.details}>
-    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id); await this.props.history.push(`/product/${this.props.data._id}`)}}>{this.props.data.name}<br/>
+    <p onClick={async() => { await this.props.getBookbyId(this.props.data._id); await this.props.history.push(`/product/${this.props.data._id}`)}}
+    style={{fontSize: this.props.data.name.length>40?'1.05rem':'1.2rem'}}>{this.props.data.name}<br/>
    </p>
-   <span className={styles.author}>By- {this.props.data.author}</span>
+   <span className={styles.author} style={{fontSize: this.props.data.name.length>30 && this.props.data.author.length>20?'0.75rem':'0.85rem'}}>By- {this.props.data.author}</span>
     <span className={styles.price}>₹ {(this.props.data.price).toFixed(2)}</span>
         </div>
         <div className={styles.buy}  onClick={()=>{this.setState({
