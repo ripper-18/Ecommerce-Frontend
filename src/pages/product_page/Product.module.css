@@ -1,8 +1,8 @@
 .product-container {
 
     padding-top: 30px;
-    background: rgb(248, 248, 248);
-}
+    background: white;}
+
 
 .big-image {
     transition: 0.3s ease-in-out;
@@ -52,7 +52,7 @@
 .Small_info {
     display: flex;
     justify-content: space-around;
-    background: rgb(248, 248, 248);
+    background:#fff;
 
 }
 
@@ -64,7 +64,7 @@
     border: 1px solid #dcdde1;
     font-weight: 700;
     color: #353b48;
-    background: #fff;
+    background: #FFFAFA;
 }
 
 .Product_Author {
@@ -179,7 +179,7 @@
     flex-wrap: wrap;
     margin-left: 5px;
     margin-right: 5px;
-    background: rgb(248, 248, 248);
+    background: white;
     padding: 0px;
 }
 
