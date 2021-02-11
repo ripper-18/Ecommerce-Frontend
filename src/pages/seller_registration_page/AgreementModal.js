@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 import cx from "classnames";
 import styles from "./SellerReg.module.css";
@@ -66,16 +67,15 @@ class AgreementModal extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <div>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
-                        <p>1. i agree with blah blah blah blah balh</p>
+                    You have a wide variety of books to choose from so please order carefully. After placing your order please review your order
+                    details and contact us immediately at +91 99538 97446 if a mistake has been made or if you want to cancel your order. 
+                    <br/>
+                    We do not give refunds if you simply change your mind, but we may be able to correct any errors in the order process prior to shipment.
+                    <br/>
+                    If the book you receive is different to what you purchased online, is damaged, or is otherwise not as expected, please contact us immediately on our phone number (+91 99538 97446) or email us at: dubookx@gmail.com to discuss further options. 
+                    <br/>See our <Link to="/terms"> Terms of use </Link> for more information.
+
+
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

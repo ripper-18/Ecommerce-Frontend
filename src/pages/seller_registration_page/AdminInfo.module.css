@@ -1,0 +1,84 @@
+.hero {
+    width: 100vw;
+    height: 32vh;
+    background-image: url('../../assets/faq_page/hero.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 80px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroMobile {
+    display: none;
+}
+
+.hero h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 60px;
+    margin: 0;
+}
+
+.hero {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-size: 20px;
+
+    margin: 0;
+}
+
+.container {
+    width: 90vw;
+    max-width: 960px;
+    margin: 80px auto;
+    font-size: 18px;
+}
+
+.container p {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        margin-top: 0;
+    }
+
+    .hero h1,
+    .hero p {
+        display: none;
+    }
+
+    .heroMobile {
+        display: flex;
+        flex-direction: column;
+        background-color: #231f20;
+        color: white;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    .heroMobile p {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .heroMobile h1 {
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container p {
+        font-size: 16px;
+    }
+}
