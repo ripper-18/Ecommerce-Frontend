@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import banner from './../terms_page/terms.module.css'
 import styles from './SellerReg.module.css'
-import athlete from './athlete.png'
+import logo from '../../assets/DU.png'
 import { registerSeller } from "../../actions/auth_actions";
 import { showDialog } from '../../actions/dialog_actions';
 import { DumpingDoodle } from "react-open-doodles";
 import AgreementModal from './AgreementModal';
+
 
 
 class SellerReg extends Component {
@@ -225,7 +226,7 @@ class SellerReg extends Component {
                         </form>
 
                     </div>
-                    <img src={athlete} className={styles.image}></img>
+                    <img src={logo} className={styles.image}></img>
 
                 </div>
                 <AgreementModal

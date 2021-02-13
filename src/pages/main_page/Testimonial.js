@@ -20,19 +20,22 @@ function MainCarousel() {
           className={styles.SlideContainer}
      
             >
-                <img src={`https://i.ibb.co/RzjPcGX/Untitled-design-23.png`} alt={'bg'}/>
+                <img src={`https://i.ibb.co/Tg85GM5/testimonial-bg.jpg`} alt={'bg'}/>
 
           <div className={styles.divider}>
           
           <p className={styles.SlideText}>
             " thanks to the amazing and smooth services of dubookx, I could get rid of my old books without any difficulties while making some quick money! 
 
-The pick up service of the books was convenient and taken directly from my door steps making it easier than ever!
+            The pick up service of the books was convenient and taken directly from my door steps making it easier than ever!
 
-Dubookx is now my go-to place for selling as well as buying my college books! "
-<br></br> <br/><br/>
-      - <span className = {styles.TestiName}>Niharika, SRCC (seller)</span>
-          </p>
+            Dubookx is now my go-to place for selling as well as buying my college books! 
+            
+<br></br> <br/>
+      - <span className = {styles.TestiName}>Niharika, (seller) <br/>
+            SRCC </span>
+     
+      </p> 
 
 
           </div>
@@ -42,7 +45,7 @@ Dubookx is now my go-to place for selling as well as buying my college books! "
           className={styles.SlideContainer}
      
             >
-                <img src={`https://i.ibb.co/RzjPcGX/Untitled-design-23.png`} alt={'bg'}/>
+                <img src={`https://i.ibb.co/Tg85GM5/testimonial-bg.jpg`} alt={'bg'}/>
 
           <div className={styles.divider}>
           
@@ -50,7 +53,7 @@ Dubookx is now my go-to place for selling as well as buying my college books! "
           "Even though DUbookX is new, they have made ordering and delivering books an easy experience. I received my materials very quickly and in perfect condition, 
           which any student will agree is important. They are extremely efficient, resourceful and courteous so I definitely recommend their services!"
 <br></br> <br/><br/>
-      - <span className = {styles.TestiName}>Riddhima Dyal Singh (buyer)</span>
+      - <span className = {styles.TestiName}>Riddhima Dyal Singh (buyer)<br/>Dyal Singh College </span>
           </p>
 
 
@@ -60,15 +63,15 @@ Dubookx is now my go-to place for selling as well as buying my college books! "
           className={styles.SlideContainer}
      
             >
-                <img src={`https://i.ibb.co/RzjPcGX/Untitled-design-23.png`} alt={'bg'}/>
+                <img src={`https://i.ibb.co/Tg85GM5/testimonial-bg.jpg`} alt={'bg'}/>
 
           <div className={styles.divider}>
           
           <p className={styles.SlideText}>
             " DUbookX delivered my readings very quickly and conveniently within 2 days. The order went through smoothly without any hindrances and 
             I had a great ordering experience at an affordable price! I'll now buy and sell my books from DUbookX for the upcoming semesters! "
-<br></br> <br/><br/>
-      - <span className = {styles.TestiName}>Priyam, SRCC (buyer)</span>
+<br></br> <br/>
+      - <span className = {styles.TestiName}>Priyam (buyer)<br/>SRCC </span>
           </p>
 
 
@@ -78,7 +81,7 @@ Dubookx is now my go-to place for selling as well as buying my college books! "
           className={styles.SlideContainer}
      
             >
-                <img src={`https://i.ibb.co/RzjPcGX/Untitled-design-23.png`} alt={'bg'}/>
+                <img src={`https://i.ibb.co/Tg85GM5/testimonial-bg.jpg`} alt={'bg'}/>
 
           <div className={styles.divider}>
           
@@ -87,8 +90,8 @@ Dubookx is now my go-to place for selling as well as buying my college books! "
             I was worried if I would get a very rough and old edition book. Great help for students in this time of pandemic.
 If there would be any rating system, I would surely give DUbookX a five-star.
 Thanks! "
-<br></br> <br/><br/>
-      - <span className = {styles.TestiName}>Aryaman Malviya SRCC (buyer)</span>
+<br></br> <br/>
+      - <span className = {styles.TestiName}>Aryaman Malviya(buyer) <br/>SRCC </span>
           </p>
 
 

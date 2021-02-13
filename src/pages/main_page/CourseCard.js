@@ -17,22 +17,22 @@ class CourseCard extends Component{
         let message;
         if(this.props.name==="BaHEco"){
             imagee=BaHEco
-            message="BA(Hon)-Eco"
+            message="BA(Hons) Eco"
         }else if(this.props.name==="BaHEng"){
             imagee=BaHEng
-            message="BA(Hon)-Eng"
+            message="BA(Hons) Eng"
         }
         else if(this.props.name==="BaHPsy"){
             imagee=BaHPsy
-            message="BA(Hon)-Psy"
+            message="BA(Hons) Psy"
         }
         else if(this.props.name==="BcomH"){
             imagee=BcomH
-            message="B.Com(Hon)"
+            message="B.Com(Hons.)"
         }
         else if(this.props.name==="BcomP"){
             imagee=BcomP
-            message="B.Com(Pro)"
+            message="B.Com(Prog)"
         }
         else if(this.props.name==="Bms"){
             imagee=Bms
@@ -40,7 +40,7 @@ class CourseCard extends Component{
         }
         else if(this.props.name==="BscHMat"){
             imagee=BscHMat
-            message="B.Sc(Hon)-Mat"
+            message="B.Sc(Hons) Maths"
         }
         else if(this.props.name==="Shivdas"){
             imagee=Shivdas

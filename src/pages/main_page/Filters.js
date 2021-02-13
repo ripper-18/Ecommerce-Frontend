@@ -25,7 +25,7 @@ class Filters extends Component {
         return (
             <Container className="pl-md-0 center">
                 <div className={cx(styles.heading, 'mt-5 m-0 mb-md-4')}>
-                    <span>Filters</span>
+                    <span>Categories </span>
                     <div className={cx(styles.resetContainer, ' mb-md-5 pb-4')}>
                         <div className="col-sm-12 p-0">
                             <button

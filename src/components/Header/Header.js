@@ -61,7 +61,7 @@ class Header extends Component{
         this.submitSearch2()}} src={logo} alt="DUBookX"/></Link> 
 
             <div className={styles.header_search}>
-                <input className={styles.header_search_input} placeholder="Enter Your Favorite Book" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)}
+                <input className={styles.header_search_input} placeholder="Search for Books" value={this.state.keyword} onChange={(e)=>this.setKeyword(e)}
                 onKeyPress={event => {
                     if (event.key === 'Enter') {
                       this.submitSearch()
