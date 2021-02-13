@@ -135,20 +135,20 @@ class Product extends Component {
             <h4> Publisher: {this.props.book.publisher}</h4>
 
 
-<br/>
-<br/>
-<br/>
-              
-            <div className={styles.Buttons_Container}>
-            <a href="https://linktr.ee/DUbookX">
-              <button
-                className={styles["ac-btn"]}
+            <br />
+            <br />
+            <br />
 
-              >
-                Want a second hand option for this book?
+            {this.props.book.hand == 1 ? <div className={styles.Buttons_Container}>
+              <a href="https://linktr.ee/DUbookX">
+                <button
+                  className={styles["ac-btn"]}
+
+                >
+                  Want a second hand option for this book?
               </button>
               </a>
-            </div>
+            </div> : <div />}
 
 
           </Col>
