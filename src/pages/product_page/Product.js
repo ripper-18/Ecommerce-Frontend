@@ -53,6 +53,19 @@ class Product extends Component {
       disabled = true
     }
 
+    const course_codes = {
+      "BaHEco": "Eco Hons",
+      "BaHEng": "Eng Hons",
+      "BaHPsy": "Psy Hons",
+      "BcomH": "BCom Hons",
+      "BcomP": "BCom P",
+      "Bms": "BMS",
+      "BscHMat": "Maths Hons",
+      "Shivdas": "Shivdas",
+
+
+    }
+
     return (
       <>
         <Row className={styles['product-container']} style={{ overflowX: "hidden" }}>
@@ -88,7 +101,7 @@ class Product extends Component {
             <div className={styles.Small_info}>
               <span className={styles.Small_info_indi}> Edition:  {this.props.book.edition} </span>
               <span className={styles.Small_info_indi}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>
-              <span className={styles.Small_info_indi}>Course: {this.props.book.course}</span>
+              <span className={styles.Small_info_indi}>Course: {course_codes[this.props.book.course]}</span>
               <span className={styles.Small_info_indi}>Year: {this.props.book.year}</span>
               <span className={styles.Small_info_indi}>Condition: {this.props.book.hand == 1 ? "New" : "Second Hand"}</span>
             </div>

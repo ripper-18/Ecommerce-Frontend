@@ -109,6 +109,13 @@ class MainPage extends Component {
 
 
                 <div className={styles.containerWrap}>
+                    {(this.props.match.params.course === 'BaHPsy' || this.props.match.params.course === 'BaHEco' || this.props.match.params.course === 'BscHMat') ?
+                        <div>
+                            <img src="" alt="No image available" width="600px" height="400px"></img>
+
+                        </div> : <div />
+                    }
+
 
                     <Row>
 
