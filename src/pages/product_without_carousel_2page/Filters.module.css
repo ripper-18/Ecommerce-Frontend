@@ -1,0 +1,40 @@
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 52px;
+}
+
+.heading span{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.sel label{
+    font-size: 1.15rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+.resetContainer button {
+    height: 45px;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+}
+
+.resetContainer button:hover {
+    color: #fff !important;
+}
+
+.reset-button {
+    background: white;
+}
+
+.reset-button:hover {
+    background: #273c75;
+    box-shadow: -5px 5px 5px #e8e8e8,
+        5px -5px 5px #ffffff;
+}

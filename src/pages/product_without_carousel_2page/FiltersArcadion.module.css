@@ -1,0 +1,71 @@
+.chevronDownToggle {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    bottom: 5%;
+    right: 5px;
+    transition: transform 0.5s ease-in-out;
+    transform: rotateX(0deg);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.card {
+    border: none;
+    margin-bottom: 0;
+    background: transparent;
+}
+.cardHeader {
+    margin-bottom: 0 !important;
+    background: transparent;
+border: none;
+    
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cardHeader span{
+    font-size: 1.15rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+
+.ul {
+    list-style: none;
+    padding-left: 1px;
+}
+.ul li {
+    padding-left: 1px;
+    padding-bottom: 0px;
+}
+.ul li label {
+    display: flex;
+    margin-bottom: 0.1rem;
+}
+.ul li label input {
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c3c2c9;
+    background: #fff;
+    margin-right: 10px;
+    min-width: 16px;
+    min-height: 16px;
+}
+.ul li label p {
+    margin-top: -4px;
+    margin-left: 4px;
+}
+.resetContainer button {
+    height: 52px;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+    border: 2px solid #d8173c;
+}
+.resetContainer button:hover {
+    color: #fff !important;
+}

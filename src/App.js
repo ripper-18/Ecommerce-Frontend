@@ -76,6 +76,10 @@ function App(props) {
         import('./pages/seller_registration_page/AdminInfo')
     )
 
+    // const PWCBeta = React.lazy(() => (
+    //     import('./pages/pwc_beta/MainPage')
+    // ))
+
     useEffect(() => {
 
         // console.log(props.loader.isLoading)
