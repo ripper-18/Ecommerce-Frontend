@@ -4,6 +4,92 @@
     flex-wrap: wrap;
 }
 
+.background-carousel {
+    background: url(https://i.ibb.co/kympBHS/Copy-of-Untitled-2.png);
+}
+
+.containerWrap {
+    padding-left: 30px;
+}
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+}
+
+
+.sideFilter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translateX(-100%);
+    width: 90vw;
+    background-color: #fff;
+    font-size: 1.1rem;
+    border-top: 0.5px solid #444;
+    min-height: 100vh;
+    transition: transform 0.5s ease-in-out;
+    overflow: auto;
+}
+
+.sideFilterOpen {
+    transform: translate(0);
+}
+
+.courses_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 30px;
+
+
+
+}
+
+.main_carousel {
+    margin: 260px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+}
+
+
+
+@media (max-width:1150px) {
+    .main_carousel {
+        margin: 100px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width:900px) {
+    .main_carousel {
+        margin: 50px;
+
+    }
+}
+
+@media (max-width:400px) {
+    .main_carousel {
+        margin: 20px;
+
+    }
+
+
+}
+
+@media screen and (min-width: 769px) {
+    .containerWrap {
+        background: #fff;
+
+    }
+
+
+}
+
 
 @media (max-width:600px){
     .dabba{

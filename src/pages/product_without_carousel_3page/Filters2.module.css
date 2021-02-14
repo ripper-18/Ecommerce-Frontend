@@ -1,0 +1,33 @@
+.heading {
+    display: flex;
+}
+
+.heading h2 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+
+
+.resetContainer button {
+    height: 52px;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: 600;
+    background: #fff;
+    color: #000;
+}
+
+.resetContainer button:hover {
+    color: #fff !important;
+}
+
+.reset-button {
+    background: white;
+}
+
+.reset-button:hover {
+    background: #273c75;
+    box-shadow: -5px 5px 5px #e8e8e8,
+        5px -5px 5px #ffffff;
+}
