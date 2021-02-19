@@ -8,13 +8,12 @@ function MainCarousel() {
       <React.Fragment>
       <h1> Testimonials </h1>
         <Carousel 
-        showThumbs={false}
+        showArrows={true}
         infiniteLoop={true}
-        showIndicators={false}
+        showThumbs={false}
         showStatus={false}
-        autoPlay
-        interval={10000}
-        stopOnHover={true}
+        autoPlay={true}
+        interval={6100}
         >
              <div
           className={styles.SlideContainer}

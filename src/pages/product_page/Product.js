@@ -53,19 +53,6 @@ class Product extends Component {
       disabled = true
     }
 
-    const course_codes = {
-      "BaHEco": "Eco Hons",
-      "BaHEng": "Eng Hons",
-      "BaHPsy": "Psy Hons",
-      "BcomH": "BCom Hons",
-      "BcomP": "BCom P",
-      "Bms": "BMS",
-      "BscHMat": "Maths Hons",
-      "Shivdas": "Shivdas",
-
-
-    }
-
     return (
       <>
         <Row className={styles['product-container']} style={{ overflowX: "hidden" }}>
@@ -101,7 +88,7 @@ class Product extends Component {
             <div className={styles.Small_info}>
               <span className={styles.Small_info_indi}> Edition:  {this.props.book.edition} </span>
               <span className={styles.Small_info_indi}>Subject: {(this.props.book.subject).charAt(0).toUpperCase() + (this.props.book.subject).substring(1)}</span>
-              <span className={styles.Small_info_indi}>Course: {course_codes[this.props.book.course]}</span>
+              <span className={styles.Small_info_indi}>Course: {this.props.book.course}</span>
               <span className={styles.Small_info_indi}>Year: {this.props.book.year}</span>
               <span className={styles.Small_info_indi}>Condition: {this.props.book.hand == 1 ? "New" : "Second Hand"}</span>
             </div>
@@ -148,20 +135,19 @@ class Product extends Component {
             <h4> Publisher: {this.props.book.publisher}</h4>
 
 
-            <br />
-            <br />
-            <br />
-
-            {this.props.book.hand == 1 ? <div className={styles.Buttons_Container}>
-              <a href="https://linktr.ee/DUbookX">
-                <button
-                  className={styles["ac-btn"]}
-
-                >
-                  Want a second hand option for this book?
+<br/>
+<br/>
+<br/>
+              
+            <div className={styles.Buttons_Container}>
+            <a href="https://linktr.ee/DUbookX">
+              <button
+                className={styles["ac-btn"]}
+              >
+                Want a second hand option for this book?
               </button>
               </a>
-            </div> : <div />}
+            </div>
 
 
           </Col>

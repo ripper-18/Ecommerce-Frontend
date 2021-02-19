@@ -23,10 +23,12 @@ function MainCarousel() {
         interval={5000}
         stopOnHover={false}
         >
+            
           <div
             className={styles.SlideContainer}>
               <img src={Carousel1} alt={'bg'}/>
           </div>
+
 
           <div
             className={styles.SlideContainer}>
@@ -34,13 +36,13 @@ function MainCarousel() {
           </div>
 
 
+          <a href = "seller_reg">
           <div
             className={styles.SlideContainer}>
 
               <img src={Carousel3} alt={'bg'}/>
-
-
           </div>
+          </a>
 
           <div
             className={styles.SlideContainer}>

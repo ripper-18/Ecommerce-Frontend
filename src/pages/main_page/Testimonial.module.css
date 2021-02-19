@@ -148,37 +148,3 @@ h1 {
     }
 
 }
-
-.pull-quote {
-    position: relative;
-    padding: 2.1rem 3rem 2.1rem 0px;
-}
-
-.pull-quote:before,
-.pull-quote:after {
-    height: 1em;
-    position: absolute;
-    font-size: 10rem;
-    font-family: Arial, Sans-Serif;
-    color: rgba(0, 0, 0, 0.3);
-}
-
-.pull-quote:before {
-    content: "\201C";
-    top: 33px;
-    left: 0;
-}
-
-.pull-quote:after {
-    content: "\201D";
-    bottom: -33px;
-    right: 0;
-}
-
-.pull-quote blockquote {
-    margin: 0;
-}
-
-.pull-quote blockquote:before {
-    content: none;
-}
