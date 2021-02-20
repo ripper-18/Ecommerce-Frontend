@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import styles from './Header.module.css'
+import Headroom from "react-headroom";
 import {Link,withRouter} from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -10,6 +11,7 @@ import { logoutUser } from "../../actions/auth_actions";
 import {showDialog} from '../../actions/dialog_actions'
 import logo from '../../assets/logo2.png'
 import Sidebar from './Sidebar'
+import './headroom.css'
 class Header extends Component{
     state={
         keyword:""
@@ -51,8 +53,13 @@ class Header extends Component{
     render(){
     return (
         <>
-
+         <Headroom style={{
+  transition: 'all 1s ease-in-out',
+  zIndex:"2000"
+}}
+         >
         <div className={styles.header}>
+        
             <Sidebar />
            <Link to="/"><img className={styles.header_logo} onClick={async()=>{await this.setState({
             ...this.state,
@@ -123,7 +130,7 @@ class Header extends Component{
                     <SearchIcon className={styles.header_search_icon} onClick={this.submitSearch}></SearchIcon> 
                 </div>
             </div>
-
+            </Headroom>
         </>
     )}
 }
