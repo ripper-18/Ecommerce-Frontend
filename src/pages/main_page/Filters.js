@@ -25,7 +25,8 @@ class Filters extends Component {
         return (
             <Container className="pl-md-0 center">
                 <div className={cx(styles.heading, 'mt-5 m-0 mb-md-4')}>
-                    <span>Categories </span>
+                    <div style={{ margin: 'auto', textAlign: 'center', fontSize: '18px', fontWeight: 'bold' }}>FILTER BOOKS</div>
+
                     <div className={cx(styles.resetContainer, ' mb-md-5 pb-4')}>
                         <div className="col-sm-12 p-0">
                             <button
@@ -38,6 +39,7 @@ class Filters extends Component {
                         </div>
                     </div>
                 </div>
+                <br></br>
                 <div className={cx(styles.sel, "col-12 col-sm-12 order-sm-12 p-0")}>
                     <label>SORT BY</label>
                     <Select
