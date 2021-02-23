@@ -132,9 +132,7 @@ class MainPage extends Component {
                     <CourseCard name='BscHMat' />
 
                 </div>
-                <div className={styles.testimonial_div}>
-                    <Testimonial></Testimonial>
-                </div>
+                
                 <div className={styles.containerWrap}>
 
                     <Row >
@@ -205,6 +203,9 @@ class MainPage extends Component {
                             />
                         </div>
                     </div>
+                </div>
+                <div className={styles.testimonial_div}>
+                    <Testimonial></Testimonial>
                 </div>
 
             </div >

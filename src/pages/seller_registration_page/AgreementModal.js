@@ -67,13 +67,15 @@ class AgreementModal extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <div>
-                    You have a wide variety of books to choose from so please order carefully. After placing your order please review your order
-                    details and contact us immediately at +91 99538 97446 if a mistake has been made or if you want to cancel your order. 
-                    <br/>
-                    We do not give refunds if you simply change your mind, but we may be able to correct any errors in the order process prior to shipment.
-                    <br/>
-                    If the book you receive is different to what you purchased online, is damaged, or is otherwise not as expected, please contact us immediately on our phone number (+91 99538 97446) or email us at: dubookx@gmail.com to discuss further options. 
-                    <br/>See our <Link to="/terms"> Terms of use </Link> for more information.
+                    WELCOME TO DUbookX<br/>
+If you want to sell your books and get good money for it, this is the perfect platform. These are our terms and conditions to become a seller-
+<br/><br/>
+1.	You will be contacted by DUbookX regarding the price/condition of the book.<br/>
+2.	If your book is sold, it shall be picked up from your given location within 48 hours. During this time period you will be required to pack the book in a small box/bubble wrap/plastic package which should be sealed properly.<br/>
+3.	You will be required to print out and stickthe shipping label which will be mailed to you by DUbookX. <br/>
+4.	The book will be received by the buyer in 3-6 days (average). When the buyer confirms receiving it, you shall be wired the agreed upon amount by your preferred mode of payment.<br/>
+5.	If due to some reason the customer returns the book, you shall get your book back and it will again become available for other buyers.<br/>
+6.	If due to some reason the book you are selling becomes unavailable please inform DUbookX regarding the same.<br/>
 
 
                     </div>
@@ -87,7 +89,7 @@ class AgreementModal extends Component {
                                 required
                                 onChange={this.IsAgreeHandler}
                             />
-                            <p>I hereby agree with all the above terms and Conditions and will follow the COde and Conduct of the Company </p>
+                            <p>I hereby agree with all the above terms and Conditions and will follow the Code and Conduct of the Company </p>
                             {this.state.isAgree}
                             <button
 

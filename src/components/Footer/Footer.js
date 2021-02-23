@@ -69,7 +69,7 @@ const ColumnThree = () => (
         <li> Terms</li>
       </Link>
       <Link to="/returns">
-        <li> Returns</li>
+        <li> Returns & Cancellation</li>
       </Link>
     </ul>
   </div>
