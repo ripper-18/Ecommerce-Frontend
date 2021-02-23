@@ -1,6 +1,7 @@
 .heading {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-content: center;
     height: 52px;
 }
