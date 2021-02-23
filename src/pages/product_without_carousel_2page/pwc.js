@@ -45,6 +45,7 @@ class MainPage extends Component {
 
 
     componentDidMount = async () => {
+
         if (window.innerWidth < 1150) {
             this.setState({
                 ...this.state,
@@ -63,7 +64,7 @@ class MainPage extends Component {
 
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-        // console.log(token)//123
+
         if (token === null) {
             token = ''
         }
@@ -72,24 +73,23 @@ class MainPage extends Component {
 
     }
     componentDidUpdate = async (prevProps, prevState) => {
-        console.log(prevState)
-        console.log(this.state);
+
         if (prevState.filters !== this.state.filters) {
             const query = new URLSearchParams(this.props.location.search);
             let token = query.get('search')
-            // console.log(token)//123
+
             if (token === null) {
                 token = ''
             }
             this.props.getBooksByKeyword(this.state.filters, token)
 
-            //window.location.reload()
+
         }
     }
 
     setFilters = (key, value, insert) => {
         if (insert) {
-            console.log(value)
+
             this.setState({
                 ...this.state,
                 filters: {
@@ -136,7 +136,7 @@ class MainPage extends Component {
         let { books } = this.props.book
         let { sortValue } = this.state;
         let display = books;
-        console.log(display)
+
         if (sortValue === "0") {
             display = books.sort((a, b) => a._id - b._id);
         } else if (sortValue === "1") {
@@ -157,6 +157,7 @@ class MainPage extends Component {
 
 
                 <div className={styles.containerWrap}>
+
 
                     <Row>
 
