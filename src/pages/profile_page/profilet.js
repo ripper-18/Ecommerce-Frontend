@@ -98,7 +98,7 @@ class Profile extends Component {
             x--;
         }
         return ( <div style={{overflowX:"hidden"}}>
-            <br/> <br/> <div className = "card_container" >
+            <div className = "card_container" >
             <div className = 'card' style={{marginBottom:"10px",margin:"auto"}} >
             <Tabs defaultActiveKey = "overview"
              id = "uncontrolled-tab-example" 

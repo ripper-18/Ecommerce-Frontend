@@ -1,6 +1,7 @@
 import React, { useEffect, Component } from 'react'
 
 import Filters from './Filters'
+import Filters2 from './Filters2'
 import styles2 from '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
@@ -12,9 +13,12 @@ import styles from './MainPage.module.css'
 import { withRouter } from 'react-router-dom'
 import { getBooksByKeyword } from '../../actions/book_actions'
 import { addToCart, removeFromCart } from '../../actions/cart_actions'
-
+import filterIcon from '../../assets/filter_icon.svg'
 class MainPage extends Component {
     state = {
+        isSideFilterOpen: false,
+        size: 0,
+        show_all: false,
         filters: {
             year: [],
             course: [],
@@ -22,11 +26,45 @@ class MainPage extends Component {
         },
         sortValue: 0
     };
+
+    updateDimensions = () => {
+        if (window.innerWidth < 1150) {
+            this.setState({
+                ...this.state,
+                size: 3
+            })
+        }
+        else {
+            this.setState({
+                ...this.state,
+                size: 2
+            })
+        }
+    };
+
+
+
     componentDidMount = async () => {
-        console.log(this.props)
+
+        if (window.innerWidth < 1150) {
+            this.setState({
+                ...this.state,
+                size: 3,
+
+            })
+        }
+        else {
+            this.setState({
+                ...this.state,
+                size: 2,
+
+            })
+        }
+        window.addEventListener('resize', this.updateDimensions);
+
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-        // console.log(token)//123
+
         if (token === null) {
             token = ''
         }
@@ -34,25 +72,24 @@ class MainPage extends Component {
         this.props.getBooksByKeyword(this.state.filters, token)
 
     }
-    componentDidUpdate = async (prevProps,prevState) => {
-        console.log(prevState)
-        console.log(this.state);
+    componentDidUpdate = async (prevProps, prevState) => {
+
         if (prevState.filters !== this.state.filters) {
             const query = new URLSearchParams(this.props.location.search);
             let token = query.get('search')
-            // console.log(token)//123
+
             if (token === null) {
                 token = ''
             }
             this.props.getBooksByKeyword(this.state.filters, token)
 
-            //window.location.reload()
+
         }
     }
 
     setFilters = (key, value, insert) => {
         if (insert) {
-            console.log(value)
+
             this.setState({
                 ...this.state,
                 filters: {
@@ -80,13 +117,26 @@ class MainPage extends Component {
         });
     };
 
+    handleSideFilterOpen = () => {
+        document.body.style.overflow = "hidden";
+        this.setState({
+            isSideFilterOpen: true,
+        });
+    };
+    handleSideFilterClose = () => {
+        document.body.style.overflow = "initial";
+        this.setState({
+            isSideFilterOpen: false,
+        });
+    };
+
 
     render() {
 
         let { books } = this.props.book
         let { sortValue } = this.state;
         let display = books;
-        console.log(display)
+
         if (sortValue === "0") {
             display = books.sort((a, b) => a._id - b._id);
         } else if (sortValue === "1") {
@@ -101,18 +151,19 @@ class MainPage extends Component {
         }
         display = books.filter((b) => b.isLive === true)
 
-        
+
         return (
             <div>
 
 
                 <div className={styles.containerWrap}>
 
+
                     <Row>
 
                         <Col
                             sm={12}
-                            md={2}
+                            md={this.state.size}
                             className="d-none d-md-block px-4 pl-md-2"
                             style={{ borderRight: "1px solid #edebef" }}
                         >
@@ -122,7 +173,7 @@ class MainPage extends Component {
                         </Col>
 
                         <Col
-                            className="bg-white" sm={12} md={10}>
+                            className="bg-white" sm={12} md={this.state.size === 2 ? 10 : 9}>
                             <br></br>
                             <div className={(styles.dabba)}>
 
@@ -132,11 +183,25 @@ class MainPage extends Component {
 
                                 </div>
 
-                                
+
                             </div>
 
 
                             <div className="main">
+                                <div className={cx(styles.filterSideNav, " d-md-none py-1 ")}>
+                                    <span style={{ fontSize: "20px", cursor: "pointer" }} onClick={this.handleSideFilterOpen}>FILTERS</span>
+                                    <button
+                                        className={styles.filterSideNavBtn}
+                                        onClick={this.handleSideFilterOpen}
+                                    >
+                                        <div
+                                            className={styles.filterIcon}
+                                            style={{
+                                                backgroundImage: `url(${filterIcon})`,
+                                            }}
+                                        />
+                                    </button>
+                                </div>
                                 <Row className={styles2.products_page}>
 
                                     <div className={styles2.all_products} style={{ justifyContent: "center" }}>
@@ -161,6 +226,53 @@ class MainPage extends Component {
                             </div>
                         </Col>
                     </Row>
+
+
+
+
+
+                    <div
+                        className={cx(styles.sideFilter, {
+                            [styles.sideFilterOpen]: this.state.isSideFilterOpen,
+                        })}
+                    >
+                        <div
+                            className="col-12"
+                            style={{ position: "relative", top: "50px", background: "2mm solid black" }}
+                        >
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: "10px",
+                                    right: "10px",
+                                }}
+                            >
+                                <button
+                                    style={{
+                                        background: "transparent",
+                                        border: "none",
+                                    }}
+                                    onClick={this.handleSideFilterClose}
+                                >
+                                    <div
+                                        style={{
+                                            backgroundImage: `url(${cross})`,
+                                            height: "32px",
+                                            width: "32px",
+                                        }}
+                                    />
+                                </button>
+                            </div>
+                            <Filters2
+                                setSortValue={this.setSortValue}
+                                setFilters={this.setFilters}
+                            />
+                        </div>
+                    </div>
+
+
+
+
 
                 </div>
 

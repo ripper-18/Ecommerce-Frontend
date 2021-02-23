@@ -88,7 +88,7 @@ function App(props) {
     return (
         <BrowserRouter>
 
-            <StickyContainer>
+           
                 <div className="App">
                     <Suspense
                         fallback={
@@ -98,20 +98,8 @@ function App(props) {
                         }
 
                     >
-                        <Sticky>
-                            {({
-                                style,
-                                isSticky,
-
-                                // the following are also available but unused in this example
-
-                            }) => (
-                                <div style={{ ...style, width: "100%", zIndex: 20, display: props.loader.isLoading ? 'none' : 'initial' }}>
-                                    <Header />
-                                </div>
-
-                            )}
-                        </Sticky>
+                         <Header />
+                               
 
                         <main style={{ minHeight: "60vh" }}>
                             {
@@ -179,7 +167,7 @@ function App(props) {
                     </Modal>
 
                 </div>
-            </StickyContainer>
+            
 
         </BrowserRouter>
     );
