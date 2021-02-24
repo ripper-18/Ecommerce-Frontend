@@ -75,6 +75,9 @@ function App(props) {
     const AdminSiteInfoPage = React.lazy(() =>
         import('./pages/seller_registration_page/AdminInfo')
     )
+    const ShippingPAGE=React.lazy(()=>
+      import('./pages/shipping_page/Shipping')
+    )
 
     // const PWCBeta = React.lazy(() => (
     //     import('./pages/pwc_beta/MainPage')
@@ -126,6 +129,7 @@ function App(props) {
                                             <Route path='/category/:course' exact component={PWC3} />
                                             <Route path='/about' exact component={AboutUsPage} />
                                             <Route path='/admin_site_info' exact component={AdminSiteInfoPage} />
+                                            <Route path='/shipping' exact component={ShippingPAGE}/>
 
                                             <PrivateRoute path="/order" exact component={OrderPage} />
                                             <PrivateRoute path="/profile" exact component={ProfilePage} />

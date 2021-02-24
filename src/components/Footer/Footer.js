@@ -71,6 +71,9 @@ const ColumnThree = () => (
       <Link to="/returns">
         <li> Returns & Cancellation</li>
       </Link>
+      <Link to="/shipping">
+        <li> Shipping Policy</li>
+      </Link>
     </ul>
   </div>
 );
