@@ -55,11 +55,13 @@
 }
 
 .label {
-    font-family: 'Carter One', cursive;
+    font-family: 'Noto Sans', sans-serif;
+
+
     font-size: 22px;
     letter-spacing: 1px;
     font-weight: 300;
-    color: #273c75;
+    color: #272727;
 }
 
 @media(max-width:420px) {

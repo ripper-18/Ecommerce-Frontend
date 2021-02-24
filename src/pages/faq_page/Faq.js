@@ -91,14 +91,6 @@ const Faq = () => {
                     Once the book has been purchased, it will be delivered to the buyer within 2-7 business days. Once the buyer verifies the receipt of the book, the amount will be remitted through the preferred mode of payment to the seller. If the seller fails to receive their money they can contact us at dubookx@gmail.com.   </p>
                 </div>
                 <div className={styles.item}>
-                    <div onClick={() => toggleCollapse(7)} className={styles.itemHeader}>
-                        <h1>How do I cancel my subscription?	</h1>
-                    </div>
-                    <p className={isCollapseOpen[7] ? styles.itemBodyOpen : styles.itemBodyClose}>
-                        Please contact us on 7683005200 or email info@mymm.in for further details.
-                    </p>
-                </div>
-                <div className={styles.item}>
                     <div onClick={() => toggleCollapse(8)} className={styles.itemHeader}>
                         <h1>As a seller, how much money will I get in return for selling my second hand books?	</h1>
                     </div>
