@@ -96,7 +96,7 @@ class OrderPage extends Component {
                     }
                 })
                 .catch((err) => {
-                    console.log(err);
+
                     this.props.showDialog("Your order could not be placed");
                 });
         }

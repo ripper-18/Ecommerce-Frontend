@@ -1,6 +1,6 @@
-import React,{Component} from 'react'
-import {  Container, Card } from 'react-bootstrap';
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { Container, Card } from 'react-bootstrap';
+import { connect } from 'react-redux'
 import Select from "react-select";
 import styles from './Filters2.module.css'
 import FilterAccordion from "./FiltersArcadion2";
@@ -14,54 +14,55 @@ const options = [
 ];
 class Filters extends Component {
     handleCheck = (e) => {
-        // console.log(e.target.checked);
+
 
         const key = e.target.value.split(":")[0];
         const value = e.target.value.split(":")[1];
-        console.log(value)
+
         this.props.setFilters(key, value, e.target.checked);
     };
-    render(){
-    return (
-        <Container className="pl-md-0 center">
-            <div className={cx(styles.heading,'mt-5 m-0 mb-md-4')}>
-                <h2>Filter Books</h2>
-            </div>
-            <div className="col-12 col-sm-12 order-sm-12 p-0">
-                <label>Sort By</label>
-                <Select
-                    theme={(theme) => ({
-                        ...theme,
-                        borderRadius: 0,
-                        colors: {
-                            ...theme.colors,
-                            primary25: "#f5f5f5",
-                            primary50: "#f5f5f5",
-                            primary: "#273c75",
-                        },
-                    })}
-                    onChange={(e) => this.props.setSortValue(e.value)}
-                    options={options}
-                />
-            </div>
-            <div>
-                <FilterAccordion setFilters={this.props.setFilters} />
-            </div>
-            <div className={cx(styles.resetContainer,' mb-md-5 pb-4')}>
-                <div className="col-sm-12 p-0">
-                    <button
-                        onClick={() => window.location.reload()}
-                        className="btn btn-lg btn-outline-danger w-100 reset-button"
-                        style={{borderColor:"#273c75"}}
-                    >
-                        Reset
-                        </button>
+    render() {
+        return (
+            <Container className="pl-md-0 center">
+                <div className={cx(styles.heading, 'mt-5 m-0 mb-md-4')}>
+                    <h2>Filter Books</h2>
                 </div>
-            </div>
-            
-        </Container>
-      
-    )}
+                <div className="col-12 col-sm-12 order-sm-12 p-0">
+                    <label>Sort By</label>
+                    <Select
+                        theme={(theme) => ({
+                            ...theme,
+                            borderRadius: 0,
+                            colors: {
+                                ...theme.colors,
+                                primary25: "#f5f5f5",
+                                primary50: "#f5f5f5",
+                                primary: "#273c75",
+                            },
+                        })}
+                        onChange={(e) => this.props.setSortValue(e.value)}
+                        options={options}
+                    />
+                </div>
+                <div>
+                    <FilterAccordion setFilters={this.props.setFilters} />
+                </div>
+                <div className={cx(styles.resetContainer, ' mb-md-5 pb-4')}>
+                    <div className="col-sm-12 p-0">
+                        <button
+                            onClick={() => window.location.reload()}
+                            className="btn btn-lg btn-outline-danger w-100 reset-button"
+                            style={{ borderColor: "#273c75" }}
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+            </Container>
+
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({

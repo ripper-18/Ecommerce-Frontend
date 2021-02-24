@@ -25,7 +25,7 @@ class Products extends Component {
 
     componentDidMount() {
         // this.props.logoutUser(this.props.history)
-        
+
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
         // console.log(token)//123
@@ -38,7 +38,7 @@ class Products extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log(prevProps);
+
         if (prevProps.filters !== this.props.filters) {
             const query = new URLSearchParams(this.props.location.search);
             let token = query.get('search')
@@ -46,7 +46,7 @@ class Products extends Component {
             if (token === null) {
                 token = ''
             }
-            console.log(this.props.filters)
+
             this.props.getBooksByKeyword(this.props.filters, token);
         }
 

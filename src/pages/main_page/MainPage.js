@@ -33,7 +33,7 @@ class MainPage extends Component {
 
     setFilters = (key, value, insert) => {
         if (insert) {
-            console.log(value)
+
             this.setState({
                 ...this.state,
                 filters: {
@@ -122,7 +122,7 @@ class MainPage extends Component {
                 <h1 style={{ textAlign: 'center' }} > Find Books By Courses</h1>
                 <div className={styles.courses_div} >
 
-                <CourseCard name='Bms' />
+                    <CourseCard name='Bms' />
                     <CourseCard name='BcomH' />
                     <CourseCard name='BcomP' />
                     <CourseCard name='BaHEco' />
@@ -132,7 +132,7 @@ class MainPage extends Component {
                     <CourseCard name='BscHMat' />
 
                 </div>
-                
+
                 <div className={styles.containerWrap}>
 
                     <Row >
