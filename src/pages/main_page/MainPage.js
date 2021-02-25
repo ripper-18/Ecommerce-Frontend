@@ -5,8 +5,6 @@ import Filters2 from './Filters2'
 import Products from './Products'
 import Testimonial from './Testimonial'
 import { Row, Col, Container } from 'react-bootstrap';
-import { connect } from 'react-redux'
-import { logoutUser } from '../../actions/auth_actions'
 import cross from '../../assets/cross.svg'
 import cx from "classnames"
 import styles from './MainPage.module.css'

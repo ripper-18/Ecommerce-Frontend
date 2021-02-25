@@ -5,9 +5,6 @@ import styles2 from '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import { logoutUser } from '../../actions/auth_actions'
-import cross from '../../assets/cross.svg'
-import cx from "classnames"
 import styles from './pwc.module.css'
 import {withRouter} from 'react-router-dom'
 import {getBooksByKeyword} from '../../actions/book_actions'
@@ -24,8 +21,7 @@ class MainPage extends Component {
         sortValue:0
     };
     componentDidMount=async()=>{
-        console.log(this.props)
-       
+     
         await this.setState({
             ...this.state,
             filters: {
@@ -34,7 +30,7 @@ class MainPage extends Component {
                 year: [...this.state.filters["year"], this.props.match.params.year],
             },
         });
-        console.log(this.state.filters)
+        window.scrollTo(0,0);
         await this.props.getBooksByKeyword(this.state.filters,'')
         
     }
@@ -48,7 +44,7 @@ class MainPage extends Component {
                     year: [...this.state.filters["year"], this.props.match.params.year],
                 },
             });
-            console.log(this.state.filters)
+           
             this.props.getBooksByKeyword(this.state.filters,'')
     
         window.location.reload()
@@ -70,7 +66,7 @@ class MainPage extends Component {
         let {books}=this.props.book
         let { sortValue } = this.state;
         let display = books;
-        //console.log(display)
+        
         if (sortValue === "0") {
             display = books.sort((a, b) => a._id - b._id);
         } else if (sortValue === "1") {

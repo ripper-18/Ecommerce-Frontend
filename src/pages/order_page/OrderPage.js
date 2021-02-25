@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import styles from './OrderPage.module.css'
-import { Row, Col } from 'react-bootstrap';
 import { placeDirectOrder } from '../../actions/order_actions'
 import { clearCart } from '../../actions/cart_actions'
 import { showDialog } from "../../actions/dialog_actions";
@@ -32,14 +31,11 @@ class OrderPage extends Component {
     };
 
     displayRazorpay = async (data) => {
-        //console.log(data);
         const res = await loadScript(
             "https://checkout.razorpay.com/v1/checkout.js"
         );
 
-        //  console.log(res)
         if (!res) {
-            // console.log(data)
             alert("Razorpay failed to load. Are you online?");
             return;
         }
@@ -51,7 +47,7 @@ class OrderPage extends Component {
             currency: "INR",//backend
             amount: data.order.finalAmount,//backend
             order_id: data.order.razorpayOrderId,
-            name: "DUBookex",
+            name: "DUbookX",
             description: "Confirm payment to place order",
             handler: (response) => {
                 this.onPaymentComplete(response);
@@ -67,7 +63,6 @@ class OrderPage extends Component {
     };
 
     stagePayment = () => {
-        //console.log(this.props)
         if (this.state.mode === "") {
             this.props.showDialog("Please select a payment mode");
         } else {

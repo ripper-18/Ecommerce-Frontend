@@ -5,11 +5,10 @@ import styles from "./FiltersArcadion2.module.css";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ChevronIcon from "../../assets/main_page/chevron_down.svg";
-// import { connect } from "react-redux";
+
 
 class FilterAccordion extends Component {
     handleCheck = (e) => {
-        // console.log(e.target.checked);
 
         const key = e.target.value.split(":")[0];
         const value = e.target.value.split(":")[1];

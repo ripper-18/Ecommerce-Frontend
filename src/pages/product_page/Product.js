@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './Product.module.css';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -39,9 +39,7 @@ class Product extends Component {
     if (this.props.cart.bookCart.filter((item) => item._id === this.props.book._id).length === this.props.book.countInStock) {
       this.props.showDialog('Maximum no of items in stock reached!')
     }
-
-
-
+    window.scrollTo(0,0);
   }
 
 

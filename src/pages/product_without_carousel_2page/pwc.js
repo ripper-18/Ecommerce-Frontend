@@ -6,7 +6,6 @@ import styles2 from '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import { logoutUser } from '../../actions/auth_actions'
 import cross from '../../assets/cross.svg'
 import cx from "classnames"
 import styles from './MainPage.module.css'
@@ -61,7 +60,7 @@ class MainPage extends Component {
             })
         }
         window.addEventListener('resize', this.updateDimensions);
-
+        window.scrollTo(0,0);
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
 

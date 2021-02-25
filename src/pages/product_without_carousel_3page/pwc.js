@@ -6,7 +6,6 @@ import styles2 from '../main_page/Products.module.css'
 import ProductItem from '../../pages/main_page/ProductItem'
 import { Row, Col, Container } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import { logoutUser } from '../../actions/auth_actions'
 import cross from '../../assets/cross.svg'
 import cx from "classnames"
 import styles from './pwc.module.css'
@@ -45,7 +44,7 @@ class MainPage extends Component {
 
 
     componentDidMount = async () => {
-        console.log('Hello');
+       
         if (window.innerWidth < 1150) {
             this.setState({
                 ...this.state,
@@ -61,14 +60,13 @@ class MainPage extends Component {
             })
         }
         window.addEventListener('resize', this.updateDimensions);
-
+        window.scrollTo(0,0);
 
         await this.setState({
             ...this.state,
             filters: {
                 ...this.state.filters,
                 course: [...this.state.filters["course"], this.props.match.params.course],
-                // year: [...this.state.filters["year"], this.props.match.params.year],
             },
         });
 
@@ -77,18 +75,7 @@ class MainPage extends Component {
     }
     componentDidUpdate = async (prevProps, prevState) => {
         if (prevProps.match.params.course !== this.props.match.params.course || prevState.filters !== this.state.filters) {
-            // await this.setState({
-            //     ...this.state,
-            //     filters: {
-            //         ...this.state.filters,
-            //         course: [...this.state.filters["course"], this.props.match.params.course],
-            //         // year: [...this.state.filters["year"], this.props.match.params.year],
-            //     },
-            // });
-
             this.props.getBooksByKeyword(this.state.filters, '')
-
-
         }
     }
 

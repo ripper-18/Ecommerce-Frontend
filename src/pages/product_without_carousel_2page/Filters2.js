@@ -14,11 +14,9 @@ const options = [
 ];
 class Filters extends Component {
     handleCheck = (e) => {
-        // console.log(e.target.checked);
 
         const key = e.target.value.split(":")[0];
         const value = e.target.value.split(":")[1];
-        console.log(value)
         this.props.setFilters(key, value, e.target.checked);
     };
     render(){

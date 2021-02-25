@@ -6,7 +6,6 @@ import styles from './SellerReg.module.css'
 import logo from '../../assets/DU.png'
 import { registerSeller } from "../../actions/auth_actions";
 import { showDialog } from '../../actions/dialog_actions';
-import { DumpingDoodle } from "react-open-doodles";
 import AgreementModal from './AgreementModal';
 
 
@@ -154,8 +153,6 @@ class SellerReg extends Component {
                     <h1>Become a Seller</h1>
                 </div>
 
-                {/* <DumpingDoodle />
-                <DumpingDoodle accent="#ff0083" ink="#484848" /> */}
                 <div className={styles.form_decor}>
 
 
@@ -182,7 +179,7 @@ class SellerReg extends Component {
                             </label>
                             <label ><span className={styles.label_head}>Mobile Number:</span><br></br>
                                 <input
-
+                                    type="text"
                                     placeholder="Enter Your Contact Number"
                                     className="form-control"
                                     required value={this.state.phone}
