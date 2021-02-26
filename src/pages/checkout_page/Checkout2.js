@@ -23,7 +23,6 @@ class Checkout extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.cart)
         this.setState({
             ...this.state,
             selectedCartValue: this.getCount(this.props.cart),
@@ -44,7 +43,6 @@ class Checkout extends Component {
         fetch(config.api + `delivery/rates`, requestOptions)
             .then((response) => response.json())
             .then((res) => {
-                console.log(res)
                 this.setState({
                     ...this.state,
                     rates: res
@@ -106,7 +104,6 @@ class Checkout extends Component {
             }
         }
 
-        console.log(this.state.finalAddress)
     };
     setModalOpen = (value) => {
         this.setState({

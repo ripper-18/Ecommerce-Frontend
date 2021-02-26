@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import styles from './Product.module.css';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -39,14 +39,12 @@ class Product extends Component {
     if (this.props.cart.bookCart.filter((item) => item._id === this.props.book._id).length === this.props.book.countInStock) {
       this.props.showDialog('Maximum no of items in stock reached!')
     }
-
-    console.log(this.props.suggest.length)
-
+    window.scrollTo(0,0);
   }
 
 
   render() {
-    console.log(this.props.book)
+
     let disabled = false
     let quantity = this.props.cart.bookCart.filter((item) => item._id === this.props.book._id).length
     if (quantity === this.props.book.countInStock) {
@@ -135,16 +133,16 @@ class Product extends Component {
             <h4> Publisher: {this.props.book.publisher}</h4>
 
 
-<br/>
-<br/>
-<br/>
-              
+            <br />
+            <br />
+            <br />
+
             <div className={styles.Buttons_Container}>
-            <a href="https://linktr.ee/DUbookX">
-              <button
-                className={styles["ac-btn"]}
-              >
-                Want a second hand option for this book?
+              <a href="https://linktr.ee/DUbookX">
+                <button
+                  className={styles["ac-btn"]}
+                >
+                  Want a second hand option for this book?
               </button>
               </a>
             </div>

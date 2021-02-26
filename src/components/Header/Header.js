@@ -54,8 +54,8 @@ class Header extends Component {
         return (
             <>
                 <Headroom style={{
-                    transition: 'all 1s ease-in-out',
-                    zIndex: "2000"
+                    transition: 'all 0.5s ease-in-out',
+                    zIndex: "200"
                 }}
                 >
                     <div className={styles.header}>

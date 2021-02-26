@@ -34,7 +34,7 @@ const About = () => {
       <div className="container">
         <div className={styles.about2}>
           <div>
-          <h1>THIS IS DUBookX</h1>
+          <h1>THIS IS DUbookX</h1>
             <p>
             <br></br>
             <br></br>

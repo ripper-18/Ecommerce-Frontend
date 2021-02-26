@@ -25,21 +25,7 @@ class AgreementModal extends Component {
 
     };
 
-    // IsAgreeHandlerr = () => {
-    //     let t = this.state.isAgree;
-
-    //     if (t) t = false;
-    //     else t = true;
-
-
-
-
-    //     this.setState({
-    //         ...this.state,
-    //         isAgree: t
-    //     })
-    // }
-
+ 
     becomeSellerHandler = () => {
 
         if (this.state.isAgree) {

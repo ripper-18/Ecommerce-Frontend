@@ -256,10 +256,18 @@ class Login extends Component {
                                                         this
                                                             .handleGoogleLogin
                                                     }
-                                                    onFailure={() =>
-                                                        this.props.showDialog(
-                                                            `Google Login failed`
-                                                        )
+                                                    onFailure={(e) => {
+
+                                                        if (e.error !== "idpiframe_initialization_failed") {
+                                                            this.props.showDialog(
+                                                                `Google Login failed`
+                                                            )
+
+                                                        }
+
+
+                                                    }
+
                                                     }
                                                     cookiePolicy={
                                                         "single_host_origin"

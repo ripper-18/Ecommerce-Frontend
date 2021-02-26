@@ -12,17 +12,11 @@ class AddressModal extends Component {
     };
 
     handleEmail = () => {
-     //   console.log(this.state)
         this.props.forgotPassword(this.state);
         this.props.setModalOpen(false);
       
     };
 
-       componentDidMount(){
-        
-       }
-    
-    
 
     render() {
         return (

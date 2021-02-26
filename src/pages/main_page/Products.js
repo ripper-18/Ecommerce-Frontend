@@ -10,7 +10,7 @@ import { addToCart, removeFromCart } from '../../actions/cart_actions'
 import { logoutUser } from '../../actions/auth_actions'
 import { showloader, hideloader } from '../../actions/isLoading_actions'
 import filterIcon from '../../assets/filter_icon.svg'
-import Loader from '../../components/Loader/Loader'
+
 
 class Products extends Component {
     state = {
@@ -24,29 +24,25 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        // this.props.logoutUser(this.props.history)
-        
+
         const query = new URLSearchParams(this.props.location.search);
         let token = query.get('search')
-        // console.log(token)//123
         if (token === null) {
             token = ''
         }
-
+        window.scrollTo(0,0);
         this.props.getBooksByKeyword(this.props.filters, token)
-        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
-        console.log(prevProps);
+
         if (prevProps.filters !== this.props.filters) {
             const query = new URLSearchParams(this.props.location.search);
             let token = query.get('search')
-            //  console.log(token)//123
             if (token === null) {
                 token = ''
             }
-            console.log(this.props.filters)
+
             this.props.getBooksByKeyword(this.props.filters, token);
         }
 
@@ -67,7 +63,6 @@ class Products extends Component {
         let { books } = this.props.book
         let { sortValue } = this.props;
         let display = books;
-        //console.log(display)
         if (sortValue === "0") {
             display = books.sort((a, b) => a._id - b._id);
         } else if (sortValue === "1") {

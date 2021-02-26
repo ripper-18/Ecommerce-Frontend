@@ -26,7 +26,6 @@ class ProductItem extends Component {
     
 };
 handleRemoveFromCart = () => {
-   // console.log(this.props.data)
    let x=this.props.container.filter(
     (item) => item._id === this.props.data._id
 ).length
@@ -48,7 +47,6 @@ componentDidMount(){
         this.setState({
             click:true
         })
-      //  console.log(this.props.data.name)
     }
 }
 componentDidUpdate(prevProps){
@@ -62,7 +60,6 @@ componentDidUpdate(prevProps){
             this.setState({
                 click:true
             })
-         //   console.log(this.props.data.name)
         }
     }
     
