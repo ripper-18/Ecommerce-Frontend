@@ -44,15 +44,20 @@ function MainCarousel() {
           </div>
           </a>
 
+
+          <a href="https://linktr.ee/DUbookX">
           <div
             className={styles.SlideContainer}>
               <img src={Carousel4} alt={'bg'}/>
           </div>
+          </a>
 
-          <div
-            className={styles.SlideContainer}>
-              <img src={Carousel5} alt={'bg'}/>
-          </div>
+          <a href = "category/BcomH">
+            <div
+              className={styles.SlideContainer}>
+                <img src={Carousel5} alt={'bg'}/>
+            </div>
+          </a>
 
     </Carousel>
     </React.Fragment>

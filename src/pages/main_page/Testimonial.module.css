@@ -1,5 +1,4 @@
 .SlideContainer {
-    height: 500px;
     position: relative;
 
 }
@@ -84,10 +83,6 @@ h1 {
         top: 0%;
     }
 
-    .SlideContainer {
-        height: 100%;
-    }
-
 }
 
 @media screen and (max-width: 750px) {
@@ -115,36 +110,8 @@ h1 {
 }
 
 @media screen and (max-width: 660px) {
-    .SlideContainer {
-        height: 400px;
-        position: relative;
-
-    }
 
     .SlideText {
         font-size: 28px;
     }
-}
-
-@media screen and (max-width: 550px) {
-    .SlideContainer {
-        background-position: right top;
-    }
-
-    .SlideText {
-        font-size: 20px;
-    }
-}
-
-
-
-@media screen and (max-width: 450px) {
-    .SlideContainer {
-        background-position: right top;
-    }
-
-    .SlideText {
-        font-size: 20px;
-    }
-
 }

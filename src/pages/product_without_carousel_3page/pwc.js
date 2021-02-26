@@ -13,6 +13,8 @@ import { withRouter } from 'react-router-dom'
 import { getBooksByKeyword } from '../../actions/book_actions'
 import { addToCart, removeFromCart } from '../../actions/cart_actions'
 import filterIcon from '../../assets/filter_icon.svg'
+import topImage from "../../assets/image.png";
+
 
 class MainPage extends Component {
     state = {
@@ -143,17 +145,22 @@ class MainPage extends Component {
         }
         display = books.filter((b) => b.isLive === true)
         return (
-            <div>
+         
 
+            <div>
+                {(this.props.match.params.course === 'BaHPsy' || this.props.match.params.course === 'BaHEco' || this.props.match.params.course === 'BscHMat') ?
+                        
+                        <div>
+                        <a href="https://linktr.ee/DUbookX">
+                            <img src={topImage} alt="No image available" width="100%" height="100%"></img>
+                        </a>
+                        </div> : <div />
+                        
+                    }
 
                 <div className={styles.containerWrap}>
 
-                    {(this.props.match.params.course === 'BaHPsy' || this.props.match.params.course === 'BaHEco' || this.props.match.params.course === 'BscHMat') ?
-                        <div>
-                            <img src="" alt="No image available" width="600px" height="400px"></img>
-
-                        </div> : <div />
-                    }
+                    
 
 
                     <Row>

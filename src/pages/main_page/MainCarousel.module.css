@@ -1,5 +1,5 @@
 .SlideContainer {
-    height: 500px;
+    height: 400px;
     position: relative;
 
 }
@@ -65,7 +65,9 @@
 @media screen and (max-width: 750px) {
     .SlideContainer {
         margin-top: 0;
+        height: 200px;
     }
+
 
     .SlideText {
         font-size: 40px;

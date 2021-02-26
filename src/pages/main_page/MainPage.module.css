@@ -45,7 +45,6 @@ h1 {
 
 .main_carousel {
     margin: 0px;
-    margin-top: 20px;
     margin-bottom: 40px;
 
 }
@@ -54,27 +53,14 @@ h1 {
 
 @media (max-width:1150px) {
     .main_carousel {
-        margin: 100px;
         margin-top: 20px;
         margin-bottom: 40px;
     }
 }
 
-@media (max-width:900px) {
-    .main_carousel {
-        margin: 50px;
+@media (max-width:900px) {}
 
-    }
-}
-
-@media (max-width:400px) {
-    .main_carousel {
-        margin: 20px;
-
-    }
-
-
-}
+@media (max-width:400px) {}
 
 @media screen and (min-width: 769px) {
     .containerWrap {
