@@ -130,7 +130,7 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:BAHEco"
+                                            value="course:BaHEco"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
@@ -142,7 +142,7 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:BAHEng"
+                                            value="course:BaHEng"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
@@ -154,7 +154,7 @@ class FilterAccordion extends Component {
                                 <li className="col-12">
                                     <label>
                                         <input
-                                            value="course:BAHPsy"
+                                            value="course:BaHPsy"
                                             onChange={(e) =>
                                                 this.handleCheck(e)
                                             }
