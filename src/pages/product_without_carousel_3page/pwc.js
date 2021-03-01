@@ -150,7 +150,7 @@ class MainPage extends Component {
             <div>
                 {(this.props.match.params.course === 'BaHPsy' || this.props.match.params.course === 'BaHEco' || this.props.match.params.course === 'BscHMat') ?
                         
-                        <div>
+                        <div style={{marginTop:"20px"}}>
                         <a href="https://linktr.ee/DUbookX">
                             <img src={topImage} alt="No image available" width="100%" height="100%"></img>
                         </a>

@@ -1,12 +1,9 @@
 import React,{useEffect} from "react";
 import styles from "./AboutUs.module.css";
 import { Link } from "react-router-dom";
-import about1 from "../../assets/about_page/about-landing-1.jpg";
+
 import about2 from "../../assets/about_page/about-landing-2.jpg";
-import stars from "../../assets/about_page/star.svg";
-import card1 from "../../assets/about_page/about-landing-card-1.jpg";
-import card2 from "../../assets/about_page/about-landing-card-2.jpg";
-import card3 from "../../assets/about_page/about-landing-card-3.jpg";
+
 
 const About = () => {
   useEffect(() => {

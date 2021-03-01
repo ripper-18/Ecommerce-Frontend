@@ -304,20 +304,7 @@
     z-index: 1;
 }
 
-.review-bottom {
-    background-image: url('../../assets//about_page/Homepage-AmbassadorSliceV2.jpg');
-    width: 100%;
-    max-width: 1214px;
-    height: 615px;
-    margin: 0 auto;
-    margin-top: -307px;
-    margin-bottom: 86px;
-    background-position: 50%;
-    background-size: cover;
-    position: relative;
-    z-index: 0;
-    background-repeat: no-repeat;
-}
+
 
 /* ORDER NOW */
 
