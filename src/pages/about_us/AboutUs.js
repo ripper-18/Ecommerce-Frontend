@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import styles from "./AboutUs.module.css";
-import { Link } from "react-router-dom";
+import { Carousel } from 'react-responsive-carousel';
 
 import about2 from "../../assets/about_page/about-landing-2.jpg";
 
@@ -11,22 +11,25 @@ const About = () => {
   }, [])
   return (
     <div className={styles.main}>
-      <div className={styles.hero}>
-        <div className={styles["hero-container"]}>
-          <hr />
-          <h3>ABOUT </h3>
-          <h1>
-            DU Book X
-          </h1>
-          <p>Affordable books at your doorstep!</p>
-          
-        </div>
-      </div>
-      <div className={styles["mobile-hero"]}>
-      <p>Affordable books at your doorstep!</p>
-        
 
-      </div>
+      <React.Fragment>
+        <Carousel 
+        showArrows={false}
+        showStatus={false}
+        showThumbs={false}
+        showIndicators={false}
+
+        >
+             <div
+          className={styles.SlideContainer}
+     
+            >
+                <img src="https://i.ibb.co/37rj6Rn/Header.png" alt={'bg'}/>
+
+        </div>
+
+    </Carousel>
+    </React.Fragment>
 
       <div className="container">
         <div className={styles.about2}>

@@ -1,7 +1,17 @@
 /* HERO CONTAINER */
 
+.SlideContainer {
+    position: relative;
+
+}
+
+.SlideContainer img {
+    height: 100%;
+    width: 100%;
+}
+
 .hero {
-    background-image: url(../../assets/about_page/top.png);
+    background-image: url(../../assets/about_page/Header.png);
     height: 724px;
     width: 100vw;
     background-size: cover;
@@ -303,8 +313,6 @@
     position: relative;
     z-index: 1;
 }
-
-
 
 /* ORDER NOW */
 

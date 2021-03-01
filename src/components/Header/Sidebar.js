@@ -97,7 +97,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.Ms</span>
+                                                            <span >BMS</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -135,7 +135,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.Com-Hon</span>
+                                                            <span >B.Com(Hons.)</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -171,7 +171,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.Com-Pro</span>
+                                                            <span >B.Com(Prog)</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -207,7 +207,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.A(Hon)-Eco</span>
+                                                            <span >BA(Hons) Eco</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -244,7 +244,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.A(Hon)-Eng</span>
+                                                            <span >BA(Hons) Eng</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -281,7 +281,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.A(Hon)-Psy</span>
+                                                            <span >BsA(Hons) Pol Science</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -355,7 +355,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.Sc(Hon)-Stat</span>
+                                                            <span >B.Sc(Hons)-Stat</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -392,7 +392,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >B.Sc(Hon)-Math</span>
+                                                            <span >B.Sc(Hons) Maths</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
