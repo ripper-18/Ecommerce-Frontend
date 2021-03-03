@@ -28,7 +28,7 @@ class Product extends Component {
   }
   handleAdd = (elem) => {
     let x = this.props.cart.bookCart.filter((item) => item._id === elem._id).length
-    if (x === elem.countInStock - 1) {
+    if (x === elem.countInStock ) {
       this.props.showDialog('Sorry! Maximum Count In Stock Reached')
       return
     }
@@ -39,6 +39,7 @@ class Product extends Component {
     if (this.props.cart.bookCart.filter((item) => item._id === this.props.book._id).length === this.props.book.countInStock) {
       this.props.showDialog('Maximum no of items in stock reached!')
     }
+    console.log(this.props.book.countInStock)
     window.scrollTo(0,0);
   }
 

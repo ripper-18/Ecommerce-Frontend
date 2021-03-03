@@ -91,8 +91,7 @@ class Checkout extends Component {
         for (let i = 0; i < this.props.order.addresses.length; i++) {
             if (this.props.order.addresses[i]._id === e) {
                 const temp_state = this.props.order.addresses[i].state.toString();
-                console.log(temp_state);
-                console.log(this.state.rates.data[temp_state])
+               
                 const delivery = this.state.rates ? this.state.rates.data[temp_state][1] : 30;
                 this.setState({
                     ...this.state,
@@ -141,7 +140,7 @@ class Checkout extends Component {
                 this.state.delivery,
                 //gst
                 0)
-            // console.log(this.props)
+           
             this.props.history.push("/order");
         } else {
             this.props.showDialog("Please select an address");
