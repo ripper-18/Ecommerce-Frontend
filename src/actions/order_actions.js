@@ -185,7 +185,7 @@ export const placeDirectOrder = (
         .catch((error) => {
             console.log(error);
             dispatch(
-                showDialog("Something went wrong while placing the order")
+                showDialog(error)
             );
            
         });
