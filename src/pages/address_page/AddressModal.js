@@ -30,6 +30,7 @@ class AddressModal extends Component {
     }
     render() {
         const options = [
+            { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
             { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
             { value: 'Assam', label: 'Assam' },
             { value: 'Bihar', label: 'Bihar' },

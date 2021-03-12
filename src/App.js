@@ -78,6 +78,8 @@ function App(props) {
     const ShippingPAGE=React.lazy(()=>
       import('./pages/shipping_page/Shipping')
     )
+    const BuyerDisclaimerPage = React.lazy(() => 
+    import('./pages/disclaimer_page/BuyerDisclaimer'))
 
     // const PWCBeta = React.lazy(() => (
     //     import('./pages/pwc_beta/MainPage')
@@ -122,7 +124,8 @@ function App(props) {
                                             <Route path="/product/:id" exact component={ProductPage} />
                                             <Route path="/faq" exact component={FaqPage} />
                                             <Route path="/privacy" exact component={PrivacyPage} />
-                                            <Route path="/disclaimer" exact component={DisclaimerPage} />
+                                            <Route path="/disclaimer" exact component={DisclaimerPage} /> 
+                                            <Route path="/BuyerDisclaimer" exact component = {BuyerDisclaimerPage}/>
                                             <Route path="/returns" exact component={ReturnsPage} />
                                             <Route path="/terms" exact component={TermsPage} />
                                             <Route path="/seller_reg" exact component={SellerRegPage} />
@@ -135,8 +138,7 @@ function App(props) {
                                             <PrivateRoute path="/profile" exact component={ProfilePage} />
                                             <PrivateRoute path="/checkout" exact component={CheckOutPage} />
                                             <PrivateRoute path="/address" exact component={AddressPage} />
-
-
+                                           
                                             <Route component={ErrorPage} />
                                         </Switch>
                                     </>

@@ -60,7 +60,10 @@ const ColumnThree = () => (
         <li> FAQs</li>
       </Link>
       <Link to="/disclaimer">
-        <li> Disclaimer</li>
+        <li> Seller Disclaimer</li>
+      </Link>
+      <Link to="/BuyerDisclaimer">
+        <li> Buyer Disclaimer</li>
       </Link>
       <Link to="/privacy">
         <li> Privacy</li>
