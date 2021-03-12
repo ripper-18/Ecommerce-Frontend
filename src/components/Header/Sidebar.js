@@ -281,7 +281,7 @@ function SwipeableTemporaryDrawer(props) {
                                                             eventKey="0"
                                                             style={{ textAlign: "center" }}
                                                         >
-                                                            <span >BsA(Hons) Pol Science</span>
+                                                            <span >BA(Hons) Pol Science</span>
                                                             <div
                                                                 className={"tog"}
                                                                 style={{
@@ -346,43 +346,7 @@ function SwipeableTemporaryDrawer(props) {
                                                     </Card>
                                                 </Accordion>
                                             </li>
-                                            <li className="col-6">
-                                                <Accordion className="my-3">
-                                                    <Card className={("my-4 c")}>
-                                                        <Accordion.Toggle
-                                                            as={Card.Header}
-                                                            className={("col-sm-12 p-0 ch")}
-                                                            eventKey="0"
-                                                            style={{ textAlign: "center" }}
-                                                        >
-                                                            <span >B.Sc(Hons)-Stat</span>
-                                                            <div
-                                                                className={"tog"}
-                                                                style={{
-                                                                    background: `url(${ChevronIcon})`,
-                                                                }}
-
-                                                            />
-                                                        </Accordion.Toggle>
-                                                        <Accordion.Collapse eventKey="0">
-                                                            <Card.Body className="px-0 pt-4 pb-0">
-                                                                <ul className={("row d-flex m-0 ul ul2")}>
-                                                                    <li className="col-6" onClick={() => props.history.push('/category/BscHSta/1')}>
-                                                                        1st Year
-                                </li>
-                                                                    <li className="col-6" onClick={() => props.history.push('/category/BscHSta/2')}>
-                                                                        2nd Year
-                                </li>
-                                                                    <li className="col-6" onClick={() => props.history.push('/category/BscHSta/3')}>
-                                                                        3rd Year
-                                </li>
-
-                                                                </ul>
-                                                            </Card.Body>
-                                                        </Accordion.Collapse>
-                                                    </Card>
-                                                </Accordion>
-                                            </li>
+                                            
                                             <li className="col-6">
                                                 <Accordion className="my-3">
                                                     <Card className={("my-4 c")}>
