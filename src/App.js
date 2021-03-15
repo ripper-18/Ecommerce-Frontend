@@ -11,7 +11,9 @@ import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./pages/common/PrivateRoute"
 import { StickyContainer, Sticky } from 'react-sticky';
-
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-R2K5Q8YSVJ'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App(props) {
     const MainPage = React.lazy(() =>
