@@ -7,7 +7,9 @@ import { Provider } from "react-redux";
 
 import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
-
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-R2K5Q8YSVJ'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 const app = (
    <Provider store={store}>
        <PersistGate Loading={null} persistor={persistor}>
