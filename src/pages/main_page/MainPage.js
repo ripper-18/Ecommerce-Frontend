@@ -12,7 +12,7 @@ import CourseCard from './CourseCard'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-
+import ReactGA from 'react-ga';
 class MainPage extends Component {
     state = {
         isSideFilterOpen: false,
@@ -92,6 +92,8 @@ class MainPage extends Component {
         })
     }
     componentDidMount() {
+        ReactGA.initialize('UA-192149269-1'); // add your tracking id here.
+        ReactGA.pageview('/homepage');
         if (window.innerWidth < 1150) {
             this.setState({
                 ...this.state,
