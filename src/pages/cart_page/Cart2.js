@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './Cart2.module.css'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
-import { addToCart, removeFromCart, clearCart } from '../../actions/cart_actions'
+import { addToCart, removeFromCart, clearCart, setDiscount } from '../../actions/cart_actions'
 import cx from 'classnames'
 import Stepper from '../common/stepper'
 import { showDialog } from '../../actions/dialog_actions'
@@ -13,7 +13,6 @@ import { showDialog } from '../../actions/dialog_actions'
 class Cart extends Component {
     state = {
         size: '',
-        discount: 0.00,
         coupon: ''
     }
 
@@ -73,6 +72,7 @@ class Cart extends Component {
         }
     };
     componentDidMount() {
+        console.log(this.props.cart)
         if (window.innerWidth < 640) {
             this.setState({
                 ...this.state,
@@ -88,13 +88,11 @@ class Cart extends Component {
         window.addEventListener('resize', this.updateDimensions);
     }
 
-    setDiscount = () => {
+    setDiscountValue = () => {
 
         if (this.state.coupon === 'RAMON') {
-            this.setState({
-                ...this.state,
-                discount: 10
-            })
+            this.props.setDiscount(10);
+
 
             alert(`COUPON APPLIED SUCCESSFULLY`)
 
@@ -228,7 +226,7 @@ class Cart extends Component {
                                         <div className={cx(styles.subtr, 'col-6')}>
                                             <div className={styles.subtrd}>
                                                 <span>
-                                                    {this.state.discount}%
+                                                    {this.props.cart.discount}%
                                                 </span>
                                             </div>
                                         </div>
@@ -295,7 +293,7 @@ class Cart extends Component {
 
                                     <div className={cx(styles.subt, 'row')}>
                                         <div className={cx(styles.subtl, 'col-8')}>
-                                            <button onClick={this.setDiscount}>Apply Coupon</button>
+                                            <button onClick={this.setDiscountValue}>Apply Coupon</button>
 
                                         </div>
 
@@ -347,6 +345,7 @@ export default connect(mapStateToProps, {
     addToCart,
     removeFromCart,
     clearCart,
+    setDiscount,
     showDialog
 })(withRouter(Cart));
 
