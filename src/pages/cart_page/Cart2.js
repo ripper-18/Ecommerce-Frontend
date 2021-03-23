@@ -13,6 +13,8 @@ import { showDialog } from '../../actions/dialog_actions'
 class Cart extends Component {
     state = {
         size: '',
+        discount: 0.00,
+        coupon: ''
     }
 
     getCount = (cart) => {
@@ -84,6 +86,27 @@ class Cart extends Component {
             })
         }
         window.addEventListener('resize', this.updateDimensions);
+    }
+
+    setDiscount = () => {
+
+        if (this.state.coupon === 'RAMON') {
+            this.setState({
+                ...this.state,
+                discount: 10
+            })
+
+            alert(`COUPON APPLIED SUCCESSFULLY`)
+
+        }
+
+        else alert(`${this.state.coupon} is an invalid coupon`)
+
+
+    }
+
+    setCouponCode = (e) => {
+        this.setState({ ...this.state, coupon: e.target.value })
     }
 
     render() {
@@ -197,6 +220,20 @@ class Cart extends Component {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div className={cx(styles.subt, 'row')}>
+                                        <div className={cx(styles.subtl, 'col-6')}>
+                                            {"Discount"}
+                                        </div>
+                                        <div className={cx(styles.subtr, 'col-6')}>
+                                            <div className={styles.subtrd}>
+                                                <span>
+                                                    {this.state.discount}%
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div className={cx(styles.subt, 'row')}>
                                         <div className={cx(styles.subtl, 'col-8')}>
                                             {"Delivery Charges Applicable"}
@@ -209,7 +246,13 @@ class Cart extends Component {
                                             </div>
                                         </div> */}
                                     </div>
+
+
+
+
                                     <hr className={styles.hr} />
+
+
                                     <div className={cx(styles.subt, "row")}>
                                         <div className={'col-6'}>
                                             <p className={styles.totalp}>
@@ -226,15 +269,50 @@ class Cart extends Component {
                                             </p>
                                         </div>
                                     </div>
+
+                                    <div className={cx(styles.subt, 'row')}>
+                                        <div className={cx(styles.subtl, 'col-12')}>
+                                            <div className={styles.subtrd}>
+                                                <input type="text" placeholder="Coupon Code"
+
+                                                    className={styles.header_search_input}
+
+                                                    value={
+                                                        this.state.coupon
+
+                                                    }
+                                                    onChange={(e) =>
+                                                        this.setCouponCode(
+                                                            e
+                                                        )
+                                                    }
+
+                                                />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div className={cx(styles.subt, 'row')}>
+                                        <div className={cx(styles.subtl, 'col-8')}>
+                                            <button onClick={this.setDiscount}>Apply Coupon</button>
+
+                                        </div>
+
+                                    </div>
                                     <hr className={styles.hr2} />
                                     <div className={styles.check}>
+
+                                        {/* <input type="text" style={{ width: "100%", height: "40px", color: "black" }} placeholder="Enter Coupon Code"></input> */}
                                         <div className="col-sm-12" style={{ paddingLeft: "16px", paddingRight: "16px" }}>
+
+
 
                                             {this.props.auth.token ? (
                                                 <button className={styles.checkbtn} disabled={!this.getSubTotal()} onClick={() => this.props.history.push('/checkout')}>Proceed to Checkout</button>
                                             ) : (
-                                                    <button className={styles.checkbtn} onClick={() => this.props.history.push('/login')}>Please sign in to Continue</button>
-                                                )}
+                                                <button className={styles.checkbtn} onClick={() => this.props.history.push('/login')}>Please sign in to Continue</button>
+                                            )}
                                             <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={this.props.clearCart}>Clear Cart</button>
                                         </div>
                                     </div>
@@ -248,8 +326,8 @@ class Cart extends Component {
                         {this.props.auth.token ? (
                             <button className={styles.btnBig} disabled={!this.getSubTotal()} onClick={() => this.props.history.push('/checkout')}>Proceed to Checkout</button>
                         ) : (
-                                <button className={styles.btnBig} onClick={() => this.props.history.push('/login')}>Please sign in to Continue</button>
-                            )}
+                            <button className={styles.btnBig} onClick={() => this.props.history.push('/login')}>Please sign in to Continue</button>
+                        )}
                     </div>
                     <div className={'col-6'}>
                         <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={this.props.clearCart}>Clear Cart</button>

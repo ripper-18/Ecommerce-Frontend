@@ -99,11 +99,11 @@ class Header extends Component {
                                         {/* <span className="header-option-lineTwo">LOGIN</span> */}
                                     </Link>
                                 ) : (
-                                        <Link to="/profile" className={styles.header_links}>
-                                            <span className={styles.header_option_lineOne}><AccountCircleIcon className="account-app-icon icon" /></span>
-                                            {/* <span className="header-option-lineTwo">ACCOUNT</span> */}
-                                        </Link>
-                                    )}
+                                    <Link to="/profile" className={styles.header_links}>
+                                        <span className={styles.header_option_lineOne}><AccountCircleIcon className="account-app-icon icon" /></span>
+                                        {/* <span className="header-option-lineTwo">ACCOUNT</span> */}
+                                    </Link>
+                                )}
 
                             </div>
 
