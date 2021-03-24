@@ -91,7 +91,7 @@ class Checkout extends Component {
         for (let i = 0; i < this.props.order.addresses.length; i++) {
             if (this.props.order.addresses[i]._id === e) {
                 const temp_state = this.props.order.addresses[i].state.toString();
-               
+
                 const delivery = this.state.rates ? this.state.rates.data[temp_state][1] : 30;
                 this.setState({
                     ...this.state,
@@ -135,13 +135,14 @@ class Checkout extends Component {
                 //finalAmount
                 (this.getSubTotal() +
                     +
-                    this.getDeliveryPrice()).toFixed(2),
+                    this.getDeliveryPrice() - this.getDiscount()).toFixed(2),
                 //delivery
                 this.state.delivery,
                 //gst
                 0,
+                //discount
                 this.props.cart.discount)
-           
+
             this.props.history.push("/order");
         } else {
             this.props.showDialog("Please select an address");
@@ -177,6 +178,10 @@ class Checkout extends Component {
             return delivery_price
         }
         return 50 * num_books;
+    }
+
+    getDiscount = () => {
+        return this.props.cart.discount * this.getSubTotal() / 100;
     }
 
     render() {
@@ -232,6 +237,18 @@ class Checkout extends Component {
                                                 </p>
                                             </div>
                                         </div>
+
+                                        <div className="row">
+                                            <div className="col-6 font-weight-bold">
+                                                <p>Discount</p>
+                                            </div>
+                                            <div className="col-6 text-right">
+                                                <p>
+                                                    ₹{" "}
+                                                    {this.getDiscount().toFixed(2)}
+                                                </p>
+                                            </div>
+                                        </div>
                                         <div className="row">
                                             <div className="col-6 font-weight-bold">
                                                 <p>Estimated Delivery Charges</p>
@@ -254,7 +271,7 @@ class Checkout extends Component {
                                             <div className="col-6 text-right">
                                                 <p className={styles.total}>
                                                     ₹{" "}
-                                                    {!this.state.finalAddress ? 'Select A delivery Address' : (this.getSubTotal() + this.getDeliveryPrice()).toFixed(2)}
+                                                    {!this.state.finalAddress ? 'Select A delivery Address' : (this.getSubTotal() + this.getDeliveryPrice() - this.getDiscount()).toFixed(2)}
 
                                                 </p>
                                             </div>
@@ -343,13 +360,13 @@ class Checkout extends Component {
                                                                         </div>
                                                                     ))
                                                                 ) : (
-                                                                        <div className="ml-4">
-                                                                            <p>
-                                                                                No saved
-                                                                                addresses
+                                                                    <div className="ml-4">
+                                                                        <p>
+                                                                            No saved
+                                                                            addresses
                              </p>
-                                                                        </div>
-                                                                    )}
+                                                                    </div>
+                                                                )}
                                                                 <input
                                                                     type="radio"
 
