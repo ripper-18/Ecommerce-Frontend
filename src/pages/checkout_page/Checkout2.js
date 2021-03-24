@@ -139,7 +139,8 @@ class Checkout extends Component {
                 //delivery
                 this.state.delivery,
                 //gst
-                0)
+                0,
+                this.props.cart.discount)
            
             this.props.history.push("/order");
         } else {

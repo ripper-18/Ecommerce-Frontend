@@ -75,7 +75,8 @@ class OrderPage extends Component {
                     this.props.currentOrder.originalBill,
                     this.props.currentOrder.finalAmount,
                     this.props.currentOrder.delivery,
-                    this.props.currentOrder.gst
+                    this.props.currentOrder.gst,
+                    this.props.currentOrder.disc
 
                 )
                 .then((res) => {

@@ -125,7 +125,8 @@ export const setCurrentOrder = (
     books,
     finalAmount,
     delivery,
-    gst
+    gst,
+    disc
 ) => (dispatch) => {
     dispatch({
         type: SET_CURRENT_ORDER,
@@ -136,7 +137,8 @@ export const setCurrentOrder = (
             originalBill,
             finalAmount,
             delivery,
-            gst
+            gst,
+            disc
         },
     });
 };
@@ -150,7 +152,8 @@ export const placeDirectOrder = (
     originalBill,
     finalAmount,
     delivery,
-    gst
+    gst,
+    disc
 ) => async(dispatch) => {
 
     
@@ -166,7 +169,8 @@ export const placeDirectOrder = (
         books: [...books],
         finalAmount: finalAmount,
         deliveryCharge:delivery,
-        gstCharge:gst
+        gstCharge:gst,
+        discount:disc
         
     });
 
