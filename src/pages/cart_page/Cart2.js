@@ -72,7 +72,7 @@ class Cart extends Component {
         }
     };
     componentDidMount() {
-        
+
         if (window.innerWidth < 640) {
             this.setState({
                 ...this.state,
@@ -88,13 +88,13 @@ class Cart extends Component {
         window.addEventListener('resize', this.updateDimensions);
         this.props.setDiscount(0);
     }
-    
+
 
     setDiscountValue = () => {
 
         if (this.state.coupon === 'WELCOME10') {
             this.props.setDiscount(10);
-            
+
 
         }
 
@@ -273,7 +273,7 @@ class Cart extends Component {
                                             <div className={styles.subtrd}>
                                                 <input type="text" placeholder="Coupon Code"
 
-                                                    className={styles.header_search_input}
+                                                    className={styles.header_search_inputt}
 
                                                     value={
                                                         this.state.coupon
@@ -291,9 +291,9 @@ class Cart extends Component {
 
                                     </div>
 
-                                    <div className={cx(styles.subt, 'row')} style ={{display: "flex", justifyContent:"center"}}>
+                                    <div className={cx(styles.subt, 'row')} style={{ display: "flex", justifyContent: "center" }}>
                                         <div className={cx(styles.subtl, 'col-8')}>
-                                            <button className={styles.coupon_button} onClick={this.setDiscountValue} disabled={Boolean(this.props.cart.bookCart.length===0)}>Apply Coupon</button>
+                                            <button className={styles.coupon_button} onClick={this.setDiscountValue} disabled={Boolean(this.props.cart.bookCart.length === 0)}>Apply Coupon</button>
 
                                         </div>
 
@@ -311,9 +311,10 @@ class Cart extends Component {
                                             ) : (
                                                 <button className={styles.checkbtn} onClick={() => this.props.history.push('/login')}>Please sign in to Continue</button>
                                             )}
-                                            <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={()=>{
-                        this.props.clearCart();
-                        this.props.setDiscount(0)}}>Clear Cart</button>
+                                            <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={() => {
+                                                this.props.clearCart();
+                                                this.props.setDiscount(0)
+                                            }}>Clear Cart</button>
                                         </div>
                                     </div>
                                 </aside>
@@ -330,9 +331,10 @@ class Cart extends Component {
                         )}
                     </div>
                     <div className={'col-6'}>
-                        <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={()=>{
-                        this.props.clearCart();
-                        this.props.setDiscount(0)}}>Clear Cart</button>
+                        <button className={styles.checkbtn2} disabled={!this.getSubTotal()} onClick={() => {
+                            this.props.clearCart();
+                            this.props.setDiscount(0)
+                        }}>Clear Cart</button>
                     </div>
                 </div>
             </>

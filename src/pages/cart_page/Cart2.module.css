@@ -53,7 +53,7 @@
     font-weight: 400;
 }
 
-.header_search_input {
+.header_search_inputt {
 
     height: 30px;
     border-style: dashed;
@@ -65,7 +65,7 @@
 
 }
 
-::placeholder {
+.header_search_inputt::placeholder {
     color: black !important;
 }
 
