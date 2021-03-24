@@ -39,6 +39,13 @@ class Cart extends Component {
             this.props.cart.bookCart.reduce((a, b) => a + b.price, 0)
         );
     };
+
+    getSuperTotal = () => {
+
+        return (
+            this.props.cart.bookCart.reduce((a, b) => a + b.price, 0) * (100 - this.props.cart.discount) / 100
+        );
+    };
     handleFullRemove = (elem) => {
         let x = this.props.cart.bookCart.filter((item) => item._id === elem._id).length
 
@@ -260,7 +267,7 @@ class Cart extends Component {
                                         <div className="col-6">
                                             <p className={styles.pr}>
                                                 <span>
-                                                    ₹ {(this.getSubTotal())}
+                                                    ₹ {(this.getSuperTotal().toFixed(2))}
 
 
                                                 </span>
