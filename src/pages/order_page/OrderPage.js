@@ -137,6 +137,10 @@ class OrderPage extends Component {
 
     }
 
+    dispFinalAmount = () => {
+        return (this.props.currentOrder.finalAmount - (this.props.currentOrder.originalBill * this.props.currentOrder.disc / 100)).toFixed(2)
+    }
+
     render() {
 
         const arr = this.props.currentOrder.finalAddress.address.split(" ");
@@ -157,7 +161,7 @@ class OrderPage extends Component {
                                     Total Payable:{" "}
                                 </span>
                                 <span>
-                                    {this.props.currentOrder.finalAmount}
+                                    {this.dispFinalAmount()}
                                 </span>
                             </div>
                             <br></br>

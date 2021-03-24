@@ -135,7 +135,7 @@ class Checkout extends Component {
                 //finalAmount
                 (this.getSubTotal() +
                     +
-                    this.getDeliveryPrice() - this.getDiscount()).toFixed(2),
+                    this.getDeliveryPrice()).toFixed(2),
                 //delivery
                 this.state.delivery,
                 //gst
