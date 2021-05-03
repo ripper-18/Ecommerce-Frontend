@@ -275,7 +275,7 @@ class Cart extends Component {
                                         </div>
                                     </div>
 
-                                    <div className={cx(styles.subt, 'row')}>
+                                    {/* <div className={cx(styles.subt, 'row')}>
                                         <div className={cx(styles.subtl, 'col-12')}>
                                             <div className={styles.subtrd}>
                                                 <input type="text" placeholder="Coupon Code"
@@ -296,15 +296,15 @@ class Cart extends Component {
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div> */}
 
-                                    <div className={cx(styles.subt, 'row')} style={{ display: "flex", justifyContent: "center" }}>
+                                    {/* <div className={cx(styles.subt, 'row')} style={{ display: "flex", justifyContent: "center" }}>
                                         <div className={cx(styles.subtl, 'col-8')}>
                                             <button className={styles.coupon_button} onClick={this.setDiscountValue} disabled={Boolean(this.props.cart.bookCart.length === 0)}>Apply Coupon</button>
 
                                         </div>
 
-                                    </div>
+                                    </div> */}
                                     <hr className={styles.hr2} />
                                     <div className={styles.check}>
 

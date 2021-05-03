@@ -238,7 +238,7 @@ class Checkout extends Component {
                                             </div>
                                         </div>
 
-                                        <div className="row">
+                                        {/* <div className="row">
                                             <div className="col-6 font-weight-bold">
                                                 <p>Discount</p>
                                             </div>
@@ -248,7 +248,7 @@ class Checkout extends Component {
                                                     {this.getDiscount().toFixed(2)}
                                                 </p>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="row">
                                             <div className="col-6 font-weight-bold">
                                                 <p>Estimated Delivery Charges</p>
