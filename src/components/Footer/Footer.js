@@ -28,7 +28,6 @@ const ColumnOne = () => {
       <br></br>
       <ul>
         <a href="tel:7973782168"><li>7973782168</li></a>
-        <li>Yuvraj Singh (Co-founder)</li>
         <a href="tel:8283030590"><li>8283030590</li></a>
         <a href="mailto:dubookx@gmail.com"><li>dubookx@gmail.com</li></a>
       </ul>

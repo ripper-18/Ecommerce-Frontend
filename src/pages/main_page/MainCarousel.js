@@ -29,13 +29,6 @@ function MainCarousel() {
               <img src={Carousel1} alt={'bg'}/>
           </div>
 
-
-          <div
-            className={styles.SlideContainer}>
-              <img src={Carousel2} alt={'bg'}/>
-          </div>
-
-
           <a href = "seller_reg">
           <div
             className={styles.SlideContainer}>
