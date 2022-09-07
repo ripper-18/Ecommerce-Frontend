@@ -42,7 +42,7 @@ const About = () => {
             </p>
             <p>
             
-            DUbookX was formed by 4 students in their second year of college with a simple idea. As our exams were approaching, we were finding a convenient way of purchasing second hand books at affordable prices but couldn’t find any reliable platform for it. We decided to take things in our own hands and launch a platform for people to purchase both first and second hand books conveniently. We wanted to be the solution to many of the students' problems.
+            DUbookX was formed by students in their second year of college with a simple idea. As our exams were approaching, we were finding a convenient way of purchasing second hand books at affordable prices but couldn’t find any reliable platform for it. We decided to take things in our own hands and launch a platform for people to purchase both first and second hand books conveniently. We wanted to be the solution to many of the students' problems.
             <br></br>
             <br></br>
             The world has been left rattled ever since the outbreak of Covid 19. Our local entrepreneurs have been left scrambling for customers and we at DUbookX are doing our best to help them. We have opened our platform to the various book shops across India who have been struggling to sell their stock. They have assisted us in providing our customers with a wide plethora of books to choose from. And the best part about this is that we can deliver the books directly to your doorstep at the cheapest of prices.
